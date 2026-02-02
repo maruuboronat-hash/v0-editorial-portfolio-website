@@ -53,73 +53,8 @@ const services = [
   },
 ]
 
-function InteractiveHero() {
-  const containerRef = useRef<HTMLDivElement>(null)
-  const [mousePos, setMousePos] = useState({ x: 0, y: 0 })
-  const [activeProject, setActiveProject] = useState<number | null>(null)
-  const [isHovering, setIsHovering] = useState(false)
-
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (!containerRef.current) return
-    const rect = containerRef.current.getBoundingClientRect()
-    const x = e.clientX - rect.left
-    const y = e.clientY - rect.top
-    setMousePos({ x, y })
-
-    const sectionWidth = rect.width / projects.length
-    const projectIndex = Math.floor(x / sectionWidth)
-    setActiveProject(Math.min(projectIndex, projects.length - 1))
-  }
-
-  return (
-    <section
-      ref={containerRef}
-      className="relative min-h-[80vh] flex items-center justify-center cursor-crosshair overflow-hidden"
-      onMouseMove={handleMouseMove}
-      onMouseEnter={() => setIsHovering(true)}
-      onMouseLeave={() => setIsHovering(false)}
-    >
-      {isHovering && activeProject !== null && (
-        <div
-          className="pointer-events-none absolute z-10 transition-all duration-200 ease-out"
-          style={{
-            left: mousePos.x,
-            top: mousePos.y,
-            transform: "translate(-50%, -50%)",
-          }}
-        >
-          <div className="relative w-64 h-40 md:w-80 md:h-52 bg-muted overflow-hidden">
-            <div className="absolute inset-0 flex items-center justify-center text-muted-foreground text-xs uppercase tracking-widest">
-              {projects[activeProject].title}
-            </div>
-          </div>
-        </div>
-      )}
-
-      <div className="relative z-20 text-center px-6">
-        <h1 className="font-heading text-4xl md:text-6xl lg:text-8xl tracking-tight text-foreground leading-none">
-          <span className="block font-sans">MARIA BORONAT</span>
-          <span className="block mt-2 text-2xl md:text-3xl lg:text-4xl font-sans font-light tracking-wide opacity-70">
-            Diseño Gráfico y Comunicación
-          </span>
-        </h1>
-      </div>
-
-      <div className="absolute inset-0 flex">
-        {projects.map((project, index) => (
-          <div
-            key={project.id}
-            className="flex-1 h-full"
-            onMouseEnter={() => setActiveProject(index)}
-          />
-        ))}
-      </div>
-    </section>
-  )
-}
-
 /* =========================
-   SERVICES SECTION (IMÁGENES REALES)
+   SERVICES SECTION (IMÁGENES BIEN MOSTRADAS)
 ========================= */
 
 function ServicesSection() {
@@ -131,14 +66,14 @@ function ServicesSection() {
             <Link
               key={service.id}
               href={service.href}
-              className="scroll-reveal-child group relative aspect-square overflow-hidden"
+              className="scroll-reveal-child group relative aspect-square overflow-hidden bg-white"
             >
-              {/* Imagen */}
+              {/* Imagen SIN recorte */}
               <Image
                 src={service.image}
                 alt={service.id}
                 fill
-                className="object-cover"
+                className="object-contain"
                 priority
               />
 
@@ -188,7 +123,6 @@ function AboutSection() {
 export default function HomePage() {
   return (
     <div className="pt-16">
-      <InteractiveHero />
       <ServicesSection />
       <AboutSection />
       <ContactSection />
