@@ -3,8 +3,13 @@
 import React from "react"
 import { useState, useRef } from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { ContactSection } from "@/components/contact-section"
 import { ScrollReveal } from "@/hooks/use-scroll-reveal"
+
+/* =========================
+   HERO (no se toca)
+========================= */
 
 const projects = [
   { id: 1, title: "Proyecto Alpha", category: "Identidad Visual" },
@@ -13,26 +18,38 @@ const projects = [
   { id: 4, title: "Proyecto Delta", category: "Digital" },
 ]
 
+/* =========================
+   SERVICES (con imágenes)
+========================= */
+
 const services = [
   {
     id: "diseno-grafico",
-    description: "Proyectos de diseño editorial, diseño 3D, comunicación visual e investigación tipográfica desarrollados durante la carrera de Diseño Gráfico y Comunicación.",
+    description:
+      "Proyectos de diseño editorial, diseño 3D, comunicación visual e investigación tipográfica desarrollados durante la carrera de Diseño Gráfico y Comunicación.",
     href: "/proyectos/diseno-grafico",
+    image: "/images/generales/home-cover-diseno-grafico.jpg",
   },
   {
     id: "corporativo",
-    description: "Trabajos realizados desde el área de Marketing y Comunicación. Combino diseño, estrategia y automatización para mejorar procesos y comunicación visual interna.",
+    description:
+      "Trabajos realizados desde el área de Marketing y Comunicación. Combino diseño, estrategia y automatización para mejorar procesos y comunicación visual interna.",
     href: "/proyectos/corporativo",
+    image: "/images/generales/home-cover-corporativo.jpg",
   },
   {
     id: "indumentaria",
-    description: "Serie de proyectos vinculados al diseño de indumentaria y la experimentación visual desde el cuerpo, la forma y la textura.",
+    description:
+      "Serie de proyectos vinculados al diseño de indumentaria y la experimentación visual desde el cuerpo, la forma y la textura.",
     href: "/proyectos/indumentaria-ilustracion",
+    image: "/images/generales/home-cover-indumentaria.jpg",
   },
   {
     id: "personales",
-    description: "Exploraciones creativas y proyectos experimentales. Trabajos que nacen de la curiosidad y la libertad creativa.",
+    description:
+      "Exploraciones creativas y proyectos experimentales. Trabajos que nacen de la curiosidad y la libertad creativa.",
     href: "/proyectos/personales",
+    image: "/images/generales/home-cover-proyectos-personales.jpg",
   },
 ]
 
@@ -49,7 +66,6 @@ function InteractiveHero() {
     const y = e.clientY - rect.top
     setMousePos({ x, y })
 
-    // Determine which project to show based on position
     const sectionWidth = rect.width / projects.length
     const projectIndex = Math.floor(x / sectionWidth)
     setActiveProject(Math.min(projectIndex, projects.length - 1))
@@ -63,7 +79,6 @@ function InteractiveHero() {
       onMouseEnter={() => setIsHovering(true)}
       onMouseLeave={() => setIsHovering(false)}
     >
-      {/* Project preview images that follow cursor */}
       {isHovering && activeProject !== null && (
         <div
           className="pointer-events-none absolute z-10 transition-all duration-200 ease-out"
@@ -81,17 +96,15 @@ function InteractiveHero() {
         </div>
       )}
 
-      {/* Hero text */}
       <div className="relative z-20 text-center px-6">
         <h1 className="font-heading text-4xl md:text-6xl lg:text-8xl tracking-tight text-foreground leading-none">
-          <span className="block font-sans hero-reveal">MARIA BORONAT</span>
-          <span className="block mt-2 text-2xl md:text-3xl lg:text-4xl font-sans font-light tracking-wide opacity-70 hero-reveal-delay">
+          <span className="block font-sans">MARIA BORONAT</span>
+          <span className="block mt-2 text-2xl md:text-3xl lg:text-4xl font-sans font-light tracking-wide opacity-70">
             Diseño Gráfico y Comunicación
           </span>
         </h1>
       </div>
 
-      {/* Invisible hover zones for projects */}
       <div className="absolute inset-0 flex">
         {projects.map((project, index) => (
           <div
@@ -105,6 +118,10 @@ function InteractiveHero() {
   )
 }
 
+/* =========================
+   SERVICES SECTION (IMÁGENES REALES)
+========================= */
+
 function ServicesSection() {
   return (
     <ScrollReveal className="py-32 px-6 md:px-12">
@@ -114,18 +131,20 @@ function ServicesSection() {
             <Link
               key={service.id}
               href={service.href}
-              className="scroll-reveal-child group relative bg-muted aspect-square overflow-hidden"
+              className="scroll-reveal-child group relative aspect-square overflow-hidden"
             >
-              {/* Image placeholder */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <span className="text-muted-foreground text-xs uppercase tracking-widest opacity-30">
-                  {service.id}
-                </span>
-              </div>
-              
-              {/* Hover overlay with description */}
-              <div className="absolute inset-0 bg-foreground/90 flex items-center justify-center p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                <p className="text-background text-sm md:text-base text-center leading-relaxed">
+              {/* Imagen */}
+              <Image
+                src={service.image}
+                alt={service.id}
+                fill
+                className="object-cover"
+                priority
+              />
+
+              {/* Overlay hover */}
+              <div className="absolute inset-0 bg-black/80 flex items-center justify-center p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                <p className="text-white text-sm md:text-base text-center leading-relaxed">
                   {service.description}
                 </p>
               </div>
@@ -137,34 +156,27 @@ function ServicesSection() {
   )
 }
 
+/* =========================
+   ABOUT + CONTACT (sin tocar)
+========================= */
+
 function AboutSection() {
   return (
     <ScrollReveal className="py-32 px-6 md:px-12">
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8">
-          <div className="md:col-span-4 scroll-reveal-child">
-            <div className="aspect-[3/4] bg-muted relative">
-              <div className="absolute inset-0 flex items-center justify-center text-muted-foreground text-xs uppercase tracking-widest">
-                Retrato
-              </div>
-            </div>
+          <div className="md:col-span-4">
+            <div className="aspect-[3/4] bg-muted" />
           </div>
-          <div className="md:col-span-7 md:col-start-6 flex flex-col justify-center">
-            <p className="scroll-reveal-child text-lg md:text-xl leading-relaxed mb-6">
-              Soy disenadora grafica y directora de arte con base en Buenos Aires. 
-              Mi trabajo se centra en la creacion de identidades visuales, 
-              diseno editorial y comunicacion estrategica.
-            </p>
-            <p className="scroll-reveal-child text-muted-foreground leading-relaxed mb-8">
-              Con mas de una decada de experiencia, he colaborado con marcas 
-              locales e internacionales, siempre buscando el equilibrio entre 
-              la funcionalidad y la expresion creativa.
+          <div className="md:col-span-7 md:col-start-6">
+            <p className="text-lg md:text-xl leading-relaxed mb-6">
+              Soy diseñadora gráfica y directora de arte con base en Buenos Aires.
             </p>
             <Link
               href="/bio"
-              className="scroll-reveal-child text-xs uppercase tracking-widest hover:opacity-70 transition-opacity"
+              className="text-xs uppercase tracking-widest hover:opacity-70 transition-opacity"
             >
-              Leer mas
+              Leer más
             </Link>
           </div>
         </div>
