@@ -1,9 +1,9 @@
 import Image from "next/image"
 import { cn } from "@/lib/utils"
 
-// =========================
-// TYPES
-// =========================
+/* =========================
+   TYPES
+========================= */
 
 export type SectionType =
   | { type: "full-width-image"; src: string; alt?: string; caption?: string }
@@ -11,43 +11,27 @@ export type SectionType =
   | { type: "single-column-stack"; images: Array<{ src: string; alt?: string; caption?: string }> }
   | { type: "two-column-grid"; images: Array<{ src: string; alt?: string }> }
   | { type: "three-column-grid"; images: Array<{ src: string; alt?: string }> }
-  | { type: "mixed-layout"; rows: Array<{ columns: 1 | 2 | 3; images: Array<{ src: string; alt?: string }> }> }
-  | { type: "video-embed"; embedUrl?: string; caption?: string }
-  | { type: "gallery-with-centered-last"; images: Array<{ src: string; alt?: string }>; columns: 2 | 3 }
   | { type: "text"; title?: string; content: string }
-  | { type: "text-two-column"; leftContent: string; rightContent: string }
-  | { type: "quote"; content: string; author?: string }
 
 interface SectionProps {
   section: SectionType
   className?: string
 }
 
-// =========================
-// IMAGE HELPERS
-// =========================
+/* =========================
+   IMAGE SECTIONS
+========================= */
 
-function ResponsiveImage({ src, alt }: { src: string; alt?: string }) {
+export function FullWidthImage({ section }: { section: Extract<SectionType, { type: "full-width-image" }> }) {
   return (
-    <Image
-      src={src}
-      alt={alt || ""}
-      fill
-      className="object-contain"
-      sizes="(max-width: 768px) 100vw, 1200px"
-    />
-  )
-}
-
-// =========================
-// SECTIONS
-// =========================
-
-export function FullWidthImage({ section, className }: { section: Extract<SectionType, { type: "full-width-image" }>; className?: string }) {
-  return (
-    <section className={cn("w-full", className)}>
-      <div className="relative w-full aspect-[16/9] bg-black">
-        <ResponsiveImage src={section.src} alt={section.alt} />
+    <section className="w-full">
+      <div className="relative aspect-[16/9]">
+        <Image
+          src={section.src}
+          alt={section.alt || ""}
+          fill
+          className="object-contain"
+        />
       </div>
       {section.caption && (
         <p className="mt-4 text-xs text-muted-foreground text-center">
@@ -58,7 +42,7 @@ export function FullWidthImage({ section, className }: { section: Extract<Sectio
   )
 }
 
-export function CenteredImage({ section, className }: { section: Extract<SectionType, { type: "centered-image" }>; className?: string }) {
+export function CenteredImage({ section }: { section: Extract<SectionType, { type: "centered-image" }> }) {
   const widthMap = {
     small: "max-w-md",
     medium: "max-w-2xl",
@@ -66,10 +50,15 @@ export function CenteredImage({ section, className }: { section: Extract<Section
   }
 
   return (
-    <section className={cn("flex justify-center", className)}>
+    <section className="flex justify-center">
       <div className={cn("w-full", widthMap[section.width || "medium"])}>
-        <div className="relative aspect-[4/3] bg-black">
-          <ResponsiveImage src={section.src} alt={section.alt} />
+        <div className="relative aspect-[4/3]">
+          <Image
+            src={section.src}
+            alt={section.alt || ""}
+            fill
+            className="object-contain"
+          />
         </div>
         {section.caption && (
           <p className="mt-4 text-xs text-muted-foreground text-center">
@@ -81,13 +70,18 @@ export function CenteredImage({ section, className }: { section: Extract<Section
   )
 }
 
-export function SingleColumnStack({ section, className }: { section: Extract<SectionType, { type: "single-column-stack" }>; className?: string }) {
+export function SingleColumnStack({ section }: { section: Extract<SectionType, { type: "single-column-stack" }> }) {
   return (
-    <section className={cn("flex flex-col gap-12", className)}>
+    <section className="flex flex-col gap-12">
       {section.images.map((img, i) => (
         <div key={i}>
-          <div className="relative aspect-[16/9] bg-black">
-            <ResponsiveImage src={img.src} alt={img.alt} />
+          <div className="relative aspect-[16/9]">
+            <Image
+              src={img.src}
+              alt={img.alt || ""}
+              fill
+              className="object-contain"
+            />
           </div>
           {img.caption && (
             <p className="mt-4 text-xs text-muted-foreground text-center">
@@ -100,86 +94,77 @@ export function SingleColumnStack({ section, className }: { section: Extract<Sec
   )
 }
 
-export function TwoColumnGrid({ section, className }: { section: Extract<SectionType, { type: "two-column-grid" }>; className?: string }) {
+export function TwoColumnGrid({ section }: { section: Extract<SectionType, { type: "two-column-grid" }> }) {
   return (
-    <section className={className}>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {section.images.map((img, i) => (
-          <div key={i} className="relative aspect-[4/3] bg-black">
-            <ResponsiveImage src={img.src} alt={img.alt} />
-          </div>
-        ))}
-      </div>
+    <section className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {section.images.map((img, i) => (
+        <div key={i} className="relative aspect-[4/3]">
+          <Image
+            src={img.src}
+            alt={img.alt || ""}
+            fill
+            className="object-contain"
+          />
+        </div>
+      ))}
     </section>
   )
 }
 
-export function ThreeColumnGrid({ section, className }: { section: Extract<SectionType, { type: "three-column-grid" }>; className?: string }) {
+export function ThreeColumnGrid({ section }: { section: Extract<SectionType, { type: "three-column-grid" }> }) {
   return (
-    <section className={className}>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {section.images.map((img, i) => (
-          <div key={i} className="relative aspect-square bg-black">
-            <ResponsiveImage src={img.src} alt={img.alt} />
-          </div>
-        ))}
-      </div>
+    <section className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {section.images.map((img, i) => (
+        <div key={i} className="relative aspect-square">
+          <Image
+            src={img.src}
+            alt={img.alt || ""}
+            fill
+            className="object-contain"
+          />
+        </div>
+      ))}
     </section>
   )
 }
 
-// =========================
-// TEXT
-// =========================
+/* =========================
+   TEXT
+========================= */
 
-export function TextSection({ section, className }: { section: Extract<SectionType, { type: "text" }>; className?: string }) {
+export function TextSection({ section }: { section: Extract<SectionType, { type: "text" }> }) {
   return (
-    <section className={cn("max-w-3xl mx-auto", className)}>
+    <section className="max-w-3xl mx-auto">
       {section.title && (
         <h3 className="text-xs uppercase tracking-widest text-muted-foreground mb-4">
           {section.title}
         </h3>
       )}
-      <p className="text-lg leading-relaxed">{section.content}</p>
+      <p className="text-lg leading-relaxed">
+        {section.content}
+      </p>
     </section>
   )
 }
 
-export function QuoteSection({ section, className }: { section: Extract<SectionType, { type: "quote" }>; className?: string }) {
-  return (
-    <section className={cn("text-center max-w-4xl mx-auto py-12", className)}>
-      <blockquote className="text-2xl md:text-4xl italic">
-        “{section.content}”
-      </blockquote>
-      {section.author && (
-        <cite className="block mt-6 text-sm text-muted-foreground not-italic">
-          {section.author}
-        </cite>
-      )}
-    </section>
-  )
-}
+/* =========================
+   SWITCH
+========================= */
 
-// =========================
-// SWITCH
-// =========================
-
-export function ProjectSection({ section, className }: SectionProps) {
+export function ProjectSection({ section }: SectionProps) {
   switch (section.type) {
     case "full-width-image":
-      return <FullWidthImage section={section} className={className} />
+      return <FullWidthImage section={section} />
     case "centered-image":
-      return <CenteredImage section={section} className={className} />
+      return <CenteredImage section={section} />
     case "single-column-stack":
-      return <SingleColumnStack section={section} className={className} />
+      return <SingleColumnStack section={section} />
     case "two-column-grid":
-      return <TwoColumnGrid section={section} className={className} />
+      return <TwoColumnGrid section={section} />
     case "three-column-grid":
-      return <ThreeColumnGrid section={section} className={className} />
+      return <ThreeColumnGrid section={section} />
     case "text":
-      return <TextSection section={section} className={className} />
-    case "quote":
-      return <QuoteSection section={section} className={className} />
+      return <TextSection section={section} />
     default:
       return null
   }
