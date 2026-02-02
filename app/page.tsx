@@ -28,7 +28,7 @@ const services = [
     description:
       "Proyectos de diseño editorial, diseño 3D, comunicación visual e investigación tipográfica desarrollados durante la carrera de Diseño Gráfico y Comunicación.",
     href: "/proyectos/diseno-grafico",
-    image: "/images/generales/home-cover-diseno-grafico.jpg",
+    image: "/images/generales/home-cover-grafico",
   },
   {
     id: "corporativo",
