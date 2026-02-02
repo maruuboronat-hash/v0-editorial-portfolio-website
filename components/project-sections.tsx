@@ -19,24 +19,35 @@ interface SectionProps {
 }
 
 /* =========================
-   IMAGE SECTIONS
+   IMAGE HELPERS
+========================= */
+
+function Img({ src, alt, contain = false }: { src: string; alt?: string; contain?: boolean }) {
+  return (
+    <div className="relative w-full h-full">
+      <Image
+        src={src}
+        alt={alt || ""}
+        fill
+        className={contain ? "object-contain" : "object-cover"}
+        sizes="(max-width: 768px) 100vw, 1200px"
+      />
+    </div>
+  )
+}
+
+/* =========================
+   SECTIONS
 ========================= */
 
 export function FullWidthImage({ section }: { section: Extract<SectionType, { type: "full-width-image" }> }) {
   return (
     <section className="w-full">
-      <div className="relative aspect-[16/9]">
-        <Image
-          src={section.src}
-          alt={section.alt || ""}
-          fill
-          className="object-contain"
-        />
+      <div className="aspect-[16/9] relative">
+        <Img src={section.src} alt={section.alt} />
       </div>
       {section.caption && (
-        <p className="mt-4 text-xs text-muted-foreground text-center">
-          {section.caption}
-        </p>
+        <p className="mt-4 text-xs text-muted-foreground text-center">{section.caption}</p>
       )}
     </section>
   )
@@ -52,18 +63,11 @@ export function CenteredImage({ section }: { section: Extract<SectionType, { typ
   return (
     <section className="flex justify-center">
       <div className={cn("w-full", widthMap[section.width || "medium"])}>
-        <div className="relative aspect-[4/3]">
-          <Image
-            src={section.src}
-            alt={section.alt || ""}
-            fill
-            className="object-contain"
-          />
+        <div className="aspect-[4/3] relative">
+          <Img src={section.src} alt={section.alt} contain />
         </div>
         {section.caption && (
-          <p className="mt-4 text-xs text-muted-foreground text-center">
-            {section.caption}
-          </p>
+          <p className="mt-4 text-xs text-muted-foreground text-center">{section.caption}</p>
         )}
       </div>
     </section>
@@ -75,18 +79,11 @@ export function SingleColumnStack({ section }: { section: Extract<SectionType, {
     <section className="flex flex-col gap-12">
       {section.images.map((img, i) => (
         <div key={i}>
-          <div className="relative aspect-[16/9]">
-            <Image
-              src={img.src}
-              alt={img.alt || ""}
-              fill
-              className="object-contain"
-            />
+          <div className="aspect-[16/9] relative">
+            <Img src={img.src} alt={img.alt} />
           </div>
           {img.caption && (
-            <p className="mt-4 text-xs text-muted-foreground text-center">
-              {img.caption}
-            </p>
+            <p className="mt-4 text-xs text-muted-foreground text-center">{img.caption}</p>
           )}
         </div>
       ))}
@@ -98,13 +95,8 @@ export function TwoColumnGrid({ section }: { section: Extract<SectionType, { typ
   return (
     <section className="grid grid-cols-1 md:grid-cols-2 gap-6">
       {section.images.map((img, i) => (
-        <div key={i} className="relative aspect-[4/3]">
-          <Image
-            src={img.src}
-            alt={img.alt || ""}
-            fill
-            className="object-contain"
-          />
+        <div key={i} className="aspect-[4/3] relative">
+          <Img src={img.src} alt={img.alt} />
         </div>
       ))}
     </section>
@@ -115,22 +107,13 @@ export function ThreeColumnGrid({ section }: { section: Extract<SectionType, { t
   return (
     <section className="grid grid-cols-1 md:grid-cols-3 gap-6">
       {section.images.map((img, i) => (
-        <div key={i} className="relative aspect-square">
-          <Image
-            src={img.src}
-            alt={img.alt || ""}
-            fill
-            className="object-contain"
-          />
+        <div key={i} className="aspect-square relative">
+          <Img src={img.src} alt={img.alt} />
         </div>
       ))}
     </section>
   )
 }
-
-/* =========================
-   TEXT
-========================= */
 
 export function TextSection({ section }: { section: Extract<SectionType, { type: "text" }> }) {
   return (
@@ -140,15 +123,13 @@ export function TextSection({ section }: { section: Extract<SectionType, { type:
           {section.title}
         </h3>
       )}
-      <p className="text-lg leading-relaxed">
-        {section.content}
-      </p>
+      <p className="text-lg leading-relaxed">{section.content}</p>
     </section>
   )
 }
 
 /* =========================
-   SWITCH
+   DISPATCHER
 ========================= */
 
 export function ProjectSection({ section }: SectionProps) {
@@ -172,7 +153,7 @@ export function ProjectSection({ section }: SectionProps) {
 
 export function ProjectSections({ sections }: { sections: SectionType[] }) {
   return (
-    <div className="flex flex-col gap-20">
+    <div className="flex flex-col gap-16">
       {sections.map((section, i) => (
         <ProjectSection key={i} section={section} />
       ))}
