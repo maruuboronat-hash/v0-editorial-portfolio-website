@@ -8,7 +8,7 @@ import { ContactSection } from "@/components/contact-section"
 import { ScrollReveal } from "@/hooks/use-scroll-reveal"
 
 /* =========================
-   HERO (no se toca)
+   HERO
 ========================= */
 
 const projects = [
@@ -18,6 +18,41 @@ const projects = [
   { id: 4, title: "Proyecto Delta", category: "Digital" },
 ]
 
+function InteractiveHero() {
+  const containerRef = useRef<HTMLDivElement>(null)
+  const [mousePos, setMousePos] = useState({ x: 0, y: 0 })
+  const [activeProject, setActiveProject] = useState<number | null>(null)
+  const [isHovering, setIsHovering] = useState(false)
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!containerRef.current) return
+    const rect = containerRef.current.getBoundingClientRect()
+    setMousePos({
+      x: e.clientX - rect.left,
+      y: e.clientY - rect.top,
+    })
+  }
+
+  return (
+    <section
+      ref={containerRef}
+      className="relative min-h-[80vh] flex items-center justify-center overflow-hidden"
+      onMouseMove={handleMouseMove}
+      onMouseEnter={() => setIsHovering(true)}
+      onMouseLeave={() => setIsHovering(false)}
+    >
+      <div className="relative z-10 text-center px-6">
+        <h1 className="font-heading text-4xl md:text-6xl lg:text-8xl tracking-tight leading-none">
+          <span className="block">MARIA BORONAT</span>
+          <span className="block mt-2 text-2xl md:text-3xl font-light opacity-70">
+            Diseño Gráfico y Comunicación
+          </span>
+        </h1>
+      </div>
+    </section>
+  )
+}
+
 /* =========================
    SERVICES (con imágenes)
 ========================= */
@@ -26,36 +61,32 @@ const services = [
   {
     id: "diseno-grafico",
     description:
-      "Proyectos de diseño editorial, diseño 3D, comunicación visual e investigación tipográfica desarrollados durante la carrera de Diseño Gráfico y Comunicación.",
+      "Proyectos de diseño editorial, diseño 3D, comunicación visual e investigación tipográfica.",
     href: "/proyectos/diseno-grafico",
     image: "/images/generales/home-cover-grafico.jpg",
   },
   {
     id: "corporativo",
     description:
-      "Trabajos realizados desde el área de Marketing y Comunicación. Combino diseño, estrategia y automatización para mejorar procesos y comunicación visual interna.",
+      "Trabajos desde Marketing y Comunicación. Diseño, estrategia y automatización.",
     href: "/proyectos/corporativo",
     image: "/images/generales/home-cover-corporativo.jpg",
   },
   {
     id: "indumentaria",
     description:
-      "Serie de proyectos vinculados al diseño de indumentaria y la experimentación visual desde el cuerpo, la forma y la textura.",
+      "Diseño de indumentaria y experimentación visual desde el cuerpo.",
     href: "/proyectos/indumentaria-ilustracion",
     image: "/images/generales/home-cover-indumentaria.jpg",
   },
   {
     id: "personales",
     description:
-      "Exploraciones creativas y proyectos experimentales. Trabajos que nacen de la curiosidad y la libertad creativa.",
+      "Exploraciones creativas y proyectos experimentales.",
     href: "/proyectos/personales",
     image: "/images/generales/home-cover-proyectos-personales.jpg",
   },
 ]
-
-/* =========================
-   SERVICES SECTION (IMÁGENES BIEN MOSTRADAS)
-========================= */
 
 function ServicesSection() {
   return (
@@ -66,9 +97,8 @@ function ServicesSection() {
             <Link
               key={service.id}
               href={service.href}
-              className="scroll-reveal-child group relative aspect-square overflow-hidden bg-white"
+              className="group relative aspect-square overflow-hidden bg-white"
             >
-              {/* Imagen SIN recorte */}
               <Image
                 src={service.image}
                 alt={service.id}
@@ -77,7 +107,6 @@ function ServicesSection() {
                 priority
               />
 
-              {/* Overlay hover */}
               <div className="absolute inset-0 bg-black/80 flex items-center justify-center p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                 <p className="text-white text-sm md:text-base text-center leading-relaxed">
                   {service.description}
@@ -92,37 +121,36 @@ function ServicesSection() {
 }
 
 /* =========================
-   ABOUT + CONTACT (sin tocar)
+   ABOUT
 ========================= */
 
 function AboutSection() {
   return (
     <ScrollReveal className="py-32 px-6 md:px-12">
       <div className="max-w-6xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8">
-          <div className="md:col-span-4">
-            <div className="aspect-[3/4] bg-muted" />
-          </div>
-          <div className="md:col-span-7 md:col-start-6">
-            <p className="text-lg md:text-xl leading-relaxed mb-6">
-              Estudiante de Diseño Gráfico y Comunicación en la Universidad de Ciencias Empresariales y Sociales (UCES).
-            </p>
-            <Link
-              href="/bio"
-              className="text-xs uppercase tracking-widest hover:opacity-70 transition-opacity"
-            >
-              Leer más
-            </Link>
-          </div>
-        </div>
+        <p className="text-lg md:text-xl leading-relaxed mb-6 max-w-3xl">
+          Estudiante de Diseño Gráfico y Comunicación en UCES, con foco en
+          identidad visual, editorial y comunicación estratégica.
+        </p>
+        <Link
+          href="/bio"
+          className="text-xs uppercase tracking-widest hover:opacity-70 transition-opacity"
+        >
+          Leer más
+        </Link>
       </div>
     </ScrollReveal>
   )
 }
 
+/* =========================
+   PAGE
+========================= */
+
 export default function HomePage() {
   return (
     <div className="pt-16">
+      <InteractiveHero />
       <ServicesSection />
       <AboutSection />
       <ContactSection />
