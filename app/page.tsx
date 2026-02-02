@@ -105,7 +105,7 @@ function AboutSection() {
           </div>
           <div className="md:col-span-7 md:col-start-6">
             <p className="text-lg md:text-xl leading-relaxed mb-6">
-              Soy diseñadora gráfica y directora de arte con base en Buenos Aires.
+              Estudiante de Diseño Gráfico y Comunicación en la Universidad de Ciencias Empresariales y Sociales (UCES).
             </p>
             <Link
               href="/bio"
