@@ -5,12 +5,12 @@ import { ContactSection } from "@/components/contact-section"
 import { ScrollReveal } from "@/hooks/use-scroll-reveal"
 
 const bioImages = [
-  { alt: "Microsoft Paint 2011", caption: "Microsoft Paint 2011" },
-  { alt: "Microsoft Paint 2011", caption: "Microsoft Paint 2011" },
-  { alt: "A mano 2013", caption: "A mano 2013" },
-  { alt: "A mano 2013", caption: "A mano 2013" },
-  { alt: "Procreate 2024", caption: "Procreate 2024" },
-  { alt: "Procreate 2024", caption: "Procreate 2024" },
+  { src: "/images/generales/BIO/bio-1.jpg", alt: "Microsoft Paint 2011", caption: "Microsoft Paint 2011" },
+  { src: "/images/generales/BIO/bio-2.jpg", alt: "Microsoft Paint 2011", caption: "Microsoft Paint 2011" },
+  { src: "/images/generales/BIO/bio-3.jpg", alt: "A mano 2013", caption: "A mano 2013" },
+  { src: "/images/generales/BIO/bio-4.jpg", alt: "A mano 2013", caption: "A mano 2013" },
+  { src: "/images/generales/BIO/bio-5.jpg", alt: "Procreate 2024", caption: "Procreate 2024" },
+  { asrc: "/images/generales/BIO/bio-6.jpg", lt: "Procreate 2024", caption: "Procreate 2024" },
 ]
 
 export default function BioPage() {
