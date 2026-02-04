@@ -1,53 +1,65 @@
 const experience = [
   {
-    period: "2020 — Presente",
-    role: "Directora de Arte",
-    company: "Estudio Propio",
+    period: "2024 — Presente",
+    role: "Pasante de Marketing y Comunicación",
+    company: "Bosch - Mobility Aftermarket",
     description: "Dirección de proyectos de identidad visual, diseño editorial y comunicación estratégica para clientes nacionales e internacionales.",
   },
   {
-    period: "2016 — 2020",
-    role: "Diseñadora Senior",
-    company: "Estudio Creativo",
+    period: "2021 — 2024",
+    role: "Empleado Administrativo",
+    company: "Cantiere SA",
     description: "Desarrollo de sistemas de identidad visual y campañas de comunicación para marcas de diferentes sectores.",
   },
   {
-    period: "2012 — 2016",
-    role: "Diseñadora Gráfica",
-    company: "Agencia de Publicidad",
+    period: "2022",
+    role: "Runner",
+    company: "AACI - Asociación Argentina de Cultura Inglesa",
+    description: "Diseño de piezas gráficas para campañas publicitarias y branding de productos de consumo masivo.",
+  },
+  {
+    period: "2021 - 2024",
+    role: "Asistente en des les de moda",
+    company: "Perpetua",
     description: "Diseño de piezas gráficas para campañas publicitarias y branding de productos de consumo masivo.",
   },
 ]
 
 const education = [
   {
-    period: "2008 — 2012",
-    title: "Licenciatura en Diseño Gráfico",
-    institution: "Universidad de Buenos Aires",
+    period: "2024 - Presente",
+    title: "Lic. Diseño Gráfico y Comunicación",
+    institution: "UCES - Universidad de Ciencias Empresariales y Sociales",
   },
   {
-    period: "2014",
-    title: "Especialización en Dirección de Arte",
-    institution: "Escuela de Creativos",
+    period: "2021 - 2024",
+    title: "Lic. Diseño de Indumentaria - 60%",
+    institution: "UBA/FADU - Univerisas de Buenos Aires",
+  },
+  {
+    period: "2014 - 2020",
+    title: "Bachillerato en Econocmía y Administración",
+    institution: "Colegio Niño Jesús de Praga",
   },
 ]
 
 const skills = [
   "Identidad Visual",
   "Diseño Editorial",
-  "Dirección de Arte",
-  "Packaging",
+  "Diseño 3D",
+  "P",
   "Diseño Web",
-  "Tipografía",
-  "Ilustración",
+  "T",
+  "I",
   "Motion Graphics",
 ]
 
 const awards = [
-  { year: "2023", title: "Premio FADU", category: "Identidad Visual" },
-  { year: "2022", title: "Bienal de Diseño", category: "Diseño Editorial" },
-  { year: "2021", title: "Latin American Design", category: "Packaging" },
-  { year: "2019", title: "Premio Lápiz de Oro", category: "Branding" },
+  { year: "2024", title: "Rebranding - Identidades Visuales E cientes", category: "Foresti Design" },
+  { year: "2023", title: "Figurines en Adobe Illustrator", category: "Estudio MG" },
+  { year: "2023", title: "Adobe Illustrator para Diseño de Moda", category: "Estudio MG" },
+  { year: "2022", title: "Adobe Photoshop e Illustrator", category: "Coderhouse" },
+  { year: "2019", title: "Fotografía", category: "Colegio Niño Jesús de Praga" },
 ]
 
 export default function CVPage() {
@@ -110,7 +122,7 @@ export default function CVPage() {
             {/* Awards */}
             <section>
               <h2 className="font-heading text-xs uppercase tracking-widest text-muted-foreground mb-8">
-                Reconocimientos
+                CURSOS
               </h2>
               <div className="space-y-4">
                 {awards.map((item, index) => (
@@ -158,8 +170,8 @@ export default function CVPage() {
                   <span className="text-muted-foreground">Avanzado</span>
                 </div>
                 <div className="flex justify-between">
-                  <span>Portugués</span>
-                  <span className="text-muted-foreground">Intermedio</span>
+                  <span>Italiano</span>
+                  <span className="text-muted-foreground">Básico</span>
                 </div>
               </div>
             </section>
