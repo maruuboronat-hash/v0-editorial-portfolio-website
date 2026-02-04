@@ -23,7 +23,7 @@ export default function BioPage() {
             <ScrollReveal className="lg:col-span-5">
               <div className="aspect-[3/4] relative sticky top-24 overflow-hidden rounded-sm bg-white">
                 <Image
-                  src="public/images/generales/BIO/Bio.png"   // ← ACA VA TU FOTO REAL
+                  src="/pubic/images/generales/BIO/Bio.png"   // ← ACA VA TU FOTO REAL
                   alt="Retrato de Maria Boronat"
                   fill
                   className="object-cover"
