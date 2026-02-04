@@ -81,7 +81,7 @@ export default function CVPage() {
             {/* Experience */}
             <section>
               <h2 className="font-heading text-xs uppercase tracking-widest text-muted-foreground mb-8">
-                Experiencia
+                Experiencia Laboral
               </h2>
               <div className="space-y-12">
                 {experience.map((item, index) => (
