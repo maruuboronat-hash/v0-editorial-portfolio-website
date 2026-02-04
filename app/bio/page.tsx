@@ -5,12 +5,12 @@ import { ContactSection } from "@/components/contact-section"
 import { ScrollReveal } from "@/hooks/use-scroll-reveal"
 
 const bioImages = [
-  { src: "/images/generales/BIO/bio-1.jpg", alt: "Microsoft Paint 2011", caption: "Microsoft Paint 2011" },
-  { src: "/images/generales/BIO/bio-2.jpg", alt: "Microsoft Paint 2011", caption: "Microsoft Paint 2011" },
-  { src: "/images/generales/BIO/bio-3.jpg", alt: "A mano 2013", caption: "A mano 2013" },
-  { src: "/images/generales/BIO/bio-4.jpg", alt: "A mano 2013", caption: "A mano 2013" },
-  { src: "/images/generales/BIO/bio-5.jpg", alt: "Procreate 2024", caption: "Procreate 2024" },
-  { asrc: "/images/generales/BIO/bio-6.jpg", lt: "Procreate 2024", caption: "Procreate 2024" },
+  { alt: "Microsoft Paint 2011", caption: "Microsoft Paint 2011" },
+  { alt: "Microsoft Paint 2011", caption: "Microsoft Paint 2011" },
+  { alt: "A mano 2013", caption: "A mano 2013" },
+  { alt: "A mano 2013", caption: "A mano 2013" },
+  { alt: "Procreate 2024", caption: "Procreate 2024" },
+  { alt: "Procreate 2024", caption: "Procreate 2024" },
 ]
 
 export default function BioPage() {
@@ -19,16 +19,13 @@ export default function BioPage() {
       <div className="pb-24 px-6 md:px-12">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+            
             {/* Portrait */}
             <ScrollReveal className="lg:col-span-5">
-              <div className="aspect-[3/4] relative sticky top-24 overflow-hidden rounded-sm bg-white">
-                <Image
-                  src="/pubic/images/generales/BIO/Bio.png"   // ← ACA VA TU FOTO REAL
-                  alt="Retrato de Maria Boronat"
-                  fill
-                  className="object-cover"
-                  priority
-                />
+              <div className="aspect-[3/4] bg-muted relative sticky top-24">
+                <div className="absolute inset-0 flex items-center justify-center text-muted-foreground text-xs uppercase tracking-widest">
+                  Retrato
+                </div>
               </div>
             </ScrollReveal>
 
@@ -46,7 +43,7 @@ export default function BioPage() {
                 <p className="scroll-reveal-child">
                   Dicen que cuando no tenes experiencia, hay que mostrar los trabajos que tengas, aunque no te encanten. Y yo me lo tome literal.
                 </p>
-                
+
                 <p className="scroll-reveal-child">
                   Estos son algunos de mis primeros proyectos: algo hecho en Microsoft Paint en 2011, lienzo y acrilico en 2013, y Procreate en 2024.
                 </p>
@@ -90,7 +87,7 @@ export default function BioPage() {
           </div>
         </div>
       </div>
-      
+
       <ContactSection />
     </div>
   )
