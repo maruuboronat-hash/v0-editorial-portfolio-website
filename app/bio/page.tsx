@@ -21,10 +21,14 @@ export default function BioPage() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
             {/* Portrait */}
             <ScrollReveal className="lg:col-span-5">
-              <div className="aspect-[3/4] bg-muted relative sticky top-24">
-                <div className="absolute inset-0 flex items-center justify-center text-muted-foreground text-xs uppercase tracking-widest">
-                  Retrato
-                </div>
+              <div className="aspect-[3/4] relative sticky top-24 overflow-hidden rounded-sm bg-white">
+                <Image
+                  src="/images/generales/BIO/Bio.jpg"   // ← ACA VA TU FOTO REAL
+                  alt="Retrato de Maria Boronat"
+                  fill
+                  className="object-cover"
+                  priority
+                />
               </div>
             </ScrollReveal>
 
