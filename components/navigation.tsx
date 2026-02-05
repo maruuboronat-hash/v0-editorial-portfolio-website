@@ -34,7 +34,7 @@ function BuenosAiresClock() {
   }, [])
 
   return (
-    <span className="font-mono text-xs tracking-wider text-muted-foreground">
+  <span className="font-heading text-xs tracking-wider text-muted-foreground">
       BSAS {time}
     </span>
   )
