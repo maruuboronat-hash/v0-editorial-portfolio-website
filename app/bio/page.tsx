@@ -3,15 +3,40 @@
 import Link from "next/link"
 import { ContactSection } from "@/components/contact-section"
 import { ScrollReveal } from "@/hooks/use-scroll-reveal"
-import { BioImage } from "@/components/bio-image" // <-- NUEVA IMPORTACIÓN
+import { BioImage } from "@/components/bio-image"
 
+// LISTA ACTUALIZADA CON LAS RUTAS REALES DE LAS IMÁGENES
 const bioImages = [
-  { alt: "Microsoft Paint 2011", caption: "Microsoft Paint 2011" },
-  { alt: "Microsoft Paint 2011", caption: "Microsoft Paint 2011" },
-  { alt: "A mano 2013", caption: "A mano 2013" },
-  { alt: "A mano 2013", caption: "A mano 2013" },
-  { alt: "Procreate 2024", caption: "Procreate 2024" },
-  { alt: "Procreate 2024", caption: "Procreate 2024" },
+  { 
+    alt: "Microsoft Paint 2011", 
+    caption: "Microsoft Paint 2011",
+    src: "/images/generales/BIO/Microsoft-Paint.jpg"
+  },
+  { 
+    alt: "Microsoft Paint 2011", 
+    caption: "Microsoft Paint 2011",
+    src: "/images/generales/BIO/Microsoft-Paint2.jpg"
+  },
+  { 
+    alt: "A mano 2013", 
+    caption: "A mano 2013",
+    src: "/images/generales/BIO/A-mano.jpg"
+  },
+  { 
+    alt: "A mano 2013", 
+    caption: "A mano 2013",
+    src: "/images/generales/BIO/A-mano2.jpg"
+  },
+  { 
+    alt: "Procreate 2024", 
+    caption: "Procreate 2024",
+    src: "/images/generales/BIO/Procreate.jpg"
+  },
+  { 
+    alt: "Procreate 2024", 
+    caption: "Procreate 2024",
+    src: "/images/generales/BIO/Procreate2.jpg"
+  },
 ]
 
 export default function BioPage() {
@@ -24,7 +49,7 @@ export default function BioPage() {
             {/* PORTRAIT CON LA IMAGEN REAL */}
             <ScrollReveal className="lg:col-span-5">
               <div className="sticky top-24 flex justify-center lg:justify-start">
-                <BioImage size="large" />  {/* Imagen circular grande */}
+                <BioImage size="large" />
               </div>
             </ScrollReveal>
 
@@ -56,16 +81,22 @@ export default function BioPage() {
                 </p>
               </ScrollReveal>
 
-              {/* GALLERY WITH CAPTIONS */}
+              {/* GALERÍA CON IMÁGENES REALES */}
               <ScrollReveal className="mt-20">
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
                   {bioImages.map((image, index) => (
-                    <div key={index} className="scroll-reveal-child">
-                      <div className="aspect-square bg-muted relative">
-                        <div className="absolute inset-0 flex items-center justify-center text-muted-foreground text-xs uppercase tracking-widest opacity-30 p-2 text-center">
-                          {image.alt}
-                        </div>
+                    <div key={index} className="scroll-reveal-child group">
+                      <div className="aspect-square bg-muted relative overflow-hidden rounded-lg">
+                        {/* IMAGEN REAL CON EFECTO HOVER */}
+                        <img 
+                          src={image.src} 
+                          alt={image.alt}
+                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        />
+                        {/* OVERLAY SUAVE AL PASAR EL MOUSE */}
+                        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300"></div>
                       </div>
+                      {/* EPÍGRAFE */}
                       <p className="mt-2 text-xs text-muted-foreground">
                         {image.caption}
                       </p>
