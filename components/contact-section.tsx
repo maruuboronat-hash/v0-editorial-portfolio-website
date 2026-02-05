@@ -32,6 +32,7 @@ export function ContactSection() {
             </p>
 
             <div className="space-y-6">
+              {/* EMAIL */}
               <div>
                 <span className="text-xs uppercase tracking-widest text-muted-foreground block mb-2">
                   Email
@@ -44,20 +45,35 @@ export function ContactSection() {
                 </a>
               </div>
 
+              {/* TELÉFONO - NUEVO */}
               <div>
                 <span className="text-xs uppercase tracking-widest text-muted-foreground block mb-2">
-                  Ubicacion
+                  Teléfono
+                </span>
+                <a 
+                  href="tel:+541159729469"
+                  className="text-lg hover:opacity-70 transition-opacity"
+                >
+                  +54 11 5972 9469
+                </a>
+              </div>
+
+              {/* UBICACIÓN */}
+              <div>
+                <span className="text-xs uppercase tracking-widest text-muted-foreground block mb-2">
+                  Ubicación
                 </span>
                 <p className="text-lg">Buenos Aires, Argentina</p>
               </div>
 
+              {/* REDES SOCIALES ACTUALIZADAS */}
               <div>
                 <span className="text-xs uppercase tracking-widest text-muted-foreground block mb-2">
                   Redes
                 </span>
                 <div className="flex gap-4 text-sm">
                   <a 
-                    href="https://instagram.com" 
+                    href="https://www.instagram.com/maria.born2art/" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="hover:opacity-70 transition-opacity"
@@ -65,7 +81,7 @@ export function ContactSection() {
                     Instagram
                   </a>
                   <a 
-                    href="https://linkedin.com" 
+                    href="https://www.linkedin.com/in/mar%C3%ADa-boronat-6bb2b7245/?isSelfProfile=true" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="hover:opacity-70 transition-opacity"
@@ -73,7 +89,7 @@ export function ContactSection() {
                     LinkedIn
                   </a>
                   <a 
-                    href="https://behance.net" 
+                    href="https://www.behance.net/mariaboronat2" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="hover:opacity-70 transition-opacity"
