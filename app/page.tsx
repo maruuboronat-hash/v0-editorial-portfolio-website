@@ -101,12 +101,12 @@ function AboutSection() {
         <div className="md:col-span-4">
           <div className="relative aspect-[3/4] overflow-hidden bg-muted">
             <Image
-              src="/images/generales/retrato.jpg" 
-              alt="Retrato María Boronat"
-              fill
-              className="object-cover"
-              priority
-            />
+  src="/images/generales/BIO/Bio.png"  // <--- NUEVA RUTA
+  alt="Bio María Boronat"
+  fill
+  className="object-cover"
+  priority
+/>
           </div>
         </div>
 
