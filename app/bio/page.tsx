@@ -3,6 +3,7 @@
 import Link from "next/link"
 import { ContactSection } from "@/components/contact-section"
 import { ScrollReveal } from "@/hooks/use-scroll-reveal"
+import { BioImage } from "@/components/bio-image" // <-- NUEVA IMPORTACIÓN
 
 const bioImages = [
   { alt: "Microsoft Paint 2011", caption: "Microsoft Paint 2011" },
@@ -20,16 +21,14 @@ export default function BioPage() {
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
             
-            {/* Portrait */}
+            {/* PORTRAIT CON LA IMAGEN REAL */}
             <ScrollReveal className="lg:col-span-5">
-              <div className="aspect-[3/4] bg-muted relative sticky top-24">
-                <div className="absolute inset-0 flex items-center justify-center text-muted-foreground text-xs uppercase tracking-widest">
-                  Retrato
-                </div>
+              <div className="sticky top-24 flex justify-center lg:justify-start">
+                <BioImage size="large" />  {/* Imagen circular grande */}
               </div>
             </ScrollReveal>
 
-            {/* Bio Content */}
+            {/* BIO CONTENT */}
             <div className="lg:col-span-7">
               <ScrollReveal>
                 <header className="mb-12">
@@ -57,7 +56,7 @@ export default function BioPage() {
                 </p>
               </ScrollReveal>
 
-              {/* Gallery with captions */}
+              {/* GALLERY WITH CAPTIONS */}
               <ScrollReveal className="mt-20">
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
                   {bioImages.map((image, index) => (
