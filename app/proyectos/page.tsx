@@ -3,8 +3,6 @@
 
 import { ProjectsGrid } from "@/components/projects-grid";
 
-// Esta es la MISMA lista de proyectos que en la Home.
-// Podés cambiarla más tarde si querés mostrar cosas diferentes acá.
 const allProjects = [
   {
     id: "diseno-grafico",
@@ -35,19 +33,14 @@ const allProjects = [
 export default function ProjectsPage() {
   return (
     <div className="pt-16">
-      {/* ENCABEZADO DE LA PÁGINA */}
-      <section className="py-20 px-6 text-center">
-        <h1 className="font-heading text-4xl md:text-5xl tracking-tight">
-          Proyectos
-        </h1>
-        <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
-          Una selección de trabajos en diseño gráfico, comunicación, indumentaria y proyectos personales.
-        </p>
-      </section>
-
-      {/* LA CUADRÍCULA DE PROYECTOS (¡EL MISMO DISEÑO QUE EN HOME!) */}
-      {/* Acá usamos el componente nuevo y le pasamos la lista "allProjects" */}
-      <ProjectsGrid projects={allProjects} />
+      {/* QUITAMOS EL ENCABEZADO CENTRADO QUE HABÍA ACÁ */}
+      
+      {/* USAMOS EL COMPONENTE CON TÍTULO Y DESCRIPCIÓN */}
+      <ProjectsGrid 
+        projects={allProjects}
+        title="Proyectos"
+        description="Una selección de trabajos en diseño gráfico, comunicación, indumentaria y proyectos personales."
+      />
     </div>
   );
 }
