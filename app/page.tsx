@@ -92,21 +92,25 @@ const services = [
    ABOUT (BIO CON RETRATO)
 ========================= */
 
+/* =========================
+   ABOUT (BIO CON RETRATO CIRCULAR)
+========================= */
+
 function AboutSection() {
   return (
     <ScrollReveal className="py-32 px-6 md:px-12">
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8 items-center">
         
-        {/* RETRATO */}
-        <div className="md:col-span-4">
-          <div className="relative aspect-[3/4] overflow-hidden bg-muted">
+        {/* CONTENEDOR CIRCULAR PARA LA IMAGEN */}
+        <div className="md:col-span-4 flex justify-center md:justify-start">
+          <div className="relative w-64 h-64 md:w-80 md:h-80 overflow-hidden rounded-full border-4 border-white shadow-lg">
             <Image
-  src="/images/generales/BIO/Bio.png"  // <--- NUEVA RUTA
-  alt="Bio María Boronat"
-  fill
-  className="object-cover"
-  priority
-/>
+              src="/images/generales/BIO/Bio.png"
+              alt="Bio María Boronat"
+              fill
+              className="object-contain p-2" /* El p-2 crea un pequeño espacio entre la imagen y el borde del círculo */
+              priority
+            />
           </div>
         </div>
 
