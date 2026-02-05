@@ -101,7 +101,7 @@ function AboutSection() {
         <div className="md:col-span-4 flex justify-center md:justify-start">
           <div className="relative w-80 h-80 md:w-96 md:h-96 overflow-hidden rounded-full">
             <Image
-              src="/images/generales/BIO/Bio.png"
+              src="/images/generales/BIO/Bioo.png"
               alt="Bio María Boronat"
               fill
               className="object-contain"
