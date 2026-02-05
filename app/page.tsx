@@ -21,7 +21,6 @@ const projects = [
 function InteractiveHero() {
   const containerRef = useRef<HTMLDivElement>(null)
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 })
-  const [activeProject, setActiveProject] = useState<number | null>(null)
   const [isHovering, setIsHovering] = useState(false)
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -121,23 +120,41 @@ function ServicesSection() {
 }
 
 /* =========================
-   ABOUT
+   ABOUT (BIO CON RETRATO)
 ========================= */
 
 function AboutSection() {
   return (
     <ScrollReveal className="py-32 px-6 md:px-12">
-      <div className="max-w-6xl mx-auto">
-        <p className="text-lg md:text-xl leading-relaxed mb-6 max-w-3xl">
-          Estudiante de Diseño Gráfico y Comunicación en UCES, con foco en
-          identidad visual, editorial y comunicación estratégica.
-        </p>
-        <Link
-          href="/bio"
-          className="text-xs uppercase tracking-widest hover:opacity-70 transition-opacity"
-        >
-          Leer más
-        </Link>
+      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8 items-center">
+        
+        {/* RETRATO (esto era lo que se había perdido) */}
+        <div className="md:col-span-4">
+          <div className="relative aspect-[3/4] overflow-hidden bg-muted">
+            <Image
+              src="/images/generales/retrato.jpg" 
+              alt="Retrato María Boronat"
+              fill
+              className="object-cover"
+              priority
+            />
+          </div>
+        </div>
+
+        {/* TEXTO BIO */}
+        <div className="md:col-span-7 md:col-start-6">
+          <p className="text-lg md:text-xl leading-relaxed mb-6">
+            Estudiante de Diseño Gráfico y Comunicación en UCES, con foco en
+            identidad visual, editorial y comunicación estratégica.
+          </p>
+          <Link
+            href="/bio"
+            className="text-xs uppercase tracking-widest hover:opacity-70 transition-opacity"
+          >
+            Leer más
+          </Link>
+        </div>
+
       </div>
     </ScrollReveal>
   )
