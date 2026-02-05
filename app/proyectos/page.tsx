@@ -1,72 +1,53 @@
-"use client"
+// app/projects/page.tsx
+"use client";
 
-import Link from "next/link"
-import { ContactSection } from "@/components/contact-section"
-import { ScrollReveal } from "@/hooks/use-scroll-reveal"
+import { ProjectsGrid } from "@/components/projects-grid";
 
-const categories = [
+// Esta es la MISMA lista de proyectos que en la Home.
+// Podés cambiarla más tarde si querés mostrar cosas diferentes acá.
+const allProjects = [
   {
     id: "diseno-grafico",
-    description: "Proyectos de diseno editorial, diseno 3D, comunicacion visual e investigacion tipografica desarrollados durante la carrera de Diseno Grafico y Comunicacion.",
+    description: "Proyectos de diseño editorial, diseño 3D, comunicación visual e investigación tipográfica.",
+    href: "/proyectos/diseno-grafico",
+    image: "/images/generales/home-cover-grafico.jpg",
   },
   {
     id: "corporativo",
-    description: "Trabajos realizados desde el area de Marketing y Comunicacion. Combino diseno, estrategia y automatizacion para mejorar procesos y comunicacion visual interna.",
+    description: "Trabajos desde Marketing y Comunicación. Diseño, estrategia y automatización.",
+    href: "/proyectos/corporativo",
+    image: "/images/generales/home-cover-corporativo.jpg",
   },
   {
-    id: "indumentaria-ilustracion",
-    description: "Serie de proyectos vinculados al diseno de indumentaria y la experimentacion visual desde el cuerpo, la forma y la textura.",
+    id: "indumentaria",
+    description: "Diseño de indumentaria y experimentación visual desde el cuerpo.",
+    href: "/proyectos/indumentaria-ilustracion",
+    image: "/images/generales/home-cover-indumentaria.jpg",
   },
   {
     id: "personales",
-    description: "Exploraciones creativas y proyectos experimentales. Trabajos que nacen de la curiosidad y la libertad creativa.",
+    description: "Exploraciones creativas y proyectos experimentales.",
+    href: "/proyectos/personales",
+    image: "/images/generales/home-cover-proyectos-personales.jpg",
   },
-]
+];
 
-export default function ProyectosPage() {
+export default function ProjectsPage() {
   return (
-    <div className="pt-24 min-h-screen">
-      <ScrollReveal as="header" className="px-6 md:px-12 mb-16">
-        <div className="max-w-6xl mx-auto">
-          <h1 className="scroll-reveal-child font-heading text-4xl md:text-6xl tracking-tight mb-6">
-            Proyectos
-          </h1>
-          <p className="scroll-reveal-child text-lg text-muted-foreground max-w-2xl">
-            Una seleccion de trabajos organizados por categoria. 
-            Cada proyecto cuenta su propia historia visual.
-          </p>
-        </div>
-      </ScrollReveal>
+    <div className="pt-16">
+      {/* ENCABEZADO DE LA PÁGINA */}
+      <section className="py-20 px-6 text-center">
+        <h1 className="font-heading text-4xl md:text-5xl tracking-tight">
+          Proyectos
+        </h1>
+        <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
+          Una selección de trabajos en diseño gráfico, comunicación, indumentaria y proyectos personales.
+        </p>
+      </section>
 
-      <ScrollReveal as="section" className="px-6 md:px-12 pb-24">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-2 gap-1">
-            {categories.map((category) => (
-              <Link
-                key={category.id}
-                href={`/proyectos/${category.id}`}
-                className="scroll-reveal-child group relative bg-muted aspect-square overflow-hidden"
-              >
-                {/* Image placeholder */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="text-muted-foreground text-xs uppercase tracking-widest opacity-30">
-                    {category.id}
-                  </span>
-                </div>
-                
-                {/* Hover overlay with description */}
-                <div className="absolute inset-0 bg-foreground/90 flex items-center justify-center p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  <p className="text-background text-sm md:text-base text-center leading-relaxed">
-                    {category.description}
-                  </p>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </ScrollReveal>
-
-      <ContactSection />
+      {/* LA CUADRÍCULA DE PROYECTOS (¡EL MISMO DISEÑO QUE EN HOME!) */}
+      {/* Acá usamos el componente nuevo y le pasamos la lista "allProjects" */}
+      <ProjectsGrid projects={allProjects} />
     </div>
-  )
+  );
 }
