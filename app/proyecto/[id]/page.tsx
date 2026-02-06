@@ -256,7 +256,7 @@ export default async function ProjectPage({ params }: { params: PageParams }) {
     <article className="pt-24 pb-24 min-h-screen">
       {/* Project Header */}
       <header className="px-6 md:px-12 mb-16 md:mb-24">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-3xl mx-auto">
           <Link
             href={`/proyectos/${project.categorySlug}`}
             className="text-xs uppercase tracking-widest text-muted-foreground hover:text-foreground transition-colors mb-8 inline-block"
@@ -276,9 +276,11 @@ export default async function ProjectPage({ params }: { params: PageParams }) {
 
       {/* Project Sections - Modular and Independent */}
       <div className="px-6 md:px-12">
-        <div className="max-w-3xl mx-auto"> {/* CAMBIADO: max-w-6xl → max-w-3xl */}
+        {/* ↓↓↓↓ AQUÍ ESTÁ EL CAMBIO IMPORTANTE ↓↓↓↓ */}
+        <div className="max-w-3xl mx-auto">
           <ProjectSections sections={project.sections} />
         </div>
+        {/* ↑↑↑↑ AHORA TIENE max-w-3xl (igual que el texto de arriba) ↑↑↑↑ */}
       </div>
 
       {/* También te puede gustar section */}
