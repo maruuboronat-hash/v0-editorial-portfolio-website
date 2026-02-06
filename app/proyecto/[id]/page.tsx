@@ -17,18 +17,19 @@ const projectsData: Record<string, {
     category: "Diseño Gráfico",
     categorySlug: "diseno-grafico",
     description: "Proyecto editorial que combina investigación visual, narrativa y diseño gráfico. Desarrollado como una revista musical inspirada en la banda británica Oasis, explora su historia, estética y legado cultural a través de recursos editoriales, tipográficos y fotográficos. El enfoque está puesto en la dirección de arte, la grilla editorial y la construcción de una identidad visual coherente con el universo de la banda.",
-    sections: [
-      { type: "single-column-stack", images: [
-        { alt: "Diario Oasis 1" },
-        { alt: "Diario Oasis 2" },
-        { alt: "Diario Oasis 3" },
-        { alt: "Diario Oasis 4" },
-        { alt: "Diario Oasis 5" },
-        { alt: "Diario Oasis 6" },
-        { alt: "Diario Oasis 7" },
-        { alt: "Diario Oasis 8" },
-      ]},
-    ],
+sections: [
+  { type: "single-column-stack", images: [
+    { src: "/images/diseno-grafico/oasis/oasis-01.jpg", alt: "Diario Oasis 1" },
+    { src: "/images/diseno-grafico/oasis/oasis-02.jpg", alt: "Diario Oasis 2" },
+    { src: "/images/diseno-grafico/oasis/oasis-03.jpg", alt: "Diario Oasis 3" },
+    { src: "/images/diseno-grafico/oasis/oasis-04.jpg", alt: "Diario Oasis 4" },
+    { src: "/images/diseno-grafico/oasis/oasis-05.jpg", alt: "Diario Oasis 5" },
+    { src: "/images/diseno-grafico/oasis/oasis-06.jpg", alt: "Diario Oasis 6" },
+    { src: "/images/diseno-grafico/oasis/oasis-07.jpg", alt: "Diario Oasis 7" },
+    // Si tenés 8 imágenes pero solo subiste 7, podés dejar este como placeholder o eliminar la línea
+    // { alt: "Diario Oasis 8" },
+  ]},
+],
   },
   "postales-cortazar": {
     title: "Postales I Julio Cortázar",
