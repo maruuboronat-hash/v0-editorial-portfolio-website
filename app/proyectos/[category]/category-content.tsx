@@ -7,7 +7,7 @@ interface CategoryContentProps {
   categoryData: {
     title: string
     description: string
-    projects: Array<{ id: string; title: string }>
+    projects: Array<{ id: string; title: string; image?: string }> // <-- AGREGAMOS 'image?' aquí
   }
 }
 
@@ -40,15 +40,26 @@ export function CategoryContent({ categoryData }: CategoryContentProps) {
                 href={`/proyecto/${project.id}`}
                 className="scroll-reveal-child group bg-background"
               >
-                {/* Project image placeholder */}
+                {/* PROJECT IMAGE - REAL O PLACEHOLDER */}
                 <div className="aspect-[4/3] bg-muted relative overflow-hidden">
-                  <div className="absolute inset-0 flex items-center justify-center text-muted-foreground text-xs uppercase tracking-widest opacity-30 px-4 text-center">
-                    {project.title}
-                  </div>
+                  {project.image ? (
+                    // SI TIENE IMAGEN: mostramos la imagen real
+                    <img 
+                      src={project.image} 
+                      alt={project.title}
+                      className="w-full h-full object-cover"
+                    />
+                  ) : (
+                    // SI NO TIENE IMAGEN: mostramos placeholder (para proyectos sin imágenes aún)
+                    <div className="absolute inset-0 flex items-center justify-center text-muted-foreground text-xs uppercase tracking-widest opacity-30 px-4 text-center">
+                      {project.title}
+                    </div>
+                  )}
+                  {/* OVERLAY SUAVE AL HACER HOVER */}
                   <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/5 transition-colors duration-500" />
                 </div>
                 
-                {/* Project info */}
+                {/* PROJECT INFO */}
                 <div className="py-6">
                   <h2 className="font-heading text-lg md:text-xl group-hover:opacity-70 transition-opacity">
                     {project.title}
