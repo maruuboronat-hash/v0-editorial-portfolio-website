@@ -15,7 +15,7 @@ const categoriesData: Record<string, {
 { 
   id: "diario-oasis", 
   title: "Diario de Oasis I Backstage Times",
-  image: "/images/diseno-grafico/oasis/oasis-01.jpg" // Imagen principal (portada)
+  image: "/images/diseno-grafico/oasis/oasis-02.jpg" // Imagen principal (portada)
 },
       { id: "postales-cortazar", title: "Postales I Julio Cortazar" },
       { id: "revista-clara-cava", title: "Revista Clara Cava" },
