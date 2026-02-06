@@ -118,7 +118,8 @@ export function ThreeColumnGrid({ section }: { section: Extract<SectionType, { t
 
 export function TextSection({ section }: { section: Extract<SectionType, { type: "text" }> }) {
   return (
-    <section className="max-w-3xl mx-auto">
+    <section>
+      {/* QUITADO: max-w-3xl mx-auto - ahora el ancho lo controla el contenedor padre */}
       {section.title && (
         <h3 className="text-xs uppercase tracking-widest text-muted-foreground mb-4">
           {section.title}
