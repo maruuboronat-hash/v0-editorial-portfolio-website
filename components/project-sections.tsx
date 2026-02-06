@@ -44,7 +44,7 @@ export function FullWidthImage({ section }: { section: Extract<SectionType, { ty
   return (
     <section className="w-full">
       <div className="aspect-[16/9] relative">
-        <Img src={section.src} alt={section.alt} />
+        <Img src={section.src} alt={section.alt} contain />  {/* MODIFICADO: agregado 'contain' */}
       </div>
       {section.caption && (
         <p className="mt-4 text-xs text-muted-foreground text-center">{section.caption}</p>
@@ -64,7 +64,7 @@ export function CenteredImage({ section }: { section: Extract<SectionType, { typ
     <section className="flex justify-center">
       <div className={cn("w-full", widthMap[section.width || "medium"])}>
         <div className="aspect-[4/3] relative">
-          <Img src={section.src} alt={section.alt} contain />
+          <Img src={section.src} alt={section.alt} contain />  {/* Ya tenía 'contain' */}
         </div>
         {section.caption && (
           <p className="mt-4 text-xs text-muted-foreground text-center">{section.caption}</p>
@@ -80,7 +80,7 @@ export function SingleColumnStack({ section }: { section: Extract<SectionType, {
       {section.images.map((img, i) => (
         <div key={i}>
           <div className="aspect-[16/9] relative">
-            <Img src={img.src} alt={img.alt} />
+            <Img src={img.src} alt={img.alt} contain />  {/* MODIFICADO: agregado 'contain' */}
           </div>
           {img.caption && (
             <p className="mt-4 text-xs text-muted-foreground text-center">{img.caption}</p>
@@ -96,7 +96,7 @@ export function TwoColumnGrid({ section }: { section: Extract<SectionType, { typ
     <section className="grid grid-cols-1 md:grid-cols-2 gap-6">
       {section.images.map((img, i) => (
         <div key={i} className="aspect-[4/3] relative">
-          <Img src={img.src} alt={img.alt} />
+          <Img src={img.src} alt={img.alt} contain />  {/* MODIFICADO: agregado 'contain' */}
         </div>
       ))}
     </section>
@@ -108,7 +108,7 @@ export function ThreeColumnGrid({ section }: { section: Extract<SectionType, { t
     <section className="grid grid-cols-1 md:grid-cols-3 gap-6">
       {section.images.map((img, i) => (
         <div key={i} className="aspect-square relative">
-          <Img src={img.src} alt={img.alt} />
+          <Img src={img.src} alt={img.alt} contain />  {/* MODIFICADO: agregado 'contain' */}
         </div>
       ))}
     </section>
