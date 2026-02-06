@@ -29,7 +29,8 @@ function Img({ src, alt, contain = false }: { src: string; alt?: string; contain
         src={src}
         alt={alt || ""}
         fill
-        className={contain ? "object-scale-down" : "object-cover"} {/* CAMBIADO: object-contain → object-scale-down */}
+        // CAMBIADO: object-contain → object-scale-down
+        className={contain ? "object-scale-down" : "object-cover"}
         sizes="(max-width: 768px) 100vw, 1200px"
       />
     </div>
