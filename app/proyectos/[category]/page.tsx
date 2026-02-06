@@ -12,7 +12,11 @@ const categoriesData: Record<string, {
     title: "Diseno Grafico",
     description: "Proyectos de diseno editorial, diseno 3D, comunicacion visual e investigacion tipografica desarrollados durante la carrera de Diseno Grafico y Comunicacion.",
     projects: [
-      { id: "diario-oasis", title: "Diario de Oasis I Backstage Times" },
+{ 
+  id: "diario-oasis", 
+  title: "Diario de Oasis I Backstage Times",
+  image: "/images/diseno-grafico/oasis/oasis-01.jpg" // Imagen principal (portada)
+},
       { id: "postales-cortazar", title: "Postales I Julio Cortazar" },
       { id: "revista-clara-cava", title: "Revista Clara Cava" },
       { id: "afiche-3d-cordoba", title: "Afiche 3D I Cordoba" },
