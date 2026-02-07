@@ -254,9 +254,9 @@ export default async function ProjectPage({ params }: { params: PageParams }) {
 
   return (
     <article className="pt-24 pb-24 min-h-screen">
-      {/* Project Header */}
+       {/* Project Header - AHORA CON max-w-3xl TAMBIÉN */}
       <header className="px-6 md:px-12 mb-16 md:mb-24">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-3xl mx-auto"> {/* CAMBIADO: max-w-6xl → max-w-3xl */}
           <Link
             href={`/proyectos/${project.categorySlug}`}
             className="text-xs uppercase tracking-widest text-muted-foreground hover:text-foreground transition-colors mb-8 inline-block"
@@ -268,15 +268,16 @@ export default async function ProjectPage({ params }: { params: PageParams }) {
             {project.title}
           </h1>
           
-          <p className="text-base md:text-lg leading-relaxed max-w-3xl text-muted-foreground">
+          <p className="text-base md:text-lg leading-relaxed text-muted-foreground">
+            {/* QUITADO: max-w-3xl (ya lo define el contenedor padre) */}
             {project.description}
           </p>
         </div>
       </header>
 
-      {/* Project Sections - Modular and Independent */}
+      {/* Project Sections - MISMO ANCHO QUE EL TEXTO */}
       <div className="px-6 md:px-12">
-        <div className="max-w-3xl mx-auto"> {/* CAMBIADO: max-w-6xl → max-w-3xl */}
+        <div className="max-w-3xl mx-auto">
           <ProjectSections sections={project.sections} />
         </div>
       </div>
