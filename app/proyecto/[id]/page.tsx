@@ -200,7 +200,11 @@ const projectsData: Record<string, {
     categorySlug: "personales",
     description: "Proyecto audiovisual realizado a partir del archivo familiar del casamiento y la luna de miel de mis padres en 1995. A través de la edición y el montaje del material original, el proyecto reinterpreta esas imágenes desde una mirada actual, explorando el paso del tiempo y cómo los registros personales pueden construir identidad.",
     sections: [
-      { type: "video-embed", caption: "Video de casamiento y luna de miel, 1995" },
+      { 
+        type: "video-embed", 
+        src: "/images/proyectos-personales/video-casamiento/casamiento.mp4", // ← RUTA DEL VIDEO
+        caption: "Video de casamiento y luna de miel, 1995" 
+      },
     ],
   },
   "fotografia-analogica": {
