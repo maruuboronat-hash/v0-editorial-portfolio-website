@@ -12,6 +12,7 @@ export type SectionType =
   | { type: "two-column-grid"; images: Array<{ src: string; alt?: string }> }
   | { type: "three-column-grid"; images: Array<{ src: string; alt?: string }> }
   | { type: "text"; title?: string; content: string }
+  | { type: "video-embed"; src: string; caption?: string }
 
 interface SectionProps {
   section: SectionType
@@ -116,19 +117,30 @@ export function ThreeColumnGrid({ section }: { section: Extract<SectionType, { t
   )
 }
 
-export function TextSection({ section }: { section: Extract<SectionType, { type: "text" }> }) {
+// COMPONENTE NUEVO PARA VIDEOS
+export function VideoEmbed({ section }: { section: Extract<SectionType, { type: "video-embed" }> }) {
   return (
-    <section>
-      {/* QUITADO: max-w-3xl mx-auto - ahora el ancho lo controla el contenedor padre */}
-      {section.title && (
-        <h3 className="text-xs uppercase tracking-widest text-muted-foreground mb-4">
-          {section.title}
-        </h3>
+    <section className="w-full">
+      <div className="aspect-video relative bg-black rounded-lg overflow-hidden">
+        {/* REPRODUCTOR DE VIDEO */}
+        <video 
+          src={section.src}
+          controls
+          className="w-full h-full object-contain"
+        >
+          Tu navegador no soporta videos HTML5.
+        </video>
+      </div>
+      {section.caption && (
+        <p className="mt-4 text-xs text-muted-foreground text-center">
+          {section.caption}
+        </p>
       )}
-      <p className="text-lg leading-relaxed">{section.content}</p>
     </section>
   )
 }
+
+
 
 /* =========================
    DISPATCHER
