@@ -160,6 +160,8 @@ export function ProjectSection({ section }: SectionProps) {
       return <ThreeColumnGrid section={section} />
     case "text":
       return <TextSection section={section} />
+    case "video-embed": // ← AGREGÁ ESTA LÍNEA
+      return <VideoEmbed section={section} /> // ← Y ESTA LÍNEA
     default:
       return null
   }
