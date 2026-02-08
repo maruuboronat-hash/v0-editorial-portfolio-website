@@ -35,7 +35,7 @@ const categoriesData: Record<string, {
             { 
   id: "afiches-tipograficos", 
   title: "Afiches tipográficos",
-  image: "/images/diseno-grafico/afiche-tipografico/tipografia-03.jpg" // ← Imagen de portada
+  image: "/images/diseno-grafico/afiche-tipografico/tipografia-portada.jpg" // ← Imagen de portada
 },
 
       { id: "cuento-infantil-3d", title: "Cuento infantil I Ilustración 3D" },
