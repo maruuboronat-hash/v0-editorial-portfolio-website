@@ -6,17 +6,17 @@ import { CategoryContent } from "./category-content"
 const categoriesData: Record<string, {
   title: string
   description: string
-  projects: Array<{ id: string; title: string }>
+  projects: Array<{ id: string; title: string; image?: string }> // ← AGREGADO: image?
 }> = {
   "diseno-grafico": {
     title: "Diseno Grafico",
     description: "Proyectos de diseno editorial, diseno 3D, comunicacion visual e investigacion tipografica desarrollados durante la carrera de Diseno Grafico y Comunicacion.",
     projects: [
-{ 
-  id: "diario-oasis", 
-  title: "Diario de Oasis I Backstage Times",
-  image: "/images/diseno-grafico/oasis/oasis-02.jpg" // Imagen principal (portada)
-},
+      { 
+        id: "diario-oasis", 
+        title: "Diario de Oasis I Backstage Times",
+        image: "/images/diseno-grafico/oasis/oasis-02.jpg"
+      },
       { id: "postales-cortazar", title: "Postales I Julio Cortazar" },
       { id: "revista-clara-cava", title: "Revista Clara Cava" },
       { id: "afiche-3d-cordoba", title: "Afiche 3D I Cordoba" },
@@ -41,22 +41,24 @@ const categoriesData: Record<string, {
       { id: "indumentaria-placeholder", title: "Proyecto de Indumentaria" },
     ],
   },
-   "personales": {
+  "personales": {  // ← CORREGIDO: estaba mal indentado
     title: "Proyectos Personales",
     description: "Exploraciones creativas y proyectos experimentales. Trabajos que nacen de la curiosidad y la libertad creativa.",
     projects: [
       { 
         id: "video-casamiento-1995", 
         title: "Video de Casamiento y Luna de Miel I 1995",
-        image: "/images/proyectos-personales/video-casamiento/casamiento-02.png" // ← AGREGÁ ESTO
+        image: "/images/proyectos-personales/video-casamiento/casamiento-02.png"
       },
       { 
         id: "fotografia-analogica", 
         title: "Fotografia analogica",
-        image: "/images/proyectos-personales/fotografia-analogica/analogicas-03.jpg" // ← AGREGÁ ESTO
+        image: "/images/proyectos-personales/fotografia-analogica/analogicas-03.jpg"
       },
     ],
   },
+}  // ← ESTA LLAVE FALTABA
+
 type PageParams = Promise<{ category: string }>
 
 export default async function CategoryPage({ params }: { params: PageParams }) {
