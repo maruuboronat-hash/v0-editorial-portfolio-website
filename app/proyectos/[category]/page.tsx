@@ -58,25 +58,23 @@ const categoriesData: Record<string, {
   },
   "corporativo": {
     title: "Corporativo",
-    description: "Trabajos realizados desde el area de Marketing y Comunicacion. En empresas como Robert Bosch Argentina y Pick&Log. Combino diseno, estrategia y automatizacion para mejorar procesos y comunicacion visual interna.",
+    description: "Trabajos realizados desde el area de Marketing y Comunicacion. En empresas como Robert Bosch Argentina, Pick&Log y Cantiere SA. Combino diseno, estrategia y automatizacion para mejorar procesos y comunicacion visual interna.",
     projects: [
       { 
         id: "carteles-bosch", 
-        title: "Robert Bosch Argentina",  // ← NOMBRE CAMBIADO
+        title: "Robert Bosch Argentina",
         image: "/images/corporativo/via-publica/viapublica-02.jpg"
       },
       { 
         id: "power-bi-picklog", 
-        title: "Pick&Log",  // ← NOMBRE CAMBIADO
+        title: "Pick&Log",
         image: "/images/corporativo/powerbi/power-01.jpg"
       },
-       { 
+      { 
         id: "cantiere", 
         title: "Cantiere SA",
         image: "/images/corporativo/cantiere/portada.jpg"
-    },
-    ],
-  },
+      },
     ],
   },
   "indumentaria-ilustracion": {
