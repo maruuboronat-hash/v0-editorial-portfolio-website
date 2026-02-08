@@ -223,6 +223,7 @@ const projectsData: Record<string, {
       }
     ]
   },
+  
   "cantiere": {
     title: "Cantiere SA",
     category: "Corporativo",
@@ -239,8 +240,6 @@ const projectsData: Record<string, {
       }
     ]
   },
-  */
-
   // INDUMENTARIA E ILUSTRACIÓN projects
   "indumentaria-placeholder": {
     title: "Proyecto de Indumentaria",
