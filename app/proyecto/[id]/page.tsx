@@ -153,10 +153,11 @@ const projectsData: Record<string, {
         type: "two-column-grid", 
         images: [
           { src: "/images/diseno-grafico/balvanera/balvanera-01.jpg", alt: "Balvanera 01" },
-          {  src: "/images/diseno-grafico/Balvanera/balvanera-02.jpg", alt: "Balvanera 02" }
+          { src: "/images/diseno-grafico/Balvanera/balvanera-02.jpg", alt: "Balvanera 02" }
         ]
-      },
-
+      }
+    ]
+  },
   // CORPORATIVO projects
   "carteles-bosch": {
     title: "Carteles en vía pública I Robert Bosch Argentina",
