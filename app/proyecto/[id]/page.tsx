@@ -100,31 +100,38 @@ const projectsData: Record<string, {
       ]},
     ],
   },
-  "cuento-infantil-3d": {
-    title: "Cuento infantil I Ilustración 3D",
-    category: "Diseño Gráfico",
-    categorySlug: "diseno-grafico",
-    description: "Proyecto editorial que combina narrativa, diseño y modelado tridimensional. Basado en El hombrecito del azulejo, cuento de Manuel Mujica Lainez, se desarrollaron los personajes y escenarios mediante ilustración 3D, integrando color, textura y volumen para construir un universo visual coherente con el relato. Además, se diseñó y maquetó el libro completo, trabajando la relación entre texto e imagen para potenciar la narrativa desde lo visual.",
-sections: [
-     // SECCIÓN 2: Dos imágenes juntas
-  { 
-    type: "two-column-grid", 
-    images: [
-      { src: "/images/diseno-grafico/infantil/infantil-01.jpg",
-      { src: "/images/diseno-grafico/infantil/infantil-02.jpg",
-    ]
-    { type: "single-column-stack", images: [
-      { src: "/images/diseno-grafico/infantil/infantil-03.jpg",
-      { src: "/images/diseno-grafico/infantil/infantil-04.jpg",
-  },
-  // SECCIÓN 2: Dos imágenes juntas
-  { 
-    type: "two-column-grid", 
-    images: [
-      { src: "/images/diseno-grafico/infantil/infantil-05.jpg" },
-      { src: "/images/diseno-grafico/infantil/infantil-06.jpg" }
-    ]
-  },
+ "cuento-infantil-3d": {
+  title: "Cuento infantil I Ilustración 3D",
+  category: "Diseño Gráfico",
+  categorySlug: "diseno-grafico",
+  description: "Proyecto editorial que combina narrativa, diseño y modelado tridimensional. Basado en El hombrecito del azulejo, cuento de Manuel Mujica Lainez, se desarrollaron los personajes y escenarios mediante ilustración 3D, integrando color, textura y volumen para construir un universo visual coherente con el relato. Además, se diseñó y maquetó el libro completo, trabajando la relación entre texto e imagen para potenciar la narrativa desde lo visual.",
+  sections: [
+    // SECCIÓN 1: Dos imágenes juntas
+    { 
+      type: "two-column-grid", 
+      images: [
+        { src: "/images/diseno-grafico/infantil/infantil-01.jpg", alt: "Infantil 01" },
+        { src: "/images/diseno-grafico/infantil/infantil-02.jpg", alt: "Infantil 02" }
+      ]
+    },
+    // SECCIÓN 2: Imágenes en columna
+    { 
+      type: "single-column-stack", 
+      images: [
+        { src: "/images/diseno-grafico/infantil/infantil-03.jpg", alt: "Infantil 03" },
+        { src: "/images/diseno-grafico/infantil/infantil-04.jpg", alt: "Infantil 04" }
+      ]
+    },
+    // SECCIÓN 3: Dos imágenes juntas
+    { 
+      type: "two-column-grid", 
+      images: [
+        { src: "/images/diseno-grafico/infantil/infantil-05.jpg", alt: "Infantil 05" },
+        { src: "/images/diseno-grafico/infantil/infantil-06.jpg", alt: "Infantil 06" }
+      ]
+    }
+  ]
+},
   "modelado-3d-objetos": {
     title: "Modelado 3D I Objetos cotidianos",
     category: "Diseño Gráfico",
