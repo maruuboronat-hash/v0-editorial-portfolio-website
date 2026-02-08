@@ -9,7 +9,7 @@ const categoriesData: Record<string, {
   projects: Array<{ id: string; title: string; image?: string }> // ← AGREGADO: image?
 }> = {
   "diseno-grafico": {
-    title: "Diseno Grafico",
+    title: "Diseno Gráfico",
     description: "Proyectos de diseno editorial, diseno 3D, comunicacion visual e investigacion tipografica desarrollados durante la carrera de Diseno Grafico y Comunicacion.",
     projects: [
       { 
@@ -19,23 +19,23 @@ const categoriesData: Record<string, {
       },
       { id: "postales-cortazar", title: "Postales I Julio Cortazar" },
       { id: "revista-clara-cava", title: "Revista Clara Cava" },
-      { id: "afiche-3d-cordoba", title: "Afiche 3D I Cordoba" },
-      { id: "afiches-tipograficos", title: "Afiches tipograficos" },
-      { id: "cuento-infantil-3d", title: "Cuento infantil I Ilustracion 3D" },
+      { id: "afiche-3d-cordoba", title: "Afiche 3D I Córdoba" },
+      { id: "afiches-tipograficos", title: "Afiches tipográficos" },
+      { id: "cuento-infantil-3d", title: "Cuento infantil I Ilustración 3D" },
       { id: "modelado-3d-objetos", title: "Modelado 3D I Objetos cotidianos" },
       { id: "revista-balvanera", title: "Revista Balvanera I Tapa y contratapa" },
     ],
   },
   "corporativo": {
     title: "Corporativo",
-    description: "Trabajos realizados desde el area de Marketing y Comunicacion. En empresas como Bosch Mobility Aftermarket y Pick&Log. Combino diseno, estrategia y automatizacion para mejorar procesos y comunicacion visual interna.",
+    description: "Trabajos realizados desde el area de Marketing y Comunicación. En empresas como Bosch Mobility Aftermarket y Pick&Log. Combino diseno, estrategia y automatizacion para mejorar procesos y comunicacion visual interna.",
     projects: [
       { id: "carteles-bosch", title: "Carteles en via publica I Robert Bosch Argentina" },
       { id: "power-bi-picklog", title: "Power BI I Plantillas de logistica I Pick&Log" },
     ],
   },
   "indumentaria-ilustracion": {
-    title: "Indumentaria e Ilustracion",
+    title: "Indumentaria e Ilustración",
     description: "Serie de proyectos vinculados al diseno de indumentaria y la experimentacion visual desde el cuerpo, la forma y la textura.",
     projects: [
       { id: "indumentaria-placeholder", title: "Proyecto de Indumentaria" },
@@ -52,7 +52,7 @@ const categoriesData: Record<string, {
       },
       { 
         id: "fotografia-analogica", 
-        title: "Fotografia analogica",
+        title: "Fotografía analógica",
         image: "/images/proyectos-personales/analogicas/analogicas-portada.JPG"
       },
     ],
