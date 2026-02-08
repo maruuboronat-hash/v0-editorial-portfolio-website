@@ -56,7 +56,7 @@ const categoriesData: Record<string, {
 
     ],
   },
-  "corporativo": {
+"corporativo": {
     title: "Corporativo",
     description: "Trabajos realizados desde el area de Marketing y Comunicacion. En empresas como Robert Bosch Argentina, Pick&Log y Cantiere SA. Combino diseno, estrategia y automatizacion para mejorar procesos y comunicacion visual interna.",
     projects: [
@@ -75,7 +75,7 @@ const categoriesData: Record<string, {
         title: "Cantiere SA",
         image: "/images/corporativo/cantiere/portada.jpg"
       },
-    ],
+    ], 
   },
   "indumentaria-ilustracion": {
     title: "Indumentaria e Ilustración",
