@@ -53,7 +53,7 @@ const categoriesData: Record<string, {
       { 
         id: "fotografia-analogica", 
         title: "Fotografia analogica",
-        image: "/images/proyectos-personales/analogicas/analogicas-03.jpg"
+        image: "/images/proyectos-personales/analogicas/analogicas-portada.JPG"
       },
     ],
   },
