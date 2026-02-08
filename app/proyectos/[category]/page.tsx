@@ -32,8 +32,12 @@ const categoriesData: Record<string, {
   title: "Afiche 3D I Córdoba",
   image: "/images/diseno-grafico/afiche3d/cordoba-01.jpg" // ← Imagen de portada
 },
+            { 
+  id: "afiches-tipograficos", 
+  title: "Afiches tipográficos",
+  image: "/images/diseno-grafico/afiche-tipografico/tipografia-03.jpg" // ← Imagen de portada
+},
 
-      { id: "afiches-tipograficos", title: "Afiches tipográficos" },
       { id: "cuento-infantil-3d", title: "Cuento infantil I Ilustración 3D" },
       { id: "modelado-3d-objetos", title: "Modelado 3D I Objetos cotidianos" },
       { id: "revista-balvanera", title: "Revista Balvanera I Tapa y contratapa" },
