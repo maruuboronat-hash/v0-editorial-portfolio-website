@@ -20,7 +20,7 @@ const categoriesData: Record<string, {
 { 
   id: "postales-cortazar", 
   title: "Postales I Julio Cortazar",
-  image: "/images/diseno-grafico/postales/postales-01.jpg" // ← Imagen de portada
+  image: "/images/diseno-grafico/postales/postales-portada.jpg" // ← Imagen de portada
 },
       { id: "revista-clara-cava", title: "Revista Clara Cava" },
       { id: "afiche-3d-cordoba", title: "Afiche 3D I Córdoba" },
