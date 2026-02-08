@@ -17,7 +17,11 @@ const categoriesData: Record<string, {
         title: "Diario de Oasis I Backstage Times",
         image: "/images/diseno-grafico/oasis/oasis-02.jpg"
       },
-      { id: "postales-cortazar", title: "Postales I Julio Cortazar" },
+{ 
+  id: "postales-cortazar", 
+  title: "Postales I Julio Cortazar",
+  image: "/images/diseno-grafico/postales/postales-01.jpg" // ← Imagen de portada
+},
       { id: "revista-clara-cava", title: "Revista Clara Cava" },
       { id: "afiche-3d-cordoba", title: "Afiche 3D I Córdoba" },
       { id: "afiches-tipograficos", title: "Afiches tipográficos" },
