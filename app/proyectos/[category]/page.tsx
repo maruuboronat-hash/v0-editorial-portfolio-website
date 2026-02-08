@@ -50,7 +50,7 @@ const categoriesData: Record<string, {
       { 
   id: "cuento-infantil-3d", 
   title: "Cuento infantil I Ilustración 3D",
-  image: "/images/diseno-grafico/postales/postales-portada.jpg" // ← Imagen de portada
+  image: "/images/diseno-grafico/infantil/infantil-portada.jpg" // ← Imagen de portada
 },
       
 
