@@ -36,9 +36,10 @@ const projectsData: Record<string, {
     description: "Serie de postales conceptuales inspiradas en Historia verídica, un cuento de Julio Cortázar. El proyecto explora la fragilidad, el azar y la poética de lo cotidiano a través de la composición visual y el uso simbólico del color y la forma. Cada postal funciona como un fragmento independiente, pero en conjunto conforman una narrativa abierta y sensible.",
     sections: [
       { type: "single-column-stack", images: [
-        { alt: "Postal Cortázar 1" },
-        { alt: "Postal Cortázar 2" },
-        { alt: "Postal Cortázar 3" },
+        { src: "/images/diseno-grafico/postales/postales-01.jpg", alt: "Postal Cortázar 1" },
+        { src: "/images/diseno-grafico/postales/postales-02.jpg", alt: "Postal Cortázar 2" },
+        { src: "/images/diseno-grafico/postales/postales-03.jpg", alt: "Postal Cortázar 3" },
+        // Agregá más si tenés más imágenes
       ]},
     ],
   },
