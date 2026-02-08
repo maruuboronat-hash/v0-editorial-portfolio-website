@@ -39,7 +39,6 @@ const projectsData: Record<string, {
         { src: "/images/diseno-grafico/postales/postales-01.jpg", alt: "Postal Cortázar 1" },
         { src: "/images/diseno-grafico/postales/postales-02.jpg", alt: "Postal Cortázar 2" },
         { src: "/images/diseno-grafico/postales/postales-03.jpg", alt: "Postal Cortázar 3" },
-        // Agregá más si tenés más imágenes
       ]},
     ],
   },
@@ -58,7 +57,6 @@ const projectsData: Record<string, {
         { src: "/images/diseno-grafico/clara-cava/clara-06.jpeg", alt: "Clara 06" },
         { src: "/images/diseno-grafico/clara-cava/clara-07.jpeg", alt: "Clara 07" },
         { src: "/images/diseno-grafico/clara-cava/clara-08.jpeg", alt: "Clara 08" },
-        // Agregá más si tenés más imágenes
       ]},
     ],
   },
@@ -75,7 +73,6 @@ const projectsData: Record<string, {
         { src: "/images/diseno-grafico/afiche3d/cordoba-04.jpg", alt: "Córdoba 04" },
         { src: "/images/diseno-grafico/afiche3d/cordoba-05.jpg", alt: "Córdoba 05" },
         { src: "/images/diseno-grafico/afiche3d/cordoba-06.jpg", alt: "Córdoba 06" },
-        // Agregá más si tenés más imágenes
       ]},
     ],
   },
@@ -96,42 +93,38 @@ const projectsData: Record<string, {
         { src: "/images/diseno-grafico/afiche-tipografico/tipografia-08.jpg", alt: "Afiche 08" },
         { src: "/images/diseno-grafico/afiche-tipografico/tipografia-09.jpg", alt: "Afiche 09" },
         { src: "/images/diseno-grafico/afiche-tipografico/tipografia-10.jpg", alt: "Afiche 10" },
-        // Agregá más si tenés más imágenes
       ]},
     ],
   },
- "cuento-infantil-3d": {
-  title: "Cuento infantil I Ilustración 3D",
-  category: "Diseño Gráfico",
-  categorySlug: "diseno-grafico",
-  description: "Proyecto editorial que combina narrativa, diseño y modelado tridimensional. Basado en El hombrecito del azulejo, cuento de Manuel Mujica Lainez, se desarrollaron los personajes y escenarios mediante ilustración 3D, integrando color, textura y volumen para construir un universo visual coherente con el relato. Además, se diseñó y maquetó el libro completo, trabajando la relación entre texto e imagen para potenciar la narrativa desde lo visual.",
-  sections: [
-    // SECCIÓN 1: Dos imágenes juntas
-    { 
-      type: "two-column-grid", 
-      images: [
-        { src: "/images/diseno-grafico/infantil/infantil-01.jpg", alt: "Infantil 01" },
-        { src: "/images/diseno-grafico/infantil/infantil-02.jpg", alt: "Infantil 02" }
-      ]
-    },
-    // SECCIÓN 2: Imágenes en columna
-    { 
-      type: "single-column-stack", 
-      images: [
-        { src: "/images/diseno-grafico/infantil/infantil-03.jpg", alt: "Infantil 03" },
-        { src: "/images/diseno-grafico/infantil/infantil-04.jpg", alt: "Infantil 04" }
-      ]
-    },
-    // SECCIÓN 3: Dos imágenes juntas
-    { 
-      type: "two-column-grid", 
-      images: [
-        { src: "/images/diseno-grafico/infantil/infantil-05.jpg", alt: "Infantil 05" },
-        { src: "/images/diseno-grafico/infantil/infantil-06.jpg", alt: "Infantil 06" }
-      ]
-    }
-  ]
-},
+  "cuento-infantil-3d": {
+    title: "Cuento infantil I Ilustración 3D",
+    category: "Diseño Gráfico",
+    categorySlug: "diseno-grafico",
+    description: "Proyecto editorial que combina narrativa, diseño y modelado tridimensional. Basado en El hombrecito del azulejo, cuento de Manuel Mujica Lainez, se desarrollaron los personajes y escenarios mediante ilustración 3D, integrando color, textura y volumen para construir un universo visual coherente con el relato. Además, se diseñó y maquetó el libro completo, trabajando la relación entre texto e imagen para potenciar la narrativa desde lo visual.",
+    sections: [
+      { 
+        type: "two-column-grid", 
+        images: [
+          { src: "/images/diseno-grafico/infantil/infantil-01.jpg", alt: "Infantil 01" },
+          { src: "/images/diseno-grafico/infantil/infantil-02.jpg", alt: "Infantil 02" }
+        ]
+      },
+      { 
+        type: "single-column-stack", 
+        images: [
+          { src: "/images/diseno-grafico/infantil/infantil-03.jpg", alt: "Infantil 03" },
+          { src: "/images/diseno-grafico/infantil/infantil-04.jpg", alt: "Infantil 04" }
+        ]
+      },
+      { 
+        type: "two-column-grid", 
+        images: [
+          { src: "/images/diseno-grafico/infantil/infantil-05.jpg", alt: "Infantil 05" },
+          { src: "/images/diseno-grafico/infantil/infantil-06.jpg", alt: "Infantil 06" }
+        ]
+      }
+    ]
+  },
   "modelado-3d-objetos": {
     title: "Modelado 3D I Objetos cotidianos",
     category: "Diseño Gráfico",
@@ -155,10 +148,10 @@ const projectsData: Record<string, {
     category: "Diseño Gráfico",
     categorySlug: "diseno-grafico",
     description: "Diseño de tapa y contratapa para una revista inspirada en el barrio porteño de Balvanera. El proyecto toma como punto de partida su identidad visual, su ritmo urbano y la diversidad cultural que lo caracteriza. A través del uso del color, la tipografía y la composición, busca reflejar el pulso cotidiano del barrio y su mezcla entre historia, tránsito y vida local.",
-       sections: [
+    sections: [
       { type: "single-column-stack", images: [
         { src: "/images/diseno-grafico/balvanera/balvanera-01.jpg", alt: "Balvanera 01" },
-        { src: "/images/diseno-grafico/Balvanera/balvanera-02.jpg", alt: "Balvanera 2" },
+        { src: "/images/diseno-grafico/Balvanera/balvanera-02.jpg", alt: "Balvanera 02" },
       ]},
     ],
   },
@@ -169,7 +162,7 @@ const projectsData: Record<string, {
     category: "Corporativo",
     categorySlug: "corporativo",
     description: "Gracias a mi pasantía en Robert Bosch Argentina, pude diseñar y producir carteles para vía pública destinados a promocionar el Centro de Capacitación Bosch. Las piezas respetan la identidad visual de la marca y se adaptan a distintos formatos y soportes exteriores.",
-       sections: [
+    sections: [
       { type: "single-column-stack", images: [
         { src: "/images/corporativo/via-publica/viapublica-02.jpg", alt: "Cartel 01" },
         { src: "/images/corporativo/via-publica/viapublica-01.jpg", alt: "Cartel 02" },
@@ -182,13 +175,12 @@ const projectsData: Record<string, {
       ]},
     ],
   },
-  
   "power-bi-picklog": {
     title: "Power BI I Plantillas de logística I Pick&Log",
     category: "Corporativo",
     categorySlug: "corporativo",
     description: "Proyecto realizado para la empresa Pick&Log. Diseño de plantillas visuales y dashboards en Power BI para un sistema de gestión logística. El trabajo combina diseño funcional y visualización de datos para mejorar la lectura y el seguimiento de indicadores operativos.",
-       sections: [
+    sections: [
       { type: "single-column-stack", images: [
         { src: "/images/corporativo/powerbi/power-01.jpg", alt: "Plantilla 01" },
       ]},
@@ -196,7 +188,6 @@ const projectsData: Record<string, {
   },
 
   // INDUMENTARIA E ILUSTRACIÓN projects
-  // (placeholder for future content - will be added when provided)
   "indumentaria-placeholder": {
     title: "Proyecto de Indumentaria",
     category: "Indumentaria e Ilustración",
@@ -219,7 +210,7 @@ const projectsData: Record<string, {
     sections: [
       { 
         type: "video-embed", 
-        src: "/images/proyectos-personales/video-casamiento/casamiento.mp4", // ← RUTA DEL VIDEO
+        src: "/images/proyectos-personales/video-casamiento/casamiento.mp4",
         caption: "Video de casamiento y luna de miel, 1995" 
       },
     ],
@@ -238,7 +229,7 @@ const projectsData: Record<string, {
           { src: "/images/proyectos-personales/analogicas/analogicas-03.jpg", alt: "Analógica 03" },
           { src: "/images/proyectos-personales/analogicas/analogicas-04.jpg", alt: "Analógica 04" },
           { src: "/images/proyectos-personales/analogicas/analogicas-05.jpg", alt: "Analógica 05" },
-          { src: "/images/proyectos-personales/analogicas/analogicas-06.jpg", alt: "Analógica 06" }, // ← AGREGÁ LA COMA AQUÍ
+          { src: "/images/proyectos-personales/analogicas/analogicas-06.jpg", alt: "Analógica 06" },
           { src: "/images/proyectos-personales/analogicas/analogicas-07.jpg", alt: "Analógica 07" },
           { src: "/images/proyectos-personales/analogicas/analogicas-08.jpg", alt: "Analógica 08" },
           { src: "/images/proyectos-personales/analogicas/analogicas-09.jpg", alt: "Analógica 09" },
@@ -248,6 +239,7 @@ const projectsData: Record<string, {
       }
     ]
   },
+}
 
 // Get all projects in a category for "También te puede gustar" section
 function getRelatedProjects(currentId: string, categorySlug: string) {
@@ -277,7 +269,7 @@ export default async function ProjectPage({ params }: { params: PageParams }) {
     <article className="pt-24 pb-24 min-h-screen">
       {/* Project Header */}
       <header className="px-6 md:px-12 mb-16 md:mb-24">
-        <div className="max-w-5xl mx-auto">  {/* CAMBIADO: 3xl → 5xl (más ancho) */}
+        <div className="max-w-5xl mx-auto">
           <Link
             href={`/proyectos/${project.categorySlug}`}
             className="text-xs uppercase tracking-widest text-muted-foreground hover:text-foreground transition-colors mb-8 inline-block"
@@ -297,7 +289,7 @@ export default async function ProjectPage({ params }: { params: PageParams }) {
 
       {/* Project Sections - MISMO ANCHO QUE EL TEXTO */}
       <div className="px-6 md:px-12">
-        <div className="max-w-5xl mx-auto">  {/* CAMBIADO: 3xl → 5xl (igual que arriba) */}
+        <div className="max-w-5xl mx-auto">
           <ProjectSections sections={project.sections} />
         </div>
       </div>
