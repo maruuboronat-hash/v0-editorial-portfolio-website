@@ -51,13 +51,13 @@ const projectsData: Record<string, {
     sections: [
       { type: "single-column-stack", images: [
         { src: "/images/diseno-grafico/clara-cava/clara-01.jpg" },
-        { src: "/images/diseno-grafico/clara-cava/clara-02.jpg", alt: "Clara Cava 01" },
-        { src: "/images/diseno-grafico/clara-cava/clara-03.jpg", alt: "Clara Cava 01" },
-        { src: "/images/diseno-grafico/clara-cava/clara-04.jpg", alt: "Clara Cava 01" },
-        { src: "/images/diseno-grafico/clara-cava/clara-05.jpg", alt: "Clara Cava 01" },
-        { src: "/images/diseno-grafico/clara-cava/clara-06.jpg", alt: "Clara Cava 01" },
-        { src: "/images/diseno-grafico/clara-cava/clara-07.jpg", alt: "Clara Cava 01" },
-        { src: "/images/diseno-grafico/clara-cava/clara-08.jpg", alt: "Clara Cava 01" },
+        { src: "/images/diseno-grafico/clara-cava/clara-02.jpg" },
+        { src: "/images/diseno-grafico/clara-cava/clara-03.jpg" },
+        { src: "/images/diseno-grafico/clara-cava/clara-04.jpg" },
+        { src: "/images/diseno-grafico/clara-cava/clara-05.jpg" },
+        { src: "/images/diseno-grafico/clara-cava/clara-06.jpg" },
+        { src: "/images/diseno-grafico/clara-cava/clara-07.jpg" },
+        { src: "/images/diseno-grafico/clara-cava/clara-08.jpg" },
         // Agregá más si tenés más imágenes
       ]},
     ],
