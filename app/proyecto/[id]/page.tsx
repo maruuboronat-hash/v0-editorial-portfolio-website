@@ -154,14 +154,14 @@ const projectsData: Record<string, {
     description: "Gracias a mi pasantía en Robert Bosch Argentina, pude diseñar y producir carteles para vía pública destinados a promocionar el Centro de Capacitación Bosch. Las piezas respetan la identidad visual de la marca y se adaptan a distintos formatos y soportes exteriores.",
        sections: [
       { type: "single-column-stack", images: [
-        { src: "/images/diseno-grafico/corporativo/via-publica/viapublica-01.jpg", alt: "Cartel 01" },
-        { src: "/images/diseno-grafico/corporativo/via-publica/viapublica-02.jpg", alt: "Cartel 02" },
-        { src: "/images/diseno-grafico/corporativo/via-publica/viapublica-03.jpg", alt: "Cartel 03" },
-        { src: "/images/diseno-grafico/corporativo/via-publica/viapublica-04.jpg", alt: "Cartel 04" },
-        { src: "/images/diseno-grafico/corporativo/via-publica/viapublica-05.jpg", alt: "Cartel 05" },
-        { src: "/images/diseno-grafico/corporativo/via-publica/viapublica-06.jpg", alt: "Cartel 06" },
-        { src: "/images/diseno-grafico/corporativo/via-publica/viapublica-07.jpg", alt: "Cartel 07" },
-        { src: "/images/diseno-grafico/corporativo/via-publica/viapublica-08.jpg", alt: "Cartel 08" },
+        { src: "/images/corporativo/via-publica/viapublica-01.jpg", alt: "Cartel 01" },
+        { src: "/images/corporativo/via-publica/viapublica-02.jpg", alt: "Cartel 02" },
+        { src: "/images/corporativo/via-publica/viapublica-03.jpg", alt: "Cartel 03" },
+        { src: "/images/corporativo/via-publica/viapublica-04.jpg", alt: "Cartel 04" },
+        { src: "/images/corporativo/via-publica/viapublica-05.jpg", alt: "Cartel 05" },
+        { src: "/images/corporativo/via-publica/viapublica-06.jpg", alt: "Cartel 06" },
+        { src: "/images/corporativo/via-publica/viapublica-07.jpg", alt: "Cartel 07" },
+        { src: "/images/corporativo/via-publica/viapublica-08.jpg", alt: "Cartel 08" },
       ]},
     ],
   },
@@ -173,7 +173,7 @@ const projectsData: Record<string, {
     description: "Proyecto realizado para la empresa Pick&Log. Diseño de plantillas visuales y dashboards en Power BI para un sistema de gestión logística. El trabajo combina diseño funcional y visualización de datos para mejorar la lectura y el seguimiento de indicadores operativos.",
        sections: [
       { type: "single-column-stack", images: [
-        { src: "/images/diseno-grafico/corporativo/powerbi/power-01.jpg", alt: "PLantilla 01" },
+        { src: "/images/corporativo/powerbi/power-01.jpg", alt: "Plantilla 01" },
       ]},
     ],
   },
