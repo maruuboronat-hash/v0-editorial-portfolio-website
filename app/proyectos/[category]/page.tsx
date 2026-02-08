@@ -58,18 +58,25 @@ const categoriesData: Record<string, {
   },
   "corporativo": {
     title: "Corporativo",
-    description: "Trabajos realizados desde el área de Marketing y Comunicación. En empresas como Bosch Mobility Aftermarket y Pick&Log. Combino diseño, estrategia y automatización para mejorar procesos.",
+    description: "Trabajos realizados desde el area de Marketing y Comunicacion. En empresas como Robert Bosch Argentina y Pick&Log. Combino diseno, estrategia y automatizacion para mejorar procesos y comunicacion visual interna.",
     projects: [
-            { 
-  id: "carteles-bosch", 
-  title: "Carteles en vía pública I Robert Bosch Argentina",
-  image: "/images/corporativo/via-publica/viapublica-02.jpg" // ← Imagen de portada
-},
-                  { 
-  id: "power-bi-picklog", 
-  title: "Power BI I Plantillas de logística I Pick&Log",
-  image: "/images/corporativo/powerbi/power-01.jpg" // ← Imagen de portada
-},
+      { 
+        id: "carteles-bosch", 
+        title: "Robert Bosch Argentina",  // ← NOMBRE CAMBIADO
+        image: "/images/corporativo/via-publica/viapublica-02.jpg"
+      },
+      { 
+        id: "power-bi-picklog", 
+        title: "Pick&Log",  // ← NOMBRE CAMBIADO
+        image: "/images/corporativo/powerbi/power-01.jpg"
+      },
+       { 
+        id: "cantiere", 
+        title: "Cantiere SA",
+        image: "/images/corporativo/cantiere/portada.jpg"
+    },
+    ],
+  },
     ],
   },
   "indumentaria-ilustracion": {
