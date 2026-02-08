@@ -229,24 +229,25 @@ const projectsData: Record<string, {
     category: "Proyectos Personales",
     categorySlug: "personales",
     description: "Serie de fotografías analógicas tomadas durante un viaje por Europa, con la intención de experimentar con nuevas técnicas y rollos vencidos. El proyecto funciona como un registro espontáneo que explora la luz, el color y la composición desde una mirada más personal.",
-sections: [
-  { 
-    type: "two-column-grid", 
-    images: [
-      { src: "/images/proyectos-personales/analogicas/analogicas-01.jpg" },
-      { src: "/images/proyectos-personales/analogicas/analogicas-02.jpg" },
-      { src: "/images/proyectos-personales/analogicas/analogicas-03.jpg" },
-      { src: "/images/proyectos-personales/analogicas/analogicas-04.jpg" },
-      { src: "/images/proyectos-personales/analogicas/analogicas-05.jpg" },
-      { src: "/images/proyectos-personales/analogicas/analogicas-06.jpg" }
-      { src: "/images/proyectos-personales/analogicas/analogicas-07.jpg" },
-      { src: "/images/proyectos-personales/analogicas/analogicas-08.jpg" },
-      { src: "/images/proyectos-personales/analogicas/analogicas-09.jpg" },
-      { src: "/images/proyectos-personales/analogicas/analogicas-10.jpg" },
-      { src: "/images/proyectos-personales/analogicas/analogicas-11.jpg" }
+    sections: [
+      { 
+        type: "two-column-grid", 
+        images: [
+          { src: "/images/proyectos-personales/analogicas/analogicas-01.jpg", alt: "Analógica 01" },
+          { src: "/images/proyectos-personales/analogicas/analogicas-02.jpg", alt: "Analógica 02" },
+          { src: "/images/proyectos-personales/analogicas/analogicas-03.jpg", alt: "Analógica 03" },
+          { src: "/images/proyectos-personales/analogicas/analogicas-04.jpg", alt: "Analógica 04" },
+          { src: "/images/proyectos-personales/analogicas/analogicas-05.jpg", alt: "Analógica 05" },
+          { src: "/images/proyectos-personales/analogicas/analogicas-06.jpg", alt: "Analógica 06" }, // ← AGREGÁ LA COMA AQUÍ
+          { src: "/images/proyectos-personales/analogicas/analogicas-07.jpg", alt: "Analógica 07" },
+          { src: "/images/proyectos-personales/analogicas/analogicas-08.jpg", alt: "Analógica 08" },
+          { src: "/images/proyectos-personales/analogicas/analogicas-09.jpg", alt: "Analógica 09" },
+          { src: "/images/proyectos-personales/analogicas/analogicas-10.jpg", alt: "Analógica 10" },
+          { src: "/images/proyectos-personales/analogicas/analogicas-11.jpg", alt: "Analógica 11" }
+        ]
+      }
     ]
-  }
-]
+  },
 
 // Get all projects in a category for "También te puede gustar" section
 function getRelatedProjects(currentId: string, categorySlug: string) {
