@@ -42,9 +42,14 @@ const categoriesData: Record<string, {
   title: "Revista Balvanera I Tapa y contratapa",
   image: "/images/diseno-grafico/afiche-tipografico/balvanera-portada.jpg" // ← Imagen de portada
 },
+      { 
+  id: "modelado-3d-objetos", 
+  title: "Modelado 3D I Objetos cotidianos",
+  image: "/images/diseno-grafico/modelado3d/modelado-02.jpg" // ← Imagen de portada
+},
 
       { id: "cuento-infantil-3d", title: "Cuento infantil I Ilustración 3D" },
-      { id: "modelado-3d-objetos", title: "Modelado 3D I Objetos cotidianos" },
+
     ],
   },
   "corporativo": {
