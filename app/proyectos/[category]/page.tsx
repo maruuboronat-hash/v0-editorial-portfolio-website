@@ -40,7 +40,7 @@ const categoriesData: Record<string, {
       { 
   id: "revista-balvanera", 
   title: "Revista Balvanera I Tapa y contratapa",
-  image: "/images/diseno-grafico/afiche-tipografico/balvanera-portada.jpg" // ← Imagen de portada
+  image: "/images/diseno-grafico/balvanera/balvanera-portada-01.jpg" // ← Imagen de portada
 },
       { 
   id: "modelado-3d-objetos", 
@@ -50,7 +50,7 @@ const categoriesData: Record<string, {
       { 
   id: "cuento-infantil-3d", 
   title: "Cuento infantil I Ilustración 3D",
-  image: "/images/diseno-grafico/infantil/infantil-portada.jpg" // ← Imagen de portada
+  image: "/images/diseno-grafico/infantil/infantil-portada-01.jpg" // ← Imagen de portada
 },
       
 
