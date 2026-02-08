@@ -75,8 +75,9 @@ const categoriesData: Record<string, {
         title: "Cantiere SA",
         image: "/images/corporativo/cantiere/portada.jpg"
       },
-    ], 
-  },
+    ], // ← AQUÍ ESTÁ EL CORCHETE QUE FALTABA
+  }, // ← ESTO YA ESTABA
+  // ========== TEXTO TEMPORAL PARA VER SI SE ACTUALIZA ==========
   "indumentaria-ilustracion": {
     title: "Indumentaria e Ilustración",
     description: "Serie de proyectos vinculados al diseno de indumentaria y la experimentacion visual desde el cuerpo, la forma y la textura.",
