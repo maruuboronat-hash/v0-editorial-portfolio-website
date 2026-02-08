@@ -47,8 +47,12 @@ const categoriesData: Record<string, {
   title: "Modelado 3D I Objetos cotidianos",
   image: "/images/diseno-grafico/modelado3d/modelado-02.jpg" // ← Imagen de portada
 },
-
-      { id: "cuento-infantil-3d", title: "Cuento infantil I Ilustración 3D" },
+      { 
+  id: "cuento-infantil-3d", 
+  title: "Cuento infantil I Ilustración 3D",
+  image: "/images/diseno-grafico/postales/postales-portada.jpg" // ← Imagen de portada
+},
+      
 
     ],
   },
