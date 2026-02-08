@@ -229,25 +229,24 @@ const projectsData: Record<string, {
     category: "Proyectos Personales",
     categorySlug: "personales",
     description: "Serie de fotografías analógicas tomadas durante un viaje por Europa, con la intención de experimentar con nuevas técnicas y rollos vencidos. El proyecto funciona como un registro espontáneo que explora la luz, el color y la composición desde una mirada más personal.",
-    sections: [
-      { type: "gallery-with-centered-last", columns: 2, images: [
-        { alt: "Foto analógica 1" },
-        { alt: "Foto analógica 2" },
-        { alt: "Foto analógica 3" },
-        { alt: "Foto analógica 4" },
-        { alt: "Foto analógica 5" },
-        { alt: "Foto analógica 6" },
-        { alt: "Foto analógica 7" },
-        { alt: "Foto analógica 8" },
-        { alt: "Foto analógica 9" },
-        { alt: "Foto analógica 10" },
-        { alt: "Foto analógica 11" },
-        { alt: "Foto analógica 12" },
-        { alt: "Foto analógica 13" },
-      ]},
-    ],
-  },
-}
+sections: [
+  { 
+    type: "two-column-grid", 
+    images: [
+      { src: "/images/proyectos-personales/analogicas/analogicas-01.jpg" },
+      { src: "/images/proyectos-personales/analogicas/analogicas-02.jpg" },
+      { src: "/images/proyectos-personales/analogicas/analogicas-03.jpg" },
+      { src: "/images/proyectos-personales/analogicas/analogicas-04.jpg" },
+      { src: "/images/proyectos-personales/analogicas/analogicas-05.jpg" },
+      { src: "/images/proyectos-personales/analogicas/analogicas-06.jpg" }
+      { src: "/images/proyectos-personales/analogicas/analogicas-07.jpg" },
+      { src: "/images/proyectos-personales/analogicas/analogicas-08.jpg" },
+      { src: "/images/proyectos-personales/analogicas/analogicas-09.jpg" },
+      { src: "/images/proyectos-personales/analogicas/analogicas-10.jpg" },
+      { src: "/images/proyectos-personales/analogicas/analogicas-11.jpg" }
+    ]
+  }
+]
 
 // Get all projects in a category for "También te puede gustar" section
 function getRelatedProjects(currentId: string, categorySlug: string) {
