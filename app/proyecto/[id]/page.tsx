@@ -152,31 +152,28 @@ const projectsData: Record<string, {
     category: "Corporativo",
     categorySlug: "corporativo",
     description: "Gracias a mi pasantía en Robert Bosch Argentina, pude diseñar y producir carteles para vía pública destinados a promocionar el Centro de Capacitación Bosch. Las piezas respetan la identidad visual de la marca y se adaptan a distintos formatos y soportes exteriores.",
-    sections: [
-      { type: "two-column-grid", images: [
-        { alt: "Cartel Bosch 1" },
-        { alt: "Cartel Bosch 2" },
-        { alt: "Cartel Bosch 3" },
-        { alt: "Cartel Bosch 4" },
-        { alt: "Cartel Bosch 5" },
-        { alt: "Cartel Bosch 6" },
+       sections: [
+      { type: "single-column-stack", images: [
+        { src: "/images/diseno-grafico/corporativo/via-publica/viapublica-01.jpg", alt: "Cartel 01" },
+        { src: "/images/diseno-grafico/corporativo/via-publica/viapublica-02.jpg", alt: "Cartel 02" },
+        { src: "/images/diseno-grafico/corporativo/via-publica/viapublica-03.jpg", alt: "Cartel 03" },
+        { src: "/images/diseno-grafico/corporativo/via-publica/viapublica-04.jpg", alt: "Cartel 04" },
+        { src: "/images/diseno-grafico/corporativo/via-publica/viapublica-05.jpg", alt: "Cartel 05" },
+        { src: "/images/diseno-grafico/corporativo/via-publica/viapublica-06.jpg", alt: "Cartel 06" },
+        { src: "/images/diseno-grafico/corporativo/via-publica/viapublica-07.jpg", alt: "Cartel 07" },
+        { src: "/images/diseno-grafico/corporativo/via-publica/viapublica-08.jpg", alt: "Cartel 08" },
       ]},
     ],
   },
+  
   "power-bi-picklog": {
     title: "Power BI I Plantillas de logística I Pick&Log",
     category: "Corporativo",
     categorySlug: "corporativo",
     description: "Proyecto realizado para la empresa Pick&Log. Diseño de plantillas visuales y dashboards en Power BI para un sistema de gestión logística. El trabajo combina diseño funcional y visualización de datos para mejorar la lectura y el seguimiento de indicadores operativos.",
-    sections: [
+       sections: [
       { type: "single-column-stack", images: [
-        { alt: "Dashboard principal" },
-      ]},
-      { type: "two-column-grid", images: [
-        { alt: "Plantilla 1" },
-        { alt: "Plantilla 2" },
-        { alt: "Plantilla 3" },
-        { alt: "Plantilla 4" },
+        { src: "/images/diseno-grafico/corporativo/powerbi/power-01.jpg", alt: "PLantilla 01" },
       ]},
     ],
   },
