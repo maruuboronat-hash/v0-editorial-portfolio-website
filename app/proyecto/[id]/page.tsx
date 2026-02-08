@@ -50,14 +50,14 @@ const projectsData: Record<string, {
     description: "Proyecto editorial inspirado en la artista argentina Clara Cava. La revista propone una lectura visual de su universo musical a través del color, la tipografía y la composición. Combina análisis gráfico y diseño de layout para construir una identidad que refleja la experimentación y sensibilidad presentes en su obra.",
     sections: [
       { type: "single-column-stack", images: [
-        { src: "/images/diseno-grafico/clara-cava/clara-01-jpg" },
-        { src: "/images/diseno-grafico/clara-cava/clara-02-jpg", alt: "Clara Cava 01" },
-        { src: "/images/diseno-grafico/clara-cava/clara-03-jpg", alt: "Clara Cava 01" },
-        { src: "/images/diseno-grafico/clara-cava/clara-04-jpg", alt: "Clara Cava 01" },
-        { src: "/images/diseno-grafico/clara-cava/clara-05-jpg", alt: "Clara Cava 01" },
-        { src: "/images/diseno-grafico/clara-cava/clara-06-jpg", alt: "Clara Cava 01" },
-        { src: "/images/diseno-grafico/clara-cava/clara-07-jpg", alt: "Clara Cava 01" },
-        { src: "/images/diseno-grafico/clara-cava/clara-08-jpg", alt: "Clara Cava 01" },
+        { src: "/images/diseno-grafico/clara-cava/clara-01.jpg" },
+        { src: "/images/diseno-grafico/clara-cava/clara-02.jpg", alt: "Clara Cava 01" },
+        { src: "/images/diseno-grafico/clara-cava/clara-03.jpg", alt: "Clara Cava 01" },
+        { src: "/images/diseno-grafico/clara-cava/clara-04.jpg", alt: "Clara Cava 01" },
+        { src: "/images/diseno-grafico/clara-cava/clara-05.jpg", alt: "Clara Cava 01" },
+        { src: "/images/diseno-grafico/clara-cava/clara-06.jpg", alt: "Clara Cava 01" },
+        { src: "/images/diseno-grafico/clara-cava/clara-07.jpg", alt: "Clara Cava 01" },
+        { src: "/images/diseno-grafico/clara-cava/clara-08.jpg", alt: "Clara Cava 01" },
         // Agregá más si tenés más imágenes
       ]},
     ],
