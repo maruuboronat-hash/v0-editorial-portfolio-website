@@ -35,12 +35,12 @@ const categoriesData: Record<string, {
             { 
   id: "afiches-tipograficos", 
   title: "Afiches tipográficos",
-  image: "/images/diseno-grafico/afiche-tipografico/balvanera-portada.jpg" // ← Imagen de portada
+  image: "/images/diseno-grafico/afiche-tipografico/tipografia-portada.jpg" // ← Imagen de portada
 },
       { 
   id: "revista-balvanera", 
   title: "Revista Balvanera I Tapa y contratapa",
-  image: "/images/diseno-grafico/postales/postales-portada.jpg" // ← Imagen de portada
+  image: "/images/diseno-grafico/afiche-tipografico/balvanera-portada.jpg" // ← Imagen de portada
 },
 
       { id: "cuento-infantil-3d", title: "Cuento infantil I Ilustración 3D" },
