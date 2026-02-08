@@ -68,11 +68,14 @@ const projectsData: Record<string, {
     categorySlug: "diseno-grafico",
     description: "Composición tridimensional inspirada en la provincia de Córdoba, Argentina. El proyecto combina elementos gráficos y volumétricos para reinterpretar íconos característicos de su paisaje y cultura, como el Reloj Cucú y los colores serranos. Basado en la identidad visual y el lenguaje gráfico presentes en la página oficial de turismo de la provincia, busca transmitir su esencia desde un enfoque contemporáneo a través del modelado y la iluminación digital.",
     sections: [
-      { type: "mixed-layout", rows: [
-        { columns: 1, images: [{ alt: "Afiche Córdoba principal" }] },
-        { columns: 2, images: [{ alt: "Detalle 1" }, { alt: "Detalle 2" }] },
-        { columns: 1, images: [{ alt: "Vista alternativa" }] },
-        { columns: 2, images: [{ alt: "Elemento 1" }, { alt: "Elemento 2" }] },
+      { type: "single-column-stack", images: [
+        { src: "/images/diseno-grafico/afiche3d/cordoba-01.jpg", alt: "Córdoba 01" },
+        { src: "/images/diseno-grafico/afiche3d/cordoba-02.jpg", alt: "Córdoba 02" },
+        { src: "/images/diseno-grafico/afiche3d/cordoba-03.jpg", alt: "Córdoba 03" },
+        { src: "/images/diseno-grafico/afiche3d/cordoba-04.jpg", alt: "Córdoba 04" },
+        { src: "/images/diseno-grafico/afiche3d/cordoba-05.jpg", alt: "Córdoba 05" },
+        { src: "/images/diseno-grafico/afiche3d/cordoba-06.jpg", alt: "Córdoba 06" },
+        // Agregá más si tenés más imágenes
       ]},
     ],
   },
