@@ -149,12 +149,13 @@ const projectsData: Record<string, {
     categorySlug: "diseno-grafico",
     description: "Diseño de tapa y contratapa para una revista inspirada en el barrio porteño de Balvanera. El proyecto toma como punto de partida su identidad visual, su ritmo urbano y la diversidad cultural que lo caracteriza. A través del uso del color, la tipografía y la composición, busca reflejar el pulso cotidiano del barrio y su mezcla entre historia, tránsito y vida local.",
     sections: [
-      { type: "single-column-stack", images: [
-        { src: "/images/diseno-grafico/balvanera/balvanera-01.jpg", alt: "Balvanera 01" },
-        { src: "/images/diseno-grafico/Balvanera/balvanera-02.jpg", alt: "Balvanera 02" },
-      ]},
-    ],
-  },
+      { 
+        type: "two-column-grid", 
+        images: [
+          { src: "/images/diseno-grafico/balvanera/balvanera-01.jpg", alt: "Balvanera 01" },
+          {  src: "/images/diseno-grafico/Balvanera/balvanera-02.jpg", alt: "Balvanera 02" }
+        ]
+      },
 
   // CORPORATIVO projects
   "carteles-bosch": {
