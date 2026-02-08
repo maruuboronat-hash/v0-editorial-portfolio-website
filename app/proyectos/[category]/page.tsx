@@ -22,7 +22,12 @@ const categoriesData: Record<string, {
   title: "Postales I Julio Cortazar",
   image: "/images/diseno-grafico/postales/postales-portada.jpg" // ← Imagen de portada
 },
-      { id: "revista-clara-cava", title: "Revista Clara Cava" },
+      { 
+  id: "revista-clara-cava", 
+  title: "Revista Clara Cava",
+  image: "/images/diseno-grafico/clara-cava/clara-01.jpg" // ← Imagen de portada
+},
+
       { id: "afiche-3d-cordoba", title: "Afiche 3D I Córdoba" },
       { id: "afiches-tipograficos", title: "Afiches tipográficos" },
       { id: "cuento-infantil-3d", title: "Cuento infantil I Ilustración 3D" },
