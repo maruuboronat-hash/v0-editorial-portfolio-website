@@ -160,34 +160,86 @@ const projectsData: Record<string, {
   },
   // CORPORATIVO projects
   "carteles-bosch": {
-    title: "Carteles en vía pública I Robert Bosch Argentina",
+    title: "Robert Bosch Argentina",
     category: "Corporativo",
     categorySlug: "corporativo",
-    description: "Gracias a mi pasantía en Robert Bosch Argentina, pude diseñar y producir carteles para vía pública destinados a promocionar el Centro de Capacitación Bosch. Las piezas respetan la identidad visual de la marca y se adaptan a distintos formatos y soportes exteriores.",
+    description: "Trabajos realizados durante mi pasantía en Robert Bosch Argentina. Incluye diseño de cartelería para vía pública, materiales POP y merchandising corporativo para el Centro de Capacitación Bosch.",
     sections: [
-      { type: "single-column-stack", images: [
-        { src: "/images/corporativo/via-publica/viapublica-02.jpg", alt: "Cartel 01" },
-        { src: "/images/corporativo/via-publica/viapublica-01.jpg", alt: "Cartel 02" },
-        { src: "/images/corporativo/via-publica/viapublica-04.jpeg", alt: "Cartel 03" },
-        { src: "/images/corporativo/via-publica/viapublica-03.jpeg", alt: "Cartel 04" },
-        { src: "/images/corporativo/via-publica/viapublica-05.jpeg", alt: "Cartel 05" },
-        { src: "/images/corporativo/via-publica/viapublica-06.jpeg", alt: "Cartel 06" },
-        { src: "/images/corporativo/via-publica/viapublica-07.jpeg", alt: "Cartel 07" },
-        { src: "/images/corporativo/via-publica/viapublica-08.jpeg", alt: "Cartel 08" },
-      ]},
-    ],
+      // SECCIÓN 1: Carteles en vía pública
+      { type: "text", title: "Carteles en vía pública", content: "" },
+      { 
+        type: "two-column-grid", 
+        images: [
+          { src: "/images/corporativo/via-publica/viapublica-01.jpg", alt: "Cartel 01" },
+          { src: "/images/corporativo/via-publica/viapublica-02.jpg", alt: "Cartel 02" },
+          { src: "/images/corporativo/via-publica/viapublica-03.jpeg", alt: "Cartel 03" },
+          { src: "/images/corporativo/via-publica/viapublica-04.jpeg", alt: "Cartel 04" },
+          { src: "/images/corporativo/via-publica/viapublica-05.jpeg", alt: "Cartel 05" },
+          { src: "/images/corporativo/via-publica/viapublica-06.jpeg", alt: "Cartel 06" },
+          { src: "/images/corporativo/via-publica/viapublica-07.jpeg", alt: "Cartel 07" },
+          { src: "/images/corporativo/via-publica/viapublica-08.jpeg", alt: "Cartel 08" },
+        ]
+      },
+      
+      // SECCIÓN 2: Materiales POP (si tenés imágenes)
+      { type: "text", title: "Materiales POP", content: "" },
+      { 
+        type: "two-column-grid", 
+        images: [
+          // { src: "/images/corporativo/bosch-pop/pop-01.jpg", alt: "POP 01" },
+          // { src: "/images/corporativo/bosch-pop/pop-02.jpg", alt: "POP 02" },
+          // Agregá tus imágenes POP aquí cuando las tengas
+        ]
+      },
+      
+      // SECCIÓN 3: Merchandising (si tenés imágenes)
+      { type: "text", title: "Merchandising", content: "" },
+      { 
+        type: "two-column-grid", 
+        images: [
+          // { src: "/images/corporativo/bosch-merch/merch-01.jpg", alt: "Merch 01" },
+          // { src: "/images/corporativo/bosch-merch/merch-02.jpg", alt: "Merch 02" },
+          // Agregá tus imágenes de merchandising aquí cuando las tengas
+        ]
+      }
+    ]
   },
+  
   "power-bi-picklog": {
-    title: "Power BI I Plantillas de logística I Pick&Log",
+    title: "Pick&Log",
     category: "Corporativo",
     categorySlug: "corporativo",
-    description: "Proyecto realizado para la empresa Pick&Log. Diseño de plantillas visuales y dashboards en Power BI para un sistema de gestión logística. El trabajo combina diseño funcional y visualización de datos para mejorar la lectura y el seguimiento de indicadores operativos.",
+    description: "Diseño de plantillas visuales y dashboards en Power BI para el sistema de gestión logística de Pick&Log. El trabajo combina diseño funcional y visualización de datos para mejorar la lectura y el seguimiento de indicadores operativos.",
     sections: [
-      { type: "single-column-stack", images: [
-        { src: "/images/corporativo/powerbi/power-01.jpg", alt: "Plantilla 01" },
-      ]},
-    ],
+      // SECCIÓN: Power BI - Plantillas de logística
+      { type: "text", title: "Power BI - Plantillas de logística", content: "" },
+      { 
+        type: "two-column-grid", 
+        images: [
+          { src: "/images/corporativo/powerbi/power-01.jpg", alt: "Dashboard 01" },
+          // { src: "/images/corporativo/powerbi/power-02.jpg", alt: "Dashboard 02" },
+          // Agregá más imágenes de Power BI aquí cuando las tengas
+        ]
+      }
+    ]
   },
+  "cantiere": {
+    title: "Cantiere SA",
+    category: "Corporativo",
+    categorySlug: "corporativo",
+    description: "Diseño y desarrollo de la página web corporativa para Cantiere SA.",
+    sections: [
+      { type: "text", title: "Página Web", content: "" },
+      { 
+        type: "single-column-stack", 
+        images: [
+          // { src: "/images/corporativo/cantiere/web-01.jpg", alt: "Web 01" },
+          // { src: "/images/corporativo/cantiere/web-02.jpg", alt: "Web 02" },
+        ]
+      }
+    ]
+  },
+  */
 
   // INDUMENTARIA E ILUSTRACIÓN projects
   "indumentaria-placeholder": {
