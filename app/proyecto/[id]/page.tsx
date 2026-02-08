@@ -122,15 +122,14 @@ const projectsData: Record<string, {
     description: "Ejercicio de observación, modelado e iluminación digital a partir de tres objetos de uso cotidiano. El proyecto busca reproducir de forma precisa la materialidad, las proporciones y las condiciones lumínicas de cada elemento, explorando cómo el entorno y el punto de vista transforman su percepción. La propuesta combina técnica y composición para convertir objetos simples en escenas visualmente expresivas.",
     sections: [
       { type: "single-column-stack", images: [
-        { alt: "Objeto cotidiano principal" },
-      ]},
-      { type: "two-column-grid", images: [
-        { alt: "Objeto 1" },
-        { alt: "Objeto 2" },
-        { alt: "Objeto 3" },
-        { alt: "Objeto 4" },
-        { alt: "Objeto 5" },
-        { alt: "Objeto 6" },
+        { src: "/images/diseno-grafico/modelado3d/modelado-01.jpg", alt: "Modelado 01" },
+        { src: "/images/diseno-grafico/modelado3d/modelado-02.jpg", alt: "Modelado 02" },
+        { src: "/images/diseno-grafico/modelado3d/modelado-03.jpg", alt: "Modelado 03" },
+        { src: "/images/diseno-grafico/modelado3d/modelado-04.jpg", alt: "Modelado 04" },
+        { src: "/images/diseno-grafico/modelado3d/modelado-05.jpg", alt: "Modelado 05" },
+        { src: "/images/diseno-grafico/modelado3d/modelado-06.jpg", alt: "Modelado 06" },
+        { src: "/images/diseno-grafico/modelado3d/modelado-07.jpg", alt: "Modelado 07" },
+        { src: "/images/diseno-grafico/modelado3d/modelado-08.jpg", alt: "Modelado 08" },
       ]},
     ],
   },
