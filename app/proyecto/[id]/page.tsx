@@ -105,15 +105,25 @@ const projectsData: Record<string, {
     category: "Diseño Gráfico",
     categorySlug: "diseno-grafico",
     description: "Proyecto editorial que combina narrativa, diseño y modelado tridimensional. Basado en El hombrecito del azulejo, cuento de Manuel Mujica Lainez, se desarrollaron los personajes y escenarios mediante ilustración 3D, integrando color, textura y volumen para construir un universo visual coherente con el relato. Además, se diseñó y maquetó el libro completo, trabajando la relación entre texto e imagen para potenciar la narrativa desde lo visual.",
-    sections: [
-      { type: "single-column-stack", images: [
-        { alt: "Cuento infantil 1" },
-        { alt: "Cuento infantil 2" },
-        { alt: "Cuento infantil 3" },
-        { alt: "Cuento infantil 4" },
-        { alt: "Cuento infantil 5" },
-      ]},
-    ],
+sections: [
+     // SECCIÓN 2: Dos imágenes juntas
+  { 
+    type: "two-column-grid", 
+    images: [
+      { src: "/images/diseno-grafico/infantil/infantil-01.jpg",
+      { src: "/images/diseno-grafico/infantil/infantil-02.jpg",
+    ]
+    { type: "single-column-stack", images: [
+      { src: "/images/diseno-grafico/infantil/infantil-03.jpg",
+      { src: "/images/diseno-grafico/infantil/infantil-04.jpg",
+  },
+  // SECCIÓN 2: Dos imágenes juntas
+  { 
+    type: "two-column-grid", 
+    images: [
+      { src: "/images/diseno-grafico/infantil/infantil-05.jpg" },
+      { src: "/images/diseno-grafico/infantil/infantil-06.jpg" }
+    ]
   },
   "modelado-3d-objetos": {
     title: "Modelado 3D I Objetos cotidianos",
