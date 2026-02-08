@@ -41,16 +41,22 @@ const categoriesData: Record<string, {
       { id: "indumentaria-placeholder", title: "Proyecto de Indumentaria" },
     ],
   },
-  "personales": {
+   "personales": {
     title: "Proyectos Personales",
     description: "Exploraciones creativas y proyectos experimentales. Trabajos que nacen de la curiosidad y la libertad creativa.",
     projects: [
-      { id: "video-casamiento-1995", title: "Video de Casamiento y Luna de Miel I 1995" },
-      { id: "fotografia-analogica", title: "Fotografia analogica" },
+      { 
+        id: "video-casamiento-1995", 
+        title: "Video de Casamiento y Luna de Miel I 1995",
+        image: "/images/proyectos-personales/video-casamiento/casamiento-02.png" // ← AGREGÁ ESTO
+      },
+      { 
+        id: "fotografia-analogica", 
+        title: "Fotografia analogica",
+        image: "/images/proyectos-personales/fotografia-analogica/analogicas-03.jpg" // ← AGREGÁ ESTO
+      },
     ],
   },
-}
-
 type PageParams = Promise<{ category: string }>
 
 export default async function CategoryPage({ params }: { params: PageParams }) {
