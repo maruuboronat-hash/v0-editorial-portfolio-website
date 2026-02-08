@@ -27,8 +27,12 @@ const categoriesData: Record<string, {
   title: "Revista Clara Cava",
   image: "/images/diseno-grafico/clara-cava/clara-01.jpg" // ← Imagen de portada
 },
+      { 
+  id: "afiche-3d-cordoba", 
+  title: "Afiche 3D I Córdoba",
+  image: "/images/diseno-grafico/afiche3d/cordoba-01.jpg" // ← Imagen de portada
+},
 
-      { id: "afiche-3d-cordoba", title: "Afiche 3D I Córdoba" },
       { id: "afiches-tipograficos", title: "Afiches tipográficos" },
       { id: "cuento-infantil-3d", title: "Cuento infantil I Ilustración 3D" },
       { id: "modelado-3d-objetos", title: "Modelado 3D I Objetos cotidianos" },
