@@ -57,6 +57,31 @@ const categoriesData: Record<string, {
     ],
   },
 
+
+  "corporativo": {
+  title: "Corporativo",
+  description: "Trabajos realizados desde el area de Marketing y Comunicacion...",
+  empresas: [  // ← IMPORTANTE: usar "empresas" no "projects"
+    { 
+      id: "bosch", 
+      nombre: "Robert Bosch Argentina",  // ← "nombre" no "title"
+      imagen: "/images/corporativo/via-publica/viapublica-02.jpg",
+      descripcion: "Diseño de material POP, campañas de vía pública..."
+    },
+    { 
+      id: "picklog", 
+      nombre: "Pick&Log",
+      imagen: "/images/corporativo/powerbi/power-01.jpg",
+      descripcion: "Dashboard Power BI y herramientas..."
+    },
+    { 
+      id: "cantiere", 
+      nombre: "Cantiere SA",
+      imagen: "/images/corporativo/cantiere/portada.jpg",
+      descripcion: "Catálogos de productos..."
+    },
+  ],
+},
   
   // ========== TEXTO TEMPORAL PARA VER SI SE ACTUALIZA ==========
   "indumentaria-ilustracion": {
