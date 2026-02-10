@@ -57,7 +57,7 @@ const categoriesData = {
       { 
         id: "bosch", 
         nombre: "Robert Bosch Argentina",
-        imagen: "/images/corporativo/via-publica/viapublica-02.jpg",
+        imagen: "/images/corporativo/logos/portadas-logos-05.jpg",
         descripcion: "Desarrollo de material gráfico corporativo, campañas de comunicación y herramientas de marketing visual.",
         categorias: [
           {
@@ -89,7 +89,7 @@ const categoriesData = {
       { 
         id: "picklog", 
         nombre: "Pick&Log",
-        imagen: "/images/corporativo/powerbi/power-01.jpg",
+        imagen: "/images/corporativo/logos/portadas-logos-01.jpg",
         descripcion: "Desarrollo de dashboards y herramientas de visualización de datos para análisis logístico.",
         categorias: [
           {
@@ -105,7 +105,7 @@ const categoriesData = {
       { 
         id: "cantiere", 
         nombre: "Cantiere SA",
-        imagen: "/images/corporativo/cantiere/portada.jpg",
+        imagen: "/images/corporativo/logos/portadas-logos-02.jpg",
         descripcion: "Diseño web y desarrollo de identidad visual para empresa de construcción.",
         categorias: [
           {
