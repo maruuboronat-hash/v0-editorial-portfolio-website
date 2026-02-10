@@ -56,27 +56,71 @@ const categoriesData: Record<string, {
 
     ],
   },
+
+// CORPORATIVO:
+
 "corporativo": {
-    title: "Corporativo",
-    description: "Trabajos realizados desde el area de Marketing y Comunicacion. En empresas como Robert Bosch Argentina, Pick&Log y Cantiere SA. Combino diseno, estrategia y automatizacion para mejorar procesos y comunicacion visual interna.",
-    projects: [
-      { 
-        id: "carteles-bosch", 
-        title: "Robert Bosch Argentina",
-        image: "/images/corporativo/via-publica/viapublica-02.jpg"
-      },
-      { 
-        id: "power-bi-picklog", 
-        title: "Pick&Log",
-        image: "/images/corporativo/powerbi/power-01.jpg"
-      },
-      { 
-        id: "cantiere", 
-        title: "Cantiere SA",
-        image: "/images/corporativo/cantiere/portada.jpg"
-      },
-    ], // ← AQUÍ ESTÁ EL CORCHETE QUE FALTABA
-  }, // ← ESTO YA ESTABA
+  title: "Corporativo",
+  description: "Trabajos realizados desde el area de Marketing y Comunicacion. En empresas como Robert Bosch Argentina, Pick&Log y Cantiere SA. Combino diseno, estrategia y automatizacion para mejorar procesos y comunicacion visual interna.",
+  // En lugar de proyectos individuales, ahora son empresas
+  empresas: [
+    {
+      id: "bosch",
+      nombre: "Robert Bosch Argentina",
+      imagen: "/images/corporativo/via-publica/viapublica-02.jpg",
+      categorias: [
+        {
+          subtitulo: "Material POP",
+          imagenes: [
+            "/images/corporativo/bosch/pop-01.jpg",
+            "/images/corporativo/bosch/pop-02.jpg",
+            // ... más imágenes
+          ]
+        },
+        {
+          subtitulo: "Vía Pública",
+          imagenes: [
+            "/images/corporativo/bosch/viapublica-01.jpg",
+            "/images/corporativo/bosch/viapublica-02.jpg",
+          ]
+        },
+        // ... más categorías
+      ]
+    },
+    {
+      id: "picklog",
+      nombre: "Pick&Log",
+      imagen: "/images/corporativo/powerbi/power-01.jpg",
+      categorias: [
+        {
+          subtitulo: "Dashboard Power BI",
+          imagenes: [
+            "/images/corporativo/picklog/powerbi-01.jpg",
+            "/images/corporativo/picklog/powerbi-02.jpg",
+          ]
+        }
+      ]
+    },
+    {
+      id: "cantiere",
+      nombre: "Cantiere SA",
+      imagen: "/images/corporativo/cantiere/portada.jpg",
+      categorias: [
+        {
+          subtitulo: "Catálogo Productos",
+          imagenes: [
+            "/images/corporativo/cantiere/catalogo-01.jpg",
+            "/images/corporativo/cantiere/catalogo-02.jpg",
+          ]
+        }
+      ]
+    },
+  ]
+},
+
+
+
+  
   // ========== TEXTO TEMPORAL PARA VER SI SE ACTUALIZA ==========
   "indumentaria-ilustracion": {
     title: "Indumentaria e Ilustración",
