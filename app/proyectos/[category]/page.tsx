@@ -64,10 +64,10 @@ const categoriesData = {
             subtitulo: "Cartelería Vía Pública",
             imagenes: [
               "/images/corporativo/via-publica/viapublica-02.jpg",
-              "/images/corporativo/via-publica/viapublica-04.jpg",
-              "/images/corporativo/via-publica/viapublica-07.jpg",
-              "/images/corporativo/via-publica/viapublica-05.jpg",
-              "/images/corporativo/via-publica/viapublica-08.jpg",
+              "/images/corporativo/via-publica/viapublica-04.jpeg",
+              "/images/corporativo/via-publica/viapublica-07.jpeg",
+              "/images/corporativo/via-publica/viapublica-05.jpeg",
+              "/images/corporativo/via-publica/viapublica-08.jpeg",
             ]
           },
           {
