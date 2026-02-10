@@ -63,9 +63,11 @@ const categoriesData = {
           {
             subtitulo: "Cartelería Vía Pública",
             imagenes: [
-              "/images/corporativo/bosch/via-publica-01.jpg",
-              "/images/corporativo/bosch/via-publica-02.jpg",
-              "/images/corporativo/bosch/via-publica-03.jpg",
+              "/images/corporativo/via-publica/viapublica-02.jpg",
+              "/images/corporativo/via-publica/viapublica-04.jpg",
+              "/images/corporativo/via-publica/viapublica-07.jpg",
+              "/images/corporativo/via-publica/viapublica-05.jpg",
+              "/images/corporativo/via-publica/viapublica-08.jpg",
             ]
           },
           {
