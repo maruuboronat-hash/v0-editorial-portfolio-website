@@ -57,34 +57,6 @@ const categoriesData: Record<string, {
     ],
   },
 
-// CORPORATIVO:
-
-// En tu archivo actual, reemplazá solo la sección "corporativo":
-
-"corporativo": {
-  title: "Corporativo",
-  description: "Trabajos realizados desde el area de Marketing y Comunicacion. En empresas como Robert Bosch Argentina, Pick&Log y Cantiere SA. Combino diseno, estrategia y automatizacion para mejorar procesos y comunicacion visual interna.",
-  empresas: [  // ← Cambiar "projects" por "empresas"
-    { 
-      id: "bosch", 
-      title: "Robert Bosch Argentina",
-      image: "/images/corporativo/via-publica/viapublica-02.jpg"
-    },
-    { 
-      id: "picklog", 
-      title: "Pick&Log",
-      image: "/images/corporativo/powerbi/power-01.jpg"
-    },
-    { 
-      id: "cantiere", 
-      title: "Cantiere SA",
-      image: "/images/corporativo/cantiere/portada.jpg"
-    },
-  ],
-},
-
-
-
   
   // ========== TEXTO TEMPORAL PARA VER SI SE ACTUALIZA ==========
   "indumentaria-ilustracion": {
