@@ -1,128 +1,239 @@
+"use client"
+
+import { useState } from "react"
 import Link from "next/link"
-import { notFound } from "next/navigation"
-import { ContactSection } from "@/components/contact-section"
-import { CategoryContent } from "./category-content"
+import Image from "next/image"
+import { ScrollReveal } from "@/hooks/use-scroll-reveal"
 
-const categoriesData: Record<string, {
+interface Project {
+  id: string
   title: string
-  description: string
-  projects: Array<{ id: string; title: string; image?: string }> // ← AGREGADO: image?
-}> = {
-  "diseno-grafico": {
-    title: "Diseno Gráfico",
-    description: "Proyectos de diseno editorial, diseno 3D, comunicacion visual e investigacion tipografica desarrollados durante la carrera de Diseno Grafico y Comunicacion.",
-    projects: [
-      { 
-        id: "diario-oasis", 
-        title: "Diario de Oasis I Backstage Times",
-        image: "/images/diseno-grafico/oasis/oasis-02.jpg"
-      },
-{ 
-  id: "postales-cortazar", 
-  title: "Postales I Julio Cortazar",
-  image: "/images/diseno-grafico/postales/postales-portada.jpg" // ← Imagen de portada
-},
-      { 
-  id: "revista-clara-cava", 
-  title: "Revista Clara Cava",
-  image: "/images/diseno-grafico/clara-cava/clara-01.jpg" // ← Imagen de portada
-},
-      { 
-  id: "afiche-3d-cordoba", 
-  title: "Afiche 3D I Córdoba",
-  image: "/images/diseno-grafico/afiche3d/cordoba-01.jpg" // ← Imagen de portada
-},
-            { 
-  id: "afiches-tipograficos", 
-  title: "Afiches tipográficos",
-  image: "/images/diseno-grafico/afiche-tipografico/tipografia-portada.jpg" // ← Imagen de portada
-},
-      { 
-  id: "revista-balvanera", 
-  title: "Revista Balvanera I Tapa y contratapa",
-  image: "/images/diseno-grafico/balvanera/balvanera-portada-01.jpg" // ← Imagen de portada
-},
-      { 
-  id: "modelado-3d-objetos", 
-  title: "Modelado 3D I Objetos cotidianos",
-  image: "/images/diseno-grafico/modelado3d/modelado-02.jpg" // ← Imagen de portada
-},
-      { 
-  id: "cuento-infantil-3d", 
-  title: "Cuento infantil I Ilustración 3D",
-  image: "/images/diseno-grafico/infantil/infantil-portada-01.jpg" // ← Imagen de portada
-},
+  image?: string
+}
+
+interface Empresa {
+  id: string
+  nombre: string
+  imagen: string
+  descripcion?: string
+  categorias?: Array<{
+    subtitulo: string
+    imagenes: string[]
+  }>
+}
+
+interface CategoryContentProps {
+  categoryData: {
+    title: string
+    description: string
+    projects?: Array<Project>
+    empresas?: Array<Empresa>
+  }
+}
+
+export function CategoryContent({ categoryData }: CategoryContentProps) {
+  const [empresaSeleccionada, setEmpresaSeleccionada] = useState<string | null>(null)
+
+  // ========== CASO CORPORATIVO ==========
+  if (categoryData.empresas) {
+    // Si hay una empresa seleccionada, mostrar sus categorías
+    if (empresaSeleccionada) {
+      const empresa = categoryData.empresas.find(e => e.id === empresaSeleccionada)
       
+      if (!empresa || !empresa.categorias) {
+        return (
+          <div className="pt-24 min-h-screen px-6 md:px-12">
+            <button
+              onClick={() => setEmpresaSeleccionada(null)}
+              className="text-sm uppercase tracking-widest text-muted-foreground hover:text-foreground transition-colors mb-8"
+            >
+              ← Volver a empresas
+            </button>
+            <p>No hay categorías para esta empresa.</p>
+          </div>
+        )
+      }
 
-    ],
-  },
+      return (
+        <div className="pt-24 min-h-screen">
+          {/* BOTÓN PARA VOLVER */}
+          <div className="px-6 md:px-12 mb-8">
+            <button
+              onClick={() => setEmpresaSeleccionada(null)}
+              className="text-sm uppercase tracking-widest text-muted-foreground hover:text-foreground transition-colors"
+            >
+              ← Volver a empresas
+            </button>
+          </div>
 
+          {/* ENCABEZADO DE LA EMPRESA */}
+          <ScrollReveal as="header" className="px-6 md:px-12 mb-16">
+            <div className="max-w-6xl mx-auto">
+              <h1 className="scroll-reveal-child font-heading text-4xl md:text-6xl tracking-tight mb-6">
+                {empresa.nombre}
+              </h1>
+              {empresa.descripcion && (
+                <p className="scroll-reveal-child text-base md:text-lg text-muted-foreground max-w-3xl leading-relaxed">
+                  {empresa.descripcion}
+                </p>
+              )}
+            </div>
+          </ScrollReveal>
 
-  "corporativo": {
-  title: "Corporativo",
-  description: "Trabajos realizados desde el area de Marketing y Comunicacion...",
-  empresas: [  // ← IMPORTANTE: usar "empresas" no "projects"
-    { 
-      id: "bosch", 
-      nombre: "Robert Bosch Argentina",  // ← "nombre" no "title"
-      imagen: "/images/corporativo/via-publica/viapublica-02.jpg",
-      descripcion: "Diseño de material POP, campañas de vía pública..."
-    },
-    { 
-      id: "picklog", 
-      nombre: "Pick&Log",
-      imagen: "/images/corporativo/powerbi/power-01.jpg",
-      descripcion: "Dashboard Power BI y herramientas..."
-    },
-    { 
-      id: "cantiere", 
-      nombre: "Cantiere SA",
-      imagen: "/images/corporativo/cantiere/portada.jpg",
-      descripcion: "Catálogos de productos..."
-    },
-  ],
-},
-  
-  // ========== TEXTO TEMPORAL PARA VER SI SE ACTUALIZA ==========
-  "indumentaria-ilustracion": {
-    title: "Indumentaria e Ilustración",
-    description: "Serie de proyectos vinculados al diseno de indumentaria y la experimentacion visual desde el cuerpo, la forma y la textura.",
-    projects: [
-      { id: "indumentaria-placeholder", title: "Proyecto de Indumentaria" },
-    ],
-  },
-  "personales": {  // ← CORREGIDO: estaba mal indentado
-    title: "Proyectos Personales",
-    description: "Exploraciones creativas y proyectos experimentales. Trabajos que nacen de la curiosidad y la libertad creativa.",
-    projects: [
-      { 
-        id: "video-casamiento-1995", 
-        title: "Video de Casamiento y Luna de Miel I 1995",
-        image: "/images/proyectos-personales/video-casamiento/casamiento-02.png"
-      },
-      { 
-        id: "fotografia-analogica", 
-        title: "Fotografía analógica",
-        image: "/images/proyectos-personales/analogicas/analogicas-portada.JPG"
-      },
-    ],
-  },
-}  // ← ESTA LLAVE FALTABA
+          {/* CATEGORÍAS DE LA EMPRESA */}
+          <ScrollReveal as="section" className="px-6 md:px-12 pb-16">
+            <div className="max-w-6xl mx-auto space-y-16">
+              {empresa.categorias.map((categoria, index) => (
+                <div key={index} className="pl-6 md:pl-8 border-l-2 border-gray-200">
+                  <h3 className="font-heading text-2xl md:text-3xl tracking-tight mb-8">
+                    {categoria.subtitulo}
+                  </h3>
+                  
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+                    {categoria.imagenes.map((imagen, imgIndex) => (
+                      <div 
+                        key={imgIndex} 
+                        className="aspect-square bg-muted relative rounded-lg overflow-hidden group cursor-pointer"
+                      >
+                        <Image
+                          src={imagen}
+                          alt={`${categoria.subtitulo} - Imagen ${imgIndex + 1}`}
+                          fill
+                          className="object-cover group-hover:scale-105 transition-transform duration-500"
+                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        />
+                        <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/5 transition-colors duration-500" />
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </ScrollReveal>
+        </div>
+      )
+    }
 
-type PageParams = Promise<{ category: string }>
+    // Si NO hay empresa seleccionada, mostrar lista de empresas
+    return (
+      <>
+        <ScrollReveal as="header" className="px-6 md:px-12 mb-16">
+          <div className="max-w-6xl mx-auto">
+            <Link
+              href="/proyectos"
+              className="scroll-reveal-child text-xs uppercase tracking-widest text-muted-foreground hover:text-foreground transition-colors mb-8 inline-block"
+            >
+              Proyectos
+            </Link>
+            <h1 className="scroll-reveal-child font-heading text-4xl md:text-6xl tracking-tight mb-6">
+              {categoryData.title}
+            </h1>
+            <p className="scroll-reveal-child text-base md:text-lg text-muted-foreground max-w-3xl leading-relaxed">
+              {categoryData.description}
+            </p>
+          </div>
+        </ScrollReveal>
 
-export default async function CategoryPage({ params }: { params: PageParams }) {
-  const { category } = await params
-  const categoryData = categoriesData[category]
-
-  if (!categoryData) {
-    notFound()
+        {/* LISTA DE EMPRESAS */}
+        <ScrollReveal as="section" className="px-6 md:px-12">
+          <div className="max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1">
+              {categoryData.empresas.map((empresa) => (
+                <button
+                  key={empresa.id}
+                  onClick={() => setEmpresaSeleccionada(empresa.id)}
+                  className="scroll-reveal-child group bg-background text-left w-full"
+                >
+                  {/* IMAGEN DE LA EMPRESA */}
+                  <div className="aspect-[4/3] bg-muted relative overflow-hidden">
+                    <Image
+                      src={empresa.imagen}
+                      alt={empresa.nombre}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    />
+                    <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/5 transition-colors duration-500" />
+                  </div>
+                  
+                  {/* INFO DE LA EMPRESA */}
+                  <div className="py-6">
+                    <h2 className="font-heading text-lg md:text-xl group-hover:opacity-70 transition-opacity mb-2">
+                      {empresa.nombre}
+                    </h2>
+                    {empresa.descripcion && (
+                      <p className="text-sm text-muted-foreground">
+                        {empresa.descripcion}
+                      </p>
+                    )}
+                  </div>
+                </button>
+              ))}
+            </div>
+          </div>
+        </ScrollReveal>
+      </>
+    )
   }
 
+  // ========== CASO CATEGORÍAS NORMALES ==========
   return (
-    <div className="pt-24 min-h-screen">
-      <CategoryContent categoryData={categoryData} />
-      <ContactSection />
-    </div>
+    <>
+      <ScrollReveal as="header" className="px-6 md:px-12 mb-16">
+        <div className="max-w-6xl mx-auto">
+          <Link
+            href="/proyectos"
+            className="scroll-reveal-child text-xs uppercase tracking-widest text-muted-foreground hover:text-foreground transition-colors mb-8 inline-block"
+          >
+            Proyectos
+          </Link>
+          <h1 className="scroll-reveal-child font-heading text-4xl md:text-6xl tracking-tight mb-6">
+            {categoryData.title}
+          </h1>
+          <p className="scroll-reveal-child text-base md:text-lg text-muted-foreground max-w-3xl leading-relaxed">
+            {categoryData.description}
+          </p>
+        </div>
+      </ScrollReveal>
+
+      <ScrollReveal as="section" className="px-6 md:px-12">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-1">
+            {categoryData.projects?.map((project) => (
+              <Link
+                key={project.id}
+                href={`/proyecto/${project.id}`}
+                className="scroll-reveal-child group bg-background"
+              >
+                {/* PROJECT IMAGE */}
+                <div className="aspect-[4/3] bg-muted relative overflow-hidden">
+                  {project.image ? (
+                    <Image
+                      src={project.image}
+                      alt={project.title}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                    />
+                  ) : (
+                    <div className="absolute inset-0 flex items-center justify-center text-muted-foreground text-xs uppercase tracking-widest opacity-30 px-4 text-center">
+                      {project.title}
+                    </div>
+                  )}
+                  <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/5 transition-colors duration-500" />
+                </div>
+                
+                {/* PROJECT INFO */}
+                <div className="py-6">
+                  <h2 className="font-heading text-lg md:text-xl group-hover:opacity-70 transition-opacity">
+                    {project.title}
+                  </h2>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </ScrollReveal>
+    </>
   )
 }
