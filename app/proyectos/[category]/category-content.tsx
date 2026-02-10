@@ -1,8 +1,8 @@
 "use client"
 
 import Link from "next/link"
-import { ScrollReveal } from "@/hooks/use-scroll-reveal"
 import Image from "next/image"
+import { ScrollReveal } from "@/hooks/use-scroll-reveal"
 
 interface Project {
   id: string
@@ -140,13 +140,16 @@ export function CategoryContent({ categoryData }: CategoryContentProps) {
                 href={`/proyecto/${project.id}`}
                 className="scroll-reveal-child group bg-background"
               >
-                {/* PROJECT IMAGE - REAL O PLACEHOLDER */}
+                {/* PROJECT IMAGE - USANDO Image DE NEXT.JS */}
                 <div className="aspect-[4/3] bg-muted relative overflow-hidden">
                   {project.image ? (
-                    <img 
-                      src={project.image} 
+                    // USAMOS Image DE NEXT.JS EN LUGAR DE img
+                    <Image
+                      src={project.image}
                       alt={project.title}
-                      className="w-full h-full object-cover"
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
                     />
                   ) : (
                     <div className="absolute inset-0 flex items-center justify-center text-muted-foreground text-xs uppercase tracking-widest opacity-30 px-4 text-center">
