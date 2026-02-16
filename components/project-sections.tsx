@@ -1,3 +1,6 @@
+"use client"
+
+import { useState } from "react"
 import Image from "next/image"
 import { cn } from "@/lib/utils"
 
@@ -69,24 +72,66 @@ function Img({ src, alt, contain = false }: { src: string; alt?: string; contain
 ========================= */
 
 export function InfiniteCarousel({ images }: { images: Array<{ src: string; alt?: string }> }) {
+  const [currentIndex, setCurrentIndex] = useState(0)
+
+  const nextSlide = () => {
+    setCurrentIndex((prev) => (prev + 1) % images.length)
+  }
+
+  const prevSlide = () => {
+    setCurrentIndex((prev) => (prev - 1 + images.length) % images.length)
+  }
+
   return (
     <section className="w-full">
       <div className="relative w-full overflow-hidden py-4">
-        {/* Degradado izquierdo */}
-<div className="absolute left-0 top-0 bottom-0 w-24 z-10 pointer-events-none bg-gradient-to-r from-[#111111] via-[#111111]/80 to-transparent" />
-<div className="absolute right-0 top-0 bottom-0 w-24 z-10 pointer-events-none bg-gradient-to-l from-[#111111] via-[#111111]/80 to-transparent" />
+        {/* Degradados (se mantienen) */}
+        <div className="absolute left-0 top-0 bottom-0 w-24 z-10 pointer-events-none bg-gradient-to-r from-[#111111] via-[#111111]/80 to-transparent" />
+        <div className="absolute right-0 top-0 bottom-0 w-24 z-10 pointer-events-none bg-gradient-to-l from-[#111111] via-[#111111]/80 to-transparent" />
         
-        {/* Carrusel que se mueve automáticamente */}
-<div className="flex gap-6 animate-scroll" style={{ animationDuration: '45s' }}>
-          {/* Repetimos las imágenes 3 veces para efecto infinito */}
-          {[...images, ...images, ...images].map((img, index) => (
-            <div key={index} className="relative h-64 w-auto flex-shrink-0">
-              <img
-                src={img.src}
-                alt={img.alt || ""}
-                className="h-full w-auto rounded-lg shadow-lg hover:scale-105 transition-transform duration-300"
-              />
-            </div>
+        {/* Contenedor de la imagen actual */}
+        <div className="relative h-80 w-full flex justify-center items-center">
+          <img
+            src={images[currentIndex].src}
+            alt={images[currentIndex].alt || ""}
+            className="h-full w-auto rounded-lg shadow-lg"
+          />
+        </div>
+
+        {/* Flechas de navegación */}
+        <button
+          onClick={prevSlide}
+          className="absolute left-8 top-1/2 transform -translate-y-1/2 z-20 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full transition-all"
+          aria-label="Imagen anterior"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M15 18l-6-6 6-6"/>
+          </svg>
+        </button>
+        
+        <button
+          onClick={nextSlide}
+          className="absolute right-8 top-1/2 transform -translate-y-1/2 z-20 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full transition-all"
+          aria-label="Imagen siguiente"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M9 18l6-6-6-6"/>
+          </svg>
+        </button>
+
+        {/* Indicadores (puntitos) */}
+        <div className="flex justify-center gap-2 mt-6">
+          {images.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentIndex(index)}
+              className={`h-2 rounded-full transition-all ${
+                index === currentIndex 
+                  ? "w-6 bg-[#111111]" 
+                  : "w-2 bg-gray-400 hover:bg-gray-600"
+              }`}
+              aria-label={`Ir a imagen ${index + 1}`}
+            />
           ))}
         </div>
       </div>
