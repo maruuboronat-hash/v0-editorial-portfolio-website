@@ -166,7 +166,7 @@ const projectsData: Record<string, {
     description: "Trabajos realizados durante mi pasantía en Robert Bosch Argentina. Incluye diseño de cartelería para vía pública, materiales POP y merchandising corporativo para el Centro de Capacitación Bosch.",
     sections: [
       // SECCIÓN 1: Carteles en vía pública
-      { type: "text", title: "🚀 CARRUSEL - Carteles en vía pública", content: "" },
+      { type: "text", title: "Carteles en vía públicaa", content: "" },
       { 
         type: "infinite-carousel", // ← CAMBIADO A CARRUSEL
         images: [
