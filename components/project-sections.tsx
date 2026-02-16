@@ -13,10 +13,37 @@ export type SectionType =
   | { type: "three-column-grid"; images: Array<{ src: string; alt?: string }> }
   | { type: "text"; title?: string; content: string }
   | { type: "video-embed"; src: string; caption?: string }
+  | { type: "infinite-carousel"; images: Array<{ src: string; alt?: string }>; speed?: number } // ← NUEVO TIPO
 
 interface SectionProps {
   section: SectionType
   className?: string
+}
+
+/* =========================
+   ANIMACIÓN CSS
+========================= */
+
+const styles = `
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-scroll {
+  animation: scroll 30s linear infinite;
+}
+
+.animate-scroll:hover {
+  animation-play-state: paused;
+}
+`;
+
+// Inyectar los estilos en la página (solo en el cliente)
+if (typeof document !== 'undefined') {
+  const styleSheet = document.createElement("style");
+  styleSheet.innerText = styles;
+  document.head.appendChild(styleSheet);
 }
 
 /* =========================
@@ -30,11 +57,42 @@ function Img({ src, alt, contain = false }: { src: string; alt?: string; contain
         src={src}
         alt={alt || ""}
         fill
-        // CAMBIADO: object-contain → object-scale-down
         className={contain ? "object-scale-down" : "object-cover"}
         sizes="(max-width: 768px) 100vw, 1200px"
       />
     </div>
+  )
+}
+
+/* =========================
+   CARRUSEL INFINITO (NUEVO)
+========================= */
+
+export function InfiniteCarousel({ images }: { images: Array<{ src: string; alt?: string }> }) {
+  return (
+    <section className="w-full">
+      <div className="relative w-full overflow-hidden py-4">
+        {/* Degradado izquierdo */}
+        <div className="absolute left-0 top-0 bottom-0 w-24 z-10 pointer-events-none bg-gradient-to-r from-background via-background/80 to-transparent" />
+        
+        {/* Degradado derecho */}
+        <div className="absolute right-0 top-0 bottom-0 w-24 z-10 pointer-events-none bg-gradient-to-l from-background via-background/80 to-transparent" />
+        
+        {/* Carrusel que se mueve automáticamente */}
+        <div className="flex gap-6 animate-scroll">
+          {/* Repetimos las imágenes 3 veces para efecto infinito */}
+          {[...images, ...images, ...images].map((img, index) => (
+            <div key={index} className="relative h-64 w-auto flex-shrink-0">
+              <img
+                src={img.src}
+                alt={img.alt || ""}
+                className="h-full w-auto rounded-lg shadow-lg hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
   )
 }
 
@@ -117,12 +175,10 @@ export function ThreeColumnGrid({ section }: { section: Extract<SectionType, { t
   )
 }
 
-// COMPONENTE NUEVO PARA VIDEOS
 export function VideoEmbed({ section }: { section: Extract<SectionType, { type: "video-embed" }> }) {
   return (
     <section className="w-full">
       <div className="aspect-video relative bg-black rounded-lg overflow-hidden">
-        {/* REPRODUCTOR DE VIDEO */}
         <video 
           src={section.src}
           controls
@@ -140,7 +196,18 @@ export function VideoEmbed({ section }: { section: Extract<SectionType, { type: 
   )
 }
 
-
+export function TextSection({ section }: { section: Extract<SectionType, { type: "text" }> }) {
+  return (
+    <section className="max-w-3xl mx-auto">
+      {section.title && (
+        <h3 className="text-xs uppercase tracking-widest text-muted-foreground mb-4">
+          {section.title}
+        </h3>
+      )}
+      <p className="text-lg leading-relaxed">{section.content}</p>
+    </section>
+  )
+}
 
 /* =========================
    DISPATCHER
@@ -160,8 +227,10 @@ export function ProjectSection({ section }: SectionProps) {
       return <ThreeColumnGrid section={section} />
     case "text":
       return <TextSection section={section} />
-    case "video-embed": // ← AGREGÁ ESTA LÍNEA
-      return <VideoEmbed section={section} /> // ← Y ESTA LÍNEA
+    case "video-embed":
+      return <VideoEmbed section={section} />
+    case "infinite-carousel": // ← NUEVO CASO
+      return <InfiniteCarousel images={section.images} />
     default:
       return null
   }
