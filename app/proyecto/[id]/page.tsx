@@ -159,26 +159,23 @@ const projectsData: Record<string, {
     ]
   },
    // CORPORATIVO projects
-  "carteles-bosch": {
+"carteles-bosch": {
     title: "Robert Bosch Argentina",
     category: "Corporativo",
     categorySlug: "corporativo",
     description: "Trabajos realizados durante mi pasantía en Robert Bosch Argentina. Incluye diseño de cartelería para vía pública, materiales POP y merchandising corporativo para el Centro de Capacitación Bosch.",
     sections: [
       // ===== TRABAJO 1: Carteles en vía pública =====
-      // Subtítulo (más grande que el texto pero más chico que el título principal)
       { 
         type: "text", 
         title: "Carteles en vía pública", 
-        content: "" // Vacío porque el título ya está arriba
+        content: "" 
       },
-      // Descripción específica (texto más chico)
       { 
         type: "text", 
         title: "", 
         content: "Diseño y producción de cartelería para vía pública destinada a promocionar el Centro de Capacitación Bosch. Las piezas respetan la identidad visual de la marca y se adaptan a distintos formatos y soportes exteriores." 
       },
-      // Carrusel
       { 
         type: "infinite-carousel", 
         images: [
