@@ -73,14 +73,13 @@ function Img({ src, alt, contain = false }: { src: string; alt?: string; contain
 
 export function InfiniteCarousel({ images }: { images: Array<{ src: string; alt?: string }> }) {
   const [currentIndex, setCurrentIndex] = useState(0)
-  const totalImages = images.length
 
   const nextSlide = () => {
-    setCurrentIndex((prev) => (prev + 1) % totalImages)
+    setCurrentIndex((prev) => (prev + 1) % images.length)
   }
 
   const prevSlide = () => {
-    setCurrentIndex((prev) => (prev - 1 + totalImages) % totalImages)
+    setCurrentIndex((prev) => (prev - 1 + images.length) % images.length)
   }
 
   return (
@@ -90,78 +89,31 @@ export function InfiniteCarousel({ images }: { images: Array<{ src: string; alt?
         <div className="absolute left-0 top-0 bottom-0 w-32 z-10 pointer-events-none bg-gradient-to-r from-[#111111] via-[#111111]/80 to-transparent" />
         <div className="absolute right-0 top-0 bottom-0 w-32 z-10 pointer-events-none bg-gradient-to-l from-[#111111] via-[#111111]/80 to-transparent" />
 
-        {/* Contenedor del carrusel con flex y transform */}
-        <div className="overflow-hidden">
-          <div 
-            className="flex items-center gap-4 transition-transform duration-500 ease-out"
-            style={{
-              transform: `translateX(calc(50% - ${currentIndex * (280 + 16) + 140}px))`,
-              width: 'max-content'
-            }}
-          >
-            {/* Imagen anterior a la seleccionada (si existe) */}
-            {[...images, ...images, ...images].map((img, idx) => {
-              // Calculamos la posición relativa respecto al set central
-              const relativePos = idx - totalImages
-              const distance = Math.abs(relativePos - currentIndex)
-              
-              // Solo renderizamos un rango alrededor de la actual para no sobrecargar
-              if (Math.abs(distance) > 5) return null
-              
-              const isSelected = relativePos === currentIndex
-              
-              return (
-                <div
-                  key={idx}
-                  className="flex-shrink-0 cursor-pointer relative"
-                  style={{
-                    width: '280px',
-                    height: '320px',
-                  }}
-                  onClick={() => setCurrentIndex(relativePos)}
-                >
-                  <img
-                    src={img.src}
-                    alt={img.alt || ""}
-                    className="w-full h-full object-contain rounded-lg"
-                  />
-                  
-                  {/* Overlay oscuro para imágenes no seleccionadas */}
-                  {!isSelected && (
-                    <div 
-                      className="absolute inset-0 rounded-lg"
-                      style={{ 
-                        backgroundColor: '#111111',
-                        opacity: 0.7
-                      }}
-                    />
-                  )}
-                </div>
-              )
-            })}
-          </div>
+        {/* Contenedor de la imagen actual */}
+        <div className="relative h-96 w-full flex justify-center items-center">
+          <img
+            src={images[currentIndex].src}
+            alt={images[currentIndex].alt || ""}
+            className="h-full w-auto rounded-lg shadow-lg"
+          />
         </div>
 
-        {/* Flechas */}
+        {/* Flechas de navegación */}
         <button
           onClick={prevSlide}
-          className="absolute left-4 top-1/2 transform -translate-y-1/2 z-20 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full transition-all"
+          className="absolute left-8 top-1/2 transform -translate-y-1/2 z-20 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full transition-all"
         >
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M15 18l-6-6 6-6"/>
-          </svg>
+          ←
         </button>
         
         <button
           onClick={nextSlide}
-          className="absolute right-4 top-1/2 transform -translate-y-1/2 z-20 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full transition-all"
+          className="absolute right-8 top-1/2 transform -translate-y-1/2 z-20 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full transition-all"
         >
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M9 18l6-6-6-6"/>
-          </svg>
+          →
         </button>
 
-        {/* Indicadores */}
+        {/* Indicadores (puntitos) */}
         <div className="flex justify-center gap-2 mt-6">
           {images.map((_, index) => (
             <button
