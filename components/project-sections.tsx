@@ -233,17 +233,20 @@ export function VideoEmbed({ section }: { section: Extract<SectionType, { type: 
 
 export function TextSection({ section }: { section: Extract<SectionType, { type: "text" }> }) {
   return (
-    <section className="max-w-3xl mx-auto">
+    <section className="max-w-3xl mx-auto w-full">
       {section.title && (
-        <h3 className="text-xs uppercase tracking-widest text-muted-foreground mb-4">
+        <h3 className="text-2xl md:text-3xl font-heading tracking-tight mb-2">
           {section.title}
         </h3>
       )}
-      <p className="text-lg leading-relaxed">{section.content}</p>
+      {section.content && (
+        <p className="text-base md:text-lg leading-relaxed text-muted-foreground">
+          {section.content}
+        </p>
+      )}
     </section>
   )
 }
-
 /* =========================
    DISPATCHER
 ========================= */
