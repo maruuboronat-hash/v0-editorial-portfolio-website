@@ -82,26 +82,75 @@ export function InfiniteCarousel({ images }: { images: Array<{ src: string; alt?
     setCurrentIndex((prev) => (prev - 1 + images.length) % images.length)
   }
 
+  // Función para obtener índices con wrap-around
+  const getIndex = (offset: number) => {
+    return (currentIndex + offset + images.length) % images.length
+  }
+
   return (
     <section className="w-full">
-      <div className="relative w-full overflow-hidden py-4">
-        {/* Degradados (se mantienen) */}
-        <div className="absolute left-0 top-0 bottom-0 w-24 z-10 pointer-events-none bg-gradient-to-r from-[#111111] via-[#111111]/80 to-transparent" />
-        <div className="absolute right-0 top-0 bottom-0 w-24 z-10 pointer-events-none bg-gradient-to-l from-[#111111] via-[#111111]/80 to-transparent" />
-        
-        {/* Contenedor de la imagen actual */}
-        <div className="relative h-80 w-full flex justify-center items-center">
-          <img
-            src={images[currentIndex].src}
-            alt={images[currentIndex].alt || ""}
-            className="h-full w-auto rounded-lg shadow-lg"
-          />
+      <div className="relative w-full py-8">
+        {/* Degradados */}
+        <div className="absolute left-0 top-0 bottom-0 w-32 z-10 pointer-events-none bg-gradient-to-r from-[#111111] via-[#111111]/80 to-transparent" />
+        <div className="absolute right-0 top-0 bottom-0 w-32 z-10 pointer-events-none bg-gradient-to-l from-[#111111] via-[#111111]/80 to-transparent" />
+
+        {/* Contenedor del carrusel con scroll horizontal suave */}
+        <div className="overflow-x-auto overflow-y-hidden scrollbar-hide" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+          <div className="flex items-center gap-4 px-32" style={{ width: 'max-content' }}>
+            {/* Renderizamos todas las imágenes con escala según su posición */}
+            {images.map((img, idx) => {
+              // Calculamos la distancia desde el índice actual (con wrap)
+              const distance = Math.min(
+                Math.abs(idx - currentIndex),
+                Math.abs(idx - currentIndex + images.length),
+                Math.abs(idx - currentIndex - images.length)
+              )
+              
+              // Definimos escala y opacidad según distancia
+              let scale = 0.6
+              let opacity = 0.3
+              
+              if (distance === 0) {
+                // Imagen central
+                scale = 1
+                opacity = 1
+              } else if (distance === 1) {
+                // Imágenes inmediatamente anteriores/posteriores
+                scale = 0.8
+                opacity = 0.7
+              } else if (distance === 2) {
+                // Siguiente nivel
+                scale = 0.7
+                opacity = 0.5
+              }
+
+              return (
+                <div
+                  key={idx}
+                  className="flex-shrink-0 transition-all duration-500 ease-in-out cursor-pointer"
+                  style={{
+                    transform: `scale(${scale})`,
+                    opacity: opacity,
+                    width: 'auto',
+                    height: '320px',
+                  }}
+                  onClick={() => setCurrentIndex(idx)}
+                >
+                  <img
+                    src={img.src}
+                    alt={img.alt || ""}
+                    className="h-full w-auto rounded-lg shadow-lg"
+                  />
+                </div>
+              )
+            })}
+          </div>
         </div>
 
         {/* Flechas de navegación */}
         <button
           onClick={prevSlide}
-          className="absolute left-8 top-1/2 transform -translate-y-1/2 z-20 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full transition-all"
+          className="absolute left-4 top-1/2 transform -translate-y-1/2 z-20 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full transition-all"
           aria-label="Imagen anterior"
         >
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -111,7 +160,7 @@ export function InfiniteCarousel({ images }: { images: Array<{ src: string; alt?
         
         <button
           onClick={nextSlide}
-          className="absolute right-8 top-1/2 transform -translate-y-1/2 z-20 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full transition-all"
+          className="absolute right-4 top-1/2 transform -translate-y-1/2 z-20 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full transition-all"
           aria-label="Imagen siguiente"
         >
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
