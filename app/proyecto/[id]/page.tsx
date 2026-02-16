@@ -159,16 +159,16 @@ const projectsData: Record<string, {
     ]
   },
    // CORPORATIVO projects
-  "carteles-bosch": {
+   "carteles-bosch": {
     title: "Robert Bosch Argentina",
     category: "Corporativo",
     categorySlug: "corporativo",
     description: "Trabajos realizados durante mi pasantía en Robert Bosch Argentina. Incluye diseño de cartelería para vía pública, materiales POP y merchandising corporativo para el Centro de Capacitación Bosch.",
     sections: [
-      // SECCIÓN 1: Carteles en vía pública
-      { type: "text", title: "Carteles en vía pública", content: "" },
+      // SECCIÓN 1: Carteles en vía pública (ya activa)
+      { type: "text", title: "🚀 CARRUSEL - Carteles en vía pública", content: "" },
       { 
-        type: "infinite-carousel", // ← CAMBIADO A CARRUSEL
+        type: "infinite-carousel", 
         images: [
           { src: "/images/corporativo/via-publica/viapublica-01.jpg", alt: "Cartel 01" },
           { src: "/images/corporativo/via-publica/viapublica-02.jpg", alt: "Cartel 02" },
@@ -181,19 +181,27 @@ const projectsData: Record<string, {
         ]
       },
       
-      // SECCIÓN 2: Materiales POP (comentada)
-      // { type: "text", title: "Materiales POP", content: "" },
-      // { 
-      //   type: "infinite-carousel", 
-      //   images: []
-      // },
+      // SECCIÓN 2: Materiales POP (ACTIVADA con imágenes de prueba)
+      { type: "text", title: "Materiales POP", content: "" },
+      { 
+        type: "infinite-carousel", 
+        images: [
+          { src: "/images/corporativo/via-publica/viapublica-01.jpg", alt: "POP 01" },
+          { src: "/images/corporativo/via-publica/viapublica-02.jpg", alt: "POP 02" },
+          { src: "/images/corporativo/via-publica/viapublica-03.jpeg", alt: "POP 03" },
+        ]
+      },
       
-      // SECCIÓN 3: Merchandising (comentada)
-      // { type: "text", title: "Merchandising", content: "" },
-      // { 
-      //   type: "infinite-carousel", 
-      //   images: []
-      // }
+      // SECCIÓN 3: Merchandising (ACTIVADA con imágenes de prueba)
+      { type: "text", title: "Merchandising", content: "" },
+      { 
+        type: "infinite-carousel", 
+        images: [
+          { src: "/images/corporativo/via-publica/viapublica-04.jpeg", alt: "Merch 01" },
+          { src: "/images/corporativo/via-publica/viapublica-05.jpeg", alt: "Merch 02" },
+          { src: "/images/corporativo/via-publica/viapublica-06.jpeg", alt: "Merch 03" },
+        ]
+      }
     ]
   },
   
