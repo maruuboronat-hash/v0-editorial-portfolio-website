@@ -222,10 +222,9 @@ const projectsData: Record<string, {
     sections: [
       { type: "text", title: "Página Web", content: "" },
       { 
-        type: "infinite-carousel", // ← CAMBIADO A CARRUSEL
+        type: "infinite-carousel",
         images: [
-          // { src: "/images/corporativo/cantiere/web-01.jpg", alt: "Web 01" },
-          // { src: "/images/corporativo/cantiere/web-02.jpg", alt: "Web 02" },
+          { src: "/images/corporativo/via-publica/viapublica-01.jpg", alt: "Web 01" }, // IMAGEN DE PRUEBA
         ]
       }
     ]
