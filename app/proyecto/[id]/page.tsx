@@ -159,18 +159,26 @@ const projectsData: Record<string, {
     ]
   },
    // CORPORATIVO projects
-   "carteles-bosch": {
+  "carteles-bosch": {
     title: "Robert Bosch Argentina",
     category: "Corporativo",
     categorySlug: "corporativo",
     description: "Trabajos realizados durante mi pasantía en Robert Bosch Argentina. Incluye diseño de cartelería para vía pública, materiales POP y merchandising corporativo para el Centro de Capacitación Bosch.",
     sections: [
-      // SECCIÓN 1: Carteles en vía pública (ya activa)
-{ 
-  type: "text", 
-  title: "Carteles en vía pública", 
-  content: "LOREM." 
-},
+      // ===== TRABAJO 1: Carteles en vía pública =====
+      // Subtítulo (más grande que el texto pero más chico que el título principal)
+      { 
+        type: "text", 
+        title: "Carteles en vía pública", 
+        content: "" // Vacío porque el título ya está arriba
+      },
+      // Descripción específica (texto más chico)
+      { 
+        type: "text", 
+        title: "", 
+        content: "Diseño y producción de cartelería para vía pública destinada a promocionar el Centro de Capacitación Bosch. Las piezas respetan la identidad visual de la marca y se adaptan a distintos formatos y soportes exteriores." 
+      },
+      // Carrusel
       { 
         type: "infinite-carousel", 
         images: [
@@ -185,8 +193,17 @@ const projectsData: Record<string, {
         ]
       },
       
-      // SECCIÓN 2: Materiales POP (ACTIVADA con imágenes de prueba)
-      { type: "text", title: "Materiales POP", content: "" },
+      // ===== TRABAJO 2: Materiales POP =====
+      { 
+        type: "text", 
+        title: "Materiales POP", 
+        content: "" 
+      },
+      { 
+        type: "text", 
+        title: "", 
+        content: "Desarrollo de materiales promocionales para puntos de venta, incluyendo folletos, banners y displays interactivos para el lanzamiento de nuevos productos." 
+      },
       { 
         type: "infinite-carousel", 
         images: [
@@ -196,8 +213,17 @@ const projectsData: Record<string, {
         ]
       },
       
-      // SECCIÓN 3: Merchandising (ACTIVADA con imágenes de prueba)
-      { type: "text", title: "Merchandising", content: "" },
+      // ===== TRABAJO 3: Merchandising =====
+      { 
+        type: "text", 
+        title: "Merchandising", 
+        content: "" 
+      },
+      { 
+        type: "text", 
+        title: "", 
+        content: "Diseño de artículos promocionales y regalos corporativos para eventos internos y externos, reforzando la identidad de marca en cada pieza." 
+      },
       { 
         type: "infinite-carousel", 
         images: [
