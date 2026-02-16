@@ -73,107 +73,53 @@ function Img({ src, alt, contain = false }: { src: string; alt?: string; contain
 
 export function InfiniteCarousel({ images }: { images: Array<{ src: string; alt?: string }> }) {
   const [currentIndex, setCurrentIndex] = useState(0)
-  const carouselRef = useRef<HTMLDivElement>(null)
-
-  // Duplicamos las imágenes 3 veces para efecto infinito
-  const infiniteImages = [...images, ...images, ...images]
   const totalImages = images.length
-  const startIndex = totalImages // Empezamos desde el primer set duplicado
 
   const nextSlide = () => {
-    setCurrentIndex((prev) => prev + 1)
+    setCurrentIndex((prev) => (prev + 1) % totalImages)
   }
 
   const prevSlide = () => {
-    setCurrentIndex((prev) => prev - 1)
+    setCurrentIndex((prev) => (prev - 1 + totalImages) % totalImages)
   }
 
-  // Efecto para centrar la imagen seleccionada
-  useEffect(() => {
-    if (carouselRef.current) {
-      const container = carouselRef.current
-      const containerWidth = container.offsetWidth
-      const itemWidth = 280 // Mismo ancho que las imágenes
-      
-      // Calculamos la posición para centrar la imagen seleccionada
-      // startIndex es la posición donde empiezan las imágenes "reales"
-      const targetIndex = startIndex + currentIndex
-      
-      // La fórmula correcta para centrar:
-      // (ancho de cada imagen * índice) + (ancho/2) - (ancho del contenedor/2)
-      const scrollAmount = (targetIndex * itemWidth) + (itemWidth / 2) - (containerWidth / 2)
-      
-      container.scrollTo({
-        left: scrollAmount,
-        behavior: 'smooth'
-      })
-    }
-  }, [currentIndex, startIndex])
-
-  // Efecto para resetear el índice cuando llegamos a los bordes
-  useEffect(() => {
-    if (currentIndex >= totalImages) {
-      setTimeout(() => {
-        setCurrentIndex(0)
-        if (carouselRef.current) {
-          const container = carouselRef.current
-          const containerWidth = container.offsetWidth
-          const itemWidth = 280
-          // Misma fórmula para centrar
-          const scrollAmount = (startIndex * itemWidth) + (itemWidth / 2) - (containerWidth / 2)
-          container.scrollTo({
-            left: scrollAmount,
-            behavior: 'auto'
-          })
-        }
-      }, 500)
-    } else if (currentIndex < 0) {
-      setTimeout(() => {
-        setCurrentIndex(totalImages - 1)
-        if (carouselRef.current) {
-          const container = carouselRef.current
-          const containerWidth = container.offsetWidth
-          const itemWidth = 280
-          const scrollAmount = ((startIndex + totalImages - 1) * itemWidth) + (itemWidth / 2) - (containerWidth / 2)
-          container.scrollTo({
-            left: scrollAmount,
-            behavior: 'auto'
-          })
-        }
-      }, 500)
-    }
-  }, [currentIndex, totalImages, startIndex])
-   
   return (
     <section className="w-full">
       <div className="relative w-full py-8">
-        {/* Degradados laterales (más sutiles) */}
+        {/* Degradados */}
         <div className="absolute left-0 top-0 bottom-0 w-32 z-10 pointer-events-none bg-gradient-to-r from-[#111111] via-[#111111]/80 to-transparent" />
         <div className="absolute right-0 top-0 bottom-0 w-32 z-10 pointer-events-none bg-gradient-to-l from-[#111111] via-[#111111]/80 to-transparent" />
 
-        {/* Contenedor del carrusel */}
-        <div 
-          ref={carouselRef}
-          className="overflow-x-auto overflow-y-hidden scrollbar-hide"
-          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
-        >
-          <div className="flex items-center gap-4 px-32" style={{ width: 'max-content' }}>
-            {infiniteImages.map((img, idx) => {
-              // Calculamos si esta imagen es la seleccionada (considerando la duplicación)
-              const relativeIndex = idx - startIndex
-              const isSelected = relativeIndex === currentIndex
+        {/* Contenedor del carrusel con flex y transform */}
+        <div className="overflow-hidden">
+          <div 
+            className="flex items-center gap-4 transition-transform duration-500 ease-out"
+            style={{
+              transform: `translateX(calc(50% - ${currentIndex * (280 + 16) + 140}px))`,
+              width: 'max-content'
+            }}
+          >
+            {/* Imagen anterior a la seleccionada (si existe) */}
+            {[...images, ...images, ...images].map((img, idx) => {
+              // Calculamos la posición relativa respecto al set central
+              const relativePos = idx - totalImages
+              const distance = Math.abs(relativePos - currentIndex)
+              
+              // Solo renderizamos un rango alrededor de la actual para no sobrecargar
+              if (Math.abs(distance) > 5) return null
+              
+              const isSelected = relativePos === currentIndex
               
               return (
                 <div
                   key={idx}
-                  className="flex-shrink-0 transition-all duration-500 ease-in-out cursor-pointer relative"
+                  className="flex-shrink-0 cursor-pointer relative"
                   style={{
                     width: '280px',
                     height: '320px',
                   }}
-                  onClick={() => setCurrentIndex(relativeIndex)}
+                  onClick={() => setCurrentIndex(relativePos)}
                 >
-                  {/* Imagen */}
                   <img
                     src={img.src}
                     alt={img.alt || ""}
@@ -183,10 +129,10 @@ export function InfiniteCarousel({ images }: { images: Array<{ src: string; alt?
                   {/* Overlay oscuro para imágenes no seleccionadas */}
                   {!isSelected && (
                     <div 
-                      className="absolute inset-0 rounded-lg transition-opacity duration-500"
+                      className="absolute inset-0 rounded-lg"
                       style={{ 
                         backgroundColor: '#111111',
-                        opacity: 0.6
+                        opacity: 0.7
                       }}
                     />
                   )}
@@ -196,7 +142,7 @@ export function InfiniteCarousel({ images }: { images: Array<{ src: string; alt?
           </div>
         </div>
 
-        {/* Flechas de navegación */}
+        {/* Flechas */}
         <button
           onClick={prevSlide}
           className="absolute left-4 top-1/2 transform -translate-y-1/2 z-20 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full transition-all"
@@ -215,7 +161,7 @@ export function InfiniteCarousel({ images }: { images: Array<{ src: string; alt?
           </svg>
         </button>
 
-        {/* Indicadores (puntitos) - solo para las imágenes reales */}
+        {/* Indicadores */}
         <div className="flex justify-center gap-2 mt-6">
           {images.map((_, index) => (
             <button
@@ -233,6 +179,7 @@ export function InfiniteCarousel({ images }: { images: Array<{ src: string; alt?
     </section>
   )
 }
+
 /* =========================
    SECTIONS
 ========================= */
