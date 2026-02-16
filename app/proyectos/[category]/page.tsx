@@ -52,73 +52,22 @@ const categoriesData = {
 
   "corporativo": {
     title: "Corporativo",
-    description: "Trabajos realizados desde el área de Marketing y Comunicación. En empresas como Robert Bosch Argentina, Pick&Log y Cantiere SA. Combino diseño, estrategia y automatización para mejorar procesos y comunicación visual interna.",
-    empresas: [
+    description: "Trabajos realizados desde el área de Marketing y Comunicación. Combino diseño, estrategia y automatización para mejorar procesos y comunicación visual interna.",
+    projects: [
       { 
-        id: "bosch", 
-        nombre: "Robert Bosch Argentina",
-        imagen: "/images/corporativo/logos/portadas-logos-05.jpg",
-        descripcion: "Desarrollo de material gráfico corporativo, campañas de comunicación y herramientas de marketing visual.",
-        categorias: [
-          {
-            subtitulo: "Cartelería Vía Pública",
-            imagenes: [
-              "/images/corporativo/via-publica/viapublica-02.jpg",
-              "/images/corporativo/via-publica/viapublica-04.jpeg",
-              "/images/corporativo/via-publica/viapublica-07.jpeg",
-              "/images/corporativo/via-publica/viapublica-05.jpeg",
-              "/images/corporativo/via-publica/viapublica-08.jpeg",
-            ]
-          },
-          {
-            subtitulo: "Material POP",
-            imagenes: [
-              "/images/corporativo/bosch/pop-01.jpg",
-              "/images/corporativo/bosch/pop-02.jpg",
-              "/images/corporativo/bosch/pop-03.jpg",
-            ]
-          },
-          {
-            subtitulo: "Aplicación de Merchandising",
-            imagenes: [
-              "/images/corporativo/bosch/merchandising-01.jpg",
-              "/images/corporativo/bosch/merchandising-02.jpg",
-              "/images/corporativo/bosch/merchandising-03.jpg",
-            ]
-          }
-        ]
+        id: "carteles-bosch", 
+        title: "Robert Bosch Argentina",
+        image: "/images/corporativo/logos/portadas-logos-05.jpg"
       },
       { 
-        id: "picklog", 
-        nombre: "Pick&Log",
-        imagen: "/images/corporativo/logos/portadas-logos-01.jpg",
-        descripcion: "Desarrollo de dashboards y herramientas de visualización de datos para análisis logístico.",
-        categorias: [
-          {
-            subtitulo: "Plantillas para Power BI",
-            imagenes: [
-              "/images/corporativo/picklog/powerbi-01.jpg",
-              "/images/corporativo/picklog/powerbi-02.jpg",
-              "/images/corporativo/picklog/powerbi-03.jpg",
-            ]
-          }
-        ]
+        id: "power-bi-picklog", 
+        title: "Pick&Log",
+        image: "/images/corporativo/logos/portadas-logos-01.jpg"
       },
       { 
         id: "cantiere", 
-        nombre: "Cantiere SA",
-        imagen: "/images/corporativo/logos/portadas-logos-02.jpg",
-        descripcion: "Diseño web y desarrollo de identidad visual para empresa de construcción.",
-        categorias: [
-          {
-            subtitulo: "Diseño y estructura de Página Web",
-            imagenes: [
-              "/images/corporativo/cantiere/web-01.jpg",
-              "/images/corporativo/cantiere/web-02.jpg",
-              "/images/corporativo/cantiere/web-03.jpg",
-            ]
-          }
-        ]
+        title: "Cantiere SA",
+        image: "/images/corporativo/logos/portadas-logos-02.jpg"
       },
     ],
   },
