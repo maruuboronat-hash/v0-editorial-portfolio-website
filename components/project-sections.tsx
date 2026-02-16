@@ -83,7 +83,7 @@ export function InfiniteCarousel({ images }: { images: Array<{ src: string; alt?
   }
 
   return (
-    <section className="w-full">
+    <section className="w-full"> {/* Sin fondo */}
       <div className="relative w-full py-8">
         {/* Degradados */}
         <div className="absolute left-0 top-0 bottom-0 w-32 z-10 pointer-events-none bg-gradient-to-r from-[#111111] via-[#111111]/80 to-transparent" />
@@ -131,7 +131,6 @@ export function InfiniteCarousel({ images }: { images: Array<{ src: string; alt?
     </section>
   )
 }
-
 /* =========================
    SECTIONS
 ========================= */
