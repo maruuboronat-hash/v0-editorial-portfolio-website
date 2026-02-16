@@ -79,7 +79,7 @@ export function InfiniteCarousel({ images }: { images: Array<{ src: string; alt?
     if (currentIndex < images.length - 1) {
       setCurrentIndex(currentIndex + 1)
     } else {
-      setCurrentIndex(0) // Vuelve al principio
+      setCurrentIndex(0)
     }
   }
 
@@ -87,18 +87,16 @@ export function InfiniteCarousel({ images }: { images: Array<{ src: string; alt?
     if (currentIndex > 0) {
       setCurrentIndex(currentIndex - 1)
     } else {
-      setCurrentIndex(images.length - 1) // Va al final
+      setCurrentIndex(images.length - 1)
     }
   }
 
-  // Efecto para desplazar el carrusel cuando cambia currentIndex
   useEffect(() => {
     if (carouselRef.current) {
       const container = carouselRef.current
       const containerWidth = container.offsetWidth
-      const itemWidth = 320 // Ancho aproximado de cada imagen (ajustable)
+      const itemWidth = 320 // Ancho aproximado de referencia
       
-      // Calculamos el scroll para centrar la imagen seleccionada
       const scrollAmount = (currentIndex * itemWidth) - (containerWidth / 2) + (itemWidth / 2)
       
       container.scrollTo({
@@ -115,33 +113,30 @@ export function InfiniteCarousel({ images }: { images: Array<{ src: string; alt?
         <div className="absolute left-0 top-0 bottom-0 w-32 z-10 pointer-events-none bg-gradient-to-r from-[#111111] via-[#111111]/80 to-transparent" />
         <div className="absolute right-0 top-0 bottom-0 w-32 z-10 pointer-events-none bg-gradient-to-l from-[#111111] via-[#111111]/80 to-transparent" />
 
-        {/* Contenedor del carrusel con scroll */}
+        {/* Contenedor del carrusel */}
         <div 
           ref={carouselRef}
           className="overflow-x-auto overflow-y-hidden scrollbar-hide"
           style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
         >
-          <div className="flex items-center gap-4 px-32" style={{ width: 'max-content' }}>
+          <div className="flex items-end gap-4 px-32" style={{ width: 'max-content' }}>
             {images.map((img, idx) => {
-              // La imagen seleccionada es más grande
               const isSelected = idx === currentIndex
               
               return (
                 <div
                   key={idx}
-                  className={`flex-shrink-0 transition-all duration-500 ease-in-out cursor-pointer ${
-                    isSelected ? 'scale-110 z-20' : 'scale-90 opacity-70 hover:opacity-100'
-                  }`}
+                  className={`flex-shrink-0 transition-all duration-500 ease-in-out cursor-pointer`}
                   style={{
-                    width: 'auto',
-                    height: isSelected ? '360px' : '280px',
+                    width: isSelected ? '400px' : '240px',
+                    height: '300px', // Altura fija para todas
                   }}
                   onClick={() => setCurrentIndex(idx)}
                 >
                   <img
                     src={img.src}
                     alt={img.alt || ""}
-                    className="h-full w-auto rounded-lg shadow-lg"
+                    className="w-full h-full object-contain rounded-lg shadow-lg"
                   />
                 </div>
               )
@@ -149,11 +144,10 @@ export function InfiniteCarousel({ images }: { images: Array<{ src: string; alt?
           </div>
         </div>
 
-        {/* Flechas de navegación */}
+        {/* Flechas */}
         <button
           onClick={prevSlide}
           className="absolute left-4 top-1/2 transform -translate-y-1/2 z-20 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full transition-all"
-          aria-label="Imagen anterior"
         >
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <path d="M15 18l-6-6 6-6"/>
@@ -163,14 +157,13 @@ export function InfiniteCarousel({ images }: { images: Array<{ src: string; alt?
         <button
           onClick={nextSlide}
           className="absolute right-4 top-1/2 transform -translate-y-1/2 z-20 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full transition-all"
-          aria-label="Imagen siguiente"
         >
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <path d="M9 18l6-6-6-6"/>
           </svg>
         </button>
 
-        {/* Indicadores (puntitos) */}
+        {/* Indicadores */}
         <div className="flex justify-center gap-2 mt-6">
           {images.map((_, index) => (
             <button
@@ -181,7 +174,6 @@ export function InfiniteCarousel({ images }: { images: Array<{ src: string; alt?
                   ? "w-6 bg-[#111111]" 
                   : "w-2 bg-gray-400 hover:bg-gray-600"
               }`}
-              aria-label={`Ir a imagen ${index + 1}`}
             />
           ))}
         </div>
@@ -189,6 +181,7 @@ export function InfiniteCarousel({ images }: { images: Array<{ src: string; alt?
     </section>
   )
 }
+
 /* =========================
    SECTIONS
 ========================= */
