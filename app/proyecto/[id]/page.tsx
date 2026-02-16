@@ -181,27 +181,25 @@ const projectsData: Record<string, {
         ]
       },
       
-      // SECCIÓN 2: Materiales POP (si tenés imágenes)
-      { type: "text", title: "Materiales POP", content: "" },
-      { 
-        type: "two-column-grid", 
-        images: [
-          // { src: "/images/corporativo/bosch-pop/pop-01.jpg", alt: "POP 01" },
-          // { src: "/images/corporativo/bosch-pop/pop-02.jpg", alt: "POP 02" },
-          // Agregá tus imágenes POP aquí cuando las tengas
-        ]
-      },
+      // SECCIÓN 2: Materiales POP (comentada hasta tener imágenes)
+      // { type: "text", title: "Materiales POP", content: "" },
+      // { 
+      //   type: "two-column-grid", 
+      //   images: [
+      //     // { src: "/images/corporativo/bosch-pop/pop-01.jpg", alt: "POP 01" },
+      //     // { src: "/images/corporativo/bosch-pop/pop-02.jpg", alt: "POP 02" },
+      //   ]
+      // },
       
-      // SECCIÓN 3: Merchandising (si tenés imágenes)
-      { type: "text", title: "Merchandising", content: "" },
-      { 
-        type: "two-column-grid", 
-        images: [
-          // { src: "/images/corporativo/bosch-merch/merch-01.jpg", alt: "Merch 01" },
-          // { src: "/images/corporativo/bosch-merch/merch-02.jpg", alt: "Merch 02" },
-          // Agregá tus imágenes de merchandising aquí cuando las tengas
-        ]
-      }
+      // SECCIÓN 3: Merchandising (comentada hasta tener imágenes)
+      // { type: "text", title: "Merchandising", content: "" },
+      // { 
+      //   type: "two-column-grid", 
+      //   images: [
+      //     // { src: "/images/corporativo/bosch-merch/merch-01.jpg", alt: "Merch 01" },
+      //     // { src: "/images/corporativo/bosch-merch/merch-02.jpg", alt: "Merch 02" },
+      //   ]
+      // }
     ]
   },
   
@@ -218,7 +216,6 @@ const projectsData: Record<string, {
         images: [
           { src: "/images/corporativo/powerbi/power-01.jpg", alt: "Dashboard 01" },
           // { src: "/images/corporativo/powerbi/power-02.jpg", alt: "Dashboard 02" },
-          // Agregá más imágenes de Power BI aquí cuando las tengas
         ]
       }
     ]
