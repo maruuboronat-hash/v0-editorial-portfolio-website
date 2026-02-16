@@ -235,7 +235,7 @@ export function TextSection({ section }: { section: Extract<SectionType, { type:
   return (
     <section className="w-full">
       {section.title && (
-        <h3 className="text-2xl md:text-3xl font-heading tracking-tight mb-2">
+        <h3 className="text-2xl md:text-3xl font-heading tracking-tight mb-1">
           {section.title}
         </h3>
       )}
