@@ -233,7 +233,7 @@ export function VideoEmbed({ section }: { section: Extract<SectionType, { type: 
 
 export function TextSection({ section }: { section: Extract<SectionType, { type: "text" }> }) {
   return (
-    <section className="max-w-3xl mx-auto w-full">
+    <section className="w-full">
       {section.title && (
         <h3 className="text-2xl md:text-3xl font-heading tracking-tight mb-2">
           {section.title}
@@ -247,6 +247,7 @@ export function TextSection({ section }: { section: Extract<SectionType, { type:
     </section>
   )
 }
+
 /* =========================
    DISPATCHER
 ========================= */
