@@ -158,7 +158,7 @@ const projectsData: Record<string, {
       }
     ]
   },
-  // CORPORATIVO projects
+   // CORPORATIVO projects
   "carteles-bosch": {
     title: "Robert Bosch Argentina",
     category: "Corporativo",
@@ -168,7 +168,7 @@ const projectsData: Record<string, {
       // SECCIÓN 1: Carteles en vía pública
       { type: "text", title: "Carteles en vía pública", content: "" },
       { 
-        type: "two-column-grid", 
+        type: "infinite-carousel", // ← CAMBIADO A CARRUSEL
         images: [
           { src: "/images/corporativo/via-publica/viapublica-01.jpg", alt: "Cartel 01" },
           { src: "/images/corporativo/via-publica/viapublica-02.jpg", alt: "Cartel 02" },
@@ -181,24 +181,18 @@ const projectsData: Record<string, {
         ]
       },
       
-      // SECCIÓN 2: Materiales POP (comentada hasta tener imágenes)
+      // SECCIÓN 2: Materiales POP (comentada)
       // { type: "text", title: "Materiales POP", content: "" },
       // { 
-      //   type: "two-column-grid", 
-      //   images: [
-      //     // { src: "/images/corporativo/bosch-pop/pop-01.jpg", alt: "POP 01" },
-      //     // { src: "/images/corporativo/bosch-pop/pop-02.jpg", alt: "POP 02" },
-      //   ]
+      //   type: "infinite-carousel", 
+      //   images: []
       // },
       
-      // SECCIÓN 3: Merchandising (comentada hasta tener imágenes)
+      // SECCIÓN 3: Merchandising (comentada)
       // { type: "text", title: "Merchandising", content: "" },
       // { 
-      //   type: "two-column-grid", 
-      //   images: [
-      //     // { src: "/images/corporativo/bosch-merch/merch-01.jpg", alt: "Merch 01" },
-      //     // { src: "/images/corporativo/bosch-merch/merch-02.jpg", alt: "Merch 02" },
-      //   ]
+      //   type: "infinite-carousel", 
+      //   images: []
       // }
     ]
   },
@@ -212,10 +206,9 @@ const projectsData: Record<string, {
       // SECCIÓN: Power BI - Plantillas de logística
       { type: "text", title: "Power BI - Plantillas de logística", content: "" },
       { 
-        type: "two-column-grid", 
+        type: "infinite-carousel", // ← CAMBIADO A CARRUSEL
         images: [
           { src: "/images/corporativo/powerbi/power-01.jpg", alt: "Dashboard 01" },
-          // { src: "/images/corporativo/powerbi/power-02.jpg", alt: "Dashboard 02" },
         ]
       }
     ]
@@ -229,7 +222,7 @@ const projectsData: Record<string, {
     sections: [
       { type: "text", title: "Página Web", content: "" },
       { 
-        type: "single-column-stack", 
+        type: "infinite-carousel", // ← CAMBIADO A CARRUSEL
         images: [
           // { src: "/images/corporativo/cantiere/web-01.jpg", alt: "Web 01" },
           // { src: "/images/corporativo/cantiere/web-02.jpg", alt: "Web 02" },
@@ -237,6 +230,8 @@ const projectsData: Record<string, {
       }
     ]
   },
+
+  
   // INDUMENTARIA E ILUSTRACIÓN projects
   "indumentaria-placeholder": {
     title: "Proyecto de Indumentaria",
