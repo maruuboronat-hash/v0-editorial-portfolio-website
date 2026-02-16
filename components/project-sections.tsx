@@ -73,11 +73,11 @@ export function InfiniteCarousel({ images }: { images: Array<{ src: string; alt?
     <section className="w-full">
       <div className="relative w-full overflow-hidden py-4">
         {/* Degradado izquierdo */}
-<div className="absolute left-0 top-0 bottom-0 w-24 z-10 pointer-events-none bg-gradient-to-r from-white via-white/80 to-transparent dark:from-black dark:via-black/80" />
-<div className="absolute right-0 top-0 bottom-0 w-24 z-10 pointer-events-none bg-gradient-to-l from-white via-white/80 to-transparent dark:from-black dark:via-black/80" />
+<div className="absolute left-0 top-0 bottom-0 w-24 z-10 pointer-events-none bg-gradient-to-r from-[#111111] via-[#111111]/80 to-transparent" />
+<div className="absolute right-0 top-0 bottom-0 w-24 z-10 pointer-events-none bg-gradient-to-l from-[#111111] via-[#111111]/80 to-transparent" />
         
         {/* Carrusel que se mueve automáticamente */}
-        <div className="flex gap-6 animate-scroll">
+<div className="flex gap-6 animate-scroll" style={{ animationDuration: '45s' }}>
           {/* Repetimos las imágenes 3 veces para efecto infinito */}
           {[...images, ...images, ...images].map((img, index) => (
             <div key={index} className="relative h-64 w-auto flex-shrink-0">
