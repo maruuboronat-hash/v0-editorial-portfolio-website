@@ -88,15 +88,20 @@ export function InfiniteCarousel({ images }: { images: Array<{ src: string; alt?
     setCurrentIndex((prev) => prev - 1)
   }
 
-  // Efecto para centrar la imagen seleccionada y manejar el loop infinito
+  // Efecto para centrar la imagen seleccionada
   useEffect(() => {
     if (carouselRef.current) {
       const container = carouselRef.current
       const containerWidth = container.offsetWidth
-      const itemWidth = 280 // Ancho aproximado de cada imagen
+      const itemWidth = 280 // Mismo ancho que las imágenes
       
-      // Calculamos scroll para centrar la imagen actual
-      const scrollAmount = ((startIndex + currentIndex) * itemWidth) - (containerWidth / 2) + (itemWidth / 2)
+      // Calculamos la posición para centrar la imagen seleccionada
+      // startIndex es la posición donde empiezan las imágenes "reales"
+      const targetIndex = startIndex + currentIndex
+      
+      // La fórmula correcta para centrar:
+      // (ancho de cada imagen * índice) + (ancho/2) - (ancho del contenedor/2)
+      const scrollAmount = (targetIndex * itemWidth) + (itemWidth / 2) - (containerWidth / 2)
       
       container.scrollTo({
         left: scrollAmount,
@@ -105,32 +110,31 @@ export function InfiniteCarousel({ images }: { images: Array<{ src: string; alt?
     }
   }, [currentIndex, startIndex])
 
-  // Efecto para resetear el índice cuando llegamos a los bordes (efecto infinito)
+  // Efecto para resetear el índice cuando llegamos a los bordes
   useEffect(() => {
     if (currentIndex >= totalImages) {
-      // Si avanzamos demasiado, volvemos al principio
       setTimeout(() => {
         setCurrentIndex(0)
         if (carouselRef.current) {
           const container = carouselRef.current
           const containerWidth = container.offsetWidth
           const itemWidth = 280
-          const scrollAmount = (startIndex * itemWidth) - (containerWidth / 2) + (itemWidth / 2)
+          // Misma fórmula para centrar
+          const scrollAmount = (startIndex * itemWidth) + (itemWidth / 2) - (containerWidth / 2)
           container.scrollTo({
             left: scrollAmount,
-            behavior: 'auto' // Sin animación para que sea instantáneo
+            behavior: 'auto'
           })
         }
       }, 500)
     } else if (currentIndex < 0) {
-      // Si retrocedemos demasiado, volvemos al final
       setTimeout(() => {
         setCurrentIndex(totalImages - 1)
         if (carouselRef.current) {
           const container = carouselRef.current
           const containerWidth = container.offsetWidth
           const itemWidth = 280
-          const scrollAmount = ((startIndex + totalImages - 1) * itemWidth) - (containerWidth / 2) + (itemWidth / 2)
+          const scrollAmount = ((startIndex + totalImages - 1) * itemWidth) + (itemWidth / 2) - (containerWidth / 2)
           container.scrollTo({
             left: scrollAmount,
             behavior: 'auto'
@@ -139,7 +143,7 @@ export function InfiniteCarousel({ images }: { images: Array<{ src: string; alt?
       }, 500)
     }
   }, [currentIndex, totalImages, startIndex])
-
+   
   return (
     <section className="w-full">
       <div className="relative w-full py-8">
