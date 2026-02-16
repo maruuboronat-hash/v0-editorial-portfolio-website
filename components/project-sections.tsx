@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useRef, useEffect } from "react"
 import Image from "next/image"
 import { cn } from "@/lib/utils"
 
@@ -73,19 +73,40 @@ function Img({ src, alt, contain = false }: { src: string; alt?: string; contain
 
 export function InfiniteCarousel({ images }: { images: Array<{ src: string; alt?: string }> }) {
   const [currentIndex, setCurrentIndex] = useState(0)
+  const carouselRef = useRef<HTMLDivElement>(null)
 
   const nextSlide = () => {
-    setCurrentIndex((prev) => (prev + 1) % images.length)
+    if (currentIndex < images.length - 1) {
+      setCurrentIndex(currentIndex + 1)
+    } else {
+      setCurrentIndex(0) // Vuelve al principio
+    }
   }
 
   const prevSlide = () => {
-    setCurrentIndex((prev) => (prev - 1 + images.length) % images.length)
+    if (currentIndex > 0) {
+      setCurrentIndex(currentIndex - 1)
+    } else {
+      setCurrentIndex(images.length - 1) // Va al final
+    }
   }
 
-  // Función para obtener índices con wrap-around
-  const getIndex = (offset: number) => {
-    return (currentIndex + offset + images.length) % images.length
-  }
+  // Efecto para desplazar el carrusel cuando cambia currentIndex
+  useEffect(() => {
+    if (carouselRef.current) {
+      const container = carouselRef.current
+      const containerWidth = container.offsetWidth
+      const itemWidth = 320 // Ancho aproximado de cada imagen (ajustable)
+      
+      // Calculamos el scroll para centrar la imagen seleccionada
+      const scrollAmount = (currentIndex * itemWidth) - (containerWidth / 2) + (itemWidth / 2)
+      
+      container.scrollTo({
+        left: scrollAmount,
+        behavior: 'smooth'
+      })
+    }
+  }, [currentIndex])
 
   return (
     <section className="w-full">
@@ -94,45 +115,26 @@ export function InfiniteCarousel({ images }: { images: Array<{ src: string; alt?
         <div className="absolute left-0 top-0 bottom-0 w-32 z-10 pointer-events-none bg-gradient-to-r from-[#111111] via-[#111111]/80 to-transparent" />
         <div className="absolute right-0 top-0 bottom-0 w-32 z-10 pointer-events-none bg-gradient-to-l from-[#111111] via-[#111111]/80 to-transparent" />
 
-        {/* Contenedor del carrusel con scroll horizontal suave */}
-        <div className="overflow-x-auto overflow-y-hidden scrollbar-hide" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+        {/* Contenedor del carrusel con scroll */}
+        <div 
+          ref={carouselRef}
+          className="overflow-x-auto overflow-y-hidden scrollbar-hide"
+          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+        >
           <div className="flex items-center gap-4 px-32" style={{ width: 'max-content' }}>
-            {/* Renderizamos todas las imágenes con escala según su posición */}
             {images.map((img, idx) => {
-              // Calculamos la distancia desde el índice actual (con wrap)
-              const distance = Math.min(
-                Math.abs(idx - currentIndex),
-                Math.abs(idx - currentIndex + images.length),
-                Math.abs(idx - currentIndex - images.length)
-              )
+              // La imagen seleccionada es más grande
+              const isSelected = idx === currentIndex
               
-              // Definimos escala y opacidad según distancia
-              let scale = 0.6
-              let opacity = 0.3
-              
-              if (distance === 0) {
-                // Imagen central
-                scale = 1
-                opacity = 1
-              } else if (distance === 1) {
-                // Imágenes inmediatamente anteriores/posteriores
-                scale = 0.8
-                opacity = 0.7
-              } else if (distance === 2) {
-                // Siguiente nivel
-                scale = 0.7
-                opacity = 0.5
-              }
-
               return (
                 <div
                   key={idx}
-                  className="flex-shrink-0 transition-all duration-500 ease-in-out cursor-pointer"
+                  className={`flex-shrink-0 transition-all duration-500 ease-in-out cursor-pointer ${
+                    isSelected ? 'scale-110 z-20' : 'scale-90 opacity-70 hover:opacity-100'
+                  }`}
                   style={{
-                    transform: `scale(${scale})`,
-                    opacity: opacity,
                     width: 'auto',
-                    height: '320px',
+                    height: isSelected ? '360px' : '280px',
                   }}
                   onClick={() => setCurrentIndex(idx)}
                 >
@@ -187,7 +189,6 @@ export function InfiniteCarousel({ images }: { images: Array<{ src: string; alt?
     </section>
   )
 }
-
 /* =========================
    SECTIONS
 ========================= */
