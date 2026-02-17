@@ -263,11 +263,6 @@ const projectsData: Record<string, {
     description: "Mini colección inspirada en la estética 'Portuguese', centrada en el uso del color, las texturas y los detalles artesanales. El proyecto incluye el desarrollo de fichas técnicas, geometrales y figurines, junto con una propuesta conceptual que combina identidad cultural y diseño contemporáneo.",
     sections: [
       { 
-        type: "text", 
-        title: "Colección Portuguese", 
-        content: "Mini colección inspirada en la estética 'Portuguese', centrada en el uso del color, las texturas y los detalles artesanales. El proyecto incluye el desarrollo de fichas técnicas, geometrales y figurines, junto con una propuesta conceptual que combina identidad cultural y diseño contemporáneo." 
-      },
-      { 
         type: "infinite-carousel", 
         images: [
           { src: "/images/indumentaria/portuguese/portuguese-01.jpg", alt: "Colección Portuguese 1" },
@@ -283,11 +278,6 @@ const projectsData: Record<string, {
     categorySlug: "indumentaria-ilustracion",
     description: "Serie de fotografías realizadas para proyectos de indumentaria, enfocadas en representar el concepto central de cada diseño. A través de la composición, la luz y la dirección de arte, las imágenes buscan resaltar la identidad visual y el carácter expresivo de cada prenda.",
     sections: [
-      { 
-        type: "text", 
-        title: "Fotografía de moda", 
-        content: "Serie de fotografías realizadas para proyectos de indumentaria, enfocadas en representar el concepto central de cada diseño. A través de la composición, la luz y la dirección de arte, las imágenes buscan resaltar la identidad visual y el carácter expresivo de cada prenda." 
-      },
       { 
         type: "infinite-carousel", 
         images: [
@@ -305,11 +295,6 @@ const projectsData: Record<string, {
     description: "Proyecto centrado en el desarrollo técnico de prendas de denim. Incluye fichas técnicas detalladas, geometrales y especificaciones de confección que abordan la estructura, los materiales y los procesos de armado de cada pieza.",
     sections: [
       { 
-        type: "text", 
-        title: "Jeanería - Fichas técnicas y geometrales", 
-        content: "Proyecto centrado en el desarrollo técnico de prendas de denim. Incluye fichas técnicas detalladas, geometrales y especificaciones de confección que abordan la estructura, los materiales y los procesos de armado de cada pieza." 
-      },
-      { 
         type: "infinite-carousel", 
         images: [
           { src: "/images/indumentaria/jeaneria/jeaneria-01.jpg", alt: "Ficha técnica 1" },
@@ -325,11 +310,6 @@ const projectsData: Record<string, {
     categorySlug: "indumentaria-ilustracion",
     description: "Desarrollo de prendas confeccionadas a mano durante la cursada de Diseño de Indumentaria. Cada prototipo explora la relación entre moldería, materiales y construcción, poniendo el foco en la experimentación con formas, terminaciones y el concepto particular que guía cada proyecto.",
     sections: [
-      { 
-        type: "text", 
-        title: "Prototipos de indumentaria", 
-        content: "Desarrollo de prendas confeccionadas a mano durante la cursada de Diseño de Indumentaria. Cada prototipo explora la relación entre moldería, materiales y construcción, poniendo el foco en la experimentación con formas, terminaciones y el concepto particular que guía cada proyecto." 
-      },
       { 
         type: "infinite-carousel", 
         images: [
