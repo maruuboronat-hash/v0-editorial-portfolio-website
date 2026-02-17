@@ -166,10 +166,11 @@ const projectsData: Record<string, {
   },
 
   // CORPORATIVO projects
-  "carteles-bosch": {
-    title: "Robert Bosch Argentina",
-    category: "Corporativo",
-    categorySlug: "corporativo",
+"carteles-bosch": {
+  title: "Robert Bosch Argentina",
+  category: "Corporativo",
+  categorySlug: "corporativo",
+  image: "/images/corporativo/logos/portadas-logos-05.jpg",
     description: "Trabajos realizados durante mi pasantía en Robert Bosch Argentina. Incluye diseño de cartelería para vía pública, materiales POP y merchandising corporativo para el Centro de Capacitación Bosch.",
     sections: [
       { 
@@ -221,10 +222,11 @@ const projectsData: Record<string, {
     ]
   },
   
-  "power-bi-picklog": {
-    title: "Pick&Log",
-    category: "Corporativo",
-    categorySlug: "corporativo",
+"power-bi-picklog": {
+  title: "Pick&Log",
+  category: "Corporativo",
+  categorySlug: "corporativo",
+  image: "/images/corporativo/logos/portadas-logos-01.jpg",
     description: "Diseño de plantillas visuales y dashboards en Power BI para el sistema de gestión logística de Pick&Log. El trabajo combina diseño funcional y visualización de datos para mejorar la lectura y el seguimiento de indicadores operativos.",
     sections: [
       { 
@@ -241,10 +243,11 @@ const projectsData: Record<string, {
     ]
   },
   
-  "cantiere": {
-    title: "Cantiere SA",
-    category: "Corporativo",
-    categorySlug: "corporativo",
+"cantiere": {
+  title: "Cantiere SA",
+  category: "Corporativo",
+  categorySlug: "corporativo",
+  image: "/images/corporativo/logos/portadas-logos-02.jpg",
     description: "Diseño y desarrollo de la página web corporativa para Cantiere SA.",
     sections: [
       { 
@@ -262,10 +265,11 @@ const projectsData: Record<string, {
   },
 
   // INDUMENTARIA E ILUSTRACIÓN projects
-  "coleccion-portuguese": {
-    title: "Colección Portuguese",
-    category: "Indumentaria e Ilustración",
-    categorySlug: "indumentaria-ilustracion",
+"coleccion-portuguese": {
+  title: "Colección Portuguese",
+  category: "Indumentaria e Ilustración",
+  categorySlug: "indumentaria-ilustracion",
+  image: "/images/indumentaria-ilustracion/colección-portuguese/portuguese-portada-blanco.jpg",
     description: "Mini colección inspirada en la estética 'Portuguese', centrada en el uso del color, las texturas y los detalles artesanales. El proyecto incluye el desarrollo de fichas técnicas, geometrales y figurines, junto con una propuesta conceptual que combina identidad cultural y diseño contemporáneo.",
     sections: [
       { 
@@ -284,10 +288,11 @@ const projectsData: Record<string, {
       }
     ]
   },
-  "fotografia-moda": {
-    title: "Fotografía de moda",
-    category: "Indumentaria e Ilustración",
-    categorySlug: "indumentaria-ilustracion",
+"fotografia-moda": {
+  title: "Fotografía de moda",
+  category: "Indumentaria e Ilustración",
+  categorySlug: "indumentaria-ilustracion",
+  image: "/images/indumentaria-ilustracion/fotografia-moda/fotografia-portada.jpg",
     description: "Serie de fotografías realizadas para proyectos de indumentaria, enfocadas en representar el concepto central de cada diseño. A través de la composición, la luz y la dirección de arte, las imágenes buscan resaltar la identidad visual y el carácter expresivo de cada prenda.",
     sections: [
       { 
@@ -315,10 +320,11 @@ const projectsData: Record<string, {
       }
     ]
   },
-  "jeaneria-fichas": {
-    title: "Jeanería I Fichas técnicas y geometrales",
-    category: "Indumentaria e Ilustración",
-    categorySlug: "indumentaria-ilustracion",
+"jeaneria-fichas": {
+  title: "Jeanería I Fichas técnicas y geometrales",
+  category: "Indumentaria e Ilustración",
+  categorySlug: "indumentaria-ilustracion",
+  image: "/images/indumentaria-ilustracion/jeaneria/fichas-portada.jpg",
     description: "Proyecto centrado en el desarrollo técnico de prendas de denim. Incluye fichas técnicas detalladas, geometrales y especificaciones de confección que abordan la estructura, los materiales y los procesos de armado de cada pieza.",
     sections: [
       { 
@@ -332,10 +338,11 @@ const projectsData: Record<string, {
       }
     ]
   },
-  "prototipos-indumentaria": {
-    title: "Prototipos de indumentaria",
-    category: "Indumentaria e Ilustración",
-    categorySlug: "indumentaria-ilustracion",
+"prototipos-indumentaria": {
+  title: "Prototipos de indumentaria",
+  category: "Indumentaria e Ilustración",
+  categorySlug: "indumentaria-ilustracion",
+  image: "/images/indumentaria-ilustracion/prototipos/protos-portada.jpg",
     description: "Desarrollo de prendas confeccionadas a mano durante la cursada de Diseño de Indumentaria. Cada prototipo explora la relación entre moldería, materiales y construcción, poniendo el foco en la experimentación con formas, terminaciones y el concepto particular que guía cada proyecto.",
     sections: [
       { 
@@ -352,10 +359,11 @@ const projectsData: Record<string, {
   },
 
   // PROYECTOS PERSONALES
-  "video-casamiento-1995": {
-    title: "Video de Casamiento y Luna de Miel I 1995",
-    category: "Proyectos Personales",
-    categorySlug: "personales",
+"video-casamiento-1995": {
+  title: "Video de Casamiento y Luna de Miel I 1995",
+  category: "Proyectos Personales",
+  categorySlug: "personales",
+  image: "/images/proyectos-personales/video-casamiento/casamiento-02.png",
     description: "Proyecto audiovisual realizado a partir del archivo familiar del casamiento y la luna de miel de mis padres en 1995. A través de la edición y el montaje del material original, el proyecto reinterpreta esas imágenes desde una mirada actual, explorando el paso del tiempo y cómo los registros personales pueden construir identidad.",
     sections: [
       { 
@@ -365,10 +373,11 @@ const projectsData: Record<string, {
       },
     ],
   },
-  "fotografia-analogica": {
-    title: "Fotografía analógica",
-    category: "Proyectos Personales",
-    categorySlug: "personales",
+"fotografia-analogica": {
+  title: "Fotografía analógica",
+  category: "Proyectos Personales",
+  categorySlug: "personales",
+  image: "/images/proyectos-personales/analogicas/analogicas-portada.JPG",
     description: "Serie de fotografías analógicas tomadas durante un viaje por Europa, con la intención de experimentar con nuevas técnicas y rollos vencidos. El proyecto funciona como un registro espontáneo que explora la luz, el color y la composición desde una mirada más personal.",
     sections: [
       { 
