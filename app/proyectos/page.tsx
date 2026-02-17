@@ -1,52 +1,77 @@
-// app/projects/page.tsx
 "use client";
 
-import { ProjectsGrid } from "@/components/projects-grid";
+import Link from "next/link";
+import Image from "next/image";
+import { ScrollReveal } from "@/hooks/use-scroll-reveal";
 
-const allProjects = [
-  {
-    id: "diseno-grafico",
-    description: "Proyectos de diseño editorial, diseño 3D, comunicación visual e investigación tipográfica.",
-    href: "/proyectos/diseno-grafico",
-    image: "/images/generales/home-cover-grafico.jpg",
-  },
-  {
-    id: "corporativo",
-    description: "Trabajos desde Marketing y Comunicación. Diseño, estrategia y automatización.",
-    href: "/proyectos/corporativo",
-    image: "/images/generales/home-cover-corporativo.jpg",
-  },
-  {
-    id: "indumentaria",
-    description: "Diseño de indumentaria y experimentación visual desde el cuerpo.",
-    href: "/proyectos/indumentaria-ilustracion",
-    image: "/images/generales/home-cover-indumentaria.jpg",
-  },
-  {
-    id: "personales",
-    description: "Exploraciones creativas y proyectos experimentales.",
-    href: "/proyectos/personales",
-    image: "/images/generales/home-cover-proyectos-personales.jpg",
-  },
-  {
-    id: "edicion-video", // Este ID debe coincidir con el slug que usarás en la URL
-    description: "Edición, post-producción y animación de piezas audiovisuales.",
-    href: "/proyectos/edicion-video",
-    image: "/images/generales/home-cover-ediciondevideo.jpg", // Misma imagen o una ligeramente diferente
-  },
-];
+// Definimos la "forma" (tipo) de cada proyecto
+interface ProjectItem {
+  id: string;
+  href: string;
+  image: string;
+  description: string;
+  colSpan?: number; // Opcional, para el caso de home
+}
 
-export default function ProjectsPage() {
+// Props del componente
+interface ProjectsGridProps {
+  projects: ProjectItem[];
+  title?: string;
+  description?: string;
+}
+
+// Este es el componente que recibirá la lista de proyectos
+export function ProjectsGrid({ projects, title, description }: ProjectsGridProps) {
   return (
-    <div className="pt-16">
-      {/* QUITAMOS EL ENCABEZADO CENTRADO QUE HABÍA ACÁ */}
-      
-      {/* USAMOS EL COMPONENTE CON TÍTULO Y DESCRIPCIÓN */}
-      <ProjectsGrid 
-        projects={allProjects}
-        title="Proyectos"
-        description="Una selección de trabajos en diseño gráfico, comunicación, indumentaria y proyectos personales."
-      />
-    </div>
+    <ScrollReveal className="py-32 px-6 md:px-12">
+      <div className="max-w-6xl mx-auto">
+        
+        {/* ENCABEZADO OPCIONAL */}
+        {title && (
+          <div className="mb-16 md:mb-20">
+            <h2 className="font-heading text-4xl md:text-5xl tracking-tight">
+              {title}
+            </h2>
+            {description && (
+              <p className="mt-4 text-lg text-gray-600 max-w-2xl">
+                {description}
+              </p>
+            )}
+          </div>
+        )}
+
+        {/* GRID DE PROYECTOS */}
+        <div className="grid grid-cols-2 gap-1">
+          {projects.map((project) => (
+            <Link
+              key={project.id}
+              href={project.href}
+              className={`group relative overflow-hidden bg-white ${
+                project.colSpan ? 'md:col-span-2' : ''
+              }`}
+            >
+              {/* Contenedor de imagen con altura automática */}
+              <div className="relative w-full" style={{ aspectRatio: 'auto' }}>
+                <Image
+                  src={project.image}
+                  alt={project.id}
+                  width={1200}
+                  height={800}
+                  className="w-full h-auto object-contain"
+                  priority
+                />
+              </div>
+
+              {/* Overlay con descripción al hacer hover */}
+              <div className="absolute inset-0 bg-black/80 flex items-center justify-center p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                <p className="text-white text-sm md:text-base text-center leading-relaxed">
+                  {project.description}
+                </p>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </div>
+    </ScrollReveal>
   );
 }
