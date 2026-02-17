@@ -10,8 +10,8 @@ interface ProjectItem {
   href: string;
   image: string;
   description: string;
-  colSpan?: number; // Opcional: para que ocupe 2 columnas en la HOME
-  imageStyle?: "square" | "natural"; // NUEVO: cada proyecto dice cómo quiere su imagen
+  colSpan?: number;
+  imageStyle?: "square" | "natural";
 }
 
 // Props del componente
@@ -47,20 +47,18 @@ export function ProjectsGrid({
         {/* GRID DE PROYECTOS */}
         <div className="grid grid-cols-2 gap-1">
           {projects.map((project) => {
-            // Determinamos el estilo de la imagen para este proyecto
             const isSquare = project.imageStyle === "square";
 
             return (
               <Link
                 key={project.id}
                 href={project.href}
-                className={`group relative overflow-hidden bg-white ${
+                className={`group relative block bg-white ${
                   project.colSpan ? 'md:col-span-2' : ''
                 }`}
               >
-                {/* Contenedor de imagen con estilo condicional */}
                 {isSquare ? (
-                  // ESTILO CUADRADO (solo para las 4 imágenes de la HOME)
+                  // ESTILO CUADRADO
                   <div className="relative w-full aspect-square">
                     <Image
                       src={project.image}
@@ -71,20 +69,20 @@ export function ProjectsGrid({
                     />
                   </div>
                 ) : (
-                  // ESTILO NATURAL (para la imagen horizontal y para PROYECTOS)
-                  <div className="relative w-full" style={{ aspectRatio: 'auto' }}>
+                  // ESTILO NATURAL - AHORA CON CLASES QUE GARANTIZAN ALTURA AUTOMÁTICA
+                  <div className="relative w-full">
                     <Image
                       src={project.image}
                       alt={project.id}
                       width={1200}
                       height={800}
-                      className="w-full h-auto object-contain"
+                      className="w-full h-auto object-contain block"
                       priority
                     />
                   </div>
                 )}
 
-                {/* Overlay con descripción al hacer hover (siempre igual) */}
+                {/* Overlay con descripción */}
                 <div className="absolute inset-0 bg-black/80 flex items-center justify-center p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                   <p className="text-white text-sm md:text-base text-center leading-relaxed">
                     {project.description}
