@@ -69,8 +69,8 @@ export function ProjectsGrid({
                     <Image
                       src={project.image}
                       alt={project.id}
-                      width={1200}
-                      height={800}
+                      width={2400}
+                      height={1600}
                       className="object-contain"
                       priority
                     />
