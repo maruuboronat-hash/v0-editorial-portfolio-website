@@ -89,12 +89,12 @@ const categoriesData = {
       { 
         id: "jeaneria-fichas", 
         title: "Jeanería I Fichas técnicas y geometrales",
-        image: "/images/indumentaria-ilustracion/jeaneria/fichas-01.jpg"
+        image: "/images/indumentaria-ilustracion/jeaneria/fichas-portada.jpg"
       },
       { 
         id: "prototipos-indumentaria", 
         title: "Prototipos de indumentaria",
-        image: "/images/indumentaria-ilustracion/prototipos/protos-02.jpg"
+        image: "/images/indumentaria-ilustracion/prototipos/protos-portada.jpg"
       },
     ],
   },
