@@ -6,20 +6,33 @@ import { CategoryContent } from "../[category]/category-content"
 const categoryData = {
   title: "Edición de Video",
   description: "Edición, post-producción y animación de piezas audiovisuales para redes, eventos y proyectos personales.",
-  projects: [
-    { 
-      id: "video-proyecto-1", 
-      title: "Nombre del Proyecto de Video 1",
-      image: "/images/edicion-video/proyecto1/portada.jpg"
-    },
-    { 
-      id: "video-proyecto-2", 
-      title: "Nombre del Proyecto de Video 2",
-      image: "/images/edicion-video/proyecto2/portada.jpg"
-    },
-    // Agregá más proyectos acá
-  ],
-}
+projects: [
+  { 
+    id: "portfolio-video", 
+    title: "Portfolio",
+    image: "/images/edicion-video/portfolio-portada.jpg" // Necesitás una imagen de portada
+  },
+  { 
+    id: "mini-skirts-video", 
+    title: "Mini Skirts - Mary Quant",
+    image: "/images/edicion-video/mini-skirts-portada.jpg" // Necesitás una imagen de portada
+  },
+  { 
+    id: "vlog-diario-video", 
+    title: "Vlog Diario",
+    image: "/images/edicion-video/vlog-portada.jpg" // Necesitás una imagen de portada
+  },
+  { 
+    id: "motocross-video", 
+    title: "Motocross",
+    image: "/images/edicion-video/motocross-portada.jpg" // Necesitás una imagen de portada
+  },
+  { 
+    id: "indumentaria-video", 
+    title: "Indumentaria",
+    image: "/images/edicion-video/indumentaria-portada.jpg" // Necesitás una imagen de portada
+  },
+]
 
 export default function EdicionVideoPage() {
   return (
