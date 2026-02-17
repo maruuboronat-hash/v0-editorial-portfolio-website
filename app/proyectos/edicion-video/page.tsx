@@ -32,7 +32,7 @@ const categoryData = {
       title: "Indumentaria",
       image: "/images/edicion-video/indumentaria-portada.jpg"
     }
-  ], // ← COMA AGREGADA AQUÍ
+  ],
 }
 
 export default function EdicionVideoPage() {
