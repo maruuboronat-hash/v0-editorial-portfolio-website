@@ -164,7 +164,23 @@ const projectsData: Record<string, {
       }
     ]
   },
-
+ 
+  // EDICION DE VIDEO projects
+"video-proyecto-1": {
+  title: "Video Portfolio",
+  category: "Edición de Video",
+  categorySlug: "edicion-video",
+  image: "/images/edicion-video/proyecto1/portada.jpg",
+  description: "Video realizado para la materia "Diseño IV"",
+  sections: [
+    {
+      type: "video-embed",
+      src: "/images/edicion-video/proyecto1/video.mp4", // o URL de YouTube
+      caption: "Título del video"
+    }
+  ]
+},
+  
   // CORPORATIVO projects
 "carteles-bosch": {
   title: "Robert Bosch Argentina",
