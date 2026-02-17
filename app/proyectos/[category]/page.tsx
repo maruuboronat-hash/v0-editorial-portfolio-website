@@ -79,12 +79,12 @@ const categoriesData = {
       { 
         id: "coleccion-portuguese", 
         title: "Colección Portuguese",
-        image: "/images/indumentaria/portuguese/portada.jpg"
+        image: "/images/indumentaria-ilustracion/colección-portuguese/portuguese-portada.jpg"
       },
       { 
         id: "fotografia-moda", 
         title: "Fotografía de moda",
-        image: "/images/indumentaria/fotografia/portada.jpg"
+        image: "/images/indumentaria-ilustracion/colección-portuguese/portuguese-portada-blanco.jpg"
       },
       { 
         id: "jeaneria-fichas", 
