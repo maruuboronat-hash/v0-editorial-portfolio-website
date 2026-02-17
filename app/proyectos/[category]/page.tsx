@@ -76,13 +76,6 @@ const categoriesData = {
     title: "Indumentaria e Ilustración",
     description: "Serie de proyectos vinculados al diseño de indumentaria y la experimentación visual desde el cuerpo, la forma y la textura.",
     projects: [
-
-// INDUMENTARIA E ILUSTRACIÓN projects
-      
-  "indumentaria-ilustracion": {
-    title: "Indumentaria e Ilustración",
-    description: "Serie de proyectos vinculados al diseño de indumentaria y la experimentación visual desde el cuerpo, la forma y la textura.",
-    projects: [
       { 
         id: "coleccion-portuguese", 
         title: "Colección Portuguese",
@@ -106,7 +99,6 @@ const categoriesData = {
     ],
   },
 
-  
   "personales": {
     title: "Proyectos Personales",
     description: "Exploraciones creativas y proyectos experimentales. Trabajos que nacen de la curiosidad y la libertad creativa.",
