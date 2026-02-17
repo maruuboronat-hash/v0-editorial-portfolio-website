@@ -17,6 +17,7 @@ const projectsData: Record<string, {
     category: "Diseño Gráfico",
     categorySlug: "diseno-grafico",
     description: "Proyecto editorial que combina investigación visual, narrativa y diseño gráfico. Desarrollado como una revista musical inspirada en la banda británica Oasis, explora su historia, estética y legado cultural a través de recursos editoriales, tipográficos y fotográficos. El enfoque está puesto en la dirección de arte, la grilla editorial y la construcción de una identidad visual coherente con el universo de la banda.",
+    image: "/images/diseno-grafico/oasis/oasis-02.jpg"
     sections: [
       { type: "single-column-stack", images: [
         { src: "/images/diseno-grafico/oasis/oasis-01.jpg", alt: "Diario Oasis 1" },
@@ -33,6 +34,7 @@ const projectsData: Record<string, {
     title: "Postales I Julio Cortázar",
     category: "Diseño Gráfico",
     categorySlug: "diseno-grafico",
+    image: "/images/diseno-grafico/postales/postales-portada.jpg"
     description: "Serie de postales conceptuales inspiradas en Historia verídica, un cuento de Julio Cortázar. El proyecto explora la fragilidad, el azar y la poética de lo cotidiano a través de la composición visual y el uso simbólico del color y la forma. Cada postal funciona como un fragmento independiente, pero en conjunto conforman una narrativa abierta y sensible.",
     sections: [
       { type: "single-column-stack", images: [
@@ -47,6 +49,7 @@ const projectsData: Record<string, {
     category: "Diseño Gráfico",
     categorySlug: "diseno-grafico",
     description: "Proyecto editorial inspirado en la artista argentina Clara Cava. La revista propone una lectura visual de su universo musical a través del color, la tipografía y la composición. Combina análisis gráfico y diseño de layout para construir una identidad que refleja la experimentación y sensibilidad presentes en su obra.",
+    image: "/images/diseno-grafico/clara-cava/clara-01.jpg"
     sections: [
       { type: "single-column-stack", images: [
         { src: "/images/diseno-grafico/clara-cava/clara-01.jpg", alt: "Clara 01" },
@@ -65,6 +68,7 @@ const projectsData: Record<string, {
     category: "Diseño Gráfico",
     categorySlug: "diseno-grafico",
     description: "Composición tridimensional inspirada en la provincia de Córdoba, Argentina. El proyecto combina elementos gráficos y volumétricos para reinterpretar íconos característicos de su paisaje y cultura, como el Reloj Cucú y los colores serranos. Basado en la identidad visual y el lenguaje gráfico presentes en la página oficial de turismo de la provincia, busca transmitir su esencia desde un enfoque contemporáneo a través del modelado y la iluminación digital.",
+    image: "/images/diseno-grafico/afiche3d/cordoba-01.jpg"
     sections: [
       { type: "single-column-stack", images: [
         { src: "/images/diseno-grafico/afiche3d/cordoba-01.jpg", alt: "Córdoba 01" },
