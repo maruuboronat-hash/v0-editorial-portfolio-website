@@ -76,10 +76,107 @@ const categoriesData = {
     title: "Indumentaria e Ilustración",
     description: "Serie de proyectos vinculados al diseño de indumentaria y la experimentación visual desde el cuerpo, la forma y la textura.",
     projects: [
-      { id: "indumentaria-placeholder", title: "Proyecto de Indumentaria" },
+// INDUMENTARIA E ILUSTRACIÓN projects
+"indumentaria-placeholder": {
+  title: "Proyecto de Indumentaria",
+  category: "Indumentaria e Ilustración",
+  categorySlug: "indumentaria-ilustracion",
+  description: "Serie de proyectos vinculados al diseño de indumentaria y la experimentación visual desde el cuerpo, la forma y la textura.",
+  sections: [
+    { type: "two-column-grid", images: [
+      { alt: "Indumentaria 1" },
+      { alt: "Indumentaria 2" },
+    ]},
+  ],
+},
+"coleccion-portuguese": {
+  title: "Colección Portuguese",
+  category: "Indumentaria e Ilustración",
+  categorySlug: "indumentaria-ilustracion",
+  description: "Mini colección inspirada en la estética 'Portuguese', centrada en el uso del color, las texturas y los detalles artesanales. El proyecto incluye el desarrollo de fichas técnicas, geometrales y figurines, junto con una propuesta conceptual que combina identidad cultural y diseño contemporáneo.",
+  sections: [
+    { 
+      type: "text", 
+      title: "Colección Portuguese", 
+      content: "Mini colección inspirada en la estética 'Portuguese', centrada en el uso del color, las texturas y los detalles artesanales. El proyecto incluye el desarrollo de fichas técnicas, geometrales y figurines, junto con una propuesta conceptual que combina identidad cultural y diseño contemporáneo." 
+    },
+    { 
+      type: "infinite-carousel", 
+      images: [
+        // { src: "/images/indumentaria/portuguese/portuguese-01.jpg", alt: "Colección Portuguese 1" },
+        // { src: "/images/indumentaria/portuguese/portuguese-02.jpg", alt: "Colección Portuguese 2" },
+        // { src: "/images/indumentaria/portuguese/portuguese-03.jpg", alt: "Colección Portuguese 3" },
+      ]
+    }
+  ]
+},
+"fotografia-moda": {
+  title: "Fotografía de moda",
+  category: "Indumentaria e Ilustración",
+  categorySlug: "indumentaria-ilustracion",
+  description: "Serie de fotografías realizadas para proyectos de indumentaria, enfocadas en representar el concepto central de cada diseño. A través de la composición, la luz y la dirección de arte, las imágenes buscan resaltar la identidad visual y el carácter expresivo de cada prenda.",
+  sections: [
+    { 
+      type: "text", 
+      title: "Fotografía de moda", 
+      content: "Serie de fotografías realizadas para proyectos de indumentaria, enfocadas en representar el concepto central de cada diseño. A través de la composición, la luz y la dirección de arte, las imágenes buscan resaltar la identidad visual y el carácter expresivo de cada prenda." 
+    },
+    { 
+      type: "infinite-carousel", 
+      images: [
+        // { src: "/images/indumentaria/fotografia/fotografia-01.jpg", alt: "Fotografía 1" },
+        // { src: "/images/indumentaria/fotografia/fotografia-02.jpg", alt: "Fotografía 2" },
+        // { src: "/images/indumentaria/fotografia/fotografia-03.jpg", alt: "Fotografía 3" },
+      ]
+    }
+  ]
+},
+"jeaneria-fichas": {
+  title: "Jeanería I Fichas técnicas y geometrales",
+  category: "Indumentaria e Ilustración",
+  categorySlug: "indumentaria-ilustracion",
+  description: "Proyecto centrado en el desarrollo técnico de prendas de denim. Incluye fichas técnicas detalladas, geometrales y especificaciones de confección que abordan la estructura, los materiales y los procesos de armado de cada pieza.",
+  sections: [
+    { 
+      type: "text", 
+      title: "Jeanería - Fichas técnicas y geometrales", 
+      content: "Proyecto centrado en el desarrollo técnico de prendas de denim. Incluye fichas técnicas detalladas, geometrales y especificaciones de confección que abordan la estructura, los materiales y los procesos de armado de cada pieza." 
+    },
+    { 
+      type: "infinite-carousel", 
+      images: [
+        // { src: "/images/indumentaria/jeaneria/jeaneria-01.jpg", alt: "Ficha técnica 1" },
+        // { src: "/images/indumentaria/jeaneria/jeaneria-02.jpg", alt: "Ficha técnica 2" },
+        // { src: "/images/indumentaria/jeaneria/jeaneria-03.jpg", alt: "Geometral 1" },
+      ]
+    }
+  ]
+},
+"prototipos-indumentaria": {
+  title: "Prototipos de indumentaria",
+  category: "Indumentaria e Ilustración",
+  categorySlug: "indumentaria-ilustracion",
+  description: "Desarrollo de prendas confeccionadas a mano durante la cursada de Diseño de Indumentaria. Cada prototipo explora la relación entre moldería, materiales y construcción, poniendo el foco en la experimentación con formas, terminaciones y el concepto particular que guía cada proyecto.",
+  sections: [
+    { 
+      type: "text", 
+      title: "Prototipos de indumentaria", 
+      content: "Desarrollo de prendas confeccionadas a mano durante la cursada de Diseño de Indumentaria. Cada prototipo explora la relación entre moldería, materiales y construcción, poniendo el foco en la experimentación con formas, terminaciones y el concepto particular que guía cada proyecto." 
+    },
+    { 
+      type: "infinite-carousel", 
+      images: [
+        // { src: "/images/indumentaria/prototipos/prototipo-01.jpg", alt: "Prototipo 1" },
+        // { src: "/images/indumentaria/prototipos/prototipo-02.jpg", alt: "Prototipo 2" },
+        // { src: "/images/indumentaria/prototipos/prototipo-03.jpg", alt: "Prototipo 3" },
+      ]
+    }
+  ]
+},
     ],
   },
 
+  
   "personales": {
     title: "Proyectos Personales",
     description: "Exploraciones creativas y proyectos experimentales. Trabajos que nacen de la curiosidad y la libertad creativa.",
