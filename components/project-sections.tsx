@@ -16,7 +16,7 @@ export type SectionType =
   | { type: "three-column-grid"; images: Array<{ src: string; alt?: string }> }
   | { type: "text"; title?: string; content: string }
   | { type: "video-embed"; src: string; caption?: string }
-  | { type: "infinite-carousel"; images: Array<{ src: string; alt?: string }>; speed?: number } // ← NUEVO TIPO
+  | { type: "infinite-carousel"; images: Array<{ src: string; alt?: string }>; speed?: number }
 
 interface SectionProps {
   section: SectionType
@@ -42,7 +42,6 @@ const styles = `
 }
 `;
 
-// Inyectar los estilos en la página (solo en el cliente)
 if (typeof document !== 'undefined') {
   const styleSheet = document.createElement("style");
   styleSheet.innerText = styles;
@@ -68,7 +67,7 @@ function Img({ src, alt, contain = false }: { src: string; alt?: string; contain
 }
 
 /* =========================
-   CARRUSEL INFINITO (NUEVO)
+   CARRUSEL
 ========================= */
 
 export function InfiniteCarousel({ images }: { images: Array<{ src: string; alt?: string }> }) {
@@ -83,13 +82,11 @@ export function InfiniteCarousel({ images }: { images: Array<{ src: string; alt?
   }
 
   return (
-    <section className="w-full"> {/* Sin fondo */}
+    <section className="w-full">
       <div className="relative w-full py-8">
-        {/* Degradados */}
         <div className="absolute left-0 top-0 bottom-0 w-32 z-10 pointer-events-none bg-gradient-to-r from-[#111111] via-[#111111]/80 to-transparent" />
         <div className="absolute right-0 top-0 bottom-0 w-32 z-10 pointer-events-none bg-gradient-to-l from-[#111111] via-[#111111]/80 to-transparent" />
 
-        {/* Contenedor de la imagen actual */}
         <div className="relative h-96 w-full flex justify-center items-center">
           <img
             src={images[currentIndex].src}
@@ -98,7 +95,6 @@ export function InfiniteCarousel({ images }: { images: Array<{ src: string; alt?
           />
         </div>
 
-        {/* Flechas de navegación */}
         <button
           onClick={prevSlide}
           className="absolute left-8 top-1/2 transform -translate-y-1/2 z-20 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full transition-all"
@@ -113,7 +109,6 @@ export function InfiniteCarousel({ images }: { images: Array<{ src: string; alt?
           →
         </button>
 
-        {/* Indicadores (puntitos) */}
         <div className="flex justify-center gap-2 mt-6">
           {images.map((_, index) => (
             <button
@@ -131,6 +126,7 @@ export function InfiniteCarousel({ images }: { images: Array<{ src: string; alt?
     </section>
   )
 }
+
 /* =========================
    SECTIONS
 ========================= */
@@ -235,7 +231,7 @@ export function TextSection({ section }: { section: Extract<SectionType, { type:
   return (
     <section className="w-full">
       {section.title && (
-        <h3 className="text-2xl md:text-3xl font-heading tracking-tight mb-0">
+        <h3 className="text-2xl md:text-3xl font-heading tracking-tight">
           {section.title}
         </h3>
       )}
@@ -268,7 +264,7 @@ export function ProjectSection({ section }: SectionProps) {
       return <TextSection section={section} />
     case "video-embed":
       return <VideoEmbed section={section} />
-    case "infinite-carousel": // ← NUEVO CASO
+    case "infinite-carousel":
       return <InfiniteCarousel images={section.images} />
     default:
       return null
@@ -277,7 +273,7 @@ export function ProjectSection({ section }: SectionProps) {
 
 export function ProjectSections({ sections }: { sections: SectionType[] }) {
   return (
-    <div className="flex flex-col gap-16">
+    <div className="flex flex-col gap-8">
       {sections.map((section, i) => (
         <ProjectSection key={i} section={section} />
       ))}
