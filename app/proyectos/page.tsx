@@ -9,7 +9,8 @@ const allProjects = [
     description: "...",
     href: "/proyectos/diseno-grafico",
     image: "/images/generales/home-cover-grafico.jpg",
-    imageStyle: "natural", // ← IMPORTANTE
+    imageStyle: "natural",
+    // SIN isWide
   },
   {
     id: "corporativo",
@@ -34,11 +35,11 @@ const allProjects = [
   },
   {
     id: "edicion-video",
-    description: "Edición, post-producción y animación de piezas audiovisuales.",
+    description: "Edición, post-producción y animación...",
     href: "/proyectos/edicion-video",
     image: "/images/generales/home-cover-ediciondevideo.jpg",
     imageStyle: "natural",
-    isWide: true, // ← NUEVO: marcamos esta como ancha
+    isWide: true, // ← SOLO ESTA
   },
 ];
 
