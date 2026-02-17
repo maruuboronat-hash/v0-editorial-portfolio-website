@@ -61,39 +61,39 @@ function InteractiveHero() {
 const services = [
   {
     id: "diseno-grafico",
-    description: "Proyectos de diseño editorial, diseño 3D, comunicación visual e investigación tipográfica.",
+    description: "...",
     href: "/proyectos/diseno-grafico",
     image: "/images/generales/home-cover-grafico.jpg",
-    imageStyle: "square", // NUEVO
+    imageStyle: "square", // ← IMPORTANTE
   },
   {
     id: "corporativo",
-    description: "Trabajos desde Marketing y Comunicación. Diseño, estrategia y automatización.",
+    description: "...",
     href: "/proyectos/corporativo",
     image: "/images/generales/home-cover-corporativo.jpg",
-    imageStyle: "square", // NUEVO
+    imageStyle: "square", // ← IMPORTANTE
   },
   {
     id: "indumentaria",
-    description: "Diseño de indumentaria y experimentación visual desde el cuerpo.",
+    description: "...",
     href: "/proyectos/indumentaria-ilustracion",
     image: "/images/generales/home-cover-indumentaria.jpg",
-    imageStyle: "square", // NUEVO
+    imageStyle: "square", // ← IMPORTANTE
   },
   {
     id: "personales",
-    description: "Exploraciones creativas y proyectos experimentales.",
+    description: "...",
     href: "/proyectos/personales",
     image: "/images/generales/home-cover-proyectos-personales.jpg",
-    imageStyle: "square", // NUEVO
+    imageStyle: "square", // ← IMPORTANTE
   },
   {
     id: "edicion-video",
-    description: "Edición, post-producción y animación de piezas audiovisuales.",
+    description: "Edición, post-producción y animación...",
     href: "/proyectos/edicion-video",
     image: "/images/generales/home-cover-ediciondevideo.jpg",
     colSpan: 2,
-    imageStyle: "natural", // NUEVO
+    imageStyle: "natural", // ← IMPORTANTE
   },
 ];
 /* =========================
