@@ -79,22 +79,22 @@ const categoriesData = {
       { 
         id: "coleccion-portuguese", 
         title: "Colección Portuguese",
-        image: "/images/indumentaria-ilustracion/colección-portuguese/portuguese-portada.jpg"
+        image: "/images/indumentaria-ilustracion/colección-portuguese/portuguese-portada-blanco.jpg"
       },
       { 
         id: "fotografia-moda", 
         title: "Fotografía de moda",
-        image: "/images/indumentaria-ilustracion/colección-portuguese/portuguese-portada-blanco.jpg"
+        image: "/images/indumentaria-ilustracion/fotografia-moda/fotografia-portada.jpg"
       },
       { 
         id: "jeaneria-fichas", 
         title: "Jeanería I Fichas técnicas y geometrales",
-        image: "/images/indumentaria/jeaneria/portada.jpg"
+        image: "/images/indumentaria-ilustracion/jeaneria/fichas-01.jpg"
       },
       { 
         id: "prototipos-indumentaria", 
         title: "Prototipos de indumentaria",
-        image: "/images/indumentaria/prototipos/portada.jpg"
+        image: "/images/indumentaria-ilustracion/prototipos/protos-02.jpg"
       },
     ],
   },
