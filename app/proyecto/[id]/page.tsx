@@ -391,9 +391,12 @@ function getRelatedProjects(currentId: string, categorySlug: string) {
   return Object.entries(projectsData)
     .filter(([id, project]) => id !== currentId && project.categorySlug === categorySlug)
     .slice(0, 2)
-    .map(([id, project]) => ({ id, ...project }))
+    .map(([id, project]) => ({ 
+      id, 
+      title: project.title,
+      image: project.image // ← AGREGAMOS LA IMAGEN
+    }))
 }
-
 function getProject(id: string) {
   return projectsData[id] || null
 }
