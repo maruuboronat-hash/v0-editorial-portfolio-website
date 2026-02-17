@@ -96,42 +96,6 @@ const services = [
   },
 ]
 
-// Componente para mostrar los servicios en la Home (NO usa ProjectsGrid)
-function ServicesSection() {
-  return (
-    <ScrollReveal className="py-32 px-6 md:px-12">
-      <div className="max-w-6xl mx-auto">
-        <div className="grid grid-cols-2 gap-1">
-          {services.map((service) => (
-            <Link
-              key={service.id}
-              href={service.href}
-              className={`group relative overflow-hidden bg-white ${
-                service.colSpan ? 'md:col-span-2' : ''
-              }`}
-            >
-              <div className="relative w-full" style={{ aspectRatio: 'auto' }}>
-                <Image
-                  src={service.image}
-                  alt={service.id}
-                  width={1200}
-                  height={800}
-                  className="w-full h-auto object-contain"
-                  priority
-                />
-              </div>
-              <div className="absolute inset-0 bg-black/80 flex items-center justify-center p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                <p className="text-white text-sm md:text-base text-center leading-relaxed">
-                  {service.description}
-                </p>
-              </div>
-            </Link>
-          ))}
-        </div>
-      </div>
-    </ScrollReveal>
-  )
-}
 /* =========================
    ABOUT (BIO CON RETRATO CIRCULAR GRANDE SIN BORDE)
 ========================= */
@@ -173,8 +137,11 @@ export default function HomePage() {
   return (
     <div className="pt-16">
       <InteractiveHero />
-      {/* Usamos ServicesSection en lugar de ProjectsGrid para tener control del col-span */}
-      <ServicesSection />
+      {/* Usamos ProjectsGrid con imageStyle="square" para mantener el estilo cuadrado original */}
+      <ProjectsGrid 
+        projects={services} 
+        imageStyle="square"
+      />
       <AboutSection />
       <ContactSection />
     </div>
