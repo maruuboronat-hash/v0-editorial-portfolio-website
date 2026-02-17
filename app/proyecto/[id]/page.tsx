@@ -255,7 +255,7 @@ const projectsData: Record<string, {
     ]
   },
 
-  // INDUMENTARIA E ILUSTRACIÓN projects
+   // INDUMENTARIA E ILUSTRACIÓN projects
   "coleccion-portuguese": {
     title: "Colección Portuguese",
     category: "Indumentaria e Ilustración",
@@ -275,36 +275,40 @@ const projectsData: Record<string, {
           { src: "/images/indumentaria-ilustracion/colección-portuguese/portuguese-08.jpg", alt: "Portuguese 08" },
           { src: "/images/indumentaria-ilustracion/colección-portuguese/portuguese-09.jpg", alt: "Portuguese 09" },
         ]
-      },
+      }
+    ]
+  },
   "fotografia-moda": {
     title: "Fotografía de moda",
     category: "Indumentaria e Ilustración",
     categorySlug: "indumentaria-ilustracion",
     description: "Serie de fotografías realizadas para proyectos de indumentaria, enfocadas en representar el concepto central de cada diseño. A través de la composición, la luz y la dirección de arte, las imágenes buscan resaltar la identidad visual y el carácter expresivo de cada prenda.",
     sections: [
-{ 
-  type: "three-column-grid", 
-  images: [
-    { src: "/images/indumentaria-ilustracion/fotografia-moda/fotografia-01.jpg", alt: "Fotografía 01" },
-    { src: "/images/indumentaria-ilustracion/fotografia-moda/fotografia-02.jpg", alt: "Fotografía 02" },
-    { src: "/images/indumentaria-ilustracion/fotografia-moda/fotografia-03.jpg", alt: "Fotografía 03" },
-    { src: "/images/indumentaria-ilustracion/fotografia-moda/fotografia-04.jpg", alt: "Fotografía 04" },
-    { src: "/images/indumentaria-ilustracion/fotografia-moda/fotografia-05.jpg", alt: "Fotografía 05" },
-    { src: "/images/indumentaria-ilustracion/fotografia-moda/fotografia-06.jpg", alt: "Fotografía 06" },
-    { src: "/images/indumentaria-ilustracion/fotografia-moda/fotografia-07.jpg", alt: "Fotografía 07" },
-    { src: "/images/indumentaria-ilustracion/fotografia-moda/fotografia-08.jpg", alt: "Fotografía 08" },
-    { src: "/images/indumentaria-ilustracion/fotografia-moda/fotografia-09.jpg", alt: "Fotografía 09" },
-    { src: "/images/indumentaria-ilustracion/fotografia-moda/fotografia-10.jpg", alt: "Fotografía 10" },
-    { src: "/images/indumentaria-ilustracion/fotografia-moda/fotografia-11.jpg", alt: "Fotografía 11" },
-    { src: "/images/indumentaria-ilustracion/fotografia-moda/fotografia-12.jpg", alt: "Fotografía 12" },
-    { src: "/images/indumentaria-ilustracion/fotografia-moda/fotografia-13.jpg", alt: "Fotografía 13" },
-    { src: "/images/indumentaria-ilustracion/fotografia-moda/fotografia-14.jpg", alt: "Fotografía 14" },
-    { src: "/images/indumentaria-ilustracion/fotografia-moda/fotografia-15.jpg", alt: "Fotografía 15" },
-    { src: "/images/indumentaria-ilustracion/fotografia-moda/fotografia-16.jpg", alt: "Fotografía 16" },
-    { src: "/images/indumentaria-ilustracion/fotografia-moda/fotografia-17.jpg", alt: "Fotografía 17" },
-    { src: "/images/indumentaria-ilustracion/fotografia-moda/fotografia-18.jpg", alt: "Fotografía 18" },
-  ]
-}
+      { 
+        type: "three-column-grid", 
+        images: [
+          { src: "/images/indumentaria-ilustracion/fotografia-moda/fotografia-01.jpg", alt: "Fotografía 01" },
+          { src: "/images/indumentaria-ilustracion/fotografia-moda/fotografia-02.jpg", alt: "Fotografía 02" },
+          { src: "/images/indumentaria-ilustracion/fotografia-moda/fotografia-03.jpg", alt: "Fotografía 03" },
+          { src: "/images/indumentaria-ilustracion/fotografia-moda/fotografia-04.jpg", alt: "Fotografía 04" },
+          { src: "/images/indumentaria-ilustracion/fotografia-moda/fotografia-05.jpg", alt: "Fotografía 05" },
+          { src: "/images/indumentaria-ilustracion/fotografia-moda/fotografia-06.jpg", alt: "Fotografía 06" },
+          { src: "/images/indumentaria-ilustracion/fotografia-moda/fotografia-07.jpg", alt: "Fotografía 07" },
+          { src: "/images/indumentaria-ilustracion/fotografia-moda/fotografia-08.jpg", alt: "Fotografía 08" },
+          { src: "/images/indumentaria-ilustracion/fotografia-moda/fotografia-09.jpg", alt: "Fotografía 09" },
+          { src: "/images/indumentaria-ilustracion/fotografia-moda/fotografia-10.jpg", alt: "Fotografía 10" },
+          { src: "/images/indumentaria-ilustracion/fotografia-moda/fotografia-11.jpg", alt: "Fotografía 11" },
+          { src: "/images/indumentaria-ilustracion/fotografia-moda/fotografia-12.jpg", alt: "Fotografía 12" },
+          { src: "/images/indumentaria-ilustracion/fotografia-moda/fotografia-13.jpg", alt: "Fotografía 13" },
+          { src: "/images/indumentaria-ilustracion/fotografia-moda/fotografia-14.jpg", alt: "Fotografía 14" },
+          { src: "/images/indumentaria-ilustracion/fotografia-moda/fotografia-15.jpg", alt: "Fotografía 15" },
+          { src: "/images/indumentaria-ilustracion/fotografia-moda/fotografia-16.jpg", alt: "Fotografía 16" },
+          { src: "/images/indumentaria-ilustracion/fotografia-moda/fotografia-17.jpg", alt: "Fotografía 17" },
+          { src: "/images/indumentaria-ilustracion/fotografia-moda/fotografia-18.jpg", alt: "Fotografía 18" },
+        ]
+      }
+    ]
+  },
   "jeaneria-fichas": {
     title: "Jeanería I Fichas técnicas y geometrales",
     category: "Indumentaria e Ilustración",
@@ -314,12 +318,14 @@ const projectsData: Record<string, {
       { 
         type: "single-column-stack", 
         images: [
-          { src: "/images/indumentaria-ilustracion/jeaneria/fichas-01.jpg", alt: "Portuguese 01" },
-          { src: "/images/indumentaria-ilustracion/jeaneria/fichas-02.jpg", alt: "Portuguese 02" },
-          { src: "/images/indumentaria-ilustracion/jeaneria/fichas-03.jpg", alt: "Portuguese 03" },
-          { src: "/images/indumentaria-ilustracion/jeaneria/fichas-04.jpg", alt: "Portuguese 04" },
+          { src: "/images/indumentaria-ilustracion/jeaneria/fichas-01.jpg", alt: "Ficha 01" },
+          { src: "/images/indumentaria-ilustracion/jeaneria/fichas-02.jpg", alt: "Ficha 02" },
+          { src: "/images/indumentaria-ilustracion/jeaneria/fichas-03.jpg", alt: "Ficha 03" },
+          { src: "/images/indumentaria-ilustracion/jeaneria/fichas-04.jpg", alt: "Ficha 04" },
         ]
-      },
+      }
+    ]
+  },
   "prototipos-indumentaria": {
     title: "Prototipos de indumentaria",
     category: "Indumentaria e Ilustración",
@@ -335,8 +341,11 @@ const projectsData: Record<string, {
           { src: "/images/indumentaria-ilustracion/prototipos/protos-04.jpg", alt: "Prototipo 04" },
           { src: "/images/indumentaria-ilustracion/prototipos/protos-05.jpg", alt: "Prototipo 05" },
         ]
-      },
+      }
+    ]
+  },
 
+  
   // PROYECTOS PERSONALES
   "video-casamiento-1995": {
     title: "Video de Casamiento y Luna de Miel I 1995",
