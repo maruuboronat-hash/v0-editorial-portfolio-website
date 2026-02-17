@@ -189,7 +189,7 @@ const projectsData: Record<string, {
   sections: [
     {
       type: "video-embed",
-      src: "https://www.youtube.com/embed/w0SAl3TPjGM",
+      src: "https://youtube.com/shorts/w0SAl3TPjGM", // Funciona
       caption: "Mini Skirts - Mary Quant"
     }
   ]
