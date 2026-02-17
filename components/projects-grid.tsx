@@ -53,7 +53,7 @@ export function ProjectsGrid({
                 }`}
               >
                 {isSquare ? (
-                  // ===== ESTILO CUADRADO (para Home) =====
+                  // ESTILO CUADRADO (para Home)
                   <div className="relative w-full aspect-square">
                     <Image
                       src={project.image}
@@ -64,15 +64,14 @@ export function ProjectsGrid({
                     />
                   </div>
                 ) : (
-                  // ===== ESTILO NATURAL (para Proyectos) =====
-                  <div className="relative w-full">
+                  // ESTILO NATURAL - respeta el ancho real de la imagen
+                  <div className="relative w-full flex justify-center">
                     <Image
                       src={project.image}
                       alt={project.id}
-                      width={0}
-                      height={0}
-                      sizes="100vw"
-                      className="w-full h-auto object-contain"
+                      width={1200}
+                      height={800}
+                      className="object-contain"
                       priority
                     />
                   </div>
