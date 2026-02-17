@@ -45,34 +45,8 @@ export function ProjectsGrid({
           </div>
         )}
 
-        {/* IMAGEN ANCHA (si existe) */}
-        {wideProject && (
-          <div className="mb-6">
-            <Link
-              href={wideProject.href}
-              className="group relative block bg-white w-full"
-            >
-              <div className="relative w-full">
-                <Image
-                  src={wideProject.image}
-                  alt={wideProject.id}
-                  width={2400}
-                  height={1600}
-                  className="w-full h-auto object-contain"
-                  priority
-                />
-              </div>
-              <div className="absolute inset-0 bg-black/80 flex items-center justify-center p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                <p className="text-white text-sm md:text-base text-center leading-relaxed">
-                  {wideProject.description}
-                </p>
-              </div>
-            </Link>
-          </div>
-        )}
-
-        {/* IMÁGENES NORMALES (en grid de 2 columnas) */}
-        <div className="grid grid-cols-2 gap-1">
+        {/* PRIMERO: Imágenes normales (en grid de 2 columnas) */}
+        <div className="grid grid-cols-2 gap-1 mb-12"> {/* ← AGREGADO mb-12 */}
           {normalProjects.map((project) => {
             const isSquare = project.imageStyle === "square";
 
@@ -116,6 +90,32 @@ export function ProjectsGrid({
             );
           })}
         </div>
+
+        {/* DESPUÉS: Imagen ancha (si existe) */}
+        {wideProject && (
+          <div className="mt-8"> {/* ← AGREGADO mt-8 para separar */}
+            <Link
+              href={wideProject.href}
+              className="group relative block bg-white w-full"
+            >
+              <div className="relative w-full">
+                <Image
+                  src={wideProject.image}
+                  alt={wideProject.id}
+                  width={2400}
+                  height={1600}
+                  className="w-full h-auto object-contain"
+                  priority
+                />
+              </div>
+              <div className="absolute inset-0 bg-black/80 flex items-center justify-center p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                <p className="text-white text-sm md:text-base text-center leading-relaxed">
+                  {wideProject.description}
+                </p>
+              </div>
+            </Link>
+          </div>
+        )}
       </div>
     </ScrollReveal>
   );
