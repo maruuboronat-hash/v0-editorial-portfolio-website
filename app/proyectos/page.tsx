@@ -28,6 +28,12 @@ const allProjects = [
     href: "/proyectos/personales",
     image: "/images/generales/home-cover-proyectos-personales.jpg",
   },
+  {
+    id: "edicion-video", // Este ID debe coincidir con el slug que usarás en la URL
+    description: "Edición, post-producción y animación de piezas audiovisuales.",
+    href: "/proyectos/edicion-video",
+    image: "/images/generales/home-cover-video.jpg", // Misma imagen o una ligeramente diferente
+  },
 ];
 
 export default function ProjectsPage() {
