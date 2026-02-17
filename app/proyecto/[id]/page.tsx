@@ -437,37 +437,47 @@ export default async function ProjectPage({ params }: { params: PageParams }) {
         </div>
       </div>
 
-      {relatedProjects.length > 0 && (
-        <section className="px-6 md:px-12 mt-24 pt-16 border-t border-border">
-          <div className="max-w-6xl mx-auto">
-            <h2 className="font-heading text-lg mb-12">
-              :) También te puede gustar:
-            </h2>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-border">
-              {relatedProjects.map((relatedProject) => (
-                <Link
-                  key={relatedProject.id}
-                  href={`/proyecto/${relatedProject.id}`}
-                  className="group bg-background"
-                >
-                  <div className="aspect-[4/3] bg-muted relative overflow-hidden">
-                    <div className="absolute inset-0 flex items-center justify-center text-muted-foreground text-xs uppercase tracking-widest opacity-30">
-                      {relatedProject.title}
-                    </div>
-                    <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/5 transition-colors" />
-                  </div>
-                  <div className="p-6 border-t border-border">
-                    <h3 className="font-heading text-xl group-hover:underline underline-offset-4">
-                      {relatedProject.title}
-                    </h3>
-                  </div>
-                </Link>
-              ))}
+{relatedProjects.length > 0 && (
+  <section className="px-6 md:px-12 mt-24 pt-16 border-t border-border">
+    <div className="max-w-6xl mx-auto">
+      <h2 className="font-heading text-lg mb-12">
+        :) También te puede gustar:
+      </h2>
+      
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-border">
+        {relatedProjects.map((relatedProject) => (
+          <Link
+            key={relatedProject.id}
+            href={`/proyecto/${relatedProject.id}`}
+            className="group bg-background"
+          >
+            <div className="aspect-[4/3] bg-muted relative overflow-hidden">
+              {relatedProject.image ? (
+                <Image
+                  src={relatedProject.image}
+                  alt={relatedProject.title}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 50vw, 33vw"
+                />
+              ) : (
+                <div className="absolute inset-0 flex items-center justify-center text-muted-foreground text-xs uppercase tracking-widest opacity-30">
+                  {relatedProject.title}
+                </div>
+              )}
+              <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/5 transition-colors" />
             </div>
-          </div>
-        </section>
-      )}
+            <div className="p-6 border-t border-border">
+              <h3 className="font-heading text-xl group-hover:underline underline-offset-4">
+                {relatedProject.title}
+              </h3>
+            </div>
+          </Link>
+        ))}
+      </div>
+    </div>
+  </section>
+)}
 
       <ContactSection />
     </article>
