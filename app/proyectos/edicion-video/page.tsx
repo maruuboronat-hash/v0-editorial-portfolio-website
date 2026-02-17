@@ -6,33 +6,34 @@ import { CategoryContent } from "../[category]/category-content"
 const categoryData = {
   title: "Edición de Video",
   description: "Edición, post-producción y animación de piezas audiovisuales para redes, eventos y proyectos personales.",
-projects: [
-  { 
-    id: "portfolio-video", 
-    title: "Portfolio",
-    image: "/images/edicion-video/portfolio-portada.jpg" // Necesitás una imagen de portada
-  },
-  { 
-    id: "mini-skirts-video", 
-    title: "Mini Skirts - Mary Quant",
-    image: "/images/edicion-video/mini-skirts-portada.jpg" // Necesitás una imagen de portada
-  },
-  { 
-    id: "vlog-diario-video", 
-    title: "Vlog Diario",
-    image: "/images/edicion-video/vlog-portada.jpg" // Necesitás una imagen de portada
-  },
-  { 
-    id: "motocross-video", 
-    title: "Motocross",
-    image: "/images/edicion-video/motocross-portada.jpg" // Necesitás una imagen de portada
-  },
-  { 
-    id: "indumentaria-video", 
-    title: "Indumentaria",
-    image: "/images/edicion-video/indumentaria-portada.jpg" // Necesitás una imagen de portada
-  },
-]
+  projects: [
+    { 
+      id: "portfolio-video", 
+      title: "Portfolio",
+      image: "/images/edicion-video/portfolio-portada.jpg"
+    },
+    { 
+      id: "mini-skirts-video", 
+      title: "Mini Skirts - Mary Quant",
+      image: "/images/edicion-video/mini-skirts-portada.jpg"
+    },
+    { 
+      id: "vlog-diario-video", 
+      title: "Vlog Diario",
+      image: "/images/edicion-video/vlog-portada.jpg"
+    },
+    { 
+      id: "motocross-video", 
+      title: "Motocross",
+      image: "/images/edicion-video/motocross-portada.jpg"
+    },
+    { 
+      id: "indumentaria-video", 
+      title: "Indumentaria",
+      image: "/images/edicion-video/indumentaria-portada.jpg"
+    }
+  ], // ← COMA AGREGADA AQUÍ
+}
 
 export default function EdicionVideoPage() {
   return (
