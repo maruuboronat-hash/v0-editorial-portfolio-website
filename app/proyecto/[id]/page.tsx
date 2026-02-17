@@ -267,11 +267,11 @@ const projectsData: Record<string, {
         images: [
           { src: "/images/indumentaria-ilustracion/colección-portuguese/portuguese-01.PNG", alt: "Portuguese 01" },
           { src: "/images/indumentaria-ilustracion/colección-portuguese/portuguese-02.jpg", alt: "Portuguese 02" },
-          { src: "/images/indumentaria-ilustracion/colección-portuguese/portuguese-03.PNG", alt: "Portuguese 03" },
+          { src: "/images/indumentaria-ilustracion/colección-portuguese/portuguese-03.jpg", alt: "Portuguese 03" },
           { src: "/images/indumentaria-ilustracion/colección-portuguese/portuguese-04.jpg", alt: "Portuguese 04" },
-          { src: "/images/indumentaria-ilustracion/colección-portuguese/portuguese-05.PNG", alt: "Portuguese 05" },
+          { src: "/images/indumentaria-ilustracion/colección-portuguese/portuguese-05.jpg", alt: "Portuguese 05" },
           { src: "/images/indumentaria-ilustracion/colección-portuguese/portuguese-06.jpg", alt: "Portuguese 06" },
-          { src: "/images/indumentaria-ilustracion/colección-portuguese/portuguese-07.PNG", alt: "Portuguese 07" },
+          { src: "/images/indumentaria-ilustracion/colección-portuguese/portuguese-07.jpg", alt: "Portuguese 07" },
           { src: "/images/indumentaria-ilustracion/colección-portuguese/portuguese-08.jpg", alt: "Portuguese 08" },
           { src: "/images/indumentaria-ilustracion/colección-portuguese/portuguese-09.jpg", alt: "Portuguese 09" },
         ]
