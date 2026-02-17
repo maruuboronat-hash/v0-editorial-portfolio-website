@@ -171,7 +171,7 @@ const projectsData: Record<string, {
   category: "Edición de Video",
   categorySlug: "edicion-video",
   image: "/images/edicion-video/proyecto1/portada.jpg",
-  description: "Video realizado para la materia "Diseño IV"",
+  description: "Video realizado para la materia Diseño IV",
   sections: [
     {
       type: "video-embed",
