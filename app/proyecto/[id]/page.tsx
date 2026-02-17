@@ -173,7 +173,6 @@ const projectsData: Record<string, {
       },
       { 
         type: "text", 
-        title: "", 
         content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam dapibus justo tellus, sit amet pretium velit finibus at. Cras enim ex, finibus non nunc quis, sodales vehicula risus. Duis rutrum non mi nec fringilla. Nulla vehicula nunc ac enim maximus sollicitudin. Vestibulum tincidunt diam ac rutrum molestie. Nam aliquet felis at nulla dignissim, a vulputate ex ultricies. Cras metus est, pharetra vel nunc eu, venenatis mollis elit." 
       },
       { 
