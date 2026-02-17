@@ -42,8 +42,6 @@ export function ProjectsGrid({
 
         <div className="grid grid-cols-2 gap-1">
           {projects.map((project) => {
-            const isSquare = project.imageStyle === "square";
-
             return (
               <Link
                 key={project.id}
@@ -52,31 +50,17 @@ export function ProjectsGrid({
                   project.colSpan ? 'md:col-span-2' : ''
                 }`}
               >
-                {isSquare ? (
-                  // ESTILO CUADRADO (sin cambios)
-                  <div className="relative w-full aspect-square">
-                    <Image
-                      src={project.image}
-                      alt={project.id}
-                      fill
-                      className="object-contain"
-                      priority
-                    />
-                  </div>
-                ) : (
-                  // ESTILO NATURAL - AHORA CON PRIORIDAD: que ocupe el ancho
-                  <div className="relative w-full">
-                    <Image
-                      src={project.image}
-                      alt={project.id}
-                      width={0}
-                      height={0}
-                      sizes="100vw"
-                      className="w-full h-auto object-contain"
-                      priority
-                    />
-                  </div>
-                )}
+                {/* CONTENEDOR QUE SE ADAPTA A LA IMAGEN */}
+                <div className="relative w-full" style={{ minHeight: '200px' }}>
+                  <Image
+                    src={project.image}
+                    alt={project.id}
+                    fill
+                    className="object-contain"
+                    priority
+                    sizes="(max-width: 768px) 50vw, 33vw"
+                  />
+                </div>
 
                 <div className="absolute inset-0 bg-black/80 flex items-center justify-center p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                   <p className="text-white text-sm md:text-base text-center leading-relaxed">
