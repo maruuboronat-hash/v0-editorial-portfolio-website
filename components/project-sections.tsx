@@ -207,16 +207,46 @@ export function ThreeColumnGrid({ section }: { section: Extract<SectionType, { t
 }
 
 export function VideoEmbed({ section }: { section: Extract<SectionType, { type: "video-embed" }> }) {
+  // Detectar si es un video de YouTube
+  const isYouTube = section.src.includes('youtube.com') || section.src.includes('youtu.be');
+  
+  // Extraer ID de YouTube si es necesario
+  let youtubeEmbedUrl = section.src;
+  if (isYouTube) {
+    // Convertir youtu.be/XXXX a youtube.com/embed/XXXX
+    if (section.src.includes('youtu.be')) {
+      const videoId = section.src.split('youtu.be/')[1]?.split('?')[0];
+      youtubeEmbedUrl = `https://www.youtube.com/embed/${videoId}`;
+    }
+    // Asegurar que sea embed
+    if (section.src.includes('watch?v=')) {
+      const videoId = section.src.split('watch?v=')[1]?.split('&')[0];
+      youtubeEmbedUrl = `https://www.youtube.com/embed/${videoId}`;
+    }
+  }
+
   return (
     <section className="w-full">
       <div className="aspect-video relative bg-black rounded-lg overflow-hidden">
-        <video 
-          src={section.src}
-          controls
-          className="w-full h-full object-contain"
-        >
-          Tu navegador no soporta videos HTML5.
-        </video>
+        {isYouTube ? (
+          // IFRAME PARA YOUTUBE
+          <iframe
+            src={youtubeEmbedUrl}
+            className="absolute inset-0 w-full h-full"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+            title={section.caption || "Video de YouTube"}
+          />
+        ) : (
+          // VIDEO LOCAL (MP4)
+          <video 
+            src={section.src}
+            controls
+            className="w-full h-full object-contain"
+          >
+            Tu navegador no soporta videos HTML5.
+          </video>
+        )}
       </div>
       {section.caption && (
         <p className="mt-4 text-xs text-muted-foreground text-center">
