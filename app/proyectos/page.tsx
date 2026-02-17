@@ -34,11 +34,11 @@ const allProjects = [
   },
   {
     id: "edicion-video",
-    description: "Edición, post-producción y animación...",
+    description: "Edición, post-producción y animación de piezas audiovisuales.",
     href: "/proyectos/edicion-video",
     image: "/images/generales/home-cover-ediciondevideo.jpg",
-    imageStyle: "natural", // ← IMPORTANTE
-    // SIN colSpan
+    imageStyle: "natural",
+    isWide: true, // ← NUEVO: marcamos esta como ancha
   },
 ];
 
