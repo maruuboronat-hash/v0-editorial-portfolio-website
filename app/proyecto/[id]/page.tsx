@@ -189,11 +189,6 @@ const projectsData: Record<string, {
       { 
         type: "text", 
         title: "Materiales POP", 
-        content: "" 
-      },
-      { 
-        type: "text", 
-        title: "", 
         content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam dapibus justo tellus, sit amet pretium velit finibus at. Cras enim ex, finibus non nunc quis, sodales vehicula risus. Duis rutrum non mi nec fringilla. Nulla vehicula nunc ac enim maximus sollicitudin. Vestibulum tincidunt diam ac rutrum molestie. Nam aliquet felis at nulla dignissim, a vulputate ex ultricies. Cras metus est, pharetra vel nunc eu, venenatis mollis elit." 
       },
       { 
@@ -209,11 +204,6 @@ const projectsData: Record<string, {
       { 
         type: "text", 
         title: "Merchandising", 
-        content: "" 
-      },
-      { 
-        type: "text", 
-        title: "", 
         content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam dapibus justo tellus, sit amet pretium velit finibus at. Cras enim ex, finibus non nunc quis, sodales vehicula risus. Duis rutrum non mi nec fringilla. Nulla vehicula nunc ac enim maximus sollicitudin. Vestibulum tincidunt diam ac rutrum molestie. Nam aliquet felis at nulla dignissim, a vulputate ex ultricies. Cras metus est, pharetra vel nunc eu, venenatis mollis elit." 
       },
       { 
@@ -227,18 +217,25 @@ const projectsData: Record<string, {
     ]
   },
   
-  "power-bi-picklog": {
+"power-bi-picklog": {
     title: "Pick&Log",
     category: "Corporativo",
     categorySlug: "corporativo",
     description: "Diseño de plantillas visuales y dashboards en Power BI para el sistema de gestión logística de Pick&Log. El trabajo combina diseño funcional y visualización de datos para mejorar la lectura y el seguimiento de indicadores operativos.",
     sections: [
       // SECCIÓN: Power BI - Plantillas de logística
-      { type: "text", title: "Power BI - Plantillas de logística", content: "" },
       { 
-        type: "infinite-carousel", // ← CAMBIADO A CARRUSEL
+        type: "text", 
+        title: "Power BI - Plantillas de logística", 
+        content: "Diseño y desarrollo de dashboards interactivos en Power BI para el seguimiento logístico. Se crearon plantillas visuales que permiten analizar métricas clave como tiempos de entrega, eficiencia operativa y volumen de pedidos, mejorando la toma de decisiones del equipo de logística." 
+      },
+      { 
+        type: "infinite-carousel", 
         images: [
           { src: "/images/corporativo/powerbi/power-01.jpg", alt: "Dashboard 01" },
+          { src: "/images/corporativo/powerbi/power-02.jpg", alt: "Dashboard 02" },
+          { src: "/images/corporativo/powerbi/power-03.jpg", alt: "Dashboard 03" },
+          { src: "/images/corporativo/powerbi/power-04.jpg", alt: "Dashboard 04" },
         ]
       }
     ]
@@ -250,11 +247,19 @@ const projectsData: Record<string, {
     categorySlug: "corporativo",
     description: "Diseño y desarrollo de la página web corporativa para Cantiere SA.",
     sections: [
-      { type: "text", title: "Página Web", content: "" },
       { 
-        type: "infinite-carousel",
+        type: "text", 
+        title: "Página Web Corporativa", 
+        content: "Diseño y desarrollo de sitio web institucional para empresa constructora. Se priorizó una interfaz limpia y profesional que refleja la solidez de la marca, con secciones de proyectos, servicios y contacto. El diseño es completamente responsive y optimizado para dispositivos móviles." 
+      },
+      { 
+        type: "infinite-carousel", 
         images: [
-          { src: "/images/corporativo/via-publica/viapublica-01.jpg", alt: "Web 01" }, // IMAGEN DE PRUEBA
+          { src: "/images/corporativo/cantiere/web-01.jpg", alt: "Home" },
+          { src: "/images/corporativo/cantiere/web-02.jpg", alt: "Sección Proyectos" },
+          { src: "/images/corporativo/cantiere/web-03.jpg", alt: "Sección Servicios" },
+          { src: "/images/corporativo/cantiere/web-04.jpg", alt: "Formulario de Contacto" },
+          { src: "/images/corporativo/cantiere/web-05.jpg", alt: "Versión móvil" },
         ]
       }
     ]
