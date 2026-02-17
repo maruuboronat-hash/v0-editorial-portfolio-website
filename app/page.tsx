@@ -106,17 +106,20 @@ function ServicesSection() {
             <Link
               key={service.id}
               href={service.href}
-              className={`group relative aspect-square overflow-hidden bg-white ${
+              className={`group relative overflow-hidden bg-white ${
                 service.colSpan ? 'md:col-span-2' : ''
               }`}
             >
-              <Image
-                src={service.image}
-                alt={service.id}
-                fill
-                className="object-contain"
-                priority
-              />
+              <div className="relative w-full" style={{ aspectRatio: 'auto' }}>
+                <Image
+                  src={service.image}
+                  alt={service.id}
+                  width={1200}
+                  height={800}
+                  className="w-full h-auto object-contain"
+                  priority
+                />
+              </div>
               <div className="absolute inset-0 bg-black/80 flex items-center justify-center p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                 <p className="text-white text-sm md:text-base text-center leading-relaxed">
                   {service.description}
@@ -129,7 +132,6 @@ function ServicesSection() {
     </ScrollReveal>
   )
 }
-
 /* =========================
    ABOUT (BIO CON RETRATO CIRCULAR GRANDE SIN BORDE)
 ========================= */
