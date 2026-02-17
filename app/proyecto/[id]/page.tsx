@@ -175,8 +175,8 @@ const projectsData: Record<string, {
   sections: [
     {
       type: "video-embed",
-      src: "/images/edicion-video/proyecto1/video.mp4", // o URL de YouTube
-      caption: "Título del video"
+      src: "/images/edicion-video/video-portfolio.mp4", // o URL de YouTube
+      caption: "Video Portfolio"
     }
   ]
 },
