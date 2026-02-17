@@ -61,41 +61,41 @@ function InteractiveHero() {
 const services = [
   {
     id: "diseno-grafico",
-    description:
-      "Proyectos de diseño editorial, diseño 3D, comunicación visual e investigación tipográfica.",
+    description: "Proyectos de diseño editorial, diseño 3D, comunicación visual e investigación tipográfica.",
     href: "/proyectos/diseno-grafico",
     image: "/images/generales/home-cover-grafico.jpg",
+    imageStyle: "square", // NUEVO
   },
   {
     id: "corporativo",
-    description:
-      "Trabajos desde Marketing y Comunicación. Diseño, estrategia y automatización.",
+    description: "Trabajos desde Marketing y Comunicación. Diseño, estrategia y automatización.",
     href: "/proyectos/corporativo",
     image: "/images/generales/home-cover-corporativo.jpg",
+    imageStyle: "square", // NUEVO
   },
   {
     id: "indumentaria",
-    description:
-      "Diseño de indumentaria y experimentación visual desde el cuerpo.",
+    description: "Diseño de indumentaria y experimentación visual desde el cuerpo.",
     href: "/proyectos/indumentaria-ilustracion",
     image: "/images/generales/home-cover-indumentaria.jpg",
+    imageStyle: "square", // NUEVO
   },
   {
     id: "personales",
-    description:
-      "Exploraciones creativas y proyectos experimentales.",
+    description: "Exploraciones creativas y proyectos experimentales.",
     href: "/proyectos/personales",
     image: "/images/generales/home-cover-proyectos-personales.jpg",
+    imageStyle: "square", // NUEVO
   },
   {
     id: "edicion-video",
-    description: "Edición, post-producción y animación de piezas audiovisuales para redes, eventos y proyectos personales.",
+    description: "Edición, post-producción y animación de piezas audiovisuales.",
     href: "/proyectos/edicion-video",
     image: "/images/generales/home-cover-ediciondevideo.jpg",
     colSpan: 2,
+    imageStyle: "natural", // NUEVO
   },
-]
-
+];
 /* =========================
    ABOUT (BIO CON RETRATO CIRCULAR GRANDE SIN BORDE)
 ========================= */
@@ -137,13 +137,10 @@ export default function HomePage() {
   return (
     <div className="pt-16">
       <InteractiveHero />
-      {/* Usamos ProjectsGrid con imageStyle="square" para mantener el estilo cuadrado original */}
-      <ProjectsGrid 
-        projects={services} 
-        imageStyle="square"
-      />
+      {/* Quitamos imageStyle de aquí, ahora lo define cada proyecto */}
+      <ProjectsGrid projects={services} />
       <AboutSection />
       <ContactSection />
     </div>
-  )
+  );
 }
