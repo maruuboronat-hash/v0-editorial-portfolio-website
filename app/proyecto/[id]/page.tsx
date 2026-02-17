@@ -174,7 +174,7 @@ const projectsData: Record<string, {
       { 
         type: "text", 
         title: "", 
-        content: "Diseño y producción de cartelería para vía pública destinada a promocionar el Centro de Capacitación Bosch. Las piezas respetan la identidad visual de la marca y se adaptan a distintos formatos y soportes exteriores." 
+        content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam dapibus justo tellus, sit amet pretium velit finibus at. Cras enim ex, finibus non nunc quis, sodales vehicula risus. Duis rutrum non mi nec fringilla. Nulla vehicula nunc ac enim maximus sollicitudin. Vestibulum tincidunt diam ac rutrum molestie. Nam aliquet felis at nulla dignissim, a vulputate ex ultricies. Cras metus est, pharetra vel nunc eu, venenatis mollis elit." 
       },
       { 
         type: "infinite-carousel", 
@@ -199,7 +199,7 @@ const projectsData: Record<string, {
       { 
         type: "text", 
         title: "", 
-        content: "Desarrollo de materiales promocionales para puntos de venta, incluyendo folletos, banners y displays interactivos para el lanzamiento de nuevos productos." 
+        content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam dapibus justo tellus, sit amet pretium velit finibus at. Cras enim ex, finibus non nunc quis, sodales vehicula risus. Duis rutrum non mi nec fringilla. Nulla vehicula nunc ac enim maximus sollicitudin. Vestibulum tincidunt diam ac rutrum molestie. Nam aliquet felis at nulla dignissim, a vulputate ex ultricies. Cras metus est, pharetra vel nunc eu, venenatis mollis elit." 
       },
       { 
         type: "infinite-carousel", 
@@ -219,7 +219,7 @@ const projectsData: Record<string, {
       { 
         type: "text", 
         title: "", 
-        content: "Diseño de artículos promocionales y regalos corporativos para eventos internos y externos, reforzando la identidad de marca en cada pieza." 
+        content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam dapibus justo tellus, sit amet pretium velit finibus at. Cras enim ex, finibus non nunc quis, sodales vehicula risus. Duis rutrum non mi nec fringilla. Nulla vehicula nunc ac enim maximus sollicitudin. Vestibulum tincidunt diam ac rutrum molestie. Nam aliquet felis at nulla dignissim, a vulputate ex ultricies. Cras metus est, pharetra vel nunc eu, venenatis mollis elit." 
       },
       { 
         type: "infinite-carousel", 
