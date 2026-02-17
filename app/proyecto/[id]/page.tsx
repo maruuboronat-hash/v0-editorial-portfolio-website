@@ -1,413 +1,282 @@
-import Link from "next/link"
-import { notFound } from "next/navigation"
-import { ProjectSections, type SectionType } from "@/components/project-sections"
-import { ContactSection } from "@/components/contact-section"
+"use client"
 
-// Project data with real content
-const projectsData: Record<string, {
-  title: string
-  category: string
-  categorySlug: string
-  description: string
-  sections: SectionType[]
-}> = {
-  // DISEÑO GRÁFICO projects
-  "diario-oasis": {
-    title: "Diario de Oasis I Backstage Times",
-    category: "Diseño Gráfico",
-    categorySlug: "diseno-grafico",
-    description: "Proyecto editorial que combina investigación visual, narrativa y diseño gráfico. Desarrollado como una revista musical inspirada en la banda británica Oasis, explora su historia, estética y legado cultural a través de recursos editoriales, tipográficos y fotográficos. El enfoque está puesto en la dirección de arte, la grilla editorial y la construcción de una identidad visual coherente con el universo de la banda.",
-    sections: [
-      { type: "single-column-stack", images: [
-        { src: "/images/diseno-grafico/oasis/oasis-01.jpg", alt: "Diario Oasis 1" },
-        { src: "/images/diseno-grafico/oasis/oasis-02.jpg", alt: "Diario Oasis 2" },
-        { src: "/images/diseno-grafico/oasis/oasis-03.jpg", alt: "Diario Oasis 3" },
-        { src: "/images/diseno-grafico/oasis/oasis-04.jpg", alt: "Diario Oasis 4" },
-        { src: "/images/diseno-grafico/oasis/oasis-05.jpg", alt: "Diario Oasis 5" },
-        { src: "/images/diseno-grafico/oasis/oasis-06.jpg", alt: "Diario Oasis 6" },
-        { src: "/images/diseno-grafico/oasis/oasis-07.jpg", alt: "Diario Oasis 7" },
-      ]},
-    ],
-  },
-  "postales-cortazar": {
-    title: "Postales I Julio Cortázar",
-    category: "Diseño Gráfico",
-    categorySlug: "diseno-grafico",
-    description: "Serie de postales conceptuales inspiradas en Historia verídica, un cuento de Julio Cortázar. El proyecto explora la fragilidad, el azar y la poética de lo cotidiano a través de la composición visual y el uso simbólico del color y la forma. Cada postal funciona como un fragmento independiente, pero en conjunto conforman una narrativa abierta y sensible.",
-    sections: [
-      { type: "single-column-stack", images: [
-        { src: "/images/diseno-grafico/postales/postales-01.jpg", alt: "Postal Cortázar 1" },
-        { src: "/images/diseno-grafico/postales/postales-02.jpg", alt: "Postal Cortázar 2" },
-        { src: "/images/diseno-grafico/postales/postales-03.jpg", alt: "Postal Cortázar 3" },
-      ]},
-    ],
-  },
-  "revista-clara-cava": {
-    title: "Revista Clara Cava",
-    category: "Diseño Gráfico",
-    categorySlug: "diseno-grafico",
-    description: "Proyecto editorial inspirado en la artista argentina Clara Cava. La revista propone una lectura visual de su universo musical a través del color, la tipografía y la composición. Combina análisis gráfico y diseño de layout para construir una identidad que refleja la experimentación y sensibilidad presentes en su obra.",
-    sections: [
-      { type: "single-column-stack", images: [
-        { src: "/images/diseno-grafico/clara-cava/clara-01.jpg", alt: "Clara 01" },
-        { src: "/images/diseno-grafico/clara-cava/clara-02.jpeg", alt: "Clara 02" },
-        { src: "/images/diseno-grafico/clara-cava/clara-03.jpeg", alt: "Clara 03" },
-        { src: "/images/diseno-grafico/clara-cava/clara-04.jpeg", alt: "Clara 04" },
-        { src: "/images/diseno-grafico/clara-cava/clara-05.jpeg", alt: "Clara 05" },
-        { src: "/images/diseno-grafico/clara-cava/clara-06.jpeg", alt: "Clara 06" },
-        { src: "/images/diseno-grafico/clara-cava/clara-07.jpeg", alt: "Clara 07" },
-        { src: "/images/diseno-grafico/clara-cava/clara-08.jpeg", alt: "Clara 08" },
-      ]},
-    ],
-  },
-  "afiche-3d-cordoba": {
-    title: "Afiche 3D I Córdoba",
-    category: "Diseño Gráfico",
-    categorySlug: "diseno-grafico",
-    description: "Composición tridimensional inspirada en la provincia de Córdoba, Argentina. El proyecto combina elementos gráficos y volumétricos para reinterpretar íconos característicos de su paisaje y cultura, como el Reloj Cucú y los colores serranos. Basado en la identidad visual y el lenguaje gráfico presentes en la página oficial de turismo de la provincia, busca transmitir su esencia desde un enfoque contemporáneo a través del modelado y la iluminación digital.",
-    sections: [
-      { type: "single-column-stack", images: [
-        { src: "/images/diseno-grafico/afiche3d/cordoba-01.jpg", alt: "Córdoba 01" },
-        { src: "/images/diseno-grafico/afiche3d/cordoba-02.jpg", alt: "Córdoba 02" },
-        { src: "/images/diseno-grafico/afiche3d/cordoba-03.jpg", alt: "Córdoba 03" },
-        { src: "/images/diseno-grafico/afiche3d/cordoba-04.jpg", alt: "Córdoba 04" },
-        { src: "/images/diseno-grafico/afiche3d/cordoba-05.jpg", alt: "Córdoba 05" },
-        { src: "/images/diseno-grafico/afiche3d/cordoba-06.jpg", alt: "Córdoba 06" },
-      ]},
-    ],
-  },
-  "afiches-tipograficos": {
-    title: "Afiches tipográficos",
-    category: "Diseño Gráfico",
-    categorySlug: "diseno-grafico",
-    description: "Serie de afiches experimentales que exploran la relación entre forma, estructura y lenguaje visual a partir de la tipografía. Cada pieza combina composición, ritmo y contraste para comunicar ideas a través del signo tipográfico como elemento principal. El proyecto investiga cómo la letra puede trascender su función textual para transformarse en imagen y expresión visual.",
-    sections: [
-      { type: "single-column-stack", images: [
-        { src: "/images/diseno-grafico/afiche-tipografico/tipografia-01.jpg", alt: "Afiche 01" },
-        { src: "/images/diseno-grafico/afiche-tipografico/tipografia-02.jpg", alt: "Afiche 02" },
-        { src: "/images/diseno-grafico/afiche-tipografico/tipografia-03.jpg", alt: "Afiche 03" },
-        { src: "/images/diseno-grafico/afiche-tipografico/tipografia-04.jpg", alt: "Afiche 04" },
-        { src: "/images/diseno-grafico/afiche-tipografico/tipografia-05.jpg", alt: "Afiche 05" },
-        { src: "/images/diseno-grafico/afiche-tipografico/tipografia-06.jpg", alt: "Afiche 06" },
-        { src: "/images/diseno-grafico/afiche-tipografico/tipografia-07.jpg", alt: "Afiche 07" },
-        { src: "/images/diseno-grafico/afiche-tipografico/tipografia-08.jpg", alt: "Afiche 08" },
-        { src: "/images/diseno-grafico/afiche-tipografico/tipografia-09.jpg", alt: "Afiche 09" },
-        { src: "/images/diseno-grafico/afiche-tipografico/tipografia-10.jpg", alt: "Afiche 10" },
-      ]},
-    ],
-  },
-  "cuento-infantil-3d": {
-    title: "Cuento infantil I Ilustración 3D",
-    category: "Diseño Gráfico",
-    categorySlug: "diseno-grafico",
-    description: "Proyecto editorial que combina narrativa, diseño y modelado tridimensional. Basado en El hombrecito del azulejo, cuento de Manuel Mujica Lainez, se desarrollaron los personajes y escenarios mediante ilustración 3D, integrando color, textura y volumen para construir un universo visual coherente con el relato. Además, se diseñó y maquetó el libro completo, trabajando la relación entre texto e imagen para potenciar la narrativa desde lo visual.",
-    sections: [
-      { 
-        type: "two-column-grid", 
-        images: [
-          { src: "/images/diseno-grafico/infantil/infantil-01.jpg", alt: "Infantil 01" },
-          { src: "/images/diseno-grafico/infantil/infantil-02.jpg", alt: "Infantil 02" }
-        ]
-      },
-      { 
-        type: "single-column-stack", 
-        images: [
-          { src: "/images/diseno-grafico/infantil/infantil-03.jpg", alt: "Infantil 03" },
-          { src: "/images/diseno-grafico/infantil/infantil-04.jpg", alt: "Infantil 04" }
-        ]
-      },
-      { 
-        type: "two-column-grid", 
-        images: [
-          { src: "/images/diseno-grafico/infantil/infantil-05.jpg", alt: "Infantil 05" },
-          { src: "/images/diseno-grafico/infantil/infantil-06.jpg", alt: "Infantil 06" }
-        ]
-      }
-    ]
-  },
-  "modelado-3d-objetos": {
-    title: "Modelado 3D I Objetos cotidianos",
-    category: "Diseño Gráfico",
-    categorySlug: "diseno-grafico",
-    description: "Ejercicio de observación, modelado e iluminación digital a partir de tres objetos de uso cotidiano. El proyecto busca reproducir de forma precisa la materialidad, las proporciones y las condiciones lumínicas de cada elemento, explorando cómo el entorno y el punto de vista transforman su percepción. La propuesta combina técnica y composición para convertir objetos simples en escenas visualmente expresivas.",
-    sections: [
-      { type: "single-column-stack", images: [
-        { src: "/images/diseno-grafico/modelado3d/modelado-01.jpg", alt: "Modelado 01" },
-        { src: "/images/diseno-grafico/modelado3d/modelado-02.jpg", alt: "Modelado 02" },
-        { src: "/images/diseno-grafico/modelado3d/modelado-03.jpg", alt: "Modelado 03" },
-        { src: "/images/diseno-grafico/modelado3d/modelado-04.jpg", alt: "Modelado 04" },
-        { src: "/images/diseno-grafico/modelado3d/modelado-05.jpg", alt: "Modelado 05" },
-        { src: "/images/diseno-grafico/modelado3d/modelado-06.jpg", alt: "Modelado 06" },
-        { src: "/images/diseno-grafico/modelado3d/modelado-07.jpg", alt: "Modelado 07" },
-        { src: "/images/diseno-grafico/modelado3d/modelado-08.jpg", alt: "Modelado 08" },
-      ]},
-    ],
-  },
-  "revista-balvanera": {
-    title: "Revista Balvanera I Tapa y contratapa",
-    category: "Diseño Gráfico",
-    categorySlug: "diseno-grafico",
-    description: "Diseño de tapa y contratapa para una revista inspirada en el barrio porteño de Balvanera. El proyecto toma como punto de partida su identidad visual, su ritmo urbano y la diversidad cultural que lo caracteriza. A través del uso del color, la tipografía y la composición, busca reflejar el pulso cotidiano del barrio y su mezcla entre historia, tránsito y vida local.",
-    sections: [
-      { 
-        type: "two-column-grid", 
-        images: [
-          { src: "/images/diseno-grafico/balvanera/balvanera-01.jpg", alt: "Balvanera 01" },
-          { src: "/images/diseno-grafico/balvanera/balvanera-02.jpg", alt: "Balvanera 02" }
-        ]
-      }
-    ]
-  },
-   // CORPORATIVO projects
-"carteles-bosch": {
-    title: "Robert Bosch Argentina",
-    category: "Corporativo",
-    categorySlug: "corporativo",
-    description: "Trabajos realizados durante mi pasantía en Robert Bosch Argentina. Incluye diseño de cartelería para vía pública, materiales POP y merchandising corporativo para el Centro de Capacitación Bosch.",
-    sections: [
-      // ===== TRABAJO 1: Carteles en vía pública =====
-      { 
-        type: "text", 
-        title: "Carteles en vía pública", 
-        content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam dapibus justo tellus, sit amet pretium velit finibus at. Cras enim ex, finibus non nunc quis, sodales vehicula risus. Duis rutrum non mi nec fringilla. Nulla vehicula nunc ac enim maximus sollicitudin. Vestibulum tincidunt diam ac rutrum molestie. Nam aliquet felis at nulla dignissim, a vulputate ex ultricies. Cras metus est, pharetra vel nunc eu, venenatis mollis elit." 
-      },
-      { 
-        type: "infinite-carousel", 
-        images: [
-          { src: "/images/corporativo/via-publica/viapublica-01.jpg", alt: "Cartel 01" },
-          { src: "/images/corporativo/via-publica/viapublica-02.jpg", alt: "Cartel 02" },
-          { src: "/images/corporativo/via-publica/viapublica-03.jpeg", alt: "Cartel 03" },
-          { src: "/images/corporativo/via-publica/viapublica-04.jpeg", alt: "Cartel 04" },
-          { src: "/images/corporativo/via-publica/viapublica-05.jpeg", alt: "Cartel 05" },
-          { src: "/images/corporativo/via-publica/viapublica-06.jpeg", alt: "Cartel 06" },
-          { src: "/images/corporativo/via-publica/viapublica-07.jpeg", alt: "Cartel 07" },
-          { src: "/images/corporativo/via-publica/viapublica-08.jpeg", alt: "Cartel 08" },
-        ]
-      },
-      
-      // ===== TRABAJO 2: Materiales POP =====
-      { 
-        type: "text", 
-        title: "Materiales POP", 
-        content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam dapibus justo tellus, sit amet pretium velit finibus at. Cras enim ex, finibus non nunc quis, sodales vehicula risus. Duis rutrum non mi nec fringilla. Nulla vehicula nunc ac enim maximus sollicitudin. Vestibulum tincidunt diam ac rutrum molestie. Nam aliquet felis at nulla dignissim, a vulputate ex ultricies. Cras metus est, pharetra vel nunc eu, venenatis mollis elit." 
-      },
-      { 
-        type: "infinite-carousel", 
-        images: [
-          { src: "/images/corporativo/via-publica/viapublica-01.jpg", alt: "POP 01" },
-          { src: "/images/corporativo/via-publica/viapublica-02.jpg", alt: "POP 02" },
-          { src: "/images/corporativo/via-publica/viapublica-03.jpeg", alt: "POP 03" },
-        ]
-      },
-      
-      // ===== TRABAJO 3: Merchandising =====
-      { 
-        type: "text", 
-        title: "Merchandising", 
-        content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam dapibus justo tellus, sit amet pretium velit finibus at. Cras enim ex, finibus non nunc quis, sodales vehicula risus. Duis rutrum non mi nec fringilla. Nulla vehicula nunc ac enim maximus sollicitudin. Vestibulum tincidunt diam ac rutrum molestie. Nam aliquet felis at nulla dignissim, a vulputate ex ultricies. Cras metus est, pharetra vel nunc eu, venenatis mollis elit." 
-      },
-      { 
-        type: "infinite-carousel", 
-        images: [
-          { src: "/images/corporativo/via-publica/viapublica-04.jpeg", alt: "Merch 01" },
-          { src: "/images/corporativo/via-publica/viapublica-05.jpeg", alt: "Merch 02" },
-          { src: "/images/corporativo/via-publica/viapublica-06.jpeg", alt: "Merch 03" },
-        ]
-      }
-    ]
-  },
-  
-"power-bi-picklog": {
-    title: "Pick&Log",
-    category: "Corporativo",
-    categorySlug: "corporativo",
-    description: "Diseño de plantillas visuales y dashboards en Power BI para el sistema de gestión logística de Pick&Log. El trabajo combina diseño funcional y visualización de datos para mejorar la lectura y el seguimiento de indicadores operativos.",
-    sections: [
-      // SECCIÓN: Power BI - Plantillas de logística
-      { 
-        type: "text", 
-        title: "Power BI - Plantillas de logística", 
-        content: "Diseño y desarrollo de dashboards interactivos en Power BI para el seguimiento logístico. Se crearon plantillas visuales que permiten analizar métricas clave como tiempos de entrega, eficiencia operativa y volumen de pedidos, mejorando la toma de decisiones del equipo de logística." 
-      },
-      { 
-        type: "infinite-carousel", 
-        images: [
-          { src: "/images/corporativo/powerbi/power-01.jpg", alt: "Dashboard 01" },
-          { src: "/images/corporativo/powerbi/power-02.jpg", alt: "Dashboard 02" },
-          { src: "/images/corporativo/powerbi/power-03.jpg", alt: "Dashboard 03" },
-          { src: "/images/corporativo/powerbi/power-04.jpg", alt: "Dashboard 04" },
-        ]
-      }
-    ]
-  },
-  
-  "cantiere": {
-    title: "Cantiere SA",
-    category: "Corporativo",
-    categorySlug: "corporativo",
-    description: "Diseño y desarrollo de la página web corporativa para Cantiere SA.",
-    sections: [
-      { 
-        type: "text", 
-        title: "Página Web Corporativa", 
-        content: "Diseño y desarrollo de sitio web institucional para empresa constructora. Se priorizó una interfaz limpia y profesional que refleja la solidez de la marca, con secciones de proyectos, servicios y contacto. El diseño es completamente responsive y optimizado para dispositivos móviles." 
-      },
-      { 
-        type: "infinite-carousel", 
-        images: [
-          { src: "/images/corporativo/cantiere/web-01.jpg", alt: "Home" },
-          { src: "/images/corporativo/cantiere/web-02.jpg", alt: "Sección Proyectos" },
-          { src: "/images/corporativo/cantiere/web-03.jpg", alt: "Sección Servicios" },
-          { src: "/images/corporativo/cantiere/web-04.jpg", alt: "Formulario de Contacto" },
-          { src: "/images/corporativo/cantiere/web-05.jpg", alt: "Versión móvil" },
-        ]
-      }
-    ]
-  },
+import { useState, useRef, useEffect } from "react"
+import Image from "next/image"
+import { cn } from "@/lib/utils"
 
-  
-  // INDUMENTARIA E ILUSTRACIÓN projects
-  "indumentaria-placeholder": {
-    title: "Proyecto de Indumentaria",
-    category: "Indumentaria e Ilustración",
-    categorySlug: "indumentaria-ilustracion",
-    description: "Serie de proyectos vinculados al diseño de indumentaria y la experimentación visual desde el cuerpo, la forma y la textura.",
-    sections: [
-      { type: "two-column-grid", images: [
-        { alt: "Indumentaria 1" },
-        { alt: "Indumentaria 2" },
-      ]},
-    ],
-  },
+/* =========================
+   TYPES
+========================= */
 
-  // PROYECTOS PERSONALES
-  "video-casamiento-1995": {
-    title: "Video de Casamiento y Luna de Miel I 1995",
-    category: "Proyectos Personales",
-    categorySlug: "personales",
-    description: "Proyecto audiovisual realizado a partir del archivo familiar del casamiento y la luna de miel de mis padres en 1995. A través de la edición y el montaje del material original, el proyecto reinterpreta esas imágenes desde una mirada actual, explorando el paso del tiempo y cómo los registros personales pueden construir identidad.",
-    sections: [
-      { 
-        type: "video-embed", 
-        src: "/images/proyectos-personales/video-casamiento/casamiento.mp4",
-        caption: "Video de casamiento y luna de miel, 1995" 
-      },
-    ],
-  },
-  "fotografia-analogica": {
-    title: "Fotografía analógica",
-    category: "Proyectos Personales",
-    categorySlug: "personales",
-    description: "Serie de fotografías analógicas tomadas durante un viaje por Europa, con la intención de experimentar con nuevas técnicas y rollos vencidos. El proyecto funciona como un registro espontáneo que explora la luz, el color y la composición desde una mirada más personal.",
-    sections: [
-      { 
-        type: "two-column-grid", 
-        images: [
-          { src: "/images/proyectos-personales/analogicas/analogicas-01.jpg", alt: "Analógica 01" },
-          { src: "/images/proyectos-personales/analogicas/analogicas-02.jpg", alt: "Analógica 02" },
-          { src: "/images/proyectos-personales/analogicas/analogicas-03.jpg", alt: "Analógica 03" },
-          { src: "/images/proyectos-personales/analogicas/analogicas-04.jpg", alt: "Analógica 04" },
-          { src: "/images/proyectos-personales/analogicas/analogicas-05.jpg", alt: "Analógica 05" },
-          { src: "/images/proyectos-personales/analogicas/analogicas-06.jpg", alt: "Analógica 06" },
-          { src: "/images/proyectos-personales/analogicas/analogicas-07.jpg", alt: "Analógica 07" },
-          { src: "/images/proyectos-personales/analogicas/analogicas-08.jpg", alt: "Analógica 08" },
-          { src: "/images/proyectos-personales/analogicas/analogicas-09.jpg", alt: "Analógica 09" },
-          { src: "/images/proyectos-personales/analogicas/analogicas-10.jpg", alt: "Analógica 10" },
-          { src: "/images/proyectos-personales/analogicas/analogicas-11.jpg", alt: "Analógica 11" }
-        ]
-      }
-    ]
-  },
+export type SectionType =
+  | { type: "full-width-image"; src: string; alt?: string; caption?: string }
+  | { type: "centered-image"; src: string; alt?: string; caption?: string; width?: "small" | "medium" | "large" }
+  | { type: "single-column-stack"; images: Array<{ src: string; alt?: string; caption?: string }> }
+  | { type: "two-column-grid"; images: Array<{ src: string; alt?: string }> }
+  | { type: "three-column-grid"; images: Array<{ src: string; alt?: string }> }
+  | { type: "text"; title?: string; content: string }
+  | { type: "video-embed"; src: string; caption?: string }
+  | { type: "infinite-carousel"; images: Array<{ src: string; alt?: string }>; speed?: number }
+
+interface SectionProps {
+  section: SectionType
+  className?: string
 }
 
-// Get all projects in a category for "También te puede gustar" section
-function getRelatedProjects(currentId: string, categorySlug: string) {
-  return Object.entries(projectsData)
-    .filter(([id, project]) => id !== currentId && project.categorySlug === categorySlug)
-    .slice(0, 2)
-    .map(([id, project]) => ({ id, ...project }))
+/* =========================
+   ANIMACIÓN CSS
+========================= */
+
+const styles = `
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
-function getProject(id: string) {
-  return projectsData[id] || null
+.animate-scroll {
+  animation: scroll 30s linear infinite;
 }
 
-type PageParams = Promise<{ id: string }>
+.animate-scroll:hover {
+  animation-play-state: paused;
+}
+`;
 
-export default async function ProjectPage({ params }: { params: PageParams }) {
-  const { id } = await params
-  const project = getProject(id)
+if (typeof document !== 'undefined') {
+  const styleSheet = document.createElement("style");
+  styleSheet.innerText = styles;
+  document.head.appendChild(styleSheet);
+}
 
-  if (!project) {
-    notFound()
+/* =========================
+   IMAGE HELPERS
+========================= */
+
+function Img({ src, alt, contain = false }: { src: string; alt?: string; contain?: boolean }) {
+  return (
+    <div className="relative w-full h-full">
+      <Image
+        src={src}
+        alt={alt || ""}
+        fill
+        className={contain ? "object-scale-down" : "object-cover"}
+        sizes="(max-width: 768px) 100vw, 1200px"
+      />
+    </div>
+  )
+}
+
+/* =========================
+   CARRUSEL
+========================= */
+
+export function InfiniteCarousel({ images }: { images: Array<{ src: string; alt?: string }> }) {
+  const [currentIndex, setCurrentIndex] = useState(0)
+
+  const nextSlide = () => {
+    setCurrentIndex((prev) => (prev + 1) % images.length)
   }
 
-  const relatedProjects = getRelatedProjects(id, project.categorySlug)
+  const prevSlide = () => {
+    setCurrentIndex((prev) => (prev - 1 + images.length) % images.length)
+  }
 
   return (
-    <article className="pt-24 pb-24 min-h-screen">
-      {/* Project Header */}
-      <header className="px-6 md:px-12 mb-16 md:mb-24">
-        <div className="max-w-5xl mx-auto">
-          <Link
-            href={`/proyectos/${project.categorySlug}`}
-            className="text-xs uppercase tracking-widest text-muted-foreground hover:text-foreground transition-colors mb-8 inline-block"
-          >
-            &larr; {project.category}
-          </Link>
-          
-          <h1 className="font-heading text-3xl md:text-5xl lg:text-6xl tracking-tight mb-8">
-            {project.title}
-          </h1>
-          
-          <p className="text-base md:text-lg leading-relaxed text-muted-foreground">
-            {project.description}
-          </p>
-        </div>
-      </header>
+    <section className="w-full">
+      <div className="relative w-full py-8">
+        <div className="absolute left-0 top-0 bottom-0 w-32 z-10 pointer-events-none bg-gradient-to-r from-[#111111] via-[#111111]/80 to-transparent" />
+        <div className="absolute right-0 top-0 bottom-0 w-32 z-10 pointer-events-none bg-gradient-to-l from-[#111111] via-[#111111]/80 to-transparent" />
 
-      {/* Project Sections - MISMO ANCHO QUE EL TEXTO */}
-      <div className="px-6 md:px-12">
-        <div className="max-w-5xl mx-auto">
-          <ProjectSections sections={project.sections} />
+        <div className="relative h-96 w-full flex justify-center items-center">
+          <img
+            src={images[currentIndex].src}
+            alt={images[currentIndex].alt || ""}
+            className="h-full w-auto rounded-lg shadow-lg"
+          />
+        </div>
+
+        <button
+          onClick={prevSlide}
+          className="absolute left-8 top-1/2 transform -translate-y-1/2 z-20 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full transition-all"
+        >
+          ←
+        </button>
+        
+        <button
+          onClick={nextSlide}
+          className="absolute right-8 top-1/2 transform -translate-y-1/2 z-20 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full transition-all"
+        >
+          →
+        </button>
+
+        <div className="flex justify-center gap-2 mt-6">
+          {images.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentIndex(index)}
+              className={`h-2 rounded-full transition-all ${
+                index === currentIndex 
+                  ? "w-6 bg-[#111111]" 
+                  : "w-2 bg-gray-400 hover:bg-gray-600"
+              }`}
+            />
+          ))}
         </div>
       </div>
+    </section>
+  )
+}
 
-      {/* También te puede gustar section */}
-      {relatedProjects.length > 0 && (
-        <section className="px-6 md:px-12 mt-24 pt-16 border-t border-border">
-          <div className="max-w-6xl mx-auto">
-            <h2 className="font-heading text-lg mb-12">
-              :) También te puede gustar:
-            </h2>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-border">
-              {relatedProjects.map((relatedProject) => (
-                <Link
-                  key={relatedProject.id}
-                  href={`/proyecto/${relatedProject.id}`}
-                  className="group bg-background"
-                >
-                  <div className="aspect-[4/3] bg-muted relative overflow-hidden">
-                    <div className="absolute inset-0 flex items-center justify-center text-muted-foreground text-xs uppercase tracking-widest opacity-30">
-                      {relatedProject.title}
-                    </div>
-                    <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/5 transition-colors" />
-                  </div>
-                  <div className="p-6 border-t border-border">
-                    <h3 className="font-heading text-xl group-hover:underline underline-offset-4">
-                      {relatedProject.title}
-                    </h3>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </div>
-        </section>
+/* =========================
+   SECTIONS
+========================= */
+
+export function FullWidthImage({ section }: { section: Extract<SectionType, { type: "full-width-image" }> }) {
+  return (
+    <section className="w-full">
+      <div className="aspect-[16/9] relative">
+        <Img src={section.src} alt={section.alt} contain />
+      </div>
+      {section.caption && (
+        <p className="mt-4 text-xs text-muted-foreground text-center">{section.caption}</p>
       )}
+    </section>
+  )
+}
 
-      {/* Contact Section */}
-      <ContactSection />
-    </article>
+export function CenteredImage({ section }: { section: Extract<SectionType, { type: "centered-image" }> }) {
+  const widthMap = {
+    small: "max-w-md",
+    medium: "max-w-2xl",
+    large: "max-w-4xl",
+  }
+
+  return (
+    <section className="flex justify-center">
+      <div className={cn("w-full", widthMap[section.width || "medium"])}>
+        <div className="aspect-[4/3] relative">
+          <Img src={section.src} alt={section.alt} contain />
+        </div>
+        {section.caption && (
+          <p className="mt-4 text-xs text-muted-foreground text-center">{section.caption}</p>
+        )}
+      </div>
+    </section>
+  )
+}
+
+export function SingleColumnStack({ section }: { section: Extract<SectionType, { type: "single-column-stack" }> }) {
+  return (
+    <section className="flex flex-col gap-12">
+      {section.images.map((img, i) => (
+        <div key={i}>
+          <div className="aspect-[16/9] relative">
+            <Img src={img.src} alt={img.alt} contain />
+          </div>
+          {img.caption && (
+            <p className="mt-4 text-xs text-muted-foreground text-center">{img.caption}</p>
+          )}
+        </div>
+      ))}
+    </section>
+  )
+}
+
+export function TwoColumnGrid({ section }: { section: Extract<SectionType, { type: "two-column-grid" }> }) {
+  return (
+    <section className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {section.images.map((img, i) => (
+        <div key={i} className="aspect-[4/3] relative">
+          <Img src={img.src} alt={img.alt} contain />
+        </div>
+      ))}
+    </section>
+  )
+}
+
+export function ThreeColumnGrid({ section }: { section: Extract<SectionType, { type: "three-column-grid" }> }) {
+  return (
+    <section className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {section.images.map((img, i) => (
+        <div key={i} className="aspect-square relative">
+          <Img src={img.src} alt={img.alt} contain />
+        </div>
+      ))}
+    </section>
+  )
+}
+
+export function VideoEmbed({ section }: { section: Extract<SectionType, { type: "video-embed" }> }) {
+  return (
+    <section className="w-full">
+      <div className="aspect-video relative bg-black rounded-lg overflow-hidden">
+        <video 
+          src={section.src}
+          controls
+          className="w-full h-full object-contain"
+        >
+          Tu navegador no soporta videos HTML5.
+        </video>
+      </div>
+      {section.caption && (
+        <p className="mt-4 text-xs text-muted-foreground text-center">
+          {section.caption}
+        </p>
+      )}
+    </section>
+  )
+}
+
+export function TextSection({ section }: { section: Extract<SectionType, { type: "text" }> }) {
+  return (
+    <section className="w-full">
+      {section.title && (
+        <h3 className="text-2xl md:text-3xl font-heading tracking-tight">
+          {section.title}
+        </h3>
+      )}
+      {section.content && (
+        <p className="text-base md:text-lg leading-relaxed text-muted-foreground">
+          {section.content}
+        </p>
+      )}
+    </section>
+  )
+}
+
+/* =========================
+   DISPATCHER
+========================= */
+
+export function ProjectSection({ section }: SectionProps) {
+  switch (section.type) {
+    case "full-width-image":
+      return <FullWidthImage section={section} />
+    case "centered-image":
+      return <CenteredImage section={section} />
+    case "single-column-stack":
+      return <SingleColumnStack section={section} />
+    case "two-column-grid":
+      return <TwoColumnGrid section={section} />
+    case "three-column-grid":
+      return <ThreeColumnGrid section={section} />
+    case "text":
+      return <TextSection section={section} />
+    case "video-embed":
+      return <VideoEmbed section={section} />
+    case "infinite-carousel":
+      return <InfiniteCarousel images={section.images} />
+    default:
+      return null
+  }
+}
+
+export function ProjectSections({ sections }: { sections: SectionType[] }) {
+  return (
+    <div className="flex flex-col gap-8">
+      {sections.map((section, i) => (
+        <ProjectSection key={i} section={section} />
+      ))}
+    </div>
   )
 }
