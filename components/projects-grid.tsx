@@ -10,7 +10,8 @@ interface ProjectItem {
   href: string;
   image: string;
   description: string;
-  colSpan?: number; // Opcional, para el caso de home
+  colSpan?: number; // Opcional: para que ocupe 2 columnas en la HOME
+  imageStyle?: "square" | "natural"; // NUEVO: cada proyecto dice cómo quiere su imagen
 }
 
 // Props del componente
@@ -18,20 +19,17 @@ interface ProjectsGridProps {
   projects: ProjectItem[];
   title?: string;
   description?: string;
-  imageStyle?: "natural" | "square"; // Controlamos el estilo de imagen
 }
 
-// Este es el componente que recibirá la lista de proyectos
-export function ProjectsGrid({ 
-  projects, 
-  title, 
+export function ProjectsGrid({
+  projects,
+  title,
   description,
-  imageStyle = "natural" // Por defecto, altura natural
 }: ProjectsGridProps) {
   return (
     <ScrollReveal className="py-32 px-6 md:px-12">
       <div className="max-w-6xl mx-auto">
-        
+
         {/* ENCABEZADO OPCIONAL */}
         {title && (
           <div className="mb-16 md:mb-20">
@@ -48,48 +46,53 @@ export function ProjectsGrid({
 
         {/* GRID DE PROYECTOS */}
         <div className="grid grid-cols-2 gap-1">
-          {projects.map((project) => (
-            <Link
-              key={project.id}
-              href={project.href}
-              className={`group relative overflow-hidden bg-white ${
-                project.colSpan ? 'md:col-span-2' : ''
-              }`}
-            >
-              {/* Contenedor de imagen con estilo configurable */}
-              {imageStyle === "square" ? (
-                // ESTILO CUADRADO (para la Home original)
-                <div className="relative w-full aspect-square">
-                  <Image
-                    src={project.image}
-                    alt={project.id}
-                    fill
-                    className="object-contain"
-                    priority
-                  />
-                </div>
-              ) : (
-                // ESTILO NATURAL (para Proyectos y nuevo servicio)
-                <div className="relative w-full" style={{ aspectRatio: 'auto' }}>
-                  <Image
-                    src={project.image}
-                    alt={project.id}
-                    width={1200}
-                    height={800}
-                    className="w-full h-auto object-contain"
-                    priority
-                  />
-                </div>
-              )}
+          {projects.map((project) => {
+            // Determinamos el estilo de la imagen para este proyecto
+            const isSquare = project.imageStyle === "square";
 
-              {/* Overlay con descripción al hacer hover */}
-              <div className="absolute inset-0 bg-black/80 flex items-center justify-center p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                <p className="text-white text-sm md:text-base text-center leading-relaxed">
-                  {project.description}
-                </p>
-              </div>
-            </Link>
-          ))}
+            return (
+              <Link
+                key={project.id}
+                href={project.href}
+                className={`group relative overflow-hidden bg-white ${
+                  project.colSpan ? 'md:col-span-2' : ''
+                }`}
+              >
+                {/* Contenedor de imagen con estilo condicional */}
+                {isSquare ? (
+                  // ESTILO CUADRADO (solo para las 4 imágenes de la HOME)
+                  <div className="relative w-full aspect-square">
+                    <Image
+                      src={project.image}
+                      alt={project.id}
+                      fill
+                      className="object-contain"
+                      priority
+                    />
+                  </div>
+                ) : (
+                  // ESTILO NATURAL (para la imagen horizontal y para PROYECTOS)
+                  <div className="relative w-full" style={{ aspectRatio: 'auto' }}>
+                    <Image
+                      src={project.image}
+                      alt={project.id}
+                      width={1200}
+                      height={800}
+                      className="w-full h-auto object-contain"
+                      priority
+                    />
+                  </div>
+                )}
+
+                {/* Overlay con descripción al hacer hover (siempre igual) */}
+                <div className="absolute inset-0 bg-black/80 flex items-center justify-center p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                  <p className="text-white text-sm md:text-base text-center leading-relaxed">
+                    {project.description}
+                  </p>
+                </div>
+              </Link>
+            );
+          })}
         </div>
       </div>
     </ScrollReveal>
