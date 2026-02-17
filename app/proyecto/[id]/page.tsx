@@ -166,17 +166,73 @@ const projectsData: Record<string, {
   },
  
   // EDICION DE VIDEO projects
-"video-proyecto-1": {
-  title: "Video Portfolio",
+"portfolio-video": {
+  title: "Portfolio",
   category: "Edición de Video",
   categorySlug: "edicion-video",
-  image: "/images/edicion-video/proyecto1/portada.jpg",
-  description: "Video realizado para la materia Diseño IV",
+  image: "/images/edicion-video/portfolio-portada.jpg",
+  description: "Video editado para la materia Diseño IV en UCES",
   sections: [
     {
       type: "video-embed",
-      src: "/images/edicion-video/video-portfolio.mp4", // o URL de YouTube
-      caption: "Video Portfolio"
+      src: "/images/edicion-video/video-portfolio.mp4",
+      caption: "Portfolio - Diseño IV"
+    }
+  ]
+},
+"mini-skirts-video": {
+  title: "Mini Skirts - Mary Quant",
+  category: "Edición de Video",
+  categorySlug: "edicion-video",
+  image: "/images/edicion-video/mini-skirts-portada.jpg",
+  description: "Video editado para la materia Diseño IV en UCES",
+  sections: [
+    {
+      type: "video-embed",
+      src: "https://www.youtube.com/embed/w0SAl3TPjGM",
+      caption: "Mini Skirts - Mary Quant"
+    }
+  ]
+},
+"vlog-diario-video": {
+  title: "Vlog Diario",
+  category: "Edición de Video",
+  categorySlug: "edicion-video",
+  image: "/images/edicion-video/vlog-portada.jpg",
+  description: "Video editado para la materia Diseño IV en UCES",
+  sections: [
+    {
+      type: "video-embed",
+      src: "https://www.youtube.com/embed/FlTDpF_Dr6Y",
+      caption: "Vlog Diario"
+    }
+  ]
+},
+"motocross-video": {
+  title: "Motocross",
+  category: "Edición de Video",
+  categorySlug: "edicion-video",
+  image: "/images/edicion-video/motocross-portada.jpg",
+  description: "Video editado para la materia Diseño IV en UCES",
+  sections: [
+    {
+      type: "video-embed",
+      src: "https://www.youtube.com/embed/mm8RTJ4UoPE",
+      caption: "Motocross"
+    }
+  ]
+},
+"indumentaria-video": {
+  title: "Indumentaria",
+  category: "Edición de Video",
+  categorySlug: "edicion-video",
+  image: "/images/edicion-video/indumentaria-portada.jpg",
+  description: "Video editado para la materia Diseño IV en UCES",
+  sections: [
+    {
+      type: "video-embed",
+      src: "/images/edicion-video/video-modelos.mp4",
+      caption: "Indumentaria - Diseño IV"
     }
   ]
 },
