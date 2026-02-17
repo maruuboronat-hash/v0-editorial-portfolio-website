@@ -46,7 +46,7 @@ export function ProjectsGrid({
         )}
 
         {/* PRIMERO: Imágenes normales (en grid de 2 columnas) */}
-        <div className="grid grid-cols-2 gap-1 mb-12"> {/* ← AGREGADO mb-12 */}
+        <div className="grid grid-cols-2 gap-1 mb-6"> {/* ← AGREGADO mb-12 */}
           {normalProjects.map((project) => {
             const isSquare = project.imageStyle === "square";
 
@@ -93,7 +93,7 @@ export function ProjectsGrid({
 
         {/* DESPUÉS: Imagen ancha (si existe) */}
         {wideProject && (
-          <div className="mt-8"> {/* ← AGREGADO mt-8 para separar */}
+          <div className="mt-4"> {/* ← AGREGADO mt-8 para separar */}
             <Link
               href={wideProject.href}
               className="group relative block bg-white w-full"
