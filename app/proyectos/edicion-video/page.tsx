@@ -10,27 +10,27 @@ const categoryData = {
     { 
       id: "portfolio-video", 
       title: "Portfolio",
-      image: "/images/edicion-video/portfolio-portada.jpg"
+      image: "/images/edicion-video/portada05.png"
     },
     { 
       id: "mini-skirts-video", 
       title: "Mini Skirts - Mary Quant",
-      image: "/images/edicion-video/mini-skirts-portada.jpg"
+      image: "/images/edicion-video/portada03.png"
     },
     { 
       id: "vlog-diario-video", 
       title: "Vlog Diario",
-      image: "/images/edicion-video/vlog-portada.jpg"
+      image: "/images/edicion-video/portada04.png"
     },
     { 
       id: "motocross-video", 
       title: "Motocross",
-      image: "/images/edicion-video/motocross-portada.jpg"
+      image: "/images/edicion-video/portada02.jpeg"
     },
     { 
       id: "indumentaria-video", 
       title: "Indumentaria",
-      image: "/images/edicion-video/indumentaria-portada.jpg"
+      image: "/images/edicion-video/portada01.png"
     }
   ],
 }
