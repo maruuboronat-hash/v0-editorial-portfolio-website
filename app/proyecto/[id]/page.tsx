@@ -170,7 +170,7 @@ const projectsData: Record<string, {
   title: "Portfolio",
   category: "Edición de Video",
   categorySlug: "edicion-video",
-  image: "/images/edicion-video/portfolio-portada.jpg",
+  image: "/images/edicion-video/portada05.png",
   description: "Video editado para la materia Diseño IV en UCES",
   sections: [
     {
@@ -184,7 +184,7 @@ const projectsData: Record<string, {
   title: "Mini Skirts - Mary Quant",
   category: "Edición de Video",
   categorySlug: "edicion-video",
-  image: "/images/edicion-video/mini-skirts-portada.jpg",
+  image: "/images/edicion-video/portada03.png",
   description: "Video editado para la materia Diseño IV en UCES",
   sections: [
     {
@@ -198,7 +198,7 @@ const projectsData: Record<string, {
   title: "Vlog Diario",
   category: "Edición de Video",
   categorySlug: "edicion-video",
-  image: "/images/edicion-video/vlog-portada.jpg",
+  image: "/images/edicion-video/portada04.png",
   description: "Video editado para la materia Diseño IV en UCES",
   sections: [
     {
@@ -212,7 +212,7 @@ const projectsData: Record<string, {
   title: "Motocross",
   category: "Edición de Video",
   categorySlug: "edicion-video",
-  image: "/images/edicion-video/motocross-portada.jpg",
+  image: "/images/edicion-video/portada02.jpeg",
   description: "Video editado para la materia Diseño IV en UCES",
   sections: [
     {
@@ -226,7 +226,7 @@ const projectsData: Record<string, {
   title: "Indumentaria",
   category: "Edición de Video",
   categorySlug: "edicion-video",
-  image: "/images/edicion-video/indumentaria-portada.jpg",
+  image: "/images/edicion-video/portada01.png",
   description: "Video editado para la materia Diseño IV en UCES",
   sections: [
     {
