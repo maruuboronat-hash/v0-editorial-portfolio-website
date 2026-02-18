@@ -110,7 +110,7 @@ function VideoPortfolioSection() {
             src="/images/edicion-video/video-portfolio.mp4"
             controls
             className="w-full h-full object-contain"
-            poster="/images/edicion-video/portfolio-portada.jpg"
+            poster="/images/edicion-video/portada05.png"
           >
             Tu navegador no soporta videos HTML5.
           </video>
