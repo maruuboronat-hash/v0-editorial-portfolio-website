@@ -61,41 +61,68 @@ function InteractiveHero() {
 const services = [
   {
     id: "diseno-grafico",
-    description: "...",
+    description: "Proyectos de diseño editorial, diseño 3D, comunicación visual e investigación tipográfica.",
     href: "/proyectos/diseno-grafico",
     image: "/images/generales/home-cover-grafico.jpg",
-    imageStyle: "square", // ← IMPORTANTE
+    imageStyle: "square",
   },
   {
     id: "corporativo",
-    description: "...",
+    description: "Trabajos desde Marketing y Comunicación. Diseño, estrategia y automatización.",
     href: "/proyectos/corporativo",
     image: "/images/generales/home-cover-corporativo.jpg",
-    imageStyle: "square", // ← IMPORTANTE
+    imageStyle: "square",
   },
   {
     id: "indumentaria",
-    description: "...",
+    description: "Diseño de indumentaria y experimentación visual desde el cuerpo.",
     href: "/proyectos/indumentaria-ilustracion",
     image: "/images/generales/home-cover-indumentaria.jpg",
-    imageStyle: "square", // ← IMPORTANTE
+    imageStyle: "square",
   },
   {
     id: "personales",
-    description: "...",
+    description: "Exploraciones creativas y proyectos experimentales.",
     href: "/proyectos/personales",
     image: "/images/generales/home-cover-proyectos-personales.jpg",
-    imageStyle: "square", // ← IMPORTANTE
+    imageStyle: "square",
   },
   {
     id: "edicion-video",
-    description: "Edición, post-producción y animación...",
+    description: "Edición, post-producción y animación de piezas audiovisuales para redes, eventos y proyectos personales.",
     href: "/proyectos/edicion-video",
     image: "/images/generales/home-cover-ediciondevideo.jpg",
     colSpan: 2,
-    imageStyle: "natural", // ← IMPORTANTE
+    imageStyle: "natural",
   },
 ];
+
+// ==================== NUEVA SECCIÓN DE VIDEO ====================
+function VideoPortfolioSection() {
+  return (
+    <ScrollReveal className="py-20 px-6 md:px-12">
+      <div className="max-w-6xl mx-auto">
+        <h2 className="font-heading text-3xl md:text-4xl tracking-tight mb-8 text-center">
+          Video Portfolio
+        </h2>
+        <div className="aspect-video relative bg-black rounded-lg overflow-hidden shadow-2xl">
+          <video 
+            src="/images/edicion-video/video-portfolio.mp4"
+            controls
+            className="w-full h-full object-contain"
+            poster="/images/edicion-video/portfolio-portada.jpg"
+          >
+            Tu navegador no soporta videos HTML5.
+          </video>
+        </div>
+        <p className="mt-4 text-sm text-muted-foreground text-center">
+          Video portfolio - Diseño IV
+        </p>
+      </div>
+    </ScrollReveal>
+  )
+}
+
 /* =========================
    ABOUT (BIO CON RETRATO CIRCULAR GRANDE SIN BORDE)
 ========================= */
@@ -137,9 +164,9 @@ export default function HomePage() {
   return (
     <div className="pt-16">
       <InteractiveHero />
-      {/* Quitamos imageStyle de aquí, ahora lo define cada proyecto */}
       <ProjectsGrid projects={services} />
       <AboutSection />
+      <VideoPortfolioSection /> {/* ← NUEVA SECCIÓN DE VIDEO */}
       <ContactSection />
     </div>
   );
