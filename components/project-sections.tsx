@@ -19,7 +19,6 @@ export type SectionType =
   | { type: "video-embed"; src: string; caption?: string }
   | { type: "infinite-carousel"; images: Array<{ src: string; alt?: string }>; speed?: number }
   | { type: "skills"; skills: string[] }
-  | { type: "custom-link"; href: string; text: string }
 
 interface SectionProps {
   section: SectionType
@@ -69,24 +68,6 @@ function Img({ src, alt, contain = false }: { src: string; alt?: string; contain
   )
 }
 
-/* =========================
-   CUSTOM LINK (PDF YOUNG TALENTS)
-========================= */
-
-export function CustomLink({ section }: { section: Extract<SectionType, { type: "custom-link" }> }) {
-  return (
-    <section className="w-full py-2">
-      <div className="max-w-5xl mx-auto">
-        <Link 
-          href={section.href}
-          className="inline-block text-sm font-medium text-[#111111] hover:underline underline-offset-4 transition-all"
-        >
-          {section.text}
-        </Link>
-      </div>
-    </section>
-  );
-}
 
 /* =========================
    CARRUSEL
@@ -340,8 +321,6 @@ export function ProjectSection({ section }: SectionProps) {
       return <InfiniteCarousel images={section.images} />
     case "skills":
       return <SkillsSection section={section} />
-    case "custom-link":
-      return <CustomLink section={section} />
     default:
       return null
   }
