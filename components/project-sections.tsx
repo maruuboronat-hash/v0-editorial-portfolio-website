@@ -1,5 +1,6 @@
 "use client"
 
+import Link from "next/link"
 import { useState, useRef, useEffect } from "react"
 import Image from "next/image"
 import { cn } from "@/lib/utils"
@@ -17,7 +18,8 @@ export type SectionType =
   | { type: "text"; title?: string; content: string }
   | { type: "video-embed"; src: string; caption?: string }
   | { type: "infinite-carousel"; images: Array<{ src: string; alt?: string }>; speed?: number }
-  | { type: "skills"; skills: string[] } // ← NUEVO TIPO
+  | { type: "skills"; skills: string[] }
+  | { type: "custom-link"; href: string; text: string }
 
 interface SectionProps {
   section: SectionType
@@ -65,6 +67,25 @@ function Img({ src, alt, contain = false }: { src: string; alt?: string; contain
       />
     </div>
   )
+}
+
+/* =========================
+   CUSTOM LINK (PDF YOUNG TALENTS)
+========================= */
+
+export function CustomLink({ section }: { section: Extract<SectionType, { type: "custom-link" }> }) {
+  return (
+    <section className="w-full py-2">
+      <div className="max-w-5xl mx-auto">
+        <Link 
+          href={section.href}
+          className="inline-block text-sm font-medium text-[#111111] hover:underline underline-offset-4 transition-all"
+        >
+          {section.text}
+        </Link>
+      </div>
+    </section>
+  );
 }
 
 /* =========================
@@ -129,7 +150,7 @@ export function InfiniteCarousel({ images }: { images: Array<{ src: string; alt?
 }
 
 /* =========================
-   SKILLS SECTION (NUEVO)
+   SKILLS SECTION
 ========================= */
 
 export function SkillsSection({ section }: { section: Extract<SectionType, { type: "skills" }> }) {
@@ -234,18 +255,14 @@ export function ThreeColumnGrid({ section }: { section: Extract<SectionType, { t
 }
 
 export function VideoEmbed({ section }: { section: Extract<SectionType, { type: "video-embed" }> }) {
-  // Detectar si es un video de YouTube
   const isYouTube = section.src.includes('youtube.com') || section.src.includes('youtu.be');
   
-  // Extraer ID de YouTube si es necesario
   let youtubeEmbedUrl = section.src;
   if (isYouTube) {
-    // Convertir youtu.be/XXXX a youtube.com/embed/XXXX
     if (section.src.includes('youtu.be')) {
       const videoId = section.src.split('youtu.be/')[1]?.split('?')[0];
       youtubeEmbedUrl = `https://www.youtube.com/embed/${videoId}`;
     }
-    // Asegurar que sea embed
     if (section.src.includes('watch?v=')) {
       const videoId = section.src.split('watch?v=')[1]?.split('&')[0];
       youtubeEmbedUrl = `https://www.youtube.com/embed/${videoId}`;
@@ -256,7 +273,6 @@ export function VideoEmbed({ section }: { section: Extract<SectionType, { type: 
     <section className="w-full">
       <div className="aspect-video relative bg-black rounded-lg overflow-hidden">
         {isYouTube ? (
-          // IFRAME PARA YOUTUBE
           <iframe
             src={youtubeEmbedUrl}
             className="absolute inset-0 w-full h-full"
@@ -265,7 +281,6 @@ export function VideoEmbed({ section }: { section: Extract<SectionType, { type: 
             title={section.caption || "Video de YouTube"}
           />
         ) : (
-          // VIDEO LOCAL (MP4)
           <video 
             src={section.src}
             controls
@@ -323,8 +338,10 @@ export function ProjectSection({ section }: SectionProps) {
       return <VideoEmbed section={section} />
     case "infinite-carousel":
       return <InfiniteCarousel images={section.images} />
-    case "skills": // ← NUEVO CASO
+    case "skills":
       return <SkillsSection section={section} />
+    case "custom-link":
+      return <CustomLink section={section} />
     default:
       return null
   }
