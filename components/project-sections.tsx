@@ -17,6 +17,7 @@ export type SectionType =
   | { type: "text"; title?: string; content: string }
   | { type: "video-embed"; src: string; caption?: string }
   | { type: "infinite-carousel"; images: Array<{ src: string; alt?: string }>; speed?: number }
+  | { type: "skills"; skills: string[] } // ← NUEVO TIPO
 
 interface SectionProps {
   section: SectionType
@@ -125,6 +126,32 @@ export function InfiniteCarousel({ images }: { images: Array<{ src: string; alt?
       </div>
     </section>
   )
+}
+
+/* =========================
+   SKILLS SECTION (NUEVO)
+========================= */
+
+export function SkillsSection({ section }: { section: Extract<SectionType, { type: "skills" }> }) {
+  return (
+    <section className="w-full py-8">
+      <div className="max-w-5xl mx-auto">
+        <h3 className="text-lg font-heading tracking-tight mb-4">
+          Herramientas y tecnologías
+        </h3>
+        <div className="flex flex-wrap gap-2">
+          {section.skills.map((skill, index) => (
+            <span 
+              key={index}
+              className="inline-block px-4 py-2 text-sm font-medium bg-gray-100 text-gray-800 rounded-full border border-gray-200 hover:bg-gray-200 transition-colors"
+            >
+              {skill}
+            </span>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
 }
 
 /* =========================
@@ -296,6 +323,8 @@ export function ProjectSection({ section }: SectionProps) {
       return <VideoEmbed section={section} />
     case "infinite-carousel":
       return <InfiniteCarousel images={section.images} />
+    case "skills": // ← NUEVO CASO
+      return <SkillsSection section={section} />
     default:
       return null
   }
