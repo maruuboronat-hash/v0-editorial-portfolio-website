@@ -233,17 +233,29 @@ const projectsData: Record<string, {
   },
   
   // CORPORATIVO projects
-  "carteles-bosch": {
-    title: "Robert Bosch Argentina",
-    category: "Corporativo",
-    categorySlug: "corporativo",
-    image: "/images/corporativo/logos/portadas-logos-05.jpg",
-    description: "Durante mi pasantía en Bosch Mobility Aftermarket Argentina formé parte del equipo de Marketing y Comunicación, participando en el desarrollo e implementación de comunicación comercial y de marca para distintas unidades de negocio.\n\nMi trabajo abarcó desde la promoción de productos y servicios hasta el acompañamiento estratégico, integrando diseño gráfico, coherencia de identidad visual y objetivos comerciales. Intervine en múltiples soportes y formatos, adaptando lineamientos globales a necesidades locales y colaborando con distintas áreas para asegurar una comunicación clara, consistente y orientada a resultados.\n\nAdemás del desarrollo creativo, asumí responsabilidades vinculadas a la coordinación con proveedores y equipos regionales, así como soporte en procesos administrativos y organización de eventos internos y externos.",
-    sections: [
-      { 
-        type: "text", 
-        title: "Young Talents – Automatización de pedidos y control de stock", 
-        content: "Proyecto desarrollado en el marco del programa interno Young Talents 2025, enfocado en la digitalización y automatización del proceso de pedidos y control de stock de merchandising.\n\nA partir de la detección de problemas operativos —carga manual, falta de registro y desactualización de datos— diseñé e implementé un sistema integrado con Power Apps, Excel y Power Automate que permitió formalizar pedidos, actualizar stock en tiempo real y generar un historial automático para análisis posteriores.\n\nLa solución redujo errores, optimizó tiempos operativos y dejó una base replicable para otras áreas. El proyecto fue presentado ante gerencia dentro del programa."
+"carteles-bosch": {
+  title: "Robert Bosch Argentina",
+  category: "Corporativo",
+  categorySlug: "corporativo",
+  image: "/images/corporativo/logos/portadas-logos-05.jpg",
+  description: "Durante mi pasantía en Bosch Mobility Aftermarket Argentina formé parte del equipo de Marketing y Comunicación, participando en el desarrollo e implementación de comunicación comercial y de marca para distintas unidades de negocio.\n\nMi trabajo abarcó desde la promoción de productos y servicios hasta el acompañamiento estratégico, integrando diseño gráfico, coherencia de identidad visual y objetivos comerciales. Intervine en múltiples soportes y formatos, adaptando lineamientos globales a necesidades locales y colaborando con distintas áreas para asegurar una comunicación clara, consistente y orientada a resultados.\n\nAdemás del desarrollo creativo, asumí responsabilidades vinculadas a la coordinación con proveedores y equipos regionales, así como soporte en procesos administrativos y organización de eventos internos y externos.",
+  sections: [
+    // ===== NUEVA SECCIÓN DE HABILIDADES (al principio) =====
+    { 
+      type: "skills", 
+      skills: [
+        "Adobe Illustrator",
+        "Adobe Photoshop",
+        "Adobe InDesign",
+        "Figma",
+        "MailJet",
+        "Canva",
+        "Adobe Premiere",
+        "SAP",
+        "Power Apps",
+        "Power Automate",
+        "Microsoft Office"
+      ] 
       },
       { 
         type: "infinite-carousel", 
