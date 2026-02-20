@@ -333,16 +333,19 @@ const projectsData: Record<string, {
     ]
   },
   
-    // { 
-    //   id: "cantiere", 
-    //   title: "Cantiere SA",
-    //   image: "/images/corporativo/logos/portadas-logos-02.jpg"
-    // },
-  ],
-},
+  // "cantiere": {
+  //   title: "Cantiere SA",
+  //   category: "Corporativo",
+  //   categorySlug: "corporativo",
+  //   image: "/images/corporativo/logos/portadas-logos-02.jpg",
+  //   description: "Diseño y desarrollo de la página web corporativa para Cantiere SA.",
+  //   sections: [
+  //     // PROYECTO DESACTIVADO - se mostrará en el futuro
+  //   ]
+  // }, ← ESTA COMA SOBRA SI ESTÁ COMENTADO
 
   // INDUMENTARIA E ILUSTRACIÓN projects
-  "coleccion-portuguese": {
+ "coleccion-portuguese": {
     title: "Colección Portuguese",
     category: "Indumentaria e Ilustración",
     categorySlug: "indumentaria-ilustracion",
