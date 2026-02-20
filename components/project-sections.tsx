@@ -29,28 +29,6 @@ interface SectionProps {
    ANIMACIÓN CSS
 ========================= */
 
-export function TextSection({ section }: { section: Extract<SectionType, { type: "text" }> }) {
-  return (
-    <section className="w-full">
-      {section.title && (
-        <h3 className="text-2xl md:text-3xl font-heading tracking-tight">
-          {section.title}
-        </h3>
-      )}
-      {section.content && (
-        <div 
-          className="text-base md:text-lg leading-relaxed text-muted-foreground"
-          dangerouslySetInnerHTML={{ __html: section.content.replace(/\n/g, '<br/>') }}
-        />
-      )}
-    </section>
-  )
-}
-
-/* =========================
-   ANIMACIÓN CSS
-========================= */
-
 const styles = `
 @keyframes scroll {
   0% { transform: translateX(0); }
@@ -89,7 +67,6 @@ function Img({ src, alt, contain = false }: { src: string; alt?: string; contain
     </div>
   )
 }
-
 
 /* =========================
    CARRUSEL
@@ -311,9 +288,10 @@ export function TextSection({ section }: { section: Extract<SectionType, { type:
         </h3>
       )}
       {section.content && (
-        <p className="text-base md:text-lg leading-relaxed text-muted-foreground">
-          {section.content}
-        </p>
+        <div 
+          className="text-base md:text-lg leading-relaxed text-muted-foreground"
+          dangerouslySetInnerHTML={{ __html: section.content.replace(/\n/g, '<br/>') }}
+        />
       )}
     </section>
   )
