@@ -5,7 +5,7 @@ import { CategoryContent } from "../[category]/category-content"
 // Datos específicos para Edición de Video
 const categoryData = {
   title: "Edición de Video",
-  description: "Edición, post-producción y animación de piezas audiovisuales para redes, eventos y proyectos personales.",
+  description: "Serie de piezas audiovisuales desarrolladas en el marco de la materia Diseño IV, a partir de material propio y preexistente. Las propuestas integran edición, animación y diseño sonoro, con foco en el ritmo, la construcción de sentido y la coherencia estética en cada proyecto.",
   projects: [
     { 
       id: "portfolio-video", 
