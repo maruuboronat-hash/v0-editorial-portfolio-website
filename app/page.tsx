@@ -103,7 +103,7 @@ function VideoPortfolioSection() {
     <ScrollReveal className="py-20 px-6 md:px-12">
       <div className="max-w-6xl mx-auto">
         <h2 className="font-heading text-3xl md:text-4xl tracking-tight mb-8 text-center">
-          Video Portfolio
+          Mini presentación
         </h2>
         <div className="aspect-video relative bg-black rounded-lg overflow-hidden shadow-2xl">
           <video 
