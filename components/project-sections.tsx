@@ -289,7 +289,7 @@ export function TextSection({ section }: { section: Extract<SectionType, { type:
       )}
       {section.content && (
         <div 
-    className="text-base md:text-lg leading-relaxed text-[#111111]"
+className="text-base md:text-lg leading-relaxed text-white"
           dangerouslySetInnerHTML={{ __html: section.content.replace(/\n/g, '<br/>') }}
         />
       )}
