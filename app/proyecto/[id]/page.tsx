@@ -171,7 +171,6 @@ const projectsData: Record<string, {
     category: "Edición de Video",
     categorySlug: "edicion-video",
     image: "/images/edicion-video/portada05.png",
-    description: "Serie de piezas audiovisuales desarrolladas en el marco de la materia Diseño IV, a partir de material propio y preexistente. Las propuestas integran edición, animación y diseño sonoro, con foco en el ritmo, la construcción de sentido y la coherencia estética en cada proyecto.",
     sections: [
       {
         type: "video-embed",
@@ -185,7 +184,6 @@ const projectsData: Record<string, {
     category: "Edición de Video",
     categorySlug: "edicion-video",
     image: "/images/edicion-video/portada03.png",
-    description: "Serie de piezas audiovisuales desarrolladas en el marco de la materia Diseño IV, a partir de material propio y preexistente. Las propuestas integran edición, animación y diseño sonoro, con foco en el ritmo, la construcción de sentido y la coherencia estética en cada proyecto.",
     sections: [
       {
         type: "video-embed",
@@ -199,7 +197,6 @@ const projectsData: Record<string, {
     category: "Edición de Video",
     categorySlug: "edicion-video",
     image: "/images/edicion-video/portada04.png",
-    description: "Serie de piezas audiovisuales desarrolladas en el marco de la materia Diseño IV, a partir de material propio y preexistente. Las propuestas integran edición, animación y diseño sonoro, con foco en el ritmo, la construcción de sentido y la coherencia estética en cada proyecto.",
     sections: [
       {
         type: "video-embed",
@@ -213,7 +210,6 @@ const projectsData: Record<string, {
     category: "Edición de Video",
     categorySlug: "edicion-video",
     image: "/images/edicion-video/portada02.jpeg",
-    description: "Serie de piezas audiovisuales desarrolladas en el marco de la materia Diseño IV, a partir de material propio y preexistente. Las propuestas integran edición, animación y diseño sonoro, con foco en el ritmo, la construcción de sentido y la coherencia estética en cada proyecto.",
     sections: [
       {
         type: "video-embed",
@@ -227,7 +223,6 @@ const projectsData: Record<string, {
     category: "Edición de Video",
     categorySlug: "edicion-video",
     image: "/images/edicion-video/portada01.png",
-    description: "Serie de piezas audiovisuales desarrolladas en el marco de la materia Diseño IV, a partir de material propio y preexistente. Las propuestas integran edición, animación y diseño sonoro, con foco en el ritmo, la construcción de sentido y la coherencia estética en cada proyecto.",
     sections: [
       {
         type: "video-embed",
