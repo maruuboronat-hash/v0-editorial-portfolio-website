@@ -50,27 +50,27 @@ const categoriesData = {
     ],
   },
 
-  "corporativo": {
-    title: "Corporativo",
-    description: "Proyectos realizados en empresas donde el diseño funciona como herramienta estratégica para comunicar, organizar información y mejorar procesos internos y comerciales.",
-    projects: [
-      { 
-        id: "carteles-bosch", 
-        title: "Robert Bosch Argentina",
-        image: "/images/corporativo/logos/portadas-logos-05.jpg"
-      },
-      { 
-        id: "power-bi-picklog", 
-        title: "Pick&Log",
-        image: "/images/corporativo/logos/portadas-logos-01.jpg"
-      },
-      { 
-        id: "cantiere", 
-        title: "Cantiere SA",
-        image: "/images/corporativo/logos/portadas-logos-02.jpg"
-      },
-    ],
-  },
+ "corporativo": {
+  title: "Corporativo",
+  description: "Proyectos realizados en empresas donde el diseño funciona como herramienta estratégica para comunicar, organizar información y mejorar procesos internos y comerciales.",
+  projects: [
+    { 
+      id: "carteles-bosch", 
+      title: "Robert Bosch Argentina",
+      image: "/images/corporativo/logos/portadas-logos-05.jpg"
+    },
+    { 
+      id: "power-bi-picklog", 
+      title: "Pick&Log",
+      image: "/images/corporativo/logos/portadas-logos-01.jpg"
+    }
+    // { 
+    //   id: "cantiere", 
+    //   title: "Cantiere SA",
+    //   image: "/images/corporativo/logos/portadas-logos-02.jpg"
+    // }
+  ],
+},
 
   "indumentaria-ilustracion": {
     title: "Indumentaria e Ilustración",
