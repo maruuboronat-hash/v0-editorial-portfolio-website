@@ -263,6 +263,16 @@ const projectsData: Record<string, {
   title: "Young Talents – Automatización de pedidos y control de stock", 
   content: "Proyecto desarrollado en el marco del programa interno Young Talents 2025, enfocado en la digitalización y automatización del proceso de pedidos y control de stock de merchandising.\n\nA partir de la detección de problemas operativos —carga manual, falta de registro y desactualización de datos— diseñé e implementé un sistema integrado con Power Apps, Excel y Power Automate que permitió formalizar pedidos, actualizar stock en tiempo real y generar un historial automático para análisis posteriores.\n\nLa solución redujo errores, optimizó tiempos operativos y dejó una base replicable para otras áreas. El proyecto fue presentado ante gerencia dentro del programa."
 },
+{
+  type: "text",
+  title: "",
+  content: ""
+},
+{
+  type: "custom-link",
+  href: "/proyecto/young-talents-detalle",
+  text: "Saber más →"
+},
 { 
   type: "infinite-carousel", 
   images: [
