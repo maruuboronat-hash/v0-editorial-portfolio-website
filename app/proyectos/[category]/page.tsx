@@ -52,7 +52,7 @@ const categoriesData = {
 
   "corporativo": {
     title: "Corporativo",
-    description: "Trabajos realizados desde el área de Marketing y Comunicación. Combino diseño, estrategia y automatización para mejorar procesos y comunicación visual interna.",
+    description: "Proyectos realizados en empresas donde el diseño funciona como herramienta estratégica para comunicar, organizar información y mejorar procesos internos y comerciales.",
     projects: [
       { 
         id: "carteles-bosch", 
