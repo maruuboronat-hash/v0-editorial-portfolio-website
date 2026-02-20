@@ -149,7 +149,7 @@ function AboutSection() {
             href="/bio"
             className="text-xs uppercase tracking-widest hover:opacity-70 transition-opacity mt-4 inline-block"
           >
-            Leer más
+            Leer más →
           </Link>
         </div>
 
