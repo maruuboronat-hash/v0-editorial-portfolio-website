@@ -270,7 +270,7 @@ const projectsData: Record<string, {
 },
 {
   type: "custom-link",
-  href: "/proyecto/young-talents-detalle",
+  href: "/images/corporativo/ytalents/presentacion-portfolio.pdf", // ← NUEVA RUTA
   text: "Saber más →"
 },
 { 
