@@ -15,10 +15,10 @@ const projectsData: Record<string, {
 }> = {
   // DISEÑO GRÁFICO projects
   "diario-oasis": {
-    title: "Diario de Oasis I Backstage Times",
+    title: "Periódico de Oasis I Backstage Times",
     category: "Diseño Gráfico",
     categorySlug: "diseno-grafico",
-    description: "Proyecto editorial que combina investigación visual, narrativa y diseño gráfico. Desarrollado como una revista musical inspirada en la banda británica Oasis, explora su historia, estética y legado cultural a través de recursos editoriales, tipográficos y fotográficos. El enfoque está puesto en la dirección de arte, la grilla editorial y la construcción de una identidad visual coherente con el universo de la banda.",
+    description: "Proyecto editorial que combina investigación visual, narrativa y diseño gráfico. Desarrollado como un periódico musical inspirada en la banda británica Oasis, explora su historia, estética y legado cultural a través de recursos editoriales, tipográficos y fotográficos. El enfoque está puesto en la dirección de arte, la grilla editorial y la construcción de una identidad visual coherente con el universo de la banda.",
     image: "/images/diseno-grafico/oasis/oasis-02.jpg",
     sections: [
       { type: "single-column-stack", images: [
@@ -171,7 +171,6 @@ const projectsData: Record<string, {
   category: "Edición de Video",
   categorySlug: "edicion-video",
   image: "/images/edicion-video/portada05.png",
-  description: "Video editado para la materia Diseño IV en UCES",
   sections: [
     {
       type: "video-embed",
@@ -185,7 +184,6 @@ const projectsData: Record<string, {
   category: "Edición de Video",
   categorySlug: "edicion-video",
   image: "/images/edicion-video/portada03.png",
-  description: "Video editado para la materia Diseño IV en UCES",
   sections: [
     {
       type: "video-embed",
@@ -199,7 +197,6 @@ const projectsData: Record<string, {
   category: "Edición de Video",
   categorySlug: "edicion-video",
   image: "/images/edicion-video/portada04.png",
-  description: "Video editado para la materia Diseño IV en UCES",
   sections: [
     {
       type: "video-embed",
@@ -213,7 +210,6 @@ const projectsData: Record<string, {
   category: "Edición de Video",
   categorySlug: "edicion-video",
   image: "/images/edicion-video/portada02.jpeg",
-  description: "Video editado para la materia Diseño IV en UCES",
   sections: [
     {
       type: "video-embed",
@@ -227,7 +223,6 @@ const projectsData: Record<string, {
   category: "Edición de Video",
   categorySlug: "edicion-video",
   image: "/images/edicion-video/portada01.png",
-  description: "Video editado para la materia Diseño IV en UCES",
   sections: [
     {
       type: "video-embed",
@@ -243,7 +238,7 @@ const projectsData: Record<string, {
   category: "Corporativo",
   categorySlug: "corporativo",
   image: "/images/corporativo/logos/portadas-logos-05.jpg",
-    description: "Trabajos realizados durante mi pasantía en Robert Bosch Argentina. Incluye diseño de cartelería para vía pública, materiales POP y merchandising corporativo para el Centro de Capacitación Bosch.",
+    description: "Durante mi pasantía en Bosch Mobility Aftermarket Argentina formé parte del equipo de Marketing y Comunicación, participando en el desarrollo e implementación de comunicación comercial y de marca para distintas unidades de negocio. Mi trabajo abarcó desde la promoción de productos y servicios hasta el acompañamiento estratégico, integrando diseño gráfico, coherencia de identidad visual y objetivos comerciales. Intervine en múltiples soportes y formatos, adaptando lineamientos globales a necesidades locales y colaborando con distintas áreas para asegurar una comunicación clara, consistente y orientada a resultados. Además del desarrollo creativo, asumí responsabilidades vinculadas a la coordinación con proveedores y equipos regionales, así como soporte en procesos administrativos y organización de eventos internos y externos.",
     sections: [
       { 
         type: "text", 
