@@ -117,10 +117,10 @@ const categoriesData = {
   },
 
   // NUEVA CATEGORÍA: EDICIÓN DE VIDEO
-  "edicion-video": {
-    title: "Edición de Video",
-    description: "Serie de piezas audiovisuales desarrolladas en el marco de la materia Diseño IV, a partir de material propio y preexistente. Las propuestas integran edición, animación y diseño sonoro, con foco en el ritmo, la construcción de sentido y la coherencia estética en cada proyecto.",
-    projects: [
+"edicion-video": {
+  title: "Edición de Video",
+  description: "Serie de piezas audiovisuales desarrolladas en el marco de la materia Diseño IV, a partir de material propio y preexistente. Las propuestas integran edición, animación y diseño sonoro, con foco en el ritmo, la construcción de sentido y la coherencia estética en cada proyecto.",
+  projects: [
       { 
         id: "portfolio-video", 
         title: "Portfolio",
