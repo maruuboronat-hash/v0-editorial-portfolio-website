@@ -436,9 +436,17 @@ const projectsData: Record<string, {
   },
 
   // PROYECTOS PERSONALES
-  "video-casamiento-1995": {
-    title: "Video de Casamiento y Luna de Miel I 1995",
-    category: "Proyectos Personales",
-    categorySlug: "personales",
-    image: "/images/proyectos-personales/video-casamiento/casamiento-02.png",
-    description: "Proyecto audiovisual realizado a partir del archivo familiar del casamiento y la luna de miel de mis padres en 1995. A través de la edición y el montaje del
+ "video-casamiento-1995": {
+  title: "Video de Casamiento y Luna de Miel I 1995",
+  category: "Proyectos Personales",
+  categorySlug: "personales",
+  image: "/images/proyectos-personales/video-casamiento/casamiento-02.png",
+  description: "Proyecto audiovisual realizado a partir del archivo familiar del casamiento y la luna de miel de mis padres en 1995. A través de la edición y el montaje del material original, el proyecto reinterpreta esas imágenes desde una mirada actual, explorando el paso del tiempo y cómo los registros personales pueden construir identidad.",
+  sections: [
+    { 
+      type: "video-embed", 
+      src: "/images/proyectos-personales/video-casamiento/casamiento.mp4",
+      caption: "Video de casamiento y luna de miel, 1995" 
+    },
+  ],
+},
