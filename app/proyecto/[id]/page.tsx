@@ -165,7 +165,7 @@ const projectsData: Record<string, {
     ]
   },
  
-  // EDICION DE VIDEO projects
+  // EDICION DE VIDEO projects - DESCRIPCIÓN GENERAL (se repite en cada proyecto)
   "portfolio-video": {
     title: "Portfolio",
     category: "Edición de Video",
@@ -251,6 +251,13 @@ const projectsData: Record<string, {
         content: "Proyecto desarrollado en el marco del programa interno Young Talents 2025, enfocado en la digitalización y automatización del proceso de pedidos y control de stock de merchandising.\n\nA partir de la detección de problemas operativos —carga manual, falta de registro y desactualización de datos— diseñé e implementé un sistema integrado con Power Apps, Excel y Power Automate que permitió formalizar pedidos, actualizar stock en tiempo real y generar un historial automático para análisis posteriores.\n\nLa solución redujo errores, optimizó tiempos operativos y dejó una base replicable para otras áreas. El proyecto fue presentado ante gerencia dentro del programa."
       },
       { 
+        type: "infinite-carousel", 
+        images: [
+          { src: "/images/corporativo/young-talents/young-01.jpg", alt: "Young Talents 1" },
+          { src: "/images/corporativo/young-talents/young-02.jpg", alt: "Young Talents 2" },
+        ]
+      },
+      { 
         type: "text", 
         title: "Diseño de cartelería en vía pública", 
         content: "Tuve la oportunidad de diseñar y producir mis primeros carteles para vía pública. Las piezas fueron creadas para promocionar el Centro de Capacitación de Bosch, manteniendo la identidad visual de la marca y adaptándola a diferentes formatos y soportes exteriores."
@@ -274,9 +281,23 @@ const projectsData: Record<string, {
         content: "Flyers de producto: Desarrollo de piezas gráficas para fichas técnicas, lanzamientos y ofertas comerciales destinadas a distribuidores y red comercial. Definición y consolidación de una estética alineada a la identidad global de marca, aplicada de forma consistente en el tiempo.\n\nPresentaciones corporativas y comerciales: Diseño y optimización de presentaciones internas y externas, asegurando coherencia visual, claridad de información y adecuación al contexto de uso.\n\nWrapped – Resumen anual: Conceptualización y diseño del resumen anual de resultados de comunicación (redes sociales, newsletters y métricas digitales), enfocado a los distintos equipos dentro de la división."
       },
       { 
+        type: "infinite-carousel", 
+        images: [
+          { src: "/images/corporativo/comunicacion/comercial-01.jpg", alt: "Comercial 1" },
+          { src: "/images/corporativo/comunicacion/comercial-02.jpg", alt: "Comercial 2" },
+        ]
+      },
+      { 
         type: "text", 
         title: "Asesoramiento y diseño para talleres mecánicos", 
         content: "Desarrollo de propuestas visuales para talleres, integrando sus necesidades comerciales con los lineamientos globales de marca.\n\nEl trabajo incluyó diseño de ploteos y aplicaciones gráficas en fachada, adaptaciones visuales personalizadas y realización de fotomontajes previos a la adhesión a la red. Estas visualizaciones permitían imaginar el resultado del taller fusionado con la identidad Bosch, funcionando como herramienta estratégica en el proceso de decisión.\n\nLa experiencia implicó contacto directo con clientes, análisis del entorno comercial e interpretación espacial, asegurando una implementación coherente y efectiva de la identidad corporativa en contextos reales."
+      },
+      { 
+        type: "infinite-carousel", 
+        images: [
+          { src: "/images/corporativo/talleres/taller-01.jpg", alt: "Taller 1" },
+          { src: "/images/corporativo/talleres/taller-02.jpg", alt: "Taller 2" },
+        ]
       },
       { 
         type: "text", 
@@ -286,9 +307,9 @@ const projectsData: Record<string, {
       { 
         type: "infinite-carousel", 
         images: [
-          { src: "/images/corporativo/via-publica/viapublica-01.jpg", alt: "Merch 01" },
-          { src: "/images/corporativo/via-publica/viapublica-02.jpg", alt: "Merch 02" },
-          { src: "/images/corporativo/via-publica/viapublica-03.jpeg", alt: "Merch 03" },
+          { src: "/images/corporativo/merchandising/merch-01.jpg", alt: "Merch 01" },
+          { src: "/images/corporativo/merchandising/merch-02.jpg", alt: "Merch 02" },
+          { src: "/images/corporativo/merchandising/merch-03.jpg", alt: "Merch 03" },
         ]
       },
       { 
@@ -296,6 +317,7 @@ const projectsData: Record<string, {
         title: "Gestión y Soporte Operativo", 
         content: "Además del desarrollo creativo, participé en:\n• Coordinación con proveedores y agencias\n• Gestión y control de stock de merchandising\n• Soporte en procesos administrativos (órdenes de compra, entregas y pagos)\n• Organización y asistencia en eventos corporativos y promocionales\n• Articulación con equipos regionales"
       }
+      // NOTA: Esta sección NO tiene carrusel, solo texto
     ]
   },
   
@@ -306,11 +328,7 @@ const projectsData: Record<string, {
     image: "/images/corporativo/logos/portadas-logos-01.jpg",
     description: "Proyecto desarrollado para la empresa de logística Pick&Log, enfocado en el diseño de plantillas visuales y dashboards para Power BI dentro de su sistema de gestión logística.\n\nEl trabajo integró diseño funcional y visualización de datos, con el objetivo de optimizar la lectura de información y facilitar el seguimiento de indicadores operativos. Se priorizó claridad, jerarquía visual y coherencia gráfica, asegurando una experiencia intuitiva para la toma de decisiones.",
     sections: [
-      { 
-        type: "text", 
-        title: "Power BI - Plantillas de logística", 
-        content: "Diseño y desarrollo de dashboards interactivos en Power BI para el seguimiento logístico. Se crearon plantillas visuales que permiten analizar métricas clave como tiempos de entrega, eficiencia operativa y volumen de pedidos, mejorando la toma de decisiones del equipo de logística." 
-      },
+      // DESCRIPCIÓN ELIMINADA - solo queda el carrusel
       { 
         type: "infinite-carousel", 
         images: [
@@ -327,17 +345,7 @@ const projectsData: Record<string, {
     image: "/images/corporativo/logos/portadas-logos-02.jpg",
     description: "Diseño y desarrollo de la página web corporativa para Cantiere SA.",
     sections: [
-      { 
-        type: "text", 
-        title: "Página Web Corporativa", 
-        content: "Diseño y desarrollo de sitio web institucional para empresa constructora. Se priorizó una interfaz limpia y profesional que refleja la solidez de la marca, con secciones de proyectos, servicios y contacto. El diseño es completamente responsive y optimizado para dispositivos móviles." 
-      },
-      { 
-        type: "infinite-carousel", 
-        images: [
-          { src: "/images/corporativo/via-publica/viapublica-01.jpg", alt: "Web 01" },
-        ]
-      }
+      // PROYECTO DESACTIVADO - se mostrará en el futuro
     ]
   },
 
@@ -436,11 +444,10 @@ const projectsData: Record<string, {
   },
 
   // PROYECTOS PERSONALES
-// PROYECTOS PERSONALES
-"video-casamiento-1995": {
-  title: "Video de Casamiento y Luna de Miel I 1995",
-  category: "Proyectos Personales",
-  categorySlug: "personales",
+  "video-casamiento-1995": {
+    title: "Video de Casamiento y Luna de Miel I 1995",
+    category: "Proyectos Personales",
+    categorySlug: "personales",
   image: "/images/proyectos-personales/video-casamiento/casamiento-02.png",
   description: "Proyecto audiovisual realizado a partir del archivo familiar del casamiento y la luna de miel de mis padres en 1995. A través de la edición y el montaje del material original, el proyecto reinterpreta esas imágenes desde una mirada actual, explorando el paso del tiempo y cómo los registros personales pueden construir identidad.",
   sections: [
