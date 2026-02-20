@@ -140,8 +140,8 @@ function AboutSection() {
         {/* TEXTO BIO */}
         <div className="md:col-span-7 md:col-start-6">
           <p className="text-lg md:text-xl leading-relaxed mb-6">
-            Estudiante de Diseño Gráfico y Comunicación en UCES, con foco en
-            identidad visual, editorial y comunicación estratégica.
+            Estudiante de Diseño Gráfico y Comunicación en UCES. 
+            Algunos sienten pasión por un artista, un famoso o un deporte. Hace poco me preguntaron cuál era la mía, y no supe qué responder. Me quedé pensando, hasta que entendí que mi pasión es lo que hago.
           </p>
           <Link
             href="/bio"
