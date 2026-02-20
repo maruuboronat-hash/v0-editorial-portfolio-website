@@ -1,16 +1,16 @@
 import Link from "next/link"
 import { notFound } from "next/navigation"
-import Image from "next/image" // ← IMPORTANTE: agregar este import
+import Image from "next/image"
 import { ProjectSections, type SectionType } from "@/components/project-sections"
 import { ContactSection } from "@/components/contact-section"
 
-// Project data with real content - CORREGIDO: agregado image en el tipo
+// Project data with real content
 const projectsData: Record<string, {
   title: string
   category: string
   categorySlug: string
   description: string
-  image?: string // ← AGREGADO: image opcional
+  image?: string
   sections: SectionType[]
 }> = {
   // DISEÑO GRÁFICO projects
@@ -166,84 +166,94 @@ const projectsData: Record<string, {
   },
  
   // EDICION DE VIDEO projects
-"portfolio-video": {
-  title: "Portfolio",
-  category: "Edición de Video",
-  categorySlug: "edicion-video",
-  image: "/images/edicion-video/portada05.png",
-  sections: [
-    {
-      type: "video-embed",
-      src: "/images/edicion-video/video-portfolio.mp4",
-      caption: "Portfolio - Diseño IV"
-    }
-  ]
-},
-"mini-skirts-video": {
-  title: "Mini Skirts - Mary Quant",
-  category: "Edición de Video",
-  categorySlug: "edicion-video",
-  image: "/images/edicion-video/portada03.png",
-  sections: [
-    {
-      type: "video-embed",
-      src: "https://www.youtube.com/embed/w0SAl3TPjGM", // Funciona
-      caption: "Mini Skirts - Mary Quant"
-    }
-  ]
-},
-"vlog-diario-video": {
-  title: "Vlog Diario",
-  category: "Edición de Video",
-  categorySlug: "edicion-video",
-  image: "/images/edicion-video/portada04.png",
-  sections: [
-    {
-      type: "video-embed",
-      src: "https://www.youtube.com/embed/FlTDpF_Dr6Y",
-      caption: "Vlog Diario"
-    }
-  ]
-},
-"motocross-video": {
-  title: "Motocross",
-  category: "Edición de Video",
-  categorySlug: "edicion-video",
-  image: "/images/edicion-video/portada02.jpeg",
-  sections: [
-    {
-      type: "video-embed",
-      src: "https://www.youtube.com/embed/mm8RTJ4UoPE",
-      caption: "Motocross"
-    }
-  ]
-},
-"indumentaria-video": {
-  title: "Indumentaria",
-  category: "Edición de Video",
-  categorySlug: "edicion-video",
-  image: "/images/edicion-video/portada01.png",
-  sections: [
-    {
-      type: "video-embed",
-      src: "/images/edicion-video/video-modelos.mp4",
-      caption: "Indumentaria - Diseño IV"
-    }
-  ]
-},
+  "portfolio-video": {
+    title: "Portfolio",
+    category: "Edición de Video",
+    categorySlug: "edicion-video",
+    image: "/images/edicion-video/portada05.png",
+    description: "Serie de piezas audiovisuales desarrolladas en el marco de la materia Diseño IV, a partir de material propio y preexistente. Las propuestas integran edición, animación y diseño sonoro, con foco en el ritmo, la construcción de sentido y la coherencia estética en cada proyecto.",
+    sections: [
+      {
+        type: "video-embed",
+        src: "/images/edicion-video/video-portfolio.mp4",
+        caption: "Portfolio - Diseño IV"
+      }
+    ]
+  },
+  "mini-skirts-video": {
+    title: "Mini Skirts - Mary Quant",
+    category: "Edición de Video",
+    categorySlug: "edicion-video",
+    image: "/images/edicion-video/portada03.png",
+    description: "Serie de piezas audiovisuales desarrolladas en el marco de la materia Diseño IV, a partir de material propio y preexistente. Las propuestas integran edición, animación y diseño sonoro, con foco en el ritmo, la construcción de sentido y la coherencia estética en cada proyecto.",
+    sections: [
+      {
+        type: "video-embed",
+        src: "https://www.youtube.com/embed/w0SAl3TPjGM",
+        caption: "Mini Skirts - Mary Quant"
+      }
+    ]
+  },
+  "vlog-diario-video": {
+    title: "Vlog Diario",
+    category: "Edición de Video",
+    categorySlug: "edicion-video",
+    image: "/images/edicion-video/portada04.png",
+    description: "Serie de piezas audiovisuales desarrolladas en el marco de la materia Diseño IV, a partir de material propio y preexistente. Las propuestas integran edición, animación y diseño sonoro, con foco en el ritmo, la construcción de sentido y la coherencia estética en cada proyecto.",
+    sections: [
+      {
+        type: "video-embed",
+        src: "https://www.youtube.com/embed/FlTDpF_Dr6Y",
+        caption: "Vlog Diario"
+      }
+    ]
+  },
+  "motocross-video": {
+    title: "Motocross",
+    category: "Edición de Video",
+    categorySlug: "edicion-video",
+    image: "/images/edicion-video/portada02.jpeg",
+    description: "Serie de piezas audiovisuales desarrolladas en el marco de la materia Diseño IV, a partir de material propio y preexistente. Las propuestas integran edición, animación y diseño sonoro, con foco en el ritmo, la construcción de sentido y la coherencia estética en cada proyecto.",
+    sections: [
+      {
+        type: "video-embed",
+        src: "https://www.youtube.com/embed/mm8RTJ4UoPE",
+        caption: "Motocross"
+      }
+    ]
+  },
+  "indumentaria-video": {
+    title: "Indumentaria",
+    category: "Edición de Video",
+    categorySlug: "edicion-video",
+    image: "/images/edicion-video/portada01.png",
+    description: "Serie de piezas audiovisuales desarrolladas en el marco de la materia Diseño IV, a partir de material propio y preexistente. Las propuestas integran edición, animación y diseño sonoro, con foco en el ritmo, la construcción de sentido y la coherencia estética en cada proyecto.",
+    sections: [
+      {
+        type: "video-embed",
+        src: "/images/edicion-video/video-modelos.mp4",
+        caption: "Indumentaria - Diseño IV"
+      }
+    ]
+  },
   
   // CORPORATIVO projects
-"carteles-bosch": {
-  title: "Robert Bosch Argentina",
-  category: "Corporativo",
-  categorySlug: "corporativo",
-  image: "/images/corporativo/logos/portadas-logos-05.jpg",
-    description: "Durante mi pasantía en Bosch Mobility Aftermarket Argentina formé parte del equipo de Marketing y Comunicación, participando en el desarrollo e implementación de comunicación comercial y de marca para distintas unidades de negocio. Mi trabajo abarcó desde la promoción de productos y servicios hasta el acompañamiento estratégico, integrando diseño gráfico, coherencia de identidad visual y objetivos comerciales. Intervine en múltiples soportes y formatos, adaptando lineamientos globales a necesidades locales y colaborando con distintas áreas para asegurar una comunicación clara, consistente y orientada a resultados. Además del desarrollo creativo, asumí responsabilidades vinculadas a la coordinación con proveedores y equipos regionales, así como soporte en procesos administrativos y organización de eventos internos y externos.",
+  "carteles-bosch": {
+    title: "Robert Bosch Argentina",
+    category: "Corporativo",
+    categorySlug: "corporativo",
+    image: "/images/corporativo/logos/portadas-logos-05.jpg",
+    description: "Durante mi pasantía en Bosch Mobility Aftermarket Argentina formé parte del equipo de Marketing y Comunicación, participando en el desarrollo e implementación de comunicación comercial y de marca para distintas unidades de negocio.\n\nMi trabajo abarcó desde la promoción de productos y servicios hasta el acompañamiento estratégico, integrando diseño gráfico, coherencia de identidad visual y objetivos comerciales. Intervine en múltiples soportes y formatos, adaptando lineamientos globales a necesidades locales y colaborando con distintas áreas para asegurar una comunicación clara, consistente y orientada a resultados.\n\nAdemás del desarrollo creativo, asumí responsabilidades vinculadas a la coordinación con proveedores y equipos regionales, así como soporte en procesos administrativos y organización de eventos internos y externos.",
     sections: [
       { 
         type: "text", 
-        title: "Carteles en vía pública", 
-        content: "Diseño y producción de cartelería para vía pública destinada a promocionar el Centro de Capacitación Bosch. Las piezas respetan la identidad visual de la marca y se adaptan a distintos formatos y soportes exteriores." 
+        title: "Young Talents – Automatización de pedidos y control de stock", 
+        content: "Proyecto desarrollado en el marco del programa interno Young Talents 2025, enfocado en la digitalización y automatización del proceso de pedidos y control de stock de merchandising.\n\nA partir de la detección de problemas operativos —carga manual, falta de registro y desactualización de datos— diseñé e implementé un sistema integrado con Power Apps, Excel y Power Automate que permitió formalizar pedidos, actualizar stock en tiempo real y generar un historial automático para análisis posteriores.\n\nLa solución redujo errores, optimizó tiempos operativos y dejó una base replicable para otras áreas. El proyecto fue presentado ante gerencia dentro del programa."
+      },
+      { 
+        type: "text", 
+        title: "Diseño de cartelería en vía pública", 
+        content: "Tuve la oportunidad de diseñar y producir mis primeros carteles para vía pública. Las piezas fueron creadas para promocionar el Centro de Capacitación de Bosch, manteniendo la identidad visual de la marca y adaptándola a diferentes formatos y soportes exteriores."
       },
       { 
         type: "infinite-carousel", 
@@ -258,43 +268,43 @@ const projectsData: Record<string, {
           { src: "/images/corporativo/via-publica/viapublica-08.jpeg", alt: "Cartel 08" },
         ]
       },
-      
       { 
         type: "text", 
-        title: "Materiales POP", 
-        content: "Desarrollo de materiales promocionales para puntos de venta, incluyendo folletos, banners y displays interactivos para el lanzamiento de nuevos productos." 
+        title: "Comunicación Comercial & Marca", 
+        content: "Flyers de producto: Desarrollo de piezas gráficas para fichas técnicas, lanzamientos y ofertas comerciales destinadas a distribuidores y red comercial. Definición y consolidación de una estética alineada a la identidad global de marca, aplicada de forma consistente en el tiempo.\n\nPresentaciones corporativas y comerciales: Diseño y optimización de presentaciones internas y externas, asegurando coherencia visual, claridad de información y adecuación al contexto de uso.\n\nWrapped – Resumen anual: Conceptualización y diseño del resumen anual de resultados de comunicación (redes sociales, newsletters y métricas digitales), enfocado a los distintos equipos dentro de la división."
+      },
+      { 
+        type: "text", 
+        title: "Asesoramiento y diseño para talleres mecánicos", 
+        content: "Desarrollo de propuestas visuales para talleres, integrando sus necesidades comerciales con los lineamientos globales de marca.\n\nEl trabajo incluyó diseño de ploteos y aplicaciones gráficas en fachada, adaptaciones visuales personalizadas y realización de fotomontajes previos a la adhesión a la red. Estas visualizaciones permitían imaginar el resultado del taller fusionado con la identidad Bosch, funcionando como herramienta estratégica en el proceso de decisión.\n\nLa experiencia implicó contacto directo con clientes, análisis del entorno comercial e interpretación espacial, asegurando una implementación coherente y efectiva de la identidad corporativa en contextos reales."
+      },
+      { 
+        type: "text", 
+        title: "Merchandising & Materiales Promocionales", 
+        content: "Diseño y desarrollo de materiales aplicados a distintas acciones comerciales y de marca: stickers, ploteos, bolsas, anotadores, cuadernos, llaveros, catálogos, newsletters y piezas para redes sociales. Trabajo enfocado en coherencia visual, funcionalidad y alineación a objetivos comerciales."
       },
       { 
         type: "infinite-carousel", 
         images: [
-          { src: "/images/corporativo/via-publica/viapublica-01.jpg", alt: "POP 01" },
-          { src: "/images/corporativo/via-publica/viapublica-02.jpg", alt: "POP 02" },
-          { src: "/images/corporativo/via-publica/viapublica-03.jpeg", alt: "POP 03" },
+          { src: "/images/corporativo/via-publica/viapublica-01.jpg", alt: "Merch 01" },
+          { src: "/images/corporativo/via-publica/viapublica-02.jpg", alt: "Merch 02" },
+          { src: "/images/corporativo/via-publica/viapublica-03.jpeg", alt: "Merch 03" },
         ]
       },
-      
       { 
         type: "text", 
-        title: "Merchandising", 
-        content: "Diseño de artículos promocionales y regalos corporativos para eventos internos y externos, reforzando la identidad de marca en cada pieza." 
-      },
-      { 
-        type: "infinite-carousel", 
-        images: [
-          { src: "/images/corporativo/via-publica/viapublica-04.jpeg", alt: "Merch 01" },
-          { src: "/images/corporativo/via-publica/viapublica-05.jpeg", alt: "Merch 02" },
-          { src: "/images/corporativo/via-publica/viapublica-06.jpeg", alt: "Merch 03" },
-        ]
+        title: "Gestión y Soporte Operativo", 
+        content: "Además del desarrollo creativo, participé en:\n• Coordinación con proveedores y agencias\n• Gestión y control de stock de merchandising\n• Soporte en procesos administrativos (órdenes de compra, entregas y pagos)\n• Organización y asistencia en eventos corporativos y promocionales\n• Articulación con equipos regionales"
       }
     ]
   },
   
-"power-bi-picklog": {
-  title: "Pick&Log",
-  category: "Corporativo",
-  categorySlug: "corporativo",
-  image: "/images/corporativo/logos/portadas-logos-01.jpg",
-    description: "Diseño de plantillas visuales y dashboards en Power BI para el sistema de gestión logística de Pick&Log. El trabajo combina diseño funcional y visualización de datos para mejorar la lectura y el seguimiento de indicadores operativos.",
+  "power-bi-picklog": {
+    title: "Pick&Log",
+    category: "Corporativo",
+    categorySlug: "corporativo",
+    image: "/images/corporativo/logos/portadas-logos-01.jpg",
+    description: "Proyecto desarrollado para la empresa de logística Pick&Log, enfocado en el diseño de plantillas visuales y dashboards para Power BI dentro de su sistema de gestión logística.\n\nEl trabajo integró diseño funcional y visualización de datos, con el objetivo de optimizar la lectura de información y facilitar el seguimiento de indicadores operativos. Se priorizó claridad, jerarquía visual y coherencia gráfica, asegurando una experiencia intuitiva para la toma de decisiones.",
     sections: [
       { 
         type: "text", 
@@ -310,11 +320,11 @@ const projectsData: Record<string, {
     ]
   },
   
-"cantiere": {
-  title: "Cantiere SA",
-  category: "Corporativo",
-  categorySlug: "corporativo",
-  image: "/images/corporativo/logos/portadas-logos-02.jpg",
+  "cantiere": {
+    title: "Cantiere SA",
+    category: "Corporativo",
+    categorySlug: "corporativo",
+    image: "/images/corporativo/logos/portadas-logos-02.jpg",
     description: "Diseño y desarrollo de la página web corporativa para Cantiere SA.",
     sections: [
       { 
@@ -332,11 +342,11 @@ const projectsData: Record<string, {
   },
 
   // INDUMENTARIA E ILUSTRACIÓN projects
-"coleccion-portuguese": {
-  title: "Colección Portuguese",
-  category: "Indumentaria e Ilustración",
-  categorySlug: "indumentaria-ilustracion",
-  image: "/images/indumentaria-ilustracion/colección-portuguese/portuguese-portada-blanco.jpg",
+  "coleccion-portuguese": {
+    title: "Colección Portuguese",
+    category: "Indumentaria e Ilustración",
+    categorySlug: "indumentaria-ilustracion",
+    image: "/images/indumentaria-ilustracion/colección-portuguese/portuguese-portada-blanco.jpg",
     description: "Mini colección inspirada en la estética 'Portuguese', centrada en el uso del color, las texturas y los detalles artesanales. El proyecto incluye el desarrollo de fichas técnicas, geometrales y figurines, junto con una propuesta conceptual que combina identidad cultural y diseño contemporáneo.",
     sections: [
       { 
@@ -355,11 +365,11 @@ const projectsData: Record<string, {
       }
     ]
   },
-"fotografia-moda": {
-  title: "Fotografía de moda",
-  category: "Indumentaria e Ilustración",
-  categorySlug: "indumentaria-ilustracion",
-  image: "/images/indumentaria-ilustracion/fotografia-moda/fotografia-portada.jpg",
+  "fotografia-moda": {
+    title: "Fotografía de moda",
+    category: "Indumentaria e Ilustración",
+    categorySlug: "indumentaria-ilustracion",
+    image: "/images/indumentaria-ilustracion/fotografia-moda/fotografia-portada.jpg",
     description: "Serie de fotografías realizadas para proyectos de indumentaria, enfocadas en representar el concepto central de cada diseño. A través de la composición, la luz y la dirección de arte, las imágenes buscan resaltar la identidad visual y el carácter expresivo de cada prenda.",
     sections: [
       { 
@@ -387,11 +397,11 @@ const projectsData: Record<string, {
       }
     ]
   },
-"jeaneria-fichas": {
-  title: "Jeanería I Fichas técnicas y geometrales",
-  category: "Indumentaria e Ilustración",
-  categorySlug: "indumentaria-ilustracion",
-  image: "/images/indumentaria-ilustracion/jeaneria/fichas-portada.jpg",
+  "jeaneria-fichas": {
+    title: "Jeanería I Fichas técnicas y geometrales",
+    category: "Indumentaria e Ilustración",
+    categorySlug: "indumentaria-ilustracion",
+    image: "/images/indumentaria-ilustracion/jeaneria/fichas-portada.jpg",
     description: "Proyecto centrado en el desarrollo técnico de prendas de denim. Incluye fichas técnicas detalladas, geometrales y especificaciones de confección que abordan la estructura, los materiales y los procesos de armado de cada pieza.",
     sections: [
       { 
@@ -405,11 +415,11 @@ const projectsData: Record<string, {
       }
     ]
   },
-"prototipos-indumentaria": {
-  title: "Prototipos de indumentaria",
-  category: "Indumentaria e Ilustración",
-  categorySlug: "indumentaria-ilustracion",
-  image: "/images/indumentaria-ilustracion/prototipos/protos-portada.jpg",
+  "prototipos-indumentaria": {
+    title: "Prototipos de indumentaria",
+    category: "Indumentaria e Ilustración",
+    categorySlug: "indumentaria-ilustracion",
+    image: "/images/indumentaria-ilustracion/prototipos/protos-portada.jpg",
     description: "Desarrollo de prendas confeccionadas a mano durante la cursada de Diseño de Indumentaria. Cada prototipo explora la relación entre moldería, materiales y construcción, poniendo el foco en la experimentación con formas, terminaciones y el concepto particular que guía cada proyecto.",
     sections: [
       { 
@@ -426,145 +436,9 @@ const projectsData: Record<string, {
   },
 
   // PROYECTOS PERSONALES
-"video-casamiento-1995": {
-  title: "Video de Casamiento y Luna de Miel I 1995",
-  category: "Proyectos Personales",
-  categorySlug: "personales",
-  image: "/images/proyectos-personales/video-casamiento/casamiento-02.png",
-    description: "Proyecto audiovisual realizado a partir del archivo familiar del casamiento y la luna de miel de mis padres en 1995. A través de la edición y el montaje del material original, el proyecto reinterpreta esas imágenes desde una mirada actual, explorando el paso del tiempo y cómo los registros personales pueden construir identidad.",
-    sections: [
-      { 
-        type: "video-embed", 
-        src: "/images/proyectos-personales/video-casamiento/casamiento.mp4",
-        caption: "Video de casamiento y luna de miel, 1995" 
-      },
-    ],
-  },
-"fotografia-analogica": {
-  title: "Fotografía analógica",
-  category: "Proyectos Personales",
-  categorySlug: "personales",
-  image: "/images/proyectos-personales/analogicas/analogicas-portada.JPG",
-    description: "Serie de fotografías analógicas tomadas durante un viaje por Europa, con la intención de experimentar con nuevas técnicas y rollos vencidos. El proyecto funciona como un registro espontáneo que explora la luz, el color y la composición desde una mirada más personal.",
-    sections: [
-      { 
-        type: "two-column-grid", 
-        images: [
-          { src: "/images/proyectos-personales/analogicas/analogicas-01.jpg", alt: "Analógica 01" },
-          { src: "/images/proyectos-personales/analogicas/analogicas-02.jpg", alt: "Analógica 02" },
-          { src: "/images/proyectos-personales/analogicas/analogicas-03.jpg", alt: "Analógica 03" },
-          { src: "/images/proyectos-personales/analogicas/analogicas-04.jpg", alt: "Analógica 04" },
-          { src: "/images/proyectos-personales/analogicas/analogicas-05.jpg", alt: "Analógica 05" },
-          { src: "/images/proyectos-personales/analogicas/analogicas-06.jpg", alt: "Analógica 06" },
-          { src: "/images/proyectos-personales/analogicas/analogicas-07.jpg", alt: "Analógica 07" },
-          { src: "/images/proyectos-personales/analogicas/analogicas-08.jpg", alt: "Analógica 08" },
-          { src: "/images/proyectos-personales/analogicas/analogicas-09.jpg", alt: "Analógica 09" },
-          { src: "/images/proyectos-personales/analogicas/analogicas-10.jpg", alt: "Analógica 10" },
-          { src: "/images/proyectos-personales/analogicas/analogicas-11.jpg", alt: "Analógica 11" }
-        ]
-      }
-    ]
-  },
-}
-
-// Get all projects in a category for "También te puede gustar" section
-function getRelatedProjects(currentId: string, categorySlug: string) {
-  return Object.entries(projectsData)
-    .filter(([id, project]) => id !== currentId && project.categorySlug === categorySlug)
-    .slice(0, 2)
-    .map(([id, project]) => ({ 
-      id, 
-      title: project.title,
-      image: project.image
-    }))
-}
-
-function getProject(id: string) {
-  return projectsData[id] || null
-}
-
-type PageParams = Promise<{ id: string }>
-
-export default async function ProjectPage({ params }: { params: PageParams }) {
-  const { id } = await params
-  const project = getProject(id)
-
-  if (!project) {
-    notFound()
-  }
-
-  const relatedProjects = getRelatedProjects(id, project.categorySlug)
-
-  return (
-    <article className="pt-24 pb-24 min-h-screen">
-      <header className="px-6 md:px-12 mb-16 md:mb-24">
-        <div className="max-w-5xl mx-auto">
-          <Link
-            href={`/proyectos/${project.categorySlug}`}
-            className="text-xs uppercase tracking-widest text-muted-foreground hover:text-foreground transition-colors mb-8 inline-block"
-          >
-            &larr; {project.category}
-          </Link>
-          
-          <h1 className="font-heading text-3xl md:text-5xl lg:text-6xl tracking-tight mb-8">
-            {project.title}
-          </h1>
-          
-          <p className="text-base md:text-lg leading-relaxed text-muted-foreground">
-            {project.description}
-          </p>
-        </div>
-      </header>
-
-      <div className="px-6 md:px-12">
-        <div className="max-w-5xl mx-auto">
-          <ProjectSections sections={project.sections} />
-        </div>
-      </div>
-
-      {relatedProjects.length > 0 && (
-        <section className="px-6 md:px-12 mt-24 pt-16 border-t border-border">
-          <div className="max-w-6xl mx-auto">
-            <h2 className="font-heading text-lg mb-12">
-              :) También te puede gustar:
-            </h2>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-border">
-              {relatedProjects.map((relatedProject) => (
-                <Link
-                  key={relatedProject.id}
-                  href={`/proyecto/${relatedProject.id}`}
-                  className="group bg-background"
-                >
-                  <div className="aspect-[4/3] bg-muted relative overflow-hidden">
-                    {relatedProject.image ? (
-                      <Image
-                        src={relatedProject.image}
-                        alt={relatedProject.title}
-                        fill
-                        className="object-cover"
-                        sizes="(max-width: 768px) 50vw, 33vw"
-                      />
-                    ) : (
-                      <div className="absolute inset-0 flex items-center justify-center text-muted-foreground text-xs uppercase tracking-widest opacity-30">
-                        {relatedProject.title}
-                      </div>
-                    )}
-                    <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/5 transition-colors" />
-                  </div>
-                  <div className="p-6 border-t border-border">
-                    <h3 className="font-heading text-xl group-hover:underline underline-offset-4">
-                      {relatedProject.title}
-                    </h3>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
-
-      <ContactSection />
-    </article>
-  )
-}
+  "video-casamiento-1995": {
+    title: "Video de Casamiento y Luna de Miel I 1995",
+    category: "Proyectos Personales",
+    categorySlug: "personales",
+    image: "/images/proyectos-personales/video-casamiento/casamiento-02.png",
+    description: "Proyecto audiovisual realizado a partir del archivo familiar del casamiento y la luna de miel de mis padres en 1995. A través de la edición y el montaje del
