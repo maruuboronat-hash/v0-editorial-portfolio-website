@@ -257,13 +257,19 @@ const projectsData: Record<string, {
         "Microsoft Office"
       ] 
       },
-      { 
-        type: "infinite-carousel", 
-        images: [
-          { src: "/images/corporativo/young-talents/young-01.jpg", alt: "Young Talents 1" },
-          { src: "/images/corporativo/young-talents/young-02.jpg", alt: "Young Talents 2" },
-        ]
-      },
+      // YOUNG TALENTS
+{ 
+  type: "text", 
+  title: "Young Talents – Automatización de pedidos y control de stock", 
+  content: "Proyecto desarrollado en el marco del programa interno Young Talents 2025, enfocado en la digitalización y automatización del proceso de pedidos y control de stock de merchandising.\n\nA partir de la detección de problemas operativos —carga manual, falta de registro y desactualización de datos— diseñé e implementé un sistema integrado con Power Apps, Excel y Power Automate que permitió formalizar pedidos, actualizar stock en tiempo real y generar un historial automático para análisis posteriores.\n\nLa solución redujo errores, optimizó tiempos operativos y dejó una base replicable para otras áreas. El proyecto fue presentado ante gerencia dentro del programa."
+},
+{ 
+  type: "infinite-carousel", 
+  images: [
+    { src: "/images/corporativo/young-talents/young-01.jpg", alt: "Young Talents 1" },
+    { src: "/images/corporativo/young-talents/young-02.jpg", alt: "Young Talents 2" },
+  ]
+},
       { 
         type: "text", 
         title: "Diseño de cartelería en vía pública", 
