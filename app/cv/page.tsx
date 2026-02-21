@@ -135,13 +135,13 @@ export default function CVPage() {
               <div className="space-y-12">
 {experience.map((item, index) => (
   <div key={index} className="grid grid-cols-1 md:grid-cols-4 gap-4">
-    {/* Columna izquierda: fecha + logo debajo */}
-    <div className="space-y-3">
+    {/* Columna izquierda: fecha + logo (más pegado) */}
+    <div className="space-y-1"> {/* ← space-y-1 (4px de separación) */}
       <span className="text-sm text-muted-foreground block">
         {item.period}
       </span>
       {item.logo && (
-        <div className="relative w-20 h-20"> {/* 80x80px ≈ 2x2cm */}
+        <div className="relative w-28 h-28"> {/* ← 112x112px ≈ 3cm */}
           <Image
             src={item.logo}
             alt={item.company}
