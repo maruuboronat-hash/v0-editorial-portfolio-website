@@ -530,7 +530,7 @@ export default async function ProjectPage({ params }: { params: PageParams }) {
   return (
     <article className="pt-24 pb-24 min-h-screen">
       <header className="px-6 md:px-12 mb-16 md:mb-24">
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           <Link
             href={`/proyectos/${project.categorySlug}`}
             className="text-xs uppercase tracking-widest text-muted-foreground hover:text-foreground transition-colors mb-8 inline-block"
