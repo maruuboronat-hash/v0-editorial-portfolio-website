@@ -136,20 +136,25 @@ export function InfiniteCarousel({ images }: { images: Array<{ src: string; alt?
    SKILLS SECTION
 ========================= */
 
+/* =========================
+   SKILLS SECTION (ESTILO CV)
+========================= */
+
 export function SkillsSection({ section }: { section: Extract<SectionType, { type: "skills" }> }) {
   return (
     <section className="w-full py-1">
-      <div className="max-w-5xl mx-auto">
-        {/* Título centrado */}
-        <h3 className="text-base font-heading tracking-tight mb-4 text-center">
+      <div className="max-w-7xl mx-auto"> {/* Mismo ancho que el título */}
+        {/* Título alineado a la izquierda (como en CV) */}
+        <h3 className="text-xs font-heading uppercase tracking-widest text-muted-foreground mb-4">
           Herramientas y tecnologías
         </h3>
-        {/* Contenedor de globos centrado */}
-        <div className="flex flex-wrap gap-2 justify-center">
+        
+        {/* Contenedor de globos con ancho ajustable */}
+        <div className="flex flex-wrap gap-2">
           {section.skills.map((skill, index) => (
             <span 
               key={index}
-              className="inline-block px-3 py-1.5 text-xs font-medium bg-gray-100 text-gray-800 rounded-full border border-gray-200"
+              className="text-xs px-3 py-1.5 border border-border bg-transparent text-foreground"
             >
               {skill}
             </span>
