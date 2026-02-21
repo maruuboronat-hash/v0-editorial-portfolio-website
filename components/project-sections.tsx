@@ -140,14 +140,16 @@ export function SkillsSection({ section }: { section: Extract<SectionType, { typ
   return (
     <section className="w-full py-1">
       <div className="max-w-5xl mx-auto">
-        <h3 className="text-base font-heading tracking-tight mb-4">
+        {/* Título centrado */}
+        <h3 className="text-base font-heading tracking-tight mb-4 text-center">
           Herramientas y tecnologías
         </h3>
-        <div className="flex flex-wrap gap-2">
+        {/* Contenedor de globos centrado */}
+        <div className="flex flex-wrap gap-2 justify-center">
           {section.skills.map((skill, index) => (
             <span 
               key={index}
-              className="inline-block px-4 py-2 text-xs font-medium bg-gray-100 text-gray-800 rounded-full border border-gray-200 hover:bg-gray-200 transition-colors"
+              className="inline-block px-3 py-1.5 text-xs font-medium bg-gray-100 text-gray-800 rounded-full border border-gray-200"
             >
               {skill}
             </span>
