@@ -549,7 +549,7 @@ export default async function ProjectPage({ params }: { params: PageParams }) {
       </header>
 
       <div className="px-6 md:px-12">
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           <ProjectSections sections={project.sections} />
         </div>
       </div>
