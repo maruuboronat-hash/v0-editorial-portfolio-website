@@ -527,25 +527,34 @@ export default async function ProjectPage({ params }: { params: PageParams }) {
 
   const relatedProjects = getRelatedProjects(id, project.categorySlug)
 
-return (
-  <article className="pt-24 pb-24 min-h-screen">
-    {/* HEADER - título y descripción principal */}
-    <header className="px-6 md:px-12 mb-16 md:mb-24">
-      <div className="max-w-5xl mx-auto">  {/* ← ANCHO DEL TÍTULO */}
-        <Link ... />
-        <h1 ... >{project.title}</h1>
-        <p ... >{project.description}</p>
-      </div>
-    </header>
+  return (
+    <article className="pt-24 pb-24 min-h-screen">
+      {/* HEADER - título y descripción principal */}
+      <header className="px-6 md:px-12 mb-16 md:mb-24">
+        <div className="max-w-7xl mx-auto">  {/* ← CAMBIADO A max-w-7xl */}
+          <Link
+            href={`/proyectos/${project.categorySlug}`}
+            className="text-xs uppercase tracking-widest text-muted-foreground hover:text-foreground transition-colors mb-8 inline-block"
+          >
+            &larr; {project.category}
+          </Link>
+          
+          <h1 className="font-heading text-3xl md:text-5xl lg:text-6xl tracking-tight mb-8">
+            {project.title}
+          </h1>
+          
+          <p className="text-base md:text-lg leading-relaxed text-muted-foreground">
+            {project.description}
+          </p>
+        </div>
+      </header>
 
-    {/* SECCIONES - subtítulos, descripciones y carruseles */}
-    <div className="px-6 md:px-12">
-      <div className="max-w-7xl mx-auto">  {/* ← ANCHO DE CARRUSELES (MÁS ANCHO) */}
-        <ProjectSections sections={project.sections} />
+      {/* SECCIONES - subtítulos, descripciones y carruseles */}
+      <div className="px-6 md:px-12">
+        <div className="max-w-7xl mx-auto">
+          <ProjectSections sections={project.sections} />
+        </div>
       </div>
-    </div>
-  </article>
-)
 
       {relatedProjects.length > 0 && (
         <section className="px-6 md:px-12 mt-24 pt-16 border-t border-border">
