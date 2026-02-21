@@ -1,27 +1,28 @@
 const experience = [
   {
-    period: "2024 — Presente",
+    period: "2024 — 2026",
     role: "Pasante de Marketing y Comunicación",
     company: "Bosch - Mobility Aftermarket",
-    description: "Dirección de proyectos de identidad visual, diseño editorial y comunicación estratégica para clientes nacionales e internacionales.",
+    description: "Trabajé en el área de comunicación de una multinacional alemana, donde me encargué de la producción integral de assets visuales para medios impresos y digitales: desde flyers de producto y cartelería en vía pública hasta newsletters, presentaciones corporativas y edición de video. Desarrollé y mantuve la estética visual de las piezas comerciales alineada a la identidad global de marca, y asesoré a talleres de la red Bosch con propuestas gráficas personalizadas. También gestioné procesos administrativos y coordiné proveedores y agencias externas.
+Como parte del programa Young Talents 2025, diseñé e implementé un sistema de digitalización del proceso de pedidos y control de stock de merchandising, integrando Power Apps, Excel y Power Automate. La solución redujo errores, automatizó el registro en tiempo real y fue presentada ante gerencia.",
   },
   {
     period: "2021 — 2024",
     role: "Empleado Administrativo",
     company: "Cantiere SA",
-    description: "Desarrollo de sistemas de identidad visual y campañas de comunicación para marcas de diferentes sectores.",
+    description: "Gestioné el registro y control de facturación mediante planillas en Excel, mantuve legajos de empleados y colaboré en tareas de logística interna.",
   },
   {
     period: "2022",
     role: "Runner",
     company: "AACI - Asociación Argentina de Cultura Inglesa",
-    description: "Diseño de piezas gráficas para campañas publicitarias y branding de productos de consumo masivo.",
+    description: "Asistí en la coordinación operativa de exámenes internacionales en colegios: supervisión de aulas, apoyo a alumnos y control de espacios durante las evaluaciones.",
   },
   {
     period: "2021 - 2024",
-    role: "Asistente en des les de moda",
+    role: "Asistente en desfiles de moda",
     company: "Perpetua",
-    description: "Diseño de piezas gráficas para campañas publicitarias y branding de productos de consumo masivo.",
+    description: "Participé en la producción de desfiles coordinando looks, asistiendo a las modelos y gestionando comunicaciones en redes sociales.",
   },
 ]
 
@@ -44,14 +45,21 @@ const education = [
 ]
 
 const skills = [
-  "Identidad Visual",
   "Diseño Editorial",
+  "Identidad visual corporativa",
   "Diseño 3D",
-  "P",
-  "Diseño Web",
-  "T",
-  "I",
+  "Comunicación de marca",
+  "UX/UI Design",
   "Motion Graphics",
+  "Fotografía",
+  "Retoque digital",
+  "Automatización de procesos",
+  "Comunicación con clientes",
+  "Trabajo en equipo multidisciplinario",
+  "Aprendizaje autónomo",
+  "Adaptabilidad tecnológica",
+  "Pensamiento creativo",
+  "Atención al detalle",
 ]
 
 const awards = [
@@ -71,7 +79,7 @@ export default function CVPage() {
             CV · María Boronat 
           </h1>
           <p className="text-muted-foreground max-w-xl leading-relaxed">
-            {"Soy una persona creativa y con facilidad para el trabajo en\nequipo. Estoy siempre en la búsqueda de actividades y\ndesafíos de autosuperación. Busco un trabajo en el cual\npueda desarollar mis conocimientos en el área de diseño."}
+            {"Diseñadora gráfica y comunicadora visual con perfil híbrido que combina creatividad, pensamiento estratégico y herramientas tecnológicas. Con experiencia en entornos corporativos internacionales, manejo integral de identidad de marca y capacidad para automatizar procesos creativos y operativos. Orientada a resultados, con iniciativa propia, aprendizaje autónomo y habilidades para adaptarse a equipos multidisciplinarios en contextos dinámicos."}
           </p>
         </header>
 
