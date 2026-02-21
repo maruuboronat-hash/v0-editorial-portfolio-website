@@ -133,34 +133,35 @@ export default function CVPage() {
                 Experiencia Laboral
               </h2>
               <div className="space-y-12">
-                {experience.map((item, index) => (
-                  <div key={index} className="grid grid-cols-1 md:grid-cols-4 gap-4">
-                    {/* CELDA DE LA FECHA CON LOGO */}
-                    <div className="flex items-start gap-2">
-                      {item.logo && (
-                        <div className="relative w-6 h-6 flex-shrink-0 mt-0.5">
-                          <Image
-                            src={item.logo}
-                            alt={item.company}
-                            fill
-                            className="object-contain"
-                          />
-                        </div>
-                      )}
-                      <span className="text-sm text-muted-foreground">
-                        {item.period}
-                      </span>
-                    </div>
-                    {/* RESTO DEL CONTENIDO */}
-                    <div className="md:col-span-3">
-                      <h3 className="font-heading text-lg mb-1">{item.role}</h3>
-                      <p className="text-sm text-muted-foreground mb-2">{item.company}</p>
-                      <div className="text-sm leading-relaxed">
-                        {item.description}
-                      </div>
-                    </div>
-                  </div>
-                ))}
+{experience.map((item, index) => (
+  <div key={index} className="grid grid-cols-1 md:grid-cols-4 gap-4">
+    {/* Columna izquierda: fecha + logo debajo */}
+    <div className="space-y-3">
+      <span className="text-sm text-muted-foreground block">
+        {item.period}
+      </span>
+      {item.logo && (
+        <div className="relative w-20 h-20"> {/* 80x80px ≈ 2x2cm */}
+          <Image
+            src={item.logo}
+            alt={item.company}
+            fill
+            className="object-contain"
+          />
+        </div>
+      )}
+    </div>
+    
+    {/* Columna derecha: contenido */}
+    <div className="md:col-span-3">
+      <h3 className="font-heading text-lg mb-1">{item.role}</h3>
+      <p className="text-sm text-muted-foreground mb-2">{item.company}</p>
+      <div className="text-sm leading-relaxed">
+        {item.description}
+      </div>
+    </div>
+  </div>
+))}
               </div>
             </section>
 
