@@ -1,6 +1,6 @@
 import React from "react"
 import type { Metadata } from 'next'
-import { Space_Grotesk, Inter, MuseoModerno } from 'next/font/google' // ← AGREGADO MuseoModerno
+import { Space_Grotesk, Inter } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 import { Navigation } from '@/components/navigation'
@@ -13,14 +13,6 @@ const _spaceGrotesk = Space_Grotesk({
 const _inter = Inter({ 
   subsets: ["latin"], 
   variable: '--font-body' 
-});
-
-// NUEVA: MuseoModerno en Bold 600
-const _museoModerno = MuseoModerno({
-  subsets: ["latin"],
-  variable: '--font-museo',
-  weight: ['600'], // Bold 600
-  display: 'swap',
 });
 
 export const metadata: Metadata = {
@@ -53,7 +45,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
-      <body className={`${_spaceGrotesk.variable} ${_inter.variable} ${_museoModerno.variable} font-sans antialiased`}> {/* ← AGREGADO _museoModerno.variable */}
+<body className={`${_spaceGrotesk.variable} ${_inter.variable} font-sans antialiased`}>
         <Navigation />
         <main>
           {children}
