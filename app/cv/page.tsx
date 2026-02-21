@@ -3,6 +3,7 @@ const experience = [
     period: "2024 — 2026",
     role: "Pasante de Marketing y Comunicación",
     company: "Bosch - Mobility Aftermarket",
+    logo: "/images/CV/blanco.png", // 
     description: (
       <>
         <p className="mb-3">
@@ -18,18 +19,21 @@ const experience = [
     period: "2021 — 2024",
     role: "Empleado Administrativo",
     company: "Cantiere SA",
+    logo: "/images/CV/Recurso 2.png",
     description: "Gestioné el registro y control de facturación mediante planillas en Excel, mantuve legajos de empleados y colaboré en tareas de logística interna.",
   },
   {
     period: "2022",
     role: "Runner",
     company: "AACI - Asociación Argentina de Cultura Inglesa",
+    logo: "/images/CV/aaci.png", // ← AGREGADO
     description: "Asistí en la coordinación operativa de exámenes internacionales en colegios: supervisión de aulas, apoyo a alumnos y control de espacios durante las evaluaciones.",
   },
   {
     period: "2021 - 2024",
     role: "Asistente en desfiles de moda",
     company: "Perpetua",
+    // logo: undefined, // Perpetua no tiene logo
     description: "Participé en la producción de desfiles coordinando looks, asistiendo a las modelos y gestionando comunicaciones en redes sociales.",
   },
 ]
