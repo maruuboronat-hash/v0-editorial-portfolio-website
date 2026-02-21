@@ -3,8 +3,7 @@ const experience = [
     period: "2024 — 2026",
     role: "Pasante de Marketing y Comunicación",
     company: "Bosch - Mobility Aftermarket",
-    description: "Trabajé en el área de comunicación de una multinacional alemana, donde me encargué de la producción integral de assets visuales para medios impresos y digitales: desde flyers de producto y cartelería en vía pública hasta newsletters, presentaciones corporativas y edición de video. Desarrollé y mantuve la estética visual de las piezas comerciales alineada a la identidad global de marca, y asesoré a talleres de la red Bosch con propuestas gráficas personalizadas. También gestioné procesos administrativos y coordiné proveedores y agencias externas.
-Como parte del programa Young Talents 2025, diseñé e implementé un sistema de digitalización del proceso de pedidos y control de stock de merchandising, integrando Power Apps, Excel y Power Automate. La solución redujo errores, automatizó el registro en tiempo real y fue presentada ante gerencia.",
+    description: "Trabajé en el área de comunicación de una multinacional alemana, donde me encargué de la producción integral de assets visuales para medios impresos y digitales: desde flyers de producto y cartelería en vía pública hasta newsletters, presentaciones corporativas y edición de video. Desarrollé y mantuve la estética visual de las piezas comerciales alineada a la identidad global de marca, y asesoré a talleres de la red Bosch con propuestas gráficas personalizadas. También gestioné procesos administrativos y coordiné proveedores y agencias externas.\n\nComo parte del programa Young Talents 2025, diseñé e implementé un sistema de digitalización del proceso de pedidos y control de stock de merchandising, integrando Power Apps, Excel y Power Automate. La solución redujo errores, automatizó el registro en tiempo real y fue presentada ante gerencia.",
   },
   {
     period: "2021 — 2024",
@@ -35,11 +34,11 @@ const education = [
   {
     period: "2021 - 2024",
     title: "Lic. Diseño de Indumentaria - 60%",
-    institution: "UBA/FADU - Univerisas de Buenos Aires",
+    institution: "UBA/FADU - Universidad de Buenos Aires",
   },
   {
     period: "2014 - 2020",
-    title: "Bachillerato en Econocmía y Administración",
+    title: "Bachillerato en Economía y Administración",
     institution: "Colegio Niño Jesús de Praga",
   },
 ]
@@ -62,8 +61,31 @@ const skills = [
   "Atención al detalle",
 ]
 
+// NUEVA SECCIÓN: Herramientas
+const tools = {
+  design: [
+    "Adobe Creative Suite (Photoshop, Illustrator, InDesign, Lightroom, Premiere, After Effects)",
+    "Figma",
+    "Blender",
+    "Canva",
+    "ElevenLabs",
+    "Grok"
+  ],
+  productivity: [
+    "Microsoft Office",
+    "Power Apps",
+    "Power Automate",
+    "SAP",
+    "MailJet"
+  ],
+  development: [
+    "GitHub",
+    "v0 (Vercel)"
+  ]
+}
+
 const awards = [
-  { year: "2024", title: "Rebranding - Identidades Visuales E cientes", category: "Foresti Design" },
+  { year: "2024", title: "Rebranding - Identidades Visuales Eficientes", category: "Foresti Design" },
   { year: "2023", title: "Figurines en Adobe Illustrator", category: "Estudio MG" },
   { year: "2023", title: "Adobe Illustrator para Diseño de Moda", category: "Estudio MG" },
   { year: "2022", title: "Adobe Photoshop e Illustrator", category: "Coderhouse" },
@@ -100,7 +122,7 @@ export default function CVPage() {
                     <div className="md:col-span-3">
                       <h3 className="font-heading text-lg mb-1">{item.role}</h3>
                       <p className="text-sm text-muted-foreground mb-2">{item.company}</p>
-                      <p className="text-sm leading-relaxed">{item.description}</p>
+                      <p className="text-sm leading-relaxed whitespace-pre-line">{item.description}</p>
                     </div>
                   </div>
                 ))}
@@ -146,26 +168,64 @@ export default function CVPage() {
             </section>
           </div>
 
-          {/* Sidebar */}
-          <aside className="lg:col-span-4 lg:border-l lg:border-border lg:pl-8">
+          {/* Sidebar - NUEVO ORDEN: Herramientas → Idiomas → Habilidades → Descargar */}
+          <aside className="lg:col-span-4 lg:border-l lg:border-border lg:pl-8 space-y-12">
+            
+            {/* SECCIÓN 1: HERRAMIENTAS (nueva) */}
             <section>
-              <h2 className="font-heading text-xs uppercase tracking-widest text-muted-foreground mb-8">
-                Habilidades
+              <h2 className="font-heading text-xs uppercase tracking-widest text-muted-foreground mb-4">
+                Herramientas
               </h2>
-              <div className="flex flex-wrap gap-2">
-                {skills.map((skill) => (
-                  <span
-                    key={skill}
-                    className="text-xs px-3 py-1.5 border border-border"
-                  >
-                    {skill}
-                  </span>
-                ))}
+              
+              {/* Diseño & Creatividad */}
+              <div className="mb-4">
+                <h3 className="text-xs font-medium text-foreground mb-2">Diseño & Creatividad</h3>
+                <div className="flex flex-wrap gap-2">
+                  {tools.design.map((tool) => (
+                    <span
+                      key={tool}
+                      className="text-xs px-3 py-1.5 border border-border"
+                    >
+                      {tool}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              {/* Productividad */}
+              <div className="mb-4">
+                <h3 className="text-xs font-medium text-foreground mb-2">Productividad</h3>
+                <div className="flex flex-wrap gap-2">
+                  {tools.productivity.map((tool) => (
+                    <span
+                      key={tool}
+                      className="text-xs px-3 py-1.5 border border-border"
+                    >
+                      {tool}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              {/* Desarrollo & Prototipado */}
+              <div>
+                <h3 className="text-xs font-medium text-foreground mb-2">Desarrollo & Prototipado</h3>
+                <div className="flex flex-wrap gap-2">
+                  {tools.development.map((tool) => (
+                    <span
+                      key={tool}
+                      className="text-xs px-3 py-1.5 border border-border"
+                    >
+                      {tool}
+                    </span>
+                  ))}
+                </div>
               </div>
             </section>
 
-            <section className="mt-12">
-              <h2 className="font-heading text-xs uppercase tracking-widest text-muted-foreground mb-8">
+            {/* SECCIÓN 2: IDIOMAS */}
+            <section>
+              <h2 className="font-heading text-xs uppercase tracking-widest text-muted-foreground mb-4">
                 Idiomas
               </h2>
               <div className="space-y-2 text-sm">
@@ -184,8 +244,26 @@ export default function CVPage() {
               </div>
             </section>
 
-            <section className="mt-12">
-              <h2 className="font-heading text-xs uppercase tracking-widest text-muted-foreground mb-8">
+            {/* SECCIÓN 3: HABILIDADES */}
+            <section>
+              <h2 className="font-heading text-xs uppercase tracking-widest text-muted-foreground mb-4">
+                Habilidades
+              </h2>
+              <div className="flex flex-wrap gap-2">
+                {skills.map((skill) => (
+                  <span
+                    key={skill}
+                    className="text-xs px-3 py-1.5 border border-border"
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </section>
+
+            {/* SECCIÓN 4: DESCARGAR */}
+            <section>
+              <h2 className="font-heading text-xs uppercase tracking-widest text-muted-foreground mb-4">
                 Descargar
               </h2>
               <a
