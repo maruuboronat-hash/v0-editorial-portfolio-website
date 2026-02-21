@@ -1,11 +1,10 @@
-import Image from "next/image" // ← IMPORTANTE: agregá esto al principio
+import Image from "next/image"
 
 const experience = [
   {
     period: "2024 — 2026",
     role: "Pasante de Marketing y Comunicación",
     company: "Bosch - Mobility Aftermarket",
-    logo: "/images/CV/blanco.png",
     description: (
       <>
         <p className="mb-3">
@@ -21,21 +20,18 @@ const experience = [
     period: "2021 — 2024",
     role: "Empleado Administrativo",
     company: "Cantiere SA",
-    logo: "/images/CV/Recurso 2.png",
     description: "Gestioné el registro y control de facturación mediante planillas en Excel, mantuve legajos de empleados y colaboré en tareas de logística interna.",
   },
   {
     period: "2022",
     role: "Runner",
     company: "AACI - Asociación Argentina de Cultura Inglesa",
-    logo: "/images/CV/aaci.png",
     description: "Asistí en la coordinación operativa de exámenes internacionales en colegios: supervisión de aulas, apoyo a alumnos y control de espacios durante las evaluaciones.",
   },
   {
     period: "2021 - 2024",
     role: "Asistente en desfiles de moda",
     company: "Perpetua",
-    // logo: undefined,
     description: "Participé en la producción de desfiles coordinando looks, asistiendo a las modelos y gestionando comunicaciones en redes sociales.",
   },
 ]
@@ -76,6 +72,7 @@ const skills = [
   "- Atención al detalle",
 ]
 
+// HERRAMIENTAS (separadas individualmente)
 const tools = {
   design: [
     "Photoshop",
@@ -133,35 +130,20 @@ export default function CVPage() {
                 Experiencia Laboral
               </h2>
               <div className="space-y-12">
-{experience.map((item, index) => (
-  <div key={index} className="grid grid-cols-1 md:grid-cols-4 gap-4">
-    {/* Columna izquierda: fecha + logo (más pegado) */}
-    <div className="space-y-1"> {/* ← space-y-1 (4px de separación) */}
-      <span className="text-sm text-muted-foreground block">
-        {item.period}
-      </span>
-      {item.logo && (
-        <div className="relative w-28 h-28"> {/* ← 112x112px ≈ 3cm */}
-          <Image
-            src={item.logo}
-            alt={item.company}
-            fill
-            className="object-contain"
-          />
-        </div>
-      )}
-    </div>
-    
-    {/* Columna derecha: contenido */}
-    <div className="md:col-span-3">
-      <h3 className="font-heading text-lg mb-1">{item.role}</h3>
-      <p className="text-sm text-muted-foreground mb-2">{item.company}</p>
-      <div className="text-sm leading-relaxed">
-        {item.description}
-      </div>
-    </div>
-  </div>
-))}
+                {experience.map((item, index) => (
+                  <div key={index} className="grid grid-cols-1 md:grid-cols-4 gap-4">
+                    <span className="text-sm text-muted-foreground">
+                      {item.period}
+                    </span>
+                    <div className="md:col-span-3">
+                      <h3 className="font-heading text-lg mb-1">{item.role}</h3>
+                      <p className="text-sm text-muted-foreground mb-2">{item.company}</p>
+                      <div className="text-sm leading-relaxed">
+                        {item.description}
+                      </div>
+                    </div>
+                  </div>
+                ))}
               </div>
             </section>
 
