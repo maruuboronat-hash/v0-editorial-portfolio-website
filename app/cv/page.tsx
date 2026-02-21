@@ -260,20 +260,19 @@ export default function CVPage() {
               </div>
             </section>
 
-            {/* SECCIÓN 3: HABILIDADES (ahora como lista con guiones) */}
-            <section>
-              <h2 className="font-heading text-xs uppercase tracking-widest text-muted-foreground mb-4">
-                Habilidades
-              </h2>
-              <div className="space-y-1">
-                {skills.map((skill) => (
-                  <p key={skill} className="text-sm font-mono">
-                    {skill}
-                  </p>
-                ))}
-              </div>
-            </section>
-
+{/* SECCIÓN 3: HABILIDADES */}
+<section>
+  <h2 className="font-heading text-xs uppercase tracking-widest text-muted-foreground mb-4">
+    Habilidades
+  </h2>
+  <div className="space-y-1">
+    {skills.map((skill) => (
+      <p key={skill} className="text-sm">
+        {skill}
+      </p>
+    ))}
+  </div>
+</section>
             {/* SECCIÓN 4: DESCARGAR */}
             <section>
               <h2 className="font-heading text-xs uppercase tracking-widest text-muted-foreground mb-4">
