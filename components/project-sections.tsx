@@ -69,7 +69,7 @@ function Img({ src, alt, contain = false }: { src: string; alt?: string; contain
 }
 
 /* =========================
-   CARRUSEL
+   CARRUSEL CON IMÁGENES CLICKEABLES
 ========================= */
 
 export function InfiniteCarousel({ images }: { images: Array<{ src: string; alt?: string }> }) {
@@ -89,13 +89,21 @@ export function InfiniteCarousel({ images }: { images: Array<{ src: string; alt?
         <div className="absolute left-0 top-0 bottom-0 w-32 z-10 pointer-events-none bg-gradient-to-r from-[#111111] via-[#111111]/80 to-transparent" />
         <div className="absolute right-0 top-0 bottom-0 w-32 z-10 pointer-events-none bg-gradient-to-l from-[#111111] via-[#111111]/80 to-transparent" />
 
-        <div className="relative h-96 w-full flex justify-center items-center">
-          <img
-            src={images[currentIndex].src}
-            alt={images[currentIndex].alt || ""}
-            className="h-full w-auto rounded-lg shadow-lg"
-          />
-        </div>
+        {/* Imagen clickeable */}
+        <a href={images[currentIndex].src} target="_blank" rel="noopener noreferrer">
+          <div className="relative h-96 w-full flex justify-center items-center cursor-pointer group">
+            <img
+              src={images[currentIndex].src}
+              alt={images[currentIndex].alt || ""}
+              className="h-full w-auto rounded-lg shadow-lg"
+            />
+            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300 flex items-center justify-center">
+              <span className="opacity-0 group-hover:opacity-100 text-white text-sm bg-black/50 px-3 py-1 rounded-full">
+                🔍 Ver
+              </span>
+            </div>
+          </div>
+        </a>
 
         <button
           onClick={prevSlide}
@@ -156,15 +164,22 @@ export function SkillsSection({ section }: { section: Extract<SectionType, { typ
 }
 
 /* =========================
-   SECTIONS
+   SECTIONS CON IMÁGENES CLICKEABLES
 ========================= */
 
 export function FullWidthImage({ section }: { section: Extract<SectionType, { type: "full-width-image" }> }) {
   return (
     <section className="w-full">
-      <div className="aspect-[16/9] relative">
-        <Img src={section.src} alt={section.alt} contain />
-      </div>
+      <a href={section.src} target="_blank" rel="noopener noreferrer" className="block">
+        <div className="aspect-[16/9] relative cursor-pointer group">
+          <Img src={section.src} alt={section.alt} contain />
+          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300 flex items-center justify-center">
+            <span className="opacity-0 group-hover:opacity-100 text-white text-sm bg-black/50 px-3 py-1 rounded-full">
+              🔍 Ver
+            </span>
+          </div>
+        </div>
+      </a>
       {section.caption && (
         <p className="mt-4 text-xs text-muted-foreground text-center">{section.caption}</p>
       )}
@@ -182,9 +197,16 @@ export function CenteredImage({ section }: { section: Extract<SectionType, { typ
   return (
     <section className="flex justify-center">
       <div className={cn("w-full", widthMap[section.width || "medium"])}>
-        <div className="aspect-[4/3] relative">
-          <Img src={section.src} alt={section.alt} contain />
-        </div>
+        <a href={section.src} target="_blank" rel="noopener noreferrer" className="block">
+          <div className="aspect-[4/3] relative cursor-pointer group">
+            <Img src={section.src} alt={section.alt} contain />
+            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300 flex items-center justify-center">
+              <span className="opacity-0 group-hover:opacity-100 text-white text-sm bg-black/50 px-3 py-1 rounded-full">
+                🔍 Ver
+              </span>
+            </div>
+          </div>
+        </a>
         {section.caption && (
           <p className="mt-4 text-xs text-muted-foreground text-center">{section.caption}</p>
         )}
@@ -198,9 +220,16 @@ export function SingleColumnStack({ section }: { section: Extract<SectionType, {
     <section className="flex flex-col gap-12">
       {section.images.map((img, i) => (
         <div key={i}>
-          <div className="aspect-[16/9] relative">
-            <Img src={img.src} alt={img.alt} contain />
-          </div>
+          <a href={img.src} target="_blank" rel="noopener noreferrer" className="block">
+            <div className="aspect-[16/9] relative cursor-pointer group">
+              <Img src={img.src} alt={img.alt} contain />
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300 flex items-center justify-center">
+                <span className="opacity-0 group-hover:opacity-100 text-white text-sm bg-black/50 px-3 py-1 rounded-full">
+                  🔍 Ver
+                </span>
+              </div>
+            </div>
+          </a>
           {img.caption && (
             <p className="mt-4 text-xs text-muted-foreground text-center">{img.caption}</p>
           )}
@@ -214,9 +243,16 @@ export function TwoColumnGrid({ section }: { section: Extract<SectionType, { typ
   return (
     <section className="grid grid-cols-1 md:grid-cols-2 gap-6">
       {section.images.map((img, i) => (
-        <div key={i} className="aspect-[4/3] relative">
-          <Img src={img.src} alt={img.alt} contain />
-        </div>
+        <a key={i} href={img.src} target="_blank" rel="noopener noreferrer" className="block">
+          <div className="aspect-[4/3] relative cursor-pointer group">
+            <Img src={img.src} alt={img.alt} contain />
+            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300 flex items-center justify-center">
+              <span className="opacity-0 group-hover:opacity-100 text-white text-sm bg-black/50 px-3 py-1 rounded-full">
+                🔍 Ver
+              </span>
+            </div>
+          </div>
+        </a>
       ))}
     </section>
   )
@@ -226,9 +262,16 @@ export function ThreeColumnGrid({ section }: { section: Extract<SectionType, { t
   return (
     <section className="grid grid-cols-1 md:grid-cols-3 gap-6">
       {section.images.map((img, i) => (
-        <div key={i} className="aspect-square relative">
-          <Img src={img.src} alt={img.alt} contain />
-        </div>
+        <a key={i} href={img.src} target="_blank" rel="noopener noreferrer" className="block">
+          <div className="aspect-square relative cursor-pointer group">
+            <Img src={img.src} alt={img.alt} contain />
+            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300 flex items-center justify-center">
+              <span className="opacity-0 group-hover:opacity-100 text-white text-sm bg-black/50 px-3 py-1 rounded-full">
+                🔍 Ver
+              </span>
+            </div>
+          </div>
+        </a>
       ))}
     </section>
   )
@@ -289,7 +332,7 @@ export function TextSection({ section }: { section: Extract<SectionType, { type:
       )}
       {section.content && (
         <div 
-className="text-base md:text-lg leading-relaxed text-white"
+          className="text-base md:text-lg leading-relaxed text-white"
           dangerouslySetInnerHTML={{ __html: section.content.replace(/\n/g, '<br/>') }}
         />
       )}
