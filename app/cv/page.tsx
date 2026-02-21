@@ -46,7 +46,7 @@ const education = [
   },
   {
     period: "2021 - 2024",
-    title: "Lic. Diseño de Indumentaria - 60%",
+    title: "Lic. Diseño de Indumentaria - 60% completo",
     institution: "UBA/FADU - Universidad de Buenos Aires",
   },
   {
