@@ -14,8 +14,7 @@ export function ContactSection() {
               Contacto
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-12 text-center max-w-2xl mx-auto">
-              Si tenes un proyecto en mente o simplemente queres saludar, 
-              no dudes en escribirme.
+              ¿Conectamos?
             </p>
 
             <div className="space-y-8 max-w-2xl mx-auto">
