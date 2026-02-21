@@ -3,7 +3,16 @@ const experience = [
     period: "2024 — 2026",
     role: "Pasante de Marketing y Comunicación",
     company: "Bosch - Mobility Aftermarket",
-    description: "Trabajé en el área de comunicación de una multinacional alemana, donde me encargué de la producción integral de assets visuales para medios impresos y digitales: desde flyers de producto y cartelería en vía pública hasta newsletters, presentaciones corporativas y edición de video. Desarrollé y mantuve la estética visual de las piezas comerciales alineada a la identidad global de marca, y asesoré a talleres de la red Bosch con propuestas gráficas personalizadas. También gestioné procesos administrativos y coordiné proveedores y agencias externas.\n\nComo parte del programa Young Talents 2025, diseñé e implementé un sistema de digitalización del proceso de pedidos y control de stock de merchandising, integrando Power Apps, Excel y Power Automate. La solución redujo errores, automatizó el registro en tiempo real y fue presentada ante gerencia.",
+    description: (
+      <>
+        <p className="mb-3">
+          Trabajé en el área de comunicación de Bosch, líder global en soluciones automotrices, produciendo assets visuales para medios impresos y digitales: flyers, cartelería en vía pública, newsletters, presentaciones corporativas y edición de video. Mantuve la identidad visual de marca de forma consistente y asesoré a talleres de la red con propuestas gráficas personalizadas.
+        </p>
+        <p className="text-muted-foreground italic border-l-2 border-gray-300 pl-4 py-1 text-sm">
+          Como parte del programa Young Talents 2025, diseñé e implementé un sistema con Power Apps, Excel y Power Automate para digitalizar el control de stock y pedidos de merchandising, reduciendo errores y automatizando el registro en tiempo real.
+        </p>
+      </>
+    ),
   },
   {
     period: "2021 — 2024",
@@ -44,27 +53,32 @@ const education = [
 ]
 
 const skills = [
-  "Diseño Editorial",
-  "Identidad visual corporativa",
-  "Diseño 3D",
-  "Comunicación de marca",
-  "UX/UI Design",
-  "Motion Graphics",
-  "Fotografía",
-  "Retoque digital",
-  "Automatización de procesos",
-  "Comunicación con clientes",
-  "Trabajo en equipo multidisciplinario",
-  "Aprendizaje autónomo",
-  "Adaptabilidad tecnológica",
-  "Pensamiento creativo",
-  "Atención al detalle",
+  "- Diseño Editorial",
+  "- Identidad visual corporativa",
+  "- Diseño 3D",
+  "- Comunicación de marca",
+  "- UX/UI Design",
+  "- Motion Graphics",
+  "- Fotografía",
+  "- Retoque digital",
+  "- Automatización de procesos",
+  "- Comunicación con clientes",
+  "- Trabajo en equipo multidisciplinario",
+  "- Aprendizaje autónomo",
+  "- Adaptabilidad tecnológica",
+  "- Pensamiento creativo",
+  "- Atención al detalle",
 ]
 
-// NUEVA SECCIÓN: Herramientas
+// HERRAMIENTAS (separadas individualmente)
 const tools = {
   design: [
-    "Adobe Creative Suite (Photoshop, Illustrator, InDesign, Lightroom, Premiere, After Effects)",
+    "Photoshop",
+    "Illustrator",
+    "InDesign",
+    "Lightroom",
+    "Premiere",
+    "After Effects",
     "Figma",
     "Blender",
     "Canva",
@@ -100,7 +114,7 @@ export default function CVPage() {
           <h1 className="font-heading text-4xl md:text-6xl tracking-tight mb-6">
             CV · María Boronat 
           </h1>
-          <p className="text-muted-foreground max-w-xl leading-relaxed">
+          <p className="text-muted-foreground max-w-3xl leading-relaxed">
             {"Diseñadora gráfica y comunicadora visual con perfil híbrido que combina creatividad, pensamiento estratégico y herramientas tecnológicas. Con experiencia en entornos corporativos internacionales, manejo integral de identidad de marca y capacidad para automatizar procesos creativos y operativos. Orientada a resultados, con iniciativa propia, aprendizaje autónomo y habilidades para adaptarse a equipos multidisciplinarios en contextos dinámicos."}
           </p>
         </header>
@@ -122,7 +136,9 @@ export default function CVPage() {
                     <div className="md:col-span-3">
                       <h3 className="font-heading text-lg mb-1">{item.role}</h3>
                       <p className="text-sm text-muted-foreground mb-2">{item.company}</p>
-                      <p className="text-sm leading-relaxed whitespace-pre-line">{item.description}</p>
+                      <div className="text-sm leading-relaxed">
+                        {item.description}
+                      </div>
                     </div>
                   </div>
                 ))}
@@ -168,10 +184,10 @@ export default function CVPage() {
             </section>
           </div>
 
-          {/* Sidebar - NUEVO ORDEN: Herramientas → Idiomas → Habilidades → Descargar */}
+          {/* Sidebar */}
           <aside className="lg:col-span-4 lg:border-l lg:border-border lg:pl-8 space-y-12">
             
-            {/* SECCIÓN 1: HERRAMIENTAS (nueva) */}
+            {/* SECCIÓN 1: HERRAMIENTAS */}
             <section>
               <h2 className="font-heading text-xs uppercase tracking-widest text-muted-foreground mb-4">
                 Herramientas
@@ -244,19 +260,16 @@ export default function CVPage() {
               </div>
             </section>
 
-            {/* SECCIÓN 3: HABILIDADES */}
+            {/* SECCIÓN 3: HABILIDADES (ahora como lista con guiones) */}
             <section>
               <h2 className="font-heading text-xs uppercase tracking-widest text-muted-foreground mb-4">
                 Habilidades
               </h2>
-              <div className="flex flex-wrap gap-2">
+              <div className="space-y-1">
                 {skills.map((skill) => (
-                  <span
-                    key={skill}
-                    className="text-xs px-3 py-1.5 border border-border"
-                  >
+                  <p key={skill} className="text-sm font-mono">
                     {skill}
-                  </span>
+                  </p>
                 ))}
               </div>
             </section>
