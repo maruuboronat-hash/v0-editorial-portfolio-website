@@ -44,12 +44,12 @@ function InteractiveHero() {
     >
       <div className="relative z-10 text-center px-6">
         {/* CAMBIADO: font-heading → font-museo */}
-        <h1 className="font-museo text-4xl md:text-6xl lg:text-8xl tracking-tight leading-none">
-          <span className="block">MARÍA BORONAT</span>
-          <span className="block mt-2 text-2xl md:text-3xl font-light opacity-70">
-            Diseño Gráfico y Comunicación
-          </span>
-        </h1>
+<h1 className="font-heading text-4xl md:text-6xl lg:text-8xl tracking-tight leading-none">
+  <span className="block">MARÍA BORONAT</span>
+  <span className="block mt-2 text-2xl md:text-3xl font-light opacity-70">
+    Diseño Gráfico y Comunicación
+  </span>
+</h1>
       </div>
     </section>
   )
