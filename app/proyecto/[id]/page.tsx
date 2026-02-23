@@ -42,12 +42,12 @@ const projectsData: Record<string, {
     ]},
   ],
 },
-  "revistas-editorial": {
+ "revistas-editorial": {
   title: "Revistas I Colección de Arte Amalia Lacroze de Fortabat",
   category: "Diseño Gráfico",
   categorySlug: "diseno-grafico",
-  description: “Proyecto editorial que toma como punto de partida la identidad del Museo Colección Amalia Lacroze de Fortabat. Desarrollado como un sistema de revistas institucionales, aborda tres exposiciones diferentes a través de recursos editoriales, tipográficos y fotográficos. El foco está puesto en construir una narrativa visual coherente, organizada mediante una grilla editorial, y en desarrollar una identidad gráfica que dialogue con el carácter, el patrimonio y la estética contemporánea del museo.",
-  image: "/images/diseno-grafico/oasis/oasis-02.jpg",
+  description: "Proyecto editorial que toma como punto de partida la identidad del Museo Colección Amalia Lacroze de Fortabat. Desarrollado como un sistema de revistas institucionales, aborda tres exposiciones diferentes a través de recursos editoriales, tipográficos y fotográficos. El foco está puesto en construir una narrativa visual coherente, organizada mediante una grilla editorial, y en desarrollar una identidad gráfica que dialogue con el carácter, el patrimonio y la estética contemporánea del museo.",
+  image: "/images/diseno-grafico/revistas-fortabat/portada.jpg",  // ← AGREGAR IMAGEN DE PORTADA
   sections: [
     { 
       type: "tools", 
@@ -58,13 +58,10 @@ const projectsData: Record<string, {
       ] 
     },
     { type: "single-column-stack", images: [
-      { src: "/images/diseno-grafico/oasis/oasis-01.jpg", alt: "Diario Oasis 1" },
-      { src: "/images/diseno-grafico/oasis/oasis-02.jpg", alt: "Diario Oasis 2" },
-      { src: "/images/diseno-grafico/oasis/oasis-03.jpg", alt: "Diario Oasis 3" },
-      { src: "/images/diseno-grafico/oasis/oasis-04.jpg", alt: "Diario Oasis 4" },
-      { src: "/images/diseno-grafico/oasis/oasis-05.jpg", alt: "Diario Oasis 5" },
-      { src: "/images/diseno-grafico/oasis/oasis-06.jpg", alt: "Diario Oasis 6" },
-      { src: "/images/diseno-grafico/oasis/oasis-07.jpg", alt: "Diario Oasis 7" },
+      { src: "/images/diseno-grafico/revistas-fortabat/revista-01.jpg", alt: "Revista 1" },
+      { src: "/images/diseno-grafico/revistas-fortabat/revista-02.jpg", alt: "Revista 2" },
+      { src: "/images/diseno-grafico/revistas-fortabat/revista-03.jpg", alt: "Revista 3" },
+      // Agregá más imágenes según tengas
     ]},
   ],
 },
