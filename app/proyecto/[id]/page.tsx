@@ -14,24 +14,34 @@ const projectsData: Record<string, {
   sections: SectionType[]
 }> = {
   // DISEÑO GRÁFICO projects
-  "diario-oasis": {
-    title: "Periódico de Oasis I Backstage Times",
-    category: "Diseño Gráfico",
-    categorySlug: "diseno-grafico",
-    description: "Proyecto editorial que combina investigación visual, narrativa y diseño gráfico. Desarrollado como un periódico musical inspirada en la banda británica Oasis, explora su historia, estética y legado cultural a través de recursos editoriales, tipográficos y fotográficos. El enfoque está puesto en la dirección de arte, la grilla editorial y la construcción de una identidad visual coherente con el universo de la banda.",
-    image: "/images/diseno-grafico/oasis/oasis-02.jpg",
-    sections: [
-      { type: "single-column-stack", images: [
-        { src: "/images/diseno-grafico/oasis/oasis-01.jpg", alt: "Diario Oasis 1" },
-        { src: "/images/diseno-grafico/oasis/oasis-02.jpg", alt: "Diario Oasis 2" },
-        { src: "/images/diseno-grafico/oasis/oasis-03.jpg", alt: "Diario Oasis 3" },
-        { src: "/images/diseno-grafico/oasis/oasis-04.jpg", alt: "Diario Oasis 4" },
-        { src: "/images/diseno-grafico/oasis/oasis-05.jpg", alt: "Diario Oasis 5" },
-        { src: "/images/diseno-grafico/oasis/oasis-06.jpg", alt: "Diario Oasis 6" },
-        { src: "/images/diseno-grafico/oasis/oasis-07.jpg", alt: "Diario Oasis 7" },
-      ]},
-    ],
-  },
+"diario-oasis": {
+  title: "Periódico de Oasis I Backstage Times",
+  category: "Diseño Gráfico",
+  categorySlug: "diseno-grafico",
+  description: "Proyecto editorial que combina investigación visual, narrativa y diseño gráfico. Desarrollado como un periódico musical inspirada en la banda británica Oasis, explora su historia, estética y legado cultural a través de recursos editoriales, tipográficos y fotográficos. El enfoque está puesto en la dirección de arte, la grilla editorial y la construcción de una identidad visual coherente con el universo de la banda.",
+  image: "/images/diseno-grafico/oasis/oasis-02.jpg",
+  sections: [
+    // ===== HERRAMIENTAS UTILIZADAS =====
+    { 
+      type: "tools", 
+      tools: [
+        "InDesign",
+        "Photoshop",
+        "Illustrator"
+      ] 
+    },
+    // ===== IMÁGENES DEL PROYECTO =====
+    { type: "single-column-stack", images: [
+      { src: "/images/diseno-grafico/oasis/oasis-01.jpg", alt: "Diario Oasis 1" },
+      { src: "/images/diseno-grafico/oasis/oasis-02.jpg", alt: "Diario Oasis 2" },
+      { src: "/images/diseno-grafico/oasis/oasis-03.jpg", alt: "Diario Oasis 3" },
+      { src: "/images/diseno-grafico/oasis/oasis-04.jpg", alt: "Diario Oasis 4" },
+      { src: "/images/diseno-grafico/oasis/oasis-05.jpg", alt: "Diario Oasis 5" },
+      { src: "/images/diseno-grafico/oasis/oasis-06.jpg", alt: "Diario Oasis 6" },
+      { src: "/images/diseno-grafico/oasis/oasis-07.jpg", alt: "Diario Oasis 7" },
+    ]},
+  ],
+},
   "postales-cortazar": {
     title: "Postales I Julio Cortázar",
     category: "Diseño Gráfico",
@@ -39,6 +49,13 @@ const projectsData: Record<string, {
     description: "Serie de postales conceptuales inspiradas en Historia verídica, un cuento de Julio Cortázar. El proyecto explora la fragilidad, el azar y la poética de lo cotidiano a través de la composición visual y el uso simbólico del color y la forma. Cada postal funciona como un fragmento independiente, pero en conjunto conforman una narrativa abierta y sensible.",
     image: "/images/diseno-grafico/postales/postales-portada.jpg",
     sections: [
+          { 
+      type: "tools", 
+      tools: [
+        "Photoshop",
+        "Illustrator"
+      ] 
+    },
       { type: "single-column-stack", images: [
         { src: "/images/diseno-grafico/postales/postales-01.jpg", alt: "Postal Cortázar 1" },
         { src: "/images/diseno-grafico/postales/postales-02.jpg", alt: "Postal Cortázar 2" },
@@ -53,6 +70,14 @@ const projectsData: Record<string, {
     description: "Proyecto editorial inspirado en la artista argentina Clara Cava. La revista propone una lectura visual de su universo musical a través del color, la tipografía y la composición. Combina análisis gráfico y diseño de layout para construir una identidad que refleja la experimentación y sensibilidad presentes en su obra.",
     image: "/images/diseno-grafico/clara-cava/clara-01.jpg",
     sections: [
+          { 
+      type: "tools", 
+      tools: [
+        "InDesign",
+        "Photoshop",
+        "Illustrator"
+      ] 
+    },
       { type: "single-column-stack", images: [
         { src: "/images/diseno-grafico/clara-cava/clara-01.jpg", alt: "Clara 01" },
         { src: "/images/diseno-grafico/clara-cava/clara-02.jpeg", alt: "Clara 02" },
@@ -72,6 +97,14 @@ const projectsData: Record<string, {
     description: "Composición tridimensional inspirada en la provincia de Córdoba, Argentina. El proyecto combina elementos gráficos y volumétricos para reinterpretar íconos característicos de su paisaje y cultura, como el Reloj Cucú y los colores serranos. Basado en la identidad visual y el lenguaje gráfico presentes en la página oficial de turismo de la provincia, busca transmitir su esencia desde un enfoque contemporáneo a través del modelado y la iluminación digital.",
     image: "/images/diseno-grafico/afiche3d/cordoba-01.jpg",
     sections: [
+          { 
+      type: "tools", 
+      tools: [
+        "Blender",
+        "Photoshop",
+        "Illustrator"
+      ] 
+    },
       { type: "single-column-stack", images: [
         { src: "/images/diseno-grafico/afiche3d/cordoba-01.jpg", alt: "Córdoba 01" },
         { src: "/images/diseno-grafico/afiche3d/cordoba-02.jpg", alt: "Córdoba 02" },
