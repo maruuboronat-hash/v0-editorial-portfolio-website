@@ -59,19 +59,21 @@ const projectsData: Record<string, {
       ] 
     },
     
-    // ===== REVISTA 1: EDUARDO STUPÍA =====
+    // ===== REVISTA 1: EDUARDO ESTUPÍA =====
     { 
       type: "text", 
-      title: "Revista - Eduardo Stupía", 
-      content: ""  // Podés agregar una descripción si querés
+      title: "Revista - Eduardo Estupía", 
+      content: ""
     },
     { 
       type: "single-column-stack", 
       images: [
-        { src: "/images/diseno-grafico/revistas-fortabat/estupia-01.jpg", alt: "Eduardo Estupía 1" },
-        { src: "/images/diseno-grafico/revistas-fortabat/estupia-02.jpg", alt: "Eduardo Estupía 2" },
-        { src: "/images/diseno-grafico/revistas-fortabat/estupia-03.jpg", alt: "Eduardo Estupía 3" },
-        // Agregá más imágenes según tengas
+        { src: "/images/diseno-grafico/revistas-editorial/leparc/2_Mockup_Stupia.jpg", alt: "Eduardo Estupía 2" },
+        { src: "/images/diseno-grafico/revistas-editorial/leparc/3_Mockup_Stupia.jpg", alt: "Eduardo Estupía 3" },
+        { src: "/images/diseno-grafico/revistas-editorial/leparc/4_Mockup_Stupia.jpg", alt: "Eduardo Estupía 4" },
+        { src: "/images/diseno-grafico/revistas-editorial/leparc/5_Mockup_Stupia.jpg", alt: "Eduardo Estupía 5" },
+        { src: "/images/diseno-grafico/revistas-editorial/leparc/6_Mockup_Stupia.jpg", alt: "Eduardo Estupía 6" },
+        { src: "/images/diseno-grafico/revistas-editorial/leparc/7_Mockup_Stupia.jpg", alt: "Eduardo Estupía 7" },
       ]
     },
     
@@ -84,9 +86,21 @@ const projectsData: Record<string, {
     { 
       type: "single-column-stack", 
       images: [
-        { src: "/images/diseno-grafico/revistas-fortabat/leparc-01.jpg", alt: "Julio Le Parc 1" },
-        { src: "/images/diseno-grafico/revistas-fortabat/leparc-02.jpg", alt: "Julio Le Parc 2" },
-        { src: "/images/diseno-grafico/revistas-fortabat/leparc-03.jpg", alt: "Julio Le Parc 3" },
+        { src: "/images/diseno-grafico/revistas-editorial/leparc/2_Mockup_LeParc.jpg", alt: "Julio Le Parc 2" },
+        { src: "/images/diseno-grafico/revistas-editorial/leparc/3_Mockup_LeParc.jpg", alt: "Julio Le Parc 3" },
+        { src: "/images/diseno-grafico/revistas-editorial/leparc/4_Mockup_LeParc.jpg", alt: "Julio Le Parc 4" },
+        { src: "/images/diseno-grafico/revistas-editorial/leparc/5_Mockup_LeParc.jpg", alt: "Julio Le Parc 5" },
+        { src: "/images/diseno-grafico/revistas-editorial/leparc/6_Mockup_LeParc.jpg", alt: "Julio Le Parc 6" },
+        { src: "/images/diseno-grafico/revistas-editorial/leparc/7_Mockup_LeParc.jpg", alt: "Julio Le Parc 7" },
+        { src: "/images/diseno-grafico/revistas-editorial/leparc/8_Mockup_LeParc.jpg", alt: "Julio Le Parc 8" },
+        { src: "/images/diseno-grafico/revistas-editorial/leparc/9_Mockup_LeParc.jpg", alt: "Julio Le Parc 9" },
+        { src: "/images/diseno-grafico/revistas-editorial/leparc/10_Mockup_LeParc.jpg", alt: "Julio Le Parc 10" },
+        { src: "/images/diseno-grafico/revistas-editorial/leparc/11_Mockup_LeParc.jpg", alt: "Julio Le Parc 11" },
+        { src: "/images/diseno-grafico/revistas-editorial/leparc/12_Mockup_LeParc.jpg", alt: "Julio Le Parc 12" },
+        { src: "/images/diseno-grafico/revistas-editorial/leparc/13_Mockup_LeParc.jpg", alt: "Julio Le Parc 13" },
+        { src: "/images/diseno-grafico/revistas-editorial/leparc/14_Mockup_LeParc.jpg", alt: "Julio Le Parc 14" },
+        { src: "/images/diseno-grafico/revistas-editorial/leparc/15_Mockup_LeParc.jpg", alt: "Julio Le Parc 15" },
+        { src: "/images/diseno-grafico/revistas-editorial/leparc/16_Mockup_LeParc.jpg", alt: "Julio Le Parc 16" },
       ]
     },
     
@@ -99,9 +113,12 @@ const projectsData: Record<string, {
     { 
       type: "single-column-stack", 
       images: [
-        { src: "/images/diseno-grafico/revistas-fortabat/pastorini-01.jpg", alt: "Ariadna Pastorini 1" },
-        { src: "/images/diseno-grafico/revistas-fortabat/pastorini-02.jpg", alt: "Ariadna Pastorini 2" },
-        { src: "/images/diseno-grafico/revistas-fortabat/pastorini-03.jpg", alt: "Ariadna Pastorini 3" },
+        { src: "/images/diseno-grafico/revistas-editorial/ariadna/2_Mockup_Ariadna.jpg", alt: "Ariadna Pastorini 2" },
+        { src: "/images/diseno-grafico/revistas-editorial/ariadna/3_Mockup_Ariadna.jpg", alt: "Ariadna Pastorini 3" },
+        { src: "/images/diseno-grafico/revistas-editorial/ariadna/4_Mockup_Ariadna.jpg", alt: "Ariadna Pastorini 4" },
+        { src: "/images/diseno-grafico/revistas-editorial/ariadna/5_Mockup_Ariadna.jpg", alt: "Ariadna Pastorini 5" },
+        { src: "/images/diseno-grafico/revistas-editorial/ariadna/6_Mockup_Ariadna.jpg", alt: "Ariadna Pastorini 6" },
+        { src: "/images/diseno-grafico/revistas-editorial/ariadna/7_Mockup_Ariadna.jpg", alt: "Ariadna Pastorini 7" },
       ]
     },
   ],
