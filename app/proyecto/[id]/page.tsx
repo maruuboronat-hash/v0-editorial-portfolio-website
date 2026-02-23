@@ -442,8 +442,11 @@ const projectsData: Record<string, {
 { 
   type: "infinite-carousel", 
   images: [
-    { src: "/images/corporativo/young-talents/young-01.jpg", alt: "Young Talents 1" },
-    { src: "/images/corporativo/young-talents/young-02.jpg", alt: "Young Talents 2" },
+    { src: "/images/corporativo/ytalents/yt-01.jpg", alt: "Young Talents 1" },
+    { src: "/images/corporativo/ytalents/yt-02.jpg", alt: "Young Talents 2" },
+    { src: "/images/corporativo/ytalents/yt-03.jpg", alt: "Young Talents 3" },
+    { src: "/images/corporativo/ytalents/yt-04.jpg", alt: "Young Talents 4" },
+    { src: "/images/corporativo/ytalents/yt-05.jpg", alt: "Young Talents 5" },
   ]
 },
       { 
@@ -454,11 +457,14 @@ const projectsData: Record<string, {
 { 
   type: "infinite-carousel", 
   images: [
-    { src: "/images/corporativo/ytalents/yt-01.jpg", alt: "Young Talents 1" },
-    { src: "/images/corporativo/ytalents/yt-02.jpg", alt: "Young Talents 2" },
-    { src: "/images/corporativo/ytalents/yt-03.jpg", alt: "Young Talents 3" },
-    { src: "/images/corporativo/ytalents/yt-04.jpg", alt: "Young Talents 4" },
-    { src: "/images/corporativo/ytalents/yt-05.jpg", alt: "Young Talents 5" },
+    { src: "/images/corporativo/via-publica/viapublica-01.jpg", alt: "Cartel 01" },
+    { src: "/images/corporativo/via-publica/viapublica-02.jpg", alt: "Cartel 02" },
+    { src: "/images/corporativo/via-publica/viapublica-03.jpeg", alt: "Cartel 03" },
+    { src: "/images/corporativo/via-publica/viapublica-04.jpeg", alt: "Cartel 04" },
+    { src: "/images/corporativo/via-publica/viapublica-05.jpeg", alt: "Cartel 05" },
+    { src: "/images/corporativo/via-publica/viapublica-06.jpeg", alt: "Cartel 06" },
+    { src: "/images/corporativo/via-publica/viapublica-07.jpeg", alt: "Cartel 07" },
+    { src: "/images/corporativo/via-publica/viapublica-08.jpeg", alt: "Cartel 08" },
   ]
 },
       { 
