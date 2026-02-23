@@ -59,10 +59,10 @@ const projectsData: Record<string, {
       ] 
     },
     
-    // ===== REVISTA 1: EDUARDO ESTUPÍA =====
+    // ===== REVISTA 1: EDUARDO STUPÍA =====
     { 
       type: "text", 
-      title: "Revista - Eduardo Estupía", 
+      title: "Revista - Eduardo Stupía", 
       content: ""  // Podés agregar una descripción si querés
     },
     { 
