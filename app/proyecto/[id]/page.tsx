@@ -655,7 +655,7 @@ export default async function ProjectPage({ params }: { params: PageParams }) {
   return (
     <article className="pt-24 pb-24 min-h-screen">
       {/* HEADER - título y descripción principal */}
-      <header className="px-6 md:px-12 mb-4 md:mb-24">
+      <header className="px-6 md:px-12 mb-2 md:mb-24">
         <div className="max-w-7xl mx-auto">
           <Link
             href={`/proyectos/${project.categorySlug}`}
