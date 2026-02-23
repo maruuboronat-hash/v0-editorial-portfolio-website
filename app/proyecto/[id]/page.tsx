@@ -301,18 +301,23 @@ const projectsData: Record<string, {
           { src: "/images/corporativo/comunicacion/comercial-02.jpg", alt: "Comercial 2" },
         ]
       },
-      { 
-        type: "text", 
-        title: "Asesoramiento y diseño para talleres mecánicos", 
-        content: "Desarrollo de propuestas visuales para talleres, integrando sus necesidades comerciales con los lineamientos globales de marca.\n\nEl trabajo incluyó diseño de ploteos y aplicaciones gráficas en fachada, adaptaciones visuales personalizadas y realización de fotomontajes previos a la adhesión a la red. Estas visualizaciones permitían imaginar el resultado del taller fusionado con la identidad Bosch, funcionando como herramienta estratégica en el proceso de decisión.\n\nLa experiencia implicó contacto directo con clientes, análisis del entorno comercial e interpretación espacial, asegurando una implementación coherente y efectiva de la identidad corporativa en contextos reales."
-      },
-      { 
-        type: "infinite-carousel", 
-        images: [
-          { src: "/images/corporativo/talleres/taller-01.jpg", alt: "Taller 1" },
-          { src: "/images/corporativo/talleres/taller-02.jpg", alt: "Taller 2" },
-        ]
-      },
+{ 
+  type: "text", 
+  title: "Asesoramiento y diseño para talleres mecánicos", 
+  content: "Desarrollo de propuestas visuales para talleres, integrando sus necesidades comerciales con los lineamientos globales de marca.\n\nEl trabajo incluyó diseño de ploteos y aplicaciones gráficas en fachada, adaptaciones visuales personalizadas y realización de fotomontajes previos a la adhesión a la red. Estas visualizaciones permitían imaginar el resultado del taller fusionado con la identidad Bosch, funcionando como herramienta estratégica en el proceso de decisión.\n\nLa experiencia implicó contacto directo con clientes, análisis del entorno comercial e interpretación espacial, asegurando una implementación coherente y efectiva de la identidad corporativa en contextos reales."
+},
+{ 
+  type: "infinite-carousel", 
+  images: [
+    { src: "/images/corporativo/talleres/taller-01.jpg", alt: "Taller 1" },
+    { 
+      src: "/images/corporativo/ploteos/parador.mp4", 
+      alt: "Video del taller",
+      type: "video" 
+    },
+    { src: "/images/corporativo/talleres/taller-02.jpg", alt: "Taller 2" },
+  ]
+},
       { 
         type: "text", 
         title: "Merchandising & Materiales Promocionales", 
