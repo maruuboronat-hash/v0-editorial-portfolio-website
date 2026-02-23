@@ -68,12 +68,12 @@ const projectsData: Record<string, {
     { 
       type: "single-column-stack", 
       images: [
-        { src: "/images/diseno-grafico/revistas-editorial/leparc/2_Mockup_Stupia.jpg", alt: "Eduardo Estupía 2" },
-        { src: "/images/diseno-grafico/revistas-editorial/leparc/3_Mockup_Stupia.jpg", alt: "Eduardo Estupía 3" },
-        { src: "/images/diseno-grafico/revistas-editorial/leparc/4_Mockup_Stupia.jpg", alt: "Eduardo Estupía 4" },
-        { src: "/images/diseno-grafico/revistas-editorial/leparc/5_Mockup_Stupia.jpg", alt: "Eduardo Estupía 5" },
-        { src: "/images/diseno-grafico/revistas-editorial/leparc/6_Mockup_Stupia.jpg", alt: "Eduardo Estupía 6" },
-        { src: "/images/diseno-grafico/revistas-editorial/leparc/7_Mockup_Stupia.jpg", alt: "Eduardo Estupía 7" },
+        { src: "/images/diseno-grafico/revistas-editorial/stupia/2_Mockup_Stupia.jpg", alt: "Eduardo Estupía 2" },
+        { src: "/images/diseno-grafico/revistas-editorial/stupia/3_Mockup_Stupia.jpg", alt: "Eduardo Estupía 3" },
+        { src: "/images/diseno-grafico/revistas-editorial/stupia/4_Mockup_Stupia.jpg", alt: "Eduardo Estupía 4" },
+        { src: "/images/diseno-grafico/revistas-editorial/stupia/5_Mockup_Stupia.jpg", alt: "Eduardo Estupía 5" },
+        { src: "/images/diseno-grafico/revistas-editorial/stupia/6_Mockup_Stupia.jpg", alt: "Eduardo Estupía 6" },
+        { src: "/images/diseno-grafico/revistas-editorial/stupia/7_Mockup_Stupia.jpg", alt: "Eduardo Estupía 7" },
       ]
     },
     
