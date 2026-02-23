@@ -13,6 +13,11 @@ const categoriesData = {
         image: "/images/diseno-grafico/oasis/oasis-02.jpg"
       },
       { 
+ id: "revistas-editorial", 
+  title: "Revistas I Colección de Arte Amalia Lacroze de Fortabat",
+  image: "/images/diseno-grafico/revistas-fortabat/portada.jpg"
+      },
+      { 
         id: "postales-cortazar", 
         title: "Postales I Julio Cortazar",
         image: "/images/diseno-grafico/postales/postales-portada.jpg"
