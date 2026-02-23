@@ -564,14 +564,6 @@ const projectsData: Record<string, {
     description: "Desarrollo de prendas confeccionadas a mano durante la cursada de Diseño de Indumentaria. Cada prototipo explora la relación entre moldería, materiales y construcción, poniendo el foco en la experimentación con formas, terminaciones y el concepto particular que guía cada proyecto.",
     sections: [
       { 
-        type: "tools", 
-        tools: [
-          "Illustrator",
-          "Photoshop",
-          "Premiere"
-        ] 
-      },
-      { 
         type: "single-column-stack", 
         images: [
           { src: "/images/indumentaria-ilustracion/prototipos/protos-01.jpg", alt: "Prototipo 01" },
