@@ -451,31 +451,34 @@ const projectsData: Record<string, {
         title: "Diseño de cartelería en vía pública", 
         content: "Tuve la oportunidad de diseñar y producir mis primeros carteles para vía pública. Las piezas fueron creadas para promocionar el Centro de Capacitación de Bosch, manteniendo la identidad visual de la marca y adaptándola a diferentes formatos y soportes exteriores."
       },
-      { 
-        type: "infinite-carousel", 
-        images: [
-          { src: "/images/corporativo/via-publica/viapublica-01.jpg", alt: "Cartel 01" },
-          { src: "/images/corporativo/via-publica/viapublica-02.jpg", alt: "Cartel 02" },
-          { src: "/images/corporativo/via-publica/viapublica-03.jpeg", alt: "Cartel 03" },
-          { src: "/images/corporativo/via-publica/viapublica-04.jpeg", alt: "Cartel 04" },
-          { src: "/images/corporativo/via-publica/viapublica-05.jpeg", alt: "Cartel 05" },
-          { src: "/images/corporativo/via-publica/viapublica-06.jpeg", alt: "Cartel 06" },
-          { src: "/images/corporativo/via-publica/viapublica-07.jpeg", alt: "Cartel 07" },
-          { src: "/images/corporativo/via-publica/viapublica-08.jpeg", alt: "Cartel 08" },
-        ]
-      },
+{ 
+  type: "infinite-carousel", 
+  images: [
+    { src: "/images/corporativo/ytalents/yt-01.jpg", alt: "Young Talents 1" },
+    { src: "/images/corporativo/ytalents/yt-02.jpg", alt: "Young Talents 2" },
+    { src: "/images/corporativo/ytalents/yt-03.jpg", alt: "Young Talents 3" },
+    { src: "/images/corporativo/ytalents/yt-04.jpg", alt: "Young Talents 4" },
+    { src: "/images/corporativo/ytalents/yt-05.jpg", alt: "Young Talents 5" },
+  ]
+},
       { 
         type: "text", 
         title: "Comunicación Comercial & Marca", 
         content: "Flyers de producto: Desarrollo de piezas gráficas para fichas técnicas, lanzamientos y ofertas comerciales destinadas a distribuidores y red comercial. Definición y consolidación de una estética alineada a la identidad global de marca, aplicada de forma consistente en el tiempo.\n\nPresentaciones corporativas y comerciales: Diseño y optimización de presentaciones internas y externas, asegurando coherencia visual, claridad de información y adecuación al contexto de uso.\n\nWrapped – Resumen anual: Conceptualización y diseño del resumen anual de resultados de comunicación (redes sociales, newsletters y métricas digitales), enfocado a los distintos equipos dentro de la división."
       },
-      { 
-        type: "infinite-carousel", 
-        images: [
-          { src: "/images/corporativo/comunicacion/comercial-01.jpg", alt: "Comercial 1" },
-          { src: "/images/corporativo/comunicacion/comercial-02.jpg", alt: "Comercial 2" },
-        ]
-      },
+{ 
+  type: "infinite-carousel", 
+  images: [
+    { src: "/images/corporativo/flyers/flyers-01.jpg", alt: "Flyer 01" },
+    { src: "/images/corporativo/flyers/flyers-02.jpg", alt: "Flyer 02" },
+    { src: "/images/corporativo/flyers/flyers-03.jpg", alt: "Flyer 03" },
+    { src: "/images/corporativo/flyers/flyers-04.jpg", alt: "Flyer 04" },
+    { src: "/images/corporativo/flyers/flyers-05.jpg", alt: "Flyer 05" },
+    { src: "/images/corporativo/flyers/flyers-06.jpg", alt: "Flyer 06" },
+    { src: "/images/corporativo/flyers/flyers-07.jpg", alt: "Flyer 07" },
+    { src: "/images/corporativo/flyers/flyers-08.jpg", alt: "Flyer 08" },
+  ]
+},
 { 
   type: "text", 
   title: "Asesoramiento y diseño para talleres mecánicos", 
@@ -484,13 +487,17 @@ const projectsData: Record<string, {
 { 
   type: "infinite-carousel", 
   images: [
-    { src: "/images/corporativo/talleres/taller-01.jpg", alt: "Taller 1" },
+    { src: "/images/corporativo/ploteos/talleres-01.jpg", alt: "Taller 01" },
+    { src: "/images/corporativo/ploteos/talleres-02.jpg", alt: "Taller 02" },
     { 
       src: "/images/corporativo/ploteos/parador.mp4", 
-      alt: "Video del taller",
+      alt: "Video del proceso",
       type: "video" 
     },
-    { src: "/images/corporativo/talleres/taller-02.jpg", alt: "Taller 2" },
+    { src: "/images/corporativo/ploteos/talleres-03.jpg", alt: "Taller 03" },
+    { src: "/images/corporativo/ploteos/talleres-04.jpg", alt: "Taller 04" },
+    { src: "/images/corporativo/ploteos/talleres-05.jpg", alt: "Taller 05" },
+    { src: "/images/corporativo/ploteos/talleres-06.jpg", alt: "Taller 06" },
   ]
 },
       { 
