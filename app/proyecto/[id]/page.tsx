@@ -152,7 +152,7 @@ const projectsData: Record<string, {
       tools: [
         "Blender",
         "InDesign",
-        "Illustrator"
+        "Illustrator",
         "Photoshop"
       ] 
     },
@@ -238,7 +238,7 @@ const projectsData: Record<string, {
       tools: [
         "AfterEffects",
         "Premiere",
-        "Blender"
+        "Blender",
         "Illustrator"
       ] 
     },
@@ -258,7 +258,7 @@ const projectsData: Record<string, {
                       { 
       type: "tools", 
       tools: [
-        "Premiere",
+        "Premiere"
       ] 
     },
       {
@@ -277,7 +277,7 @@ const projectsData: Record<string, {
                       { 
       type: "tools", 
       tools: [
-        "Premiere",
+        "Premiere"
       ] 
     },
       {
@@ -296,7 +296,7 @@ const projectsData: Record<string, {
                       { 
       type: "tools", 
       tools: [
-        "Premiere",
+        "Premiere"
       ] 
     },
       {
@@ -315,7 +315,7 @@ const projectsData: Record<string, {
                       { 
       type: "tools", 
       tools: [
-        "Premiere",
+        "Premiere"
       ] 
     },
       {
@@ -444,7 +444,7 @@ const projectsData: Record<string, {
           { 
       type: "tools", 
       tools: [
-        "Illustrator"
+        "Illustrator",
         "PowerBi"
       ] 
     },
@@ -466,7 +466,7 @@ const projectsData: Record<string, {
   //   sections: [
   //     // PROYECTO DESACTIVADO - se mostrará en el futuro
   //   ]
-  // }, ← ESTA COMA SOBRA SI ESTÁ COMENTADO
+  // },
 
   // INDUMENTARIA E ILUSTRACIÓN projects
  "coleccion-portuguese": {
@@ -561,177 +561,4 @@ const projectsData: Record<string, {
     category: "Indumentaria e Ilustración",
     categorySlug: "indumentaria-ilustracion",
     image: "/images/indumentaria-ilustracion/prototipos/protos-portada.jpg",
-    description: "Desarrollo de prendas confeccionadas a mano durante la cursada de Diseño de Indumentaria. Cada prototipo explora la relación entre moldería, materiales y construcción, poniendo el foco en la experimentación con formas, terminaciones y el concepto particular que guía cada proyecto.",
-    sections: [
-          { 
-      type: "tools", 
-      tools: [
-        "Illustrator",
-        "Photoshop",
-        "Premiere"
-      ] 
-    },
-      { 
-        type: "single-column-stack", 
-        images: [
-          { src: "/images/indumentaria-ilustracion/prototipos/protos-01.jpg", alt: "Prototipo 01" },
-          { src: "/images/indumentaria-ilustracion/prototipos/protos-02.jpg", alt: "Prototipo 02" },
-          { src: "/images/indumentaria-ilustracion/prototipos/protos-03.jpg", alt: "Prototipo 03" },
-          { src: "/images/indumentaria-ilustracion/prototipos/protos-04.jpg", alt: "Prototipo 04" },
-          { src: "/images/indumentaria-ilustracion/prototipos/protos-05.jpg", alt: "Prototipo 05" },
-        ]
-      }
-    ]
-  },
-
-  // PROYECTOS PERSONALES
-  "video-casamiento-1995": {
-    title: "Video de Casamiento y Luna de Miel I 1995",
-    category: "Proyectos Personales",
-    categorySlug: "personales",
-  image: "/images/proyectos-personales/video-casamiento/casamiento-02.png",
-  description: "Proyecto audiovisual realizado a partir del archivo familiar del casamiento y la luna de miel de mis padres en 1995. A través de la edición y el montaje del material original, el proyecto reinterpreta esas imágenes desde una mirada actual, explorando el paso del tiempo y cómo los registros personales pueden construir identidad.",
-  sections: [
-        { 
-      type: "tools", 
-      tools: [
-        "Premiere"
-      ] 
-    },
-    { 
-      type: "video-embed", 
-      src: "/images/proyectos-personales/video-casamiento/casamiento.mp4",
-      caption: "Video de casamiento y luna de miel, 1995" 
-    },
-  ],
-},
-  "fotografia-analogica": {
-    title: "Fotografía analógica",
-    category: "Proyectos Personales",
-    categorySlug: "personales",
-    image: "/images/proyectos-personales/analogicas/analogicas-portada.JPG",
-    description: "Serie de fotografías analógicas tomadas durante un viaje por Europa, con la intención de experimentar con nuevas técnicas y rollos vencidos. El proyecto funciona como un registro espontáneo que explora la luz, el color y la composición desde una mirada más personal.",
-    sections: [
-      { 
-        type: "two-column-grid", 
-        images: [
-          { src: "/images/proyectos-personales/analogicas/analogicas-01.jpg", alt: "Analógica 01" },
-          { src: "/images/proyectos-personales/analogicas/analogicas-02.jpg", alt: "Analógica 02" },
-          { src: "/images/proyectos-personales/analogicas/analogicas-03.jpg", alt: "Analógica 03" },
-          { src: "/images/proyectos-personales/analogicas/analogicas-04.jpg", alt: "Analógica 04" },
-          { src: "/images/proyectos-personales/analogicas/analogicas-05.jpg", alt: "Analógica 05" },
-          { src: "/images/proyectos-personales/analogicas/analogicas-06.jpg", alt: "Analógica 06" },
-          { src: "/images/proyectos-personales/analogicas/analogicas-07.jpg", alt: "Analógica 07" },
-          { src: "/images/proyectos-personales/analogicas/analogicas-08.jpg", alt: "Analógica 08" },
-          { src: "/images/proyectos-personales/analogicas/analogicas-09.jpg", alt: "Analógica 09" },
-          { src: "/images/proyectos-personales/analogicas/analogicas-10.jpg", alt: "Analógica 10" },
-          { src: "/images/proyectos-personales/analogicas/analogicas-11.jpg", alt: "Analógica 11" }
-        ]
-      }
-    ]
-  }, // ← COMA IMPORTANTE AQUÍ
-} // ← CIERRE DEL OBJETO projectsData
-
-// Get all projects in a category for "También te puede gustar" section
-function getRelatedProjects(currentId: string, categorySlug: string) {
-  return Object.entries(projectsData)
-    .filter(([id, project]) => id !== currentId && project.categorySlug === categorySlug)
-    .slice(0, 2)
-    .map(([id, project]) => ({ 
-      id, 
-      title: project.title,
-      image: project.image
-    }))
-}
-
-function getProject(id: string) {
-  return projectsData[id] || null
-}
-
-type PageParams = Promise<{ id: string }>
-
-export default async function ProjectPage({ params }: { params: PageParams }) {
-  const { id } = await params
-  const project = getProject(id)
-
-  if (!project) {
-    notFound()
-  }
-
-  const relatedProjects = getRelatedProjects(id, project.categorySlug)
-
-  return (
-    <article className="pt-24 pb-24 min-h-screen">
-      {/* HEADER - título y descripción principal */}
-      <header className="px-6 md:px-12 mb-16 md:mb-24">
-        <div className="max-w-7xl mx-auto">  {/* ← CAMBIADO A max-w-7xl */}
-          <Link
-            href={`/proyectos/${project.categorySlug}`}
-            className="text-xs uppercase tracking-widest text-muted-foreground hover:text-foreground transition-colors mb-8 inline-block"
-          >
-            &larr; {project.category}
-          </Link>
-          
-          <h1 className="font-heading text-3xl md:text-5xl lg:text-6xl tracking-tight mb-8">
-            {project.title}
-          </h1>
-          
-          <p className="text-base md:text-lg leading-relaxed text-muted-foreground">
-            {project.description}
-          </p>
-        </div>
-      </header>
-
-      {/* SECCIONES - subtítulos, descripciones y carruseles */}
-      <div className="px-6 md:px-12">
-        <div className="max-w-7xl mx-auto">
-          <ProjectSections sections={project.sections} />
-        </div>
-      </div>
-
-      {relatedProjects.length > 0 && (
-        <section className="px-6 md:px-12 mt-24 pt-16 border-t border-border">
-          <div className="max-w-6xl mx-auto">
-            <h2 className="font-heading text-lg mb-12">
-              :) También te puede gustar:
-            </h2>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-border">
-              {relatedProjects.map((relatedProject) => (
-                <Link
-                  key={relatedProject.id}
-                  href={`/proyecto/${relatedProject.id}`}
-                  className="group bg-background"
-                >
-                  <div className="aspect-[4/3] bg-muted relative overflow-hidden">
-                    {relatedProject.image ? (
-                      <Image
-                        src={relatedProject.image}
-                        alt={relatedProject.title}
-                        fill
-                        className="object-cover"
-                        sizes="(max-width: 768px) 50vw, 33vw"
-                      />
-                    ) : (
-                      <div className="absolute inset-0 flex items-center justify-center text-muted-foreground text-xs uppercase tracking-widest opacity-30">
-                        {relatedProject.title}
-                      </div>
-                    )}
-                    <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/5 transition-colors" />
-                  </div>
-                  <div className="p-6 border-t border-border">
-                    <h3 className="font-heading text-xl group-hover:underline underline-offset-4">
-                      {relatedProject.title}
-                    </h3>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
-
-      <ContactSection />
-    </article>
-  )
-}
+    description: "Desarrollo de prendas confeccion
