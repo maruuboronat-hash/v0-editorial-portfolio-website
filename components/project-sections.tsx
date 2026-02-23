@@ -69,10 +69,10 @@ function Img({ src, alt, contain = false }: { src: string; alt?: string; contain
 }
 
 /* =========================
-   CARRUSEL CON IMÁGENES CLICKEABLES
+   CARRUSEL CON SOPORTE PARA VIDEOS
 ========================= */
 
-export function InfiniteCarousel({ images }: { images: Array<{ src: string; alt?: string }> }) {
+export function InfiniteCarousel({ images }: { images: Array<{ src: string; alt?: string; type?: 'image' | 'video' }> }) {
   const [currentIndex, setCurrentIndex] = useState(0)
 
   const nextSlide = () => {
@@ -83,23 +83,41 @@ export function InfiniteCarousel({ images }: { images: Array<{ src: string; alt?
     setCurrentIndex((prev) => (prev - 1 + images.length) % images.length)
   }
 
+  const currentItem = images[currentIndex]
+  const isVideo = currentItem.type === 'video'
+
   return (
     <section className="w-full">
       <div className="relative w-full py-8">
         <div className="absolute left-0 top-0 bottom-0 w-32 z-10 pointer-events-none bg-gradient-to-r from-[#111111] via-[#111111]/80 to-transparent" />
         <div className="absolute right-0 top-0 bottom-0 w-32 z-10 pointer-events-none bg-gradient-to-l from-[#111111] via-[#111111]/80 to-transparent" />
 
-        {/* Imagen clickeable */}
-        <a href={images[currentIndex].src} target="_blank" rel="noopener noreferrer">
-          <div className="relative h-96 w-full flex justify-center items-center cursor-pointer">
-            <img
-              src={images[currentIndex].src}
-              alt={images[currentIndex].alt || ""}
+        {/* Contenedor del item actual (imagen o video) */}
+        <div className="relative h-96 w-full flex justify-center items-center">
+          {isVideo ? (
+            // Si es video: mostrar reproductor de video
+            <video
+              key={currentItem.src} // Importante para que recargue al cambiar
+              src={currentItem.src}
+              controls
               className="h-full w-auto rounded-lg shadow-lg"
-            />
-          </div>
-        </a>
+              poster={currentItem.alt} // Opcional: podés pasar una miniatura en alt
+            >
+              Tu navegador no soporta videos HTML5.
+            </video>
+          ) : (
+            // Si es imagen: mostrar imagen clickeable
+            <a href={currentItem.src} target="_blank" rel="noopener noreferrer" className="block">
+              <img
+                src={currentItem.src}
+                alt={currentItem.alt || ""}
+                className="h-full w-auto rounded-lg shadow-lg cursor-pointer"
+              />
+            </a>
+          )}
+        </div>
 
+        {/* Flechas de navegación */}
         <button
           onClick={prevSlide}
           className="absolute left-8 top-1/2 transform -translate-y-1/2 z-20 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full transition-all"
@@ -114,6 +132,7 @@ export function InfiniteCarousel({ images }: { images: Array<{ src: string; alt?
           →
         </button>
 
+        {/* Indicadores (puntitos) */}
         <div className="flex justify-center gap-2 mt-6">
           {images.map((_, index) => (
             <button
