@@ -19,6 +19,7 @@ export type SectionType =
   | { type: "video-embed"; src: string; caption?: string }
   | { type: "infinite-carousel"; images: Array<{ src: string; alt?: string }>; speed?: number }
   | { type: "skills"; skills: string[] }
+  | { type: "tools"; tools: string[] }  // ← NUEVO TIPO
 
 interface SectionProps {
   section: SectionType
@@ -150,6 +151,35 @@ export function SkillsSection({ section }: { section: Extract<SectionType, { typ
               className="text-xs px-3 py-1.5 border border-border bg-transparent text-foreground"
             >
               {skill}
+            </span>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* =========================
+   PROJECT TOOLS (HERRAMIENTAS DEL PROYECTO)
+   Mismo estilo que los globos de Bosch/CV
+========================= */
+
+export function ProjectTools({ tools }: { tools: string[] }) {
+  if (!tools || tools.length === 0) return null;
+  
+  return (
+    <section className="w-full py-4">
+      <div className="max-w-7xl mx-auto">
+        <h3 className="text-xs font-heading uppercase tracking-widest text-muted-foreground mb-4">
+          Herramientas utilizadas
+        </h3>
+        <div className="flex flex-wrap gap-2">
+          {tools.map((tool, index) => (
+            <span 
+              key={index}
+              className="text-xs px-3 py-1.5 border border-border bg-transparent text-foreground"
+            >
+              {tool}
             </span>
           ))}
         </div>
@@ -334,6 +364,8 @@ export function ProjectSection({ section }: SectionProps) {
       return <InfiniteCarousel images={section.images} />
     case "skills":
       return <SkillsSection section={section} />
+    case "tools":  // ← NUEVO CASO
+      return <ProjectTools tools={section.tools} />
     default:
       return null
   }
