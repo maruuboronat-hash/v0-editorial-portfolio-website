@@ -42,13 +42,14 @@ const projectsData: Record<string, {
     ]},
   ],
 },
- "revistas-editorial": {
+"revistas-editorial": {
   title: "Revistas I Colección de Arte Amalia Lacroze de Fortabat",
   category: "Diseño Gráfico",
   categorySlug: "diseno-grafico",
   description: "Proyecto editorial que toma como punto de partida la identidad del Museo Colección Amalia Lacroze de Fortabat. Desarrollado como un sistema de revistas institucionales, aborda tres exposiciones diferentes a través de recursos editoriales, tipográficos y fotográficos. El foco está puesto en construir una narrativa visual coherente, organizada mediante una grilla editorial, y en desarrollar una identidad gráfica que dialogue con el carácter, el patrimonio y la estética contemporánea del museo.",
-  image: "/images/diseno-grafico/revistas-fortabat/portada.jpg",  // ← AGREGAR IMAGEN DE PORTADA
+  image: "/images/diseno-grafico/revistas-fortabat/portada.jpg",
   sections: [
+    // ===== HERRAMIENTAS UTILIZADAS =====
     { 
       type: "tools", 
       tools: [
@@ -57,12 +58,52 @@ const projectsData: Record<string, {
         "Illustrator"
       ] 
     },
-    { type: "single-column-stack", images: [
-      { src: "/images/diseno-grafico/revistas-fortabat/revista-01.jpg", alt: "Revista 1" },
-      { src: "/images/diseno-grafico/revistas-fortabat/revista-02.jpg", alt: "Revista 2" },
-      { src: "/images/diseno-grafico/revistas-fortabat/revista-03.jpg", alt: "Revista 3" },
-      // Agregá más imágenes según tengas
-    ]},
+    
+    // ===== REVISTA 1: EDUARDO ESTUPÍA =====
+    { 
+      type: "text", 
+      title: "Revista - Eduardo Estupía", 
+      content: ""  // Podés agregar una descripción si querés
+    },
+    { 
+      type: "single-column-stack", 
+      images: [
+        { src: "/images/diseno-grafico/revistas-fortabat/estupia-01.jpg", alt: "Eduardo Estupía 1" },
+        { src: "/images/diseno-grafico/revistas-fortabat/estupia-02.jpg", alt: "Eduardo Estupía 2" },
+        { src: "/images/diseno-grafico/revistas-fortabat/estupia-03.jpg", alt: "Eduardo Estupía 3" },
+        // Agregá más imágenes según tengas
+      ]
+    },
+    
+    // ===== REVISTA 2: JULIO LE PARC =====
+    { 
+      type: "text", 
+      title: "Revista - Julio Le Parc", 
+      content: ""
+    },
+    { 
+      type: "single-column-stack", 
+      images: [
+        { src: "/images/diseno-grafico/revistas-fortabat/leparc-01.jpg", alt: "Julio Le Parc 1" },
+        { src: "/images/diseno-grafico/revistas-fortabat/leparc-02.jpg", alt: "Julio Le Parc 2" },
+        { src: "/images/diseno-grafico/revistas-fortabat/leparc-03.jpg", alt: "Julio Le Parc 3" },
+      ]
+    },
+    
+    // ===== REVISTA 3: ARIADNA PASTORINI =====
+    { 
+      type: "text", 
+      title: "Revista - Ariadna Pastorini", 
+      content: ""
+    },
+    { 
+      type: "single-column-stack", 
+      images: [
+        { src: "/images/diseno-grafico/revistas-fortabat/pastorini-01.jpg", alt: "Ariadna Pastorini 1" },
+        { src: "/images/diseno-grafico/revistas-fortabat/pastorini-02.jpg", alt: "Ariadna Pastorini 2" },
+        { src: "/images/diseno-grafico/revistas-fortabat/pastorini-03.jpg", alt: "Ariadna Pastorini 3" },
+      ]
+    },
   ],
 },
   "postales-cortazar": {
