@@ -373,7 +373,7 @@ export function ProjectSection({ section }: SectionProps) {
 
 export function ProjectSections({ sections }: { sections: SectionType[] }) {
   return (
-    <div className="flex flex-col gap-8">
+    <div className="flex flex-col gap-4">
       {sections.map((section, i) => (
         <ProjectSection key={i} section={section} />
       ))}
