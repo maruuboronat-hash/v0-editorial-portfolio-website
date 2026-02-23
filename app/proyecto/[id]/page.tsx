@@ -121,6 +121,12 @@ const projectsData: Record<string, {
     categorySlug: "diseno-grafico",
     description: "Serie de afiches experimentales que exploran la relación entre forma, estructura y lenguaje visual a partir de la tipografía. Cada pieza combina composición, ritmo y contraste para comunicar ideas a través del signo tipográfico como elemento principal. El proyecto investiga cómo la letra puede trascender su función textual para transformarse en imagen y expresión visual.",
     sections: [
+                { 
+      type: "tools", 
+      tools: [
+        "Illustrator"
+      ] 
+    },
       { type: "single-column-stack", images: [
         { src: "/images/diseno-grafico/afiche-tipografico/tipografia-01.jpg", alt: "Afiche 01" },
         { src: "/images/diseno-grafico/afiche-tipografico/tipografia-02.jpg", alt: "Afiche 02" },
@@ -141,6 +147,15 @@ const projectsData: Record<string, {
     categorySlug: "diseno-grafico",
     description: "Proyecto editorial que combina narrativa, diseño y modelado tridimensional. Basado en El hombrecito del azulejo, cuento de Manuel Mujica Lainez, se desarrollaron los personajes y escenarios mediante ilustración 3D, integrando color, textura y volumen para construir un universo visual coherente con el relato. Además, se diseñó y maquetó el libro completo, trabajando la relación entre texto e imagen para potenciar la narrativa desde lo visual.",
     sections: [
+                { 
+      type: "tools", 
+      tools: [
+        "Blender",
+        "InDesign",
+        "Illustrator"
+        "Photoshop"
+      ] 
+    },
       { 
         type: "two-column-grid", 
         images: [
@@ -170,6 +185,13 @@ const projectsData: Record<string, {
     categorySlug: "diseno-grafico",
     description: "Ejercicio de observación, modelado e iluminación digital a partir de tres objetos de uso cotidiano. El proyecto busca reproducir de forma precisa la materialidad, las proporciones y las condiciones lumínicas de cada elemento, explorando cómo el entorno y el punto de vista transforman su percepción. La propuesta combina técnica y composición para convertir objetos simples en escenas visualmente expresivas.",
     sections: [
+                      { 
+      type: "tools", 
+      tools: [
+        "Blender",
+        "Photoshop"
+      ] 
+    },
       { type: "single-column-stack", images: [
         { src: "/images/diseno-grafico/modelado3d/modelado-01.jpg", alt: "Modelado 01" },
         { src: "/images/diseno-grafico/modelado3d/modelado-02.jpg", alt: "Modelado 02" },
@@ -188,6 +210,12 @@ const projectsData: Record<string, {
     categorySlug: "diseno-grafico",
     description: "Diseño de tapa y contratapa para una revista inspirada en el barrio porteño de Balvanera. El proyecto toma como punto de partida su identidad visual, su ritmo urbano y la diversidad cultural que lo caracteriza. A través del uso del color, la tipografía y la composición, busca reflejar el pulso cotidiano del barrio y su mezcla entre historia, tránsito y vida local.",
     sections: [
+                      { 
+      type: "tools", 
+      tools: [
+        "Illustrator"
+      ] 
+    },
       { 
         type: "two-column-grid", 
         images: [
@@ -205,6 +233,15 @@ const projectsData: Record<string, {
     categorySlug: "edicion-video",
     image: "/images/edicion-video/portada05.png",
     sections: [
+                      { 
+      type: "tools", 
+      tools: [
+        "AfterEffects",
+        "Premiere",
+        "Blender"
+        "Illustrator"
+      ] 
+    },
       {
         type: "video-embed",
         src: "/images/edicion-video/video-portfolio.mp4",
@@ -218,6 +255,12 @@ const projectsData: Record<string, {
     categorySlug: "edicion-video",
     image: "/images/edicion-video/portada03.png",
     sections: [
+                      { 
+      type: "tools", 
+      tools: [
+        "Premiere",
+      ] 
+    },
       {
         type: "video-embed",
         src: "https://www.youtube.com/embed/w0SAl3TPjGM",
@@ -231,6 +274,12 @@ const projectsData: Record<string, {
     categorySlug: "edicion-video",
     image: "/images/edicion-video/portada04.png",
     sections: [
+                      { 
+      type: "tools", 
+      tools: [
+        "Premiere",
+      ] 
+    },
       {
         type: "video-embed",
         src: "https://www.youtube.com/embed/FlTDpF_Dr6Y",
@@ -244,6 +293,12 @@ const projectsData: Record<string, {
     categorySlug: "edicion-video",
     image: "/images/edicion-video/portada02.jpeg",
     sections: [
+                      { 
+      type: "tools", 
+      tools: [
+        "Premiere",
+      ] 
+    },
       {
         type: "video-embed",
         src: "https://www.youtube.com/embed/mm8RTJ4UoPE",
@@ -257,6 +312,12 @@ const projectsData: Record<string, {
     categorySlug: "edicion-video",
     image: "/images/edicion-video/portada01.png",
     sections: [
+                      { 
+      type: "tools", 
+      tools: [
+        "Premiere",
+      ] 
+    },
       {
         type: "video-embed",
         src: "/images/edicion-video/video-modelos.mp4",
@@ -380,7 +441,13 @@ const projectsData: Record<string, {
     image: "/images/corporativo/logos/portadas-logos-01.jpg",
     description: "Proyecto desarrollado para la empresa de logística Pick&Log, enfocado en el diseño de plantillas visuales y dashboards para Power BI dentro de su sistema de gestión logística.\n\nEl trabajo integró diseño funcional y visualización de datos, con el objetivo de optimizar la lectura de información y facilitar el seguimiento de indicadores operativos. Se priorizó claridad, jerarquía visual y coherencia gráfica, asegurando una experiencia intuitiva para la toma de decisiones.",
     sections: [
-      // DESCRIPCIÓN ELIMINADA - solo queda el carrusel
+          { 
+      type: "tools", 
+      tools: [
+        "Illustrator"
+        "PowerBi"
+      ] 
+    },
       { 
         type: "infinite-carousel", 
         images: [
@@ -409,6 +476,14 @@ const projectsData: Record<string, {
     image: "/images/indumentaria-ilustracion/colección-portuguese/portuguese-portada-blanco.jpg",
     description: "Mini colección inspirada en la estética 'Portuguese', centrada en el uso del color, las texturas y los detalles artesanales. El proyecto incluye el desarrollo de fichas técnicas, geometrales y figurines, junto con una propuesta conceptual que combina identidad cultural y diseño contemporáneo.",
     sections: [
+          { 
+      type: "tools", 
+      tools: [
+        "Photoshop",
+        "Illustrator",
+        "Premiere"
+      ] 
+    },
       { 
         type: "single-column-stack", 
         images: [
@@ -464,6 +539,12 @@ const projectsData: Record<string, {
     image: "/images/indumentaria-ilustracion/jeaneria/fichas-portada.jpg",
     description: "Proyecto centrado en el desarrollo técnico de prendas de denim. Incluye fichas técnicas detalladas, geometrales y especificaciones de confección que abordan la estructura, los materiales y los procesos de armado de cada pieza.",
     sections: [
+          { 
+      type: "tools", 
+      tools: [
+        "Illustrator"
+      ] 
+    },
       { 
         type: "single-column-stack", 
         images: [
@@ -482,6 +563,14 @@ const projectsData: Record<string, {
     image: "/images/indumentaria-ilustracion/prototipos/protos-portada.jpg",
     description: "Desarrollo de prendas confeccionadas a mano durante la cursada de Diseño de Indumentaria. Cada prototipo explora la relación entre moldería, materiales y construcción, poniendo el foco en la experimentación con formas, terminaciones y el concepto particular que guía cada proyecto.",
     sections: [
+          { 
+      type: "tools", 
+      tools: [
+        "Illustrator",
+        "Photoshop",
+        "Premiere"
+      ] 
+    },
       { 
         type: "single-column-stack", 
         images: [
@@ -503,6 +592,12 @@ const projectsData: Record<string, {
   image: "/images/proyectos-personales/video-casamiento/casamiento-02.png",
   description: "Proyecto audiovisual realizado a partir del archivo familiar del casamiento y la luna de miel de mis padres en 1995. A través de la edición y el montaje del material original, el proyecto reinterpreta esas imágenes desde una mirada actual, explorando el paso del tiempo y cómo los registros personales pueden construir identidad.",
   sections: [
+        { 
+      type: "tools", 
+      tools: [
+        "Premiere"
+      ] 
+    },
     { 
       type: "video-embed", 
       src: "/images/proyectos-personales/video-casamiento/casamiento.mp4",
