@@ -481,7 +481,7 @@ const projectsData: Record<string, {
       tools: [
         "Photoshop",
         "Illustrator",
-        "Premiere"
+        "Procreate"
       ] 
     },
       { 
