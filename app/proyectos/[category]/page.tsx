@@ -15,7 +15,7 @@ const categoriesData = {
       { 
  id: "revistas-editorial", 
   title: "Revistas I Colección de Arte Amalia Lacroze de Fortabat",
-  image: "/images/diseno-grafico/revistas-fortabat/portada.jpg"
+  image: "/images/diseno-grafico/revistas-editorial/portada-editorial2.jpg"
       },
       { 
         id: "postales-cortazar", 
