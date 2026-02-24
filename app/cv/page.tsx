@@ -276,21 +276,16 @@ export default function CVPage() {
               </div>
             </section>
 
-            {/* SECCIÓN 4: DESCARGAR */}
-            <section>
-              <h2 className="font-heading text-xs uppercase tracking-widest text-muted-foreground mb-4">
-                Descargar
-              </h2>
-              <a
-                href="#"
-                className="inline-flex items-center gap-2 text-xs uppercase tracking-widest hover:underline underline-offset-4"
-              >
-                CV en PDF &darr;
-              </a>
-            </section>
-          </aside>
-        </div>
-      </div>
-    </div>
-  )
-}
+{/* SECCIÓN 4: DESCARGAR */}
+<section>
+  <h2 className="font-heading text-xs uppercase tracking-widest text-muted-foreground mb-4">
+    Descargar
+  </h2>
+  <a
+    href="/images/CV/CV_Maria_Boronat.pdf"
+    download
+    className="inline-flex items-center gap-2 text-xs uppercase tracking-widest hover:underline underline-offset-4"
+  >
+    CV en PDF &darr;
+  </a>
+</section>
