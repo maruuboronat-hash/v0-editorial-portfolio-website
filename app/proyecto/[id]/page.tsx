@@ -506,19 +506,33 @@ const projectsData: Record<string, {
     { src: "/images/corporativo/ploteos/talleres-06.jpg", alt: "Taller 06" },
   ]
 },
-      { 
-        type: "text", 
-        title: "Merchandising & Materiales Promocionales", 
-        content: "Diseño y desarrollo de materiales aplicados a distintas acciones comerciales y de marca: stickers, ploteos, bolsas, anotadores, cuadernos, llaveros, catálogos, newsletters y piezas para redes sociales. Trabajo enfocado en coherencia visual, funcionalidad y alineación a objetivos comerciales."
-      },
-      { 
-        type: "infinite-carousel", 
-        images: [
-          { src: "/images/corporativo/merchandising/merch-01.jpg", alt: "Merch 01" },
-          { src: "/images/corporativo/merchandising/merch-02.jpg", alt: "Merch 02" },
-          { src: "/images/corporativo/merchandising/merch-03.jpg", alt: "Merch 03" },
-        ]
-      },
+ { 
+  type: "text", 
+  title: "Merchandising & Materiales Promocionales", 
+  content: "Diseño y desarrollo de materiales aplicados a distintas acciones comerciales y de marca: stickers, ploteos, bolsas, anotadores, cuadernos, llaveros, catálogos, newsletters y piezas para redes sociales. Trabajo enfocado en coherencia visual, funcionalidad y alineación a objetivos comerciales."
+},
+{ 
+  type: "infinite-carousel", 
+  images: [
+    { src: "/images/corporativo/merch/merch-01.jpg", alt: "Merch 01" },
+    { src: "/images/corporativo/merch/merch-02.jpg", alt: "Merch 02" },
+    { src: "/images/corporativo/merch/merch-03.jpg", alt: "Merch 03" },
+    { src: "/images/corporativo/merch/merch-04.jpg", alt: "Merch 04" },
+    { src: "/images/corporativo/merch/merch-05.jpg", alt: "Merch 05" },
+    { src: "/images/corporativo/merch/merch-06.jpg", alt: "Merch 06" },
+    { src: "/images/corporativo/merch/merch-07.jpg", alt: "Merch 07" },
+    { src: "/images/corporativo/merch/merch-08.jpg", alt: "Merch 08" },
+    { src: "/images/corporativo/merch/merch-09.jpg", alt: "Merch 09" },
+    { src: "/images/corporativo/merch/merch-10.jpg", alt: "Merch 10" },
+    { src: "/images/corporativo/merch/merch-11.jpg", alt: "Merch 11" },
+    { src: "/images/corporativo/merch/merch-12.jpg", alt: "Merch 12" },
+    { src: "/images/corporativo/merch/merch-13.jpg", alt: "Merch 13" },
+    { src: "/images/corporativo/merch/merch-14.jpg", alt: "Merch 14" },
+    { src: "/images/corporativo/merch/merch-15.jpg", alt: "Merch 15" },
+    { src: "/images/corporativo/merch/merch-16.jpg", alt: "Merch 16" },
+    { src: "/images/corporativo/merch/merch-17.jpg", alt: "Merch 17" },
+  ]
+},
       { 
         type: "text", 
         title: "Gestión y Soporte Operativo", 
