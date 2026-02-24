@@ -55,30 +55,30 @@ export function ProjectsGrid({
                   isWide ? 'md:col-span-2' : ''
                 }`}
               >
-                {isSquare ? (
-                  // ESTILO CUADRADO
-                  <div className="relative w-full aspect-square">
-                    <Image
-                      src={project.image}
-                      alt={project.id}
-                      fill
-                      className="object-contain"
-                      priority
-                    />
-                  </div>
-                ) : (
-                  // ESTILO NATURAL
-                  <div className="relative w-full">
-                    <Image
-                      src={project.image}
-                      alt={project.id}
-                      width={1200}
-                      height={800}
-                      className="w-full h-auto object-contain"
-                      priority
-                    />
-                  </div>
-                )}
+ {isSquare ? (
+  // ESTILO CUADRADO
+  <div className="relative w-full aspect-square">
+    <Image
+      src={project.image}
+      alt={project.id}
+      fill
+      className="object-contain"
+      priority
+    />
+  </div>
+) : (
+  // ESTILO NATURAL - en móvil también respeta altura
+  <div className="relative w-full">
+    <Image
+      src={project.image}
+      alt={project.id}
+      width={1200}
+      height={800}
+      className="w-full h-auto object-contain"
+      priority
+    />
+  </div>
+)}
 
                 <div className="absolute inset-0 bg-black/80 flex items-center justify-center p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                   <p className="text-white text-sm md:text-base text-center leading-relaxed">
