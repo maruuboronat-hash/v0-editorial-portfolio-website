@@ -89,12 +89,13 @@ const services = [
     imageStyle: "square",
   },
   {
-    id: "edicion-video",
-    description: "Edición, post-producción y animación de piezas audiovisuales para redes, eventos y proyectos personales.",
-    href: "/proyectos/edicion-video",
-    image: "/images/generales/home-cover-ediciondevideo.jpg",
-    colSpan: 2,
-    imageStyle: "natural",
+  id: "edicion-video",
+  description: "Edición, post-producción y animación de piezas audiovisuales para redes, eventos y proyectos personales.",
+  href: "/proyectos/edicion-video",
+  image: "/images/generales/home-cover-ediciondevideo.jpg",
+  colSpan: 2,
+  imageStyle: "natural",
+  isWide: true,  // ← AGREGAR ESTA LÍNEA
   },
 ];
 
