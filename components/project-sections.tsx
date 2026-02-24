@@ -70,7 +70,7 @@ function Img({ src, alt, contain = false }: { src: string; alt?: string; contain
 }
 
 /* =========================
-   CARRUSEL ORIGINAL (SOLO IMÁGENES)
+   CARRUSEL ORIGINAL (SOLO IMÁGENES) - ALTURA REDUCIDA
 ========================= */
 
 export function InfiniteCarousel({ images }: { images: Array<{ src: string; alt?: string }> }) {
@@ -90,9 +90,9 @@ export function InfiniteCarousel({ images }: { images: Array<{ src: string; alt?
         <div className="absolute left-0 top-0 bottom-0 w-32 z-10 pointer-events-none bg-gradient-to-r from-[#111111] via-[#111111]/80 to-transparent" />
         <div className="absolute right-0 top-0 bottom-0 w-32 z-10 pointer-events-none bg-gradient-to-l from-[#111111] via-[#111111]/80 to-transparent" />
 
-        {/* Imagen clickeable */}
+        {/* Imagen clickeable - ALTURA REDUCIDA */}
         <a href={images[currentIndex].src} target="_blank" rel="noopener noreferrer">
-          <div className="relative h-96 w-full flex justify-center items-center cursor-pointer">
+          <div className="relative h-64 md:h-80 w-full flex justify-center items-center cursor-pointer">
             <img
               src={images[currentIndex].src}
               alt={images[currentIndex].alt || ""}
