@@ -504,6 +504,7 @@ const projectsData: Record<string, {
     { src: "/images/corporativo/ploteos/talleres-04.jpg", alt: "Taller 04" },
     { src: "/images/corporativo/ploteos/talleres-05.jpg", alt: "Taller 05" },
     { src: "/images/corporativo/ploteos/talleres-06.jpg", alt: "Taller 06" },
+    { src: "/images/corporativo/ploteos/talleres-07.jpg", alt: "Taller 07" },
   ]
 },
  { 
