@@ -302,7 +302,7 @@ export default function CVPage() {
                 Descargar
               </h2>
               <a
-                href="/images/CV/CV_Maria_Boronat.pdf"
+                href="/images/CV/CV_MariaBoronat.pdf"
                 download
                 className="inline-flex items-center gap-2 text-xs uppercase tracking-widest hover:underline underline-offset-4"
               >
