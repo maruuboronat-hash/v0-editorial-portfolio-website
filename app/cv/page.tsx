@@ -2,6 +2,18 @@ import Image from "next/image"
 
 const experience = [
   {
+    period: "2026 — Presente",
+    role: "Diseñadora Digital Jr. - Marketing",
+    company: "Cencosud - Jumbo, Disco y Vea",
+    description: (
+      <>
+        <p className="mb-3">
+          Desarrollo de piezas digitales para campañas de marketing, incluyendo emails, banners, contenidos audiovisuales masivos. Maquetación y edición de piezas de email marketing utilizando HTML5 y CSS. Adaptación de contenidos para distintos canales digitales con foco en usabilidad y conversión. Implementación de herramientas de inteligencia artificial y automatización para optimizar procesos creativos y productivos. Trabajo colaborativo con equipos de marketing en la ejecución de campañas digitales y estrategias omnicanal.
+        </p>
+      </>
+    ),
+  },
+  {
     period: "2024 — 2026",
     role: "Pasante de Marketing y Comunicación",
     company: "Bosch - Mobility Aftermarket",
@@ -43,6 +55,11 @@ const education = [
     institution: "UCES - Universidad de Ciencias Empresariales y Sociales",
   },
   {
+    period: "2024 - Presente",
+    title: "Técnico Universitario en Diseño Multimedia",
+    institution: "UCES - Universidad de Ciencias Empresariales y Sociales",
+  },
+  {
     period: "2021 - 2024",
     title: "Lic. Diseño de Indumentaria - 60% completo",
     institution: "UBA/FADU - Universidad de Buenos Aires",
@@ -70,6 +87,8 @@ const skills = [
   "- Adaptabilidad tecnológica",
   "- Pensamiento creativo",
   "- Atención al detalle",
+  "- Vibe Coding",
+  "- Mailing",
 ]
 
 // HERRAMIENTAS (separadas individualmente)
@@ -82,6 +101,7 @@ const tools = {
     "Premiere",
     "After Effects",
     "Figma",
+    "Responsys",
     "Blender",
     "Canva",
     "ElevenLabs",
