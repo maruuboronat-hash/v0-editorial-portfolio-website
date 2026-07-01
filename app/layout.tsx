@@ -49,7 +49,7 @@ export default function RootLayout({
 <body className={`${_spaceGrotesk.variable} ${_inter.variable} font-sans antialiased`}>
         <ThemeProvider
           attribute="class"
-          defaultTheme="dark"
+          defaultTheme="light"
           enableSystem={false}
           disableTransitionOnChange
         >

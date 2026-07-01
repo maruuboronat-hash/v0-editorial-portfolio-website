@@ -48,7 +48,7 @@ function InteractiveHero() {
         className="hero-spotlight"
         style={{
           opacity: isHovering ? 1 : 0,
-          background: `radial-gradient(600px circle at ${mousePos.x}px ${mousePos.y}px, rgba(247,237,57,0.10), transparent 70%)`,
+          background: `radial-gradient(220px circle at ${mousePos.x}px ${mousePos.y}px, rgba(253,3,1,0.18), transparent 65%)`,
         }}
       />
 

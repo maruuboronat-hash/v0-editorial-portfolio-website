@@ -34,12 +34,12 @@ export function CategoryContent({ categoryData }: CategoryContentProps) {
 
       <ScrollReveal as="section" className="px-6 md:px-12">
         <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-1">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
             {categoryData.projects?.map((project) => (
               <Link
                 key={project.id}
                 href={`/proyecto/${project.id}`}
-                className="scroll-reveal-child group bg-background"
+                className="scroll-reveal-child group flex flex-col overflow-hidden rounded-2xl border border-border bg-card transition-all duration-300 hover:-translate-y-1 hover:border-brand hover:shadow-xl"
               >
                 {/* PROJECT IMAGE */}
                 <div className="aspect-[4/3] bg-muted relative overflow-hidden">
@@ -48,8 +48,8 @@ export function CategoryContent({ categoryData }: CategoryContentProps) {
                       src={project.image}
                       alt={project.title}
                       fill
-                      className="object-cover"
-                      sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      sizes="(max-width: 768px) 100vw, 50vw"
                     />
                   ) : (
                     <div className="absolute inset-0 flex items-center justify-center text-muted-foreground text-xs uppercase tracking-widest opacity-30 px-4 text-center">
@@ -60,10 +60,13 @@ export function CategoryContent({ categoryData }: CategoryContentProps) {
                 </div>
                 
                 {/* PROJECT INFO */}
-                <div className="py-6">
-                  <h2 className="font-heading text-lg md:text-xl group-hover:opacity-70 transition-opacity">
+                <div className="flex items-center justify-between gap-4 px-6 py-5">
+                  <h2 className="font-heading text-lg md:text-xl transition-colors group-hover:text-brand">
                     {project.title}
                   </h2>
+                  <span className="text-brand opacity-0 -translate-x-2 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0">
+                    →
+                  </span>
                 </div>
               </Link>
             ))}

@@ -13,7 +13,7 @@ export function BioImage({ size = "medium" }: BioImageProps) {
   // Definimos las clases de tamaño según la prop
   const sizeClasses = {
     medium: "w-80 h-80 md:w-96 md:h-96",  // Tamaño de la Home
-    large: "w-96 h-96 md:w-[28rem] md:h-[28rem]",  // Más grande para la página de Bio
+    large: "w-64 h-64 md:w-80 md:h-80 lg:w-[22rem] lg:h-[22rem]",  // Página de Bio (más contenida)
   };
 
   return (
