@@ -4,6 +4,7 @@ import { Space_Grotesk, Inter } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 import { Navigation } from '@/components/navigation'
+import { ThemeProvider } from '@/components/theme-provider'
 
 const _spaceGrotesk = Space_Grotesk({ 
   subsets: ["latin"], 
@@ -44,8 +45,14 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="es">
+    <html lang="es" className="bg-background" suppressHydrationWarning>
 <body className={`${_spaceGrotesk.variable} ${_inter.variable} font-sans antialiased`}>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem={false}
+          disableTransitionOnChange
+        >
         <Navigation />
         <main>
           {children}
@@ -134,6 +141,7 @@ font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   v0
 </span>
 </div>` }} />
+        </ThemeProvider>
 </body>
     </html>
   )

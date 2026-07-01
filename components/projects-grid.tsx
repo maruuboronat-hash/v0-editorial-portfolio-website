@@ -34,7 +34,7 @@ export function ProjectsGrid({
               {title}
             </h2>
             {description && (
-              <p className="mt-4 text-lg text-gray-600 max-w-2xl">
+              <p className="mt-4 text-lg text-muted-foreground max-w-2xl">
                 {description}
               </p>
             )}
@@ -42,7 +42,7 @@ export function ProjectsGrid({
         )}
 
         {/* Grid de 2 columnas */}
-        <div className="grid grid-cols-2 gap-1">
+        <div className="grid grid-cols-2 gap-2 md:gap-3">
           {projects.map((project) => {
             const isSquare = project.imageStyle === "square";
             const isWide = project.isWide;
@@ -51,7 +51,7 @@ export function ProjectsGrid({
               <Link
                 key={project.id}
                 href={project.href}
-                className={`group relative block bg-white ${
+                className={`group relative block overflow-hidden rounded-xl border border-border bg-white ring-2 ring-transparent transition-all duration-300 hover:ring-brand hover:-translate-y-0.5 ${
                   isWide ? 'md:col-span-2' : ''
                 }`}
               >
@@ -80,7 +80,8 @@ export function ProjectsGrid({
   </div>
 )}
 
-                <div className="absolute inset-0 bg-black/80 flex items-center justify-center p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                <div className="absolute inset-0 bg-black/80 flex flex-col items-center justify-center gap-4 p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                  <span className="h-0.5 w-8 rounded-full bg-brand" />
                   <p className="text-white text-sm md:text-base text-center leading-relaxed">
                     {project.description}
                   </p>

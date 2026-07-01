@@ -48,7 +48,7 @@ function InteractiveHero() {
         className="hero-spotlight"
         style={{
           opacity: isHovering ? 1 : 0,
-          background: `radial-gradient(600px circle at ${mousePos.x}px ${mousePos.y}px, rgba(255,255,255,0.06), transparent 70%)`,
+          background: `radial-gradient(600px circle at ${mousePos.x}px ${mousePos.y}px, rgba(247,237,57,0.10), transparent 70%)`,
         }}
       />
 
@@ -67,7 +67,7 @@ function InteractiveHero() {
       {/* Indicador de scroll */}
       <div className="hero-reveal-delay absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
         <span className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground">Scroll</span>
-        <span className="h-8 w-px bg-border" />
+        <span className="h-8 w-px bg-gradient-to-b from-brand to-transparent" />
       </div>
     </section>
   )
@@ -167,7 +167,7 @@ function AboutSection() {
           </p>
           <Link
             href="/bio"
-            className="text-xs uppercase tracking-widest hover:opacity-70 transition-opacity mt-4 inline-block"
+            className="link-underline text-xs uppercase tracking-widest transition-colors hover:text-brand mt-6 inline-block"
           >
             Leer más →
           </Link>
