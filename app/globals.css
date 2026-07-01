@@ -189,3 +189,115 @@
     transform: translateY(0);
   }
 }
+
+/* =========================
+   INTRO ANIMATION (page enter)
+========================= */
+.intro-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--background);
+  transition: transform 0.9s cubic-bezier(0.76, 0, 0.24, 1);
+  will-change: transform;
+}
+
+.intro-overlay.intro-exiting {
+  transform: translateY(-100%);
+}
+
+.intro-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.intro-line-mask {
+  overflow: hidden;
+  display: block;
+}
+
+.intro-line {
+  display: block;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  color: var(--foreground);
+  transform: translateY(110%);
+  animation: introLineUp 1s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+}
+
+.intro-word-1 {
+  font-size: clamp(2.5rem, 12vw, 7rem);
+  animation-delay: 0.15s;
+}
+
+.intro-word-2 {
+  font-size: clamp(2.5rem, 12vw, 7rem);
+  animation-delay: 0.28s;
+}
+
+.intro-sub {
+  margin-top: 0.75rem;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  color: var(--muted-foreground);
+  opacity: 0;
+  animation: introFadeIn 0.9s ease 0.9s forwards;
+}
+
+.intro-bar {
+  margin-top: 1.5rem;
+  height: 1px;
+  width: 0;
+  background: var(--foreground);
+  opacity: 0.4;
+  animation: introBar 1s cubic-bezier(0.19, 1, 0.22, 1) 0.5s forwards;
+}
+
+@keyframes introLineUp {
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes introFadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes introBar {
+  to {
+    width: min(220px, 60vw);
+  }
+}
+
+/* Hero cursor spotlight */
+.hero-spotlight {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+  will-change: background;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .intro-line,
+  .intro-sub,
+  .intro-bar,
+  .hero-reveal,
+  .hero-reveal-delay {
+    animation: none;
+    opacity: 1;
+    transform: none;
+    width: auto;
+  }
+}

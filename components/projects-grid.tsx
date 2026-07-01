@@ -26,10 +26,10 @@ export function ProjectsGrid({
   description,
 }: ProjectsGridProps) {
   return (
-    <ScrollReveal className="py-32 px-6 md:px-12">
+    <ScrollReveal className="py-20 md:py-28 px-6 md:px-12">
       <div className="max-w-6xl mx-auto">
         {title && (
-          <div className="mb-16 md:mb-20">
+          <div className="mb-12 md:mb-16">
             <h2 className="font-heading text-4xl md:text-5xl tracking-tight">
               {title}
             </h2>
