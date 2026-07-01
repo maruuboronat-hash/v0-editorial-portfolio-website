@@ -19,9 +19,9 @@ export function CategoryContent({ categoryData }: CategoryContentProps) {
         <div className="max-w-6xl mx-auto">
           <Link
             href="/proyectos"
-            className="scroll-reveal-child text-xs uppercase tracking-widest text-muted-foreground hover:text-foreground transition-colors mb-8 inline-block"
+            className="group scroll-reveal-child text-xs uppercase tracking-widest text-muted-foreground hover:text-brand transition-colors mb-8 inline-flex items-center gap-1.5"
           >
-            Proyectos
+            <span className="transition-transform duration-300 group-hover:-translate-x-1">&larr;</span> Proyectos
           </Link>
           <h1 className="scroll-reveal-child font-heading text-4xl md:text-6xl tracking-tight mb-6">
             {categoryData.title}

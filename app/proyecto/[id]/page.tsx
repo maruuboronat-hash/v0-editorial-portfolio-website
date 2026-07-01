@@ -777,9 +777,9 @@ export default async function ProjectPage({ params }: { params: PageParams }) {
         <div className="max-w-7xl mx-auto">
           <Link
             href={`/proyectos/${project.categorySlug}`}
-            className="text-xs uppercase tracking-widest text-muted-foreground hover:text-foreground transition-colors mb-8 inline-block"
+            className="group text-xs uppercase tracking-widest text-muted-foreground hover:text-brand transition-colors mb-8 inline-flex items-center gap-1.5"
           >
-            &larr; {project.category}
+            <span className="transition-transform duration-300 group-hover:-translate-x-1">&larr;</span> {project.category}
           </Link>
           
           <h1 className="font-heading text-3xl md:text-5xl lg:text-6xl tracking-tight mb-8">
