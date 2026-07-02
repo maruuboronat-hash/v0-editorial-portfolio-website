@@ -8,9 +8,9 @@ export default function YoungTalentsDetallePage() {
         <div className="max-w-5xl mx-auto">
           <Link
             href="/proyecto/carteles-bosch"
-            className="text-xs uppercase tracking-widest text-muted-foreground hover:text-foreground transition-colors mb-8 inline-block"
+            className="group text-xs uppercase tracking-widest text-muted-foreground hover:text-brand transition-colors mb-8 inline-flex items-center gap-1.5"
           >
-            &larr; Volver a Bosch
+            <span className="transition-transform duration-300 group-hover:-translate-x-1">&larr;</span> Volver a Bosch
           </Link>
           
           <h1 className="font-heading text-3xl md:text-5xl lg:text-6xl tracking-tight mb-4">
@@ -26,7 +26,7 @@ export default function YoungTalentsDetallePage() {
       <div className="px-6 md:px-12">
         <div className="max-w-5xl mx-auto">
           {/* Aquí puedes mostrar el PDF */}
-          <div className="w-full h-[800px] border border-gray-200 rounded-lg overflow-hidden">
+          <div className="w-full h-[800px] border border-border rounded-lg overflow-hidden">
             <iframe
               src="/pdf/young-talents-detalle.pdf"
               className="w-full h-full"

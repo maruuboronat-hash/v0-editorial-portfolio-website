@@ -26,7 +26,7 @@ export function ProjectsGrid({
   description,
 }: ProjectsGridProps) {
   return (
-    <ScrollReveal className="py-20 md:py-28 px-6 md:px-12">
+    <ScrollReveal className="py-10 md:py-28 px-6 md:px-12">
       <div className="max-w-6xl mx-auto">
         {title && (
           <div className="mb-12 md:mb-16">
@@ -52,7 +52,7 @@ export function ProjectsGrid({
                 key={project.id}
                 href={project.href}
                 className={`group relative block overflow-hidden rounded-xl border border-border bg-white ring-2 ring-transparent transition-all duration-300 hover:ring-brand hover:-translate-y-0.5 ${
-                  isWide ? 'md:col-span-2' : ''
+                  isWide ? 'col-span-2' : ''
                 }`}
               >
  {isSquare ? (

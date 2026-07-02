@@ -244,18 +244,26 @@ export function CenteredImage({ section }: { section: Extract<SectionType, { typ
 
 export function SingleColumnStack({ section }: { section: Extract<SectionType, { type: "single-column-stack" }> }) {
   return (
-    <section className="flex flex-col gap-12">
+    <section className="mx-auto flex max-w-4xl flex-col gap-5 md:gap-7">
       {section.images.map((img, i) => (
-        <div key={i}>
-          <a href={img.src} target="_blank" rel="noopener noreferrer" className="block">
-            <div className="aspect-[16/9] relative">
-              <Img src={img.src} alt={img.alt} contain />
-            </div>
+        <figure key={i} className="m-0">
+          <a
+            href={img.src}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group block overflow-hidden rounded-xl border border-border bg-muted shadow-sm transition-all duration-300 hover:border-brand hover:shadow-lg"
+          >
+            <img
+              src={img.src || "/placeholder.svg"}
+              alt={img.alt || ""}
+              loading="lazy"
+              className="h-auto w-full object-contain transition-transform duration-500 group-hover:scale-[1.02]"
+            />
           </a>
           {img.caption && (
-            <p className="mt-4 text-xs text-muted-foreground text-center">{img.caption}</p>
+            <figcaption className="mt-3 text-xs text-muted-foreground text-center">{img.caption}</figcaption>
           )}
-        </div>
+        </figure>
       ))}
     </section>
   )
@@ -350,7 +358,8 @@ export function TextSection({ section }: { section: Extract<SectionType, { type:
   return (
     <section className="w-full">
       {section.title && (
-        <h3 className="text-2xl md:text-3xl font-heading tracking-tight">
+        <h3 className="flex items-center gap-3 text-2xl md:text-3xl font-heading tracking-tight pt-6 md:pt-10">
+          <span className="h-6 w-1 rounded-full bg-brand" />
           {section.title}
         </h3>
       )}

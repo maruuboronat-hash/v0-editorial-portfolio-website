@@ -310,18 +310,18 @@
 }
 
 .intro-word-1 {
-  font-size: clamp(2.5rem, 12vw, 7rem);
+  font-size: clamp(3.5rem, 16vw, 7rem);
   animation-delay: 0.15s;
 }
 
 .intro-word-2 {
-  font-size: clamp(2.5rem, 12vw, 7rem);
+  font-size: clamp(3.5rem, 16vw, 7rem);
   animation-delay: 0.28s;
 }
 
 .intro-sub {
   margin-top: 0.75rem;
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   text-transform: uppercase;
   letter-spacing: 0.3em;
   color: var(--muted-foreground);
