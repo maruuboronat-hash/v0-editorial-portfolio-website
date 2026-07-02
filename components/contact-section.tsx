@@ -5,7 +5,7 @@ import { ScrollReveal } from "@/hooks/use-scroll-reveal"
 
 export function ContactSection() {
   return (
-    <ScrollReveal as="section" className="py-32 px-6 md:px-12">
+    <ScrollReveal as="section" className="py-20 md:py-28 px-6 md:px-12">
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
           {/* Contact Info */}
@@ -17,7 +17,7 @@ export function ContactSection() {
               ¿Conectamos?
             </p>
 
-            <div className="space-y-8 max-w-2xl mx-auto">
+            <div className="max-w-2xl mx-auto rounded-2xl border border-border bg-card p-8 md:p-12 space-y-8">
               {/* EMAIL */}
               <div className="text-center">
                 <span className="text-xs uppercase tracking-widest text-muted-foreground block mb-2">
@@ -25,11 +25,13 @@ export function ContactSection() {
                 </span>
                 <a 
                   href="mailto:maruuboronat@gmail.com" 
-                  className="text-lg hover:opacity-70 transition-opacity"
+                  className="link-underline text-lg transition-colors hover:text-brand"
                 >
                   maruuboronat@gmail.com
                 </a>
               </div>
+
+              <div className="h-px w-full bg-border" />
 
               {/* TELÉFONO */}
               <div className="text-center">
@@ -38,11 +40,13 @@ export function ContactSection() {
                 </span>
                 <a 
                   href="tel:+541159729469"
-                  className="text-lg hover:opacity-70 transition-opacity"
+                  className="link-underline text-lg transition-colors hover:text-brand"
                 >
                   +54 11 5972 9469
                 </a>
               </div>
+
+              <div className="h-px w-full bg-border" />
 
               {/* UBICACIÓN */}
               <div className="text-center">
@@ -57,12 +61,12 @@ export function ContactSection() {
                 <span className="text-xs uppercase tracking-widest text-muted-foreground block mb-4">
                   Redes
                 </span>
-                <div className="flex justify-center gap-6 text-sm">
+                <div className="flex flex-wrap justify-center gap-6 text-sm">
                   <a 
                     href="https://www.instagram.com/maria.born2art/" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="hover:opacity-70 transition-opacity"
+                    className="link-underline transition-colors hover:text-brand"
                   >
                     Instagram
                   </a>
@@ -70,7 +74,7 @@ export function ContactSection() {
                     href="https://www.linkedin.com/in/mar%C3%ADa-boronat-6bb2b7245/?isSelfProfile=true" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="hover:opacity-70 transition-opacity"
+                    className="link-underline transition-colors hover:text-brand"
                   >
                     LinkedIn
                   </a>
@@ -78,7 +82,7 @@ export function ContactSection() {
                     href="https://www.behance.net/mariaboronat2" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="hover:opacity-70 transition-opacity"
+                    className="link-underline transition-colors hover:text-brand"
                   >
                     Behance
                   </a>

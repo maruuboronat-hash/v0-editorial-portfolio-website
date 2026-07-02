@@ -3,6 +3,32 @@
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { useEffect, useState } from "react"
+import { useTheme } from "next-themes"
+import { Moon, Sun } from "lucide-react"
+
+function ThemeToggle() {
+  const { resolvedTheme, setTheme } = useTheme()
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => setMounted(true), [])
+
+  const isDark = resolvedTheme === "dark"
+
+  return (
+    <button
+      type="button"
+      aria-label={isDark ? "Activar modo claro" : "Activar modo oscuro"}
+      onClick={() => setTheme(isDark ? "light" : "dark")}
+      className="flex h-9 w-9 items-center justify-center rounded-full border border-border text-foreground transition-colors hover:border-brand hover:text-brand"
+    >
+      {mounted ? (
+        isDark ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />
+      ) : (
+        <span className="h-4 w-4" />
+      )}
+    </button>
+  )
+}
 
 const navItems = [
   { href: "/", label: "Home" },
@@ -58,31 +84,40 @@ export function Navigation() {
             <Link
               key={item.href}
               href={item.href}
-              className={`text-xs uppercase tracking-widest transition-colors hover:text-foreground ${
+              className={`link-underline text-xs uppercase tracking-widest transition-colors hover:text-foreground ${
                 pathname === item.href
                   ? "text-foreground"
                   : "text-muted-foreground"
               }`}
             >
-              {item.label}
+              <span className="inline-flex items-center gap-1.5">
+                {pathname === item.href && (
+                  <span className="h-1.5 w-1.5 rounded-full bg-brand" />
+                )}
+                {item.label}
+              </span>
             </Link>
           ))}
         </nav>
 
-        {/* Desktop: Hora a la derecha */}
-        <div className="hidden md:block">
+        {/* Desktop: Hora + toggle a la derecha */}
+        <div className="hidden md:flex items-center gap-5">
           <BuenosAiresClock />
+          <ThemeToggle />
         </div>
 
-        {/* Botón hamburguesa para móvil (solo visible en móvil) */}
+        {/* Móvil: toggle + hamburguesa */}
+        <div className="flex items-center gap-3 md:hidden">
+        <ThemeToggle />
         <button 
-          className="block md:hidden text-foreground"
+          className="text-foreground"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-6 h-6">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
           </svg>
         </button>
+        </div>
 
         {/* Menú desplegable para móvil */}
         {isMenuOpen && (

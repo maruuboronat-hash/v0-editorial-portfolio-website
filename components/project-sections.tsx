@@ -85,50 +85,62 @@ export function InfiniteCarousel({ images }: { images: Array<{ src: string; alt?
   }
 
   return (
-    <section className="w-full">
-      <div className="relative w-full py-8">
-        <div className="absolute left-0 top-0 bottom-0 w-32 z-10 pointer-events-none bg-gradient-to-r from-[#111111] via-[#111111]/80 to-transparent" />
-        <div className="absolute right-0 top-0 bottom-0 w-32 z-10 pointer-events-none bg-gradient-to-l from-[#111111] via-[#111111]/80 to-transparent" />
+    <section className="w-full py-4">
+      <div className="relative w-full overflow-hidden rounded-2xl border border-border bg-muted">
+        {/* Contador */}
+        <div className="absolute right-4 top-4 z-20 rounded-full bg-background/80 px-3 py-1 text-xs font-medium tabular-nums text-foreground backdrop-blur">
+          {currentIndex + 1} / {images.length}
+        </div>
 
-        {/* Imagen clickeable - ALTURA REDUCIDA */}
-        <a href={images[currentIndex].src} target="_blank" rel="noopener noreferrer">
-          <div className="relative h-64 md:h-80 w-full flex justify-center items-center cursor-pointer">
+        {/* Marco de imagen con relación fija para que no salte el layout */}
+        <a href={images[currentIndex].src} target="_blank" rel="noopener noreferrer" className="block">
+          <div className="relative flex h-72 w-full cursor-zoom-in items-center justify-center p-4 md:h-[30rem] md:p-8">
             <img
-              src={images[currentIndex].src}
+              key={currentIndex}
+              src={images[currentIndex].src || "/placeholder.svg"}
               alt={images[currentIndex].alt || ""}
-              className="h-full w-auto rounded-lg shadow-lg"
+              className="max-h-full max-w-full rounded-lg object-contain shadow-lg animate-in fade-in duration-500"
             />
           </div>
         </a>
 
-        <button
-          onClick={prevSlide}
-          className="absolute left-8 top-1/2 transform -translate-y-1/2 z-20 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full transition-all"
-        >
-          ←
-        </button>
-        
-        <button
-          onClick={nextSlide}
-          className="absolute right-8 top-1/2 transform -translate-y-1/2 z-20 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full transition-all"
-        >
-          →
-        </button>
+        {images.length > 1 && (
+          <>
+            <button
+              onClick={prevSlide}
+              aria-label="Imagen anterior"
+              className="absolute left-3 top-1/2 z-20 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-border bg-background/80 text-foreground backdrop-blur transition-all hover:border-brand hover:text-brand"
+            >
+              ←
+            </button>
+            <button
+              onClick={nextSlide}
+              aria-label="Imagen siguiente"
+              className="absolute right-3 top-1/2 z-20 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-border bg-background/80 text-foreground backdrop-blur transition-all hover:border-brand hover:text-brand"
+            >
+              →
+            </button>
+          </>
+        )}
+      </div>
 
-        <div className="flex justify-center gap-2 mt-6">
+      {/* Dots */}
+      {images.length > 1 && (
+        <div className="mt-5 flex flex-wrap justify-center gap-2">
           {images.map((_, index) => (
             <button
               key={index}
               onClick={() => setCurrentIndex(index)}
+              aria-label={`Ir a la imagen ${index + 1}`}
               className={`h-2 rounded-full transition-all ${
-                index === currentIndex 
-                  ? "w-6 bg-[#111111]" 
-                  : "w-2 bg-gray-400 hover:bg-gray-600"
+                index === currentIndex
+                  ? "w-7 bg-brand"
+                  : "w-2 bg-border hover:bg-muted-foreground"
               }`}
             />
           ))}
         </div>
-      </div>
+      )}
     </section>
   )
 }
@@ -232,18 +244,26 @@ export function CenteredImage({ section }: { section: Extract<SectionType, { typ
 
 export function SingleColumnStack({ section }: { section: Extract<SectionType, { type: "single-column-stack" }> }) {
   return (
-    <section className="flex flex-col gap-12">
+    <section className="mx-auto flex max-w-4xl flex-col gap-5 md:gap-7">
       {section.images.map((img, i) => (
-        <div key={i}>
-          <a href={img.src} target="_blank" rel="noopener noreferrer" className="block">
-            <div className="aspect-[16/9] relative">
-              <Img src={img.src} alt={img.alt} contain />
-            </div>
+        <figure key={i} className="m-0">
+          <a
+            href={img.src}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group block overflow-hidden rounded-xl border border-border bg-muted shadow-sm transition-all duration-300 hover:border-brand hover:shadow-lg"
+          >
+            <img
+              src={img.src || "/placeholder.svg"}
+              alt={img.alt || ""}
+              loading="lazy"
+              className="h-auto w-full object-contain transition-transform duration-500 group-hover:scale-[1.02]"
+            />
           </a>
           {img.caption && (
-            <p className="mt-4 text-xs text-muted-foreground text-center">{img.caption}</p>
+            <figcaption className="mt-3 text-xs text-muted-foreground text-center">{img.caption}</figcaption>
           )}
-        </div>
+        </figure>
       ))}
     </section>
   )
@@ -253,8 +273,14 @@ export function TwoColumnGrid({ section }: { section: Extract<SectionType, { typ
   return (
     <section className="grid grid-cols-1 md:grid-cols-2 gap-6">
       {section.images.map((img, i) => (
-        <a key={i} href={img.src} target="_blank" rel="noopener noreferrer" className="block">
-          <div className="aspect-[4/3] relative">
+        <a
+          key={i}
+          href={img.src}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group block overflow-hidden rounded-2xl border border-border bg-muted transition-all duration-300 hover:border-brand hover:shadow-lg"
+        >
+          <div className="aspect-[4/3] relative transition-transform duration-500 group-hover:scale-[1.03]">
             <Img src={img.src} alt={img.alt} contain />
           </div>
         </a>
@@ -267,8 +293,14 @@ export function ThreeColumnGrid({ section }: { section: Extract<SectionType, { t
   return (
     <section className="grid grid-cols-1 md:grid-cols-3 gap-6">
       {section.images.map((img, i) => (
-        <a key={i} href={img.src} target="_blank" rel="noopener noreferrer" className="block">
-          <div className="aspect-square relative">
+        <a
+          key={i}
+          href={img.src}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group block overflow-hidden rounded-2xl border border-border bg-muted transition-all duration-300 hover:border-brand hover:shadow-lg"
+        >
+          <div className="aspect-square relative transition-transform duration-500 group-hover:scale-[1.03]">
             <Img src={img.src} alt={img.alt} contain />
           </div>
         </a>
@@ -326,13 +358,14 @@ export function TextSection({ section }: { section: Extract<SectionType, { type:
   return (
     <section className="w-full">
       {section.title && (
-        <h3 className="text-2xl md:text-3xl font-heading tracking-tight">
+        <h3 className="flex items-center gap-3 text-2xl md:text-3xl font-heading tracking-tight pt-6 md:pt-10">
+          <span className="h-6 w-1 rounded-full bg-brand" />
           {section.title}
         </h3>
       )}
       {section.content && (
         <div 
-          className="text-base md:text-lg leading-relaxed text-white"
+          className="text-base md:text-lg leading-relaxed text-foreground"
           dangerouslySetInnerHTML={{ __html: section.content.replace(/\n/g, '<br/>') }}
         />
       )}

@@ -22,7 +22,7 @@ const experience = [
         <p className="mb-3">
           Trabajé en el área de comunicación de Bosch, líder global en soluciones automotrices, produciendo assets visuales para medios impresos y digitales: flyers, cartelería en vía pública, newsletters, presentaciones corporativas y edición de video. Mantuve la identidad visual de marca de forma consistente y asesoré a talleres de la red con propuestas gráficas personalizadas.
         </p>
-        <p className="text-muted-foreground italic border-l-2 border-gray-300 pl-4 py-1 text-sm">
+        <p className="text-muted-foreground italic border-l-2 border-brand pl-4 py-1 text-sm">
           Como parte del programa Young Talents 2025, diseñé e implementé un sistema con Power Apps, Excel y Power Automate para digitalizar el control de stock y pedidos de merchandising, reduciendo errores y automatizando el registro en tiempo real.
         </p>
       </>
@@ -146,7 +146,8 @@ export default function CVPage() {
           <div className="lg:col-span-8 space-y-16">
             {/* Experience */}
             <section>
-              <h2 className="font-heading text-xs uppercase tracking-widest text-muted-foreground mb-8">
+              <h2 className="font-heading text-xs uppercase tracking-widest text-muted-foreground mb-8 flex items-center gap-2">
+                <span className="h-3 w-1 rounded-full bg-brand" />
                 Experiencia Laboral
               </h2>
               <div className="space-y-12">
@@ -169,7 +170,8 @@ export default function CVPage() {
 
             {/* Education */}
             <section>
-              <h2 className="font-heading text-xs uppercase tracking-widest text-muted-foreground mb-8">
+              <h2 className="font-heading text-xs uppercase tracking-widest text-muted-foreground mb-8 flex items-center gap-2">
+                <span className="h-3 w-1 rounded-full bg-brand" />
                 Educación
               </h2>
               <div className="space-y-8">
@@ -189,13 +191,14 @@ export default function CVPage() {
 
             {/* Awards */}
             <section>
-              <h2 className="font-heading text-xs uppercase tracking-widest text-muted-foreground mb-8">
+              <h2 className="font-heading text-xs uppercase tracking-widest text-muted-foreground mb-8 flex items-center gap-2">
+                <span className="h-3 w-1 rounded-full bg-brand" />
                 CURSOS
               </h2>
               <div className="space-y-4">
                 {awards.map((item, index) => (
                   <div key={index} className="flex items-baseline gap-4">
-                    <span className="text-sm text-muted-foreground w-12">
+                    <span className="text-sm font-medium text-brand w-12">
                       {item.year}
                     </span>
                     <span className="text-sm">{item.title}</span>
@@ -211,7 +214,7 @@ export default function CVPage() {
             
             {/* SECCIÓN 1: HERRAMIENTAS */}
             <section>
-              <h2 className="font-heading text-xs uppercase tracking-widest text-muted-foreground mb-4">
+              <h2 className="font-heading text-xs uppercase tracking-widest text-muted-foreground mb-4 flex items-center gap-2"><span className="h-3 w-1 rounded-full bg-brand" />
                 Herramientas
               </h2>
               
@@ -263,7 +266,7 @@ export default function CVPage() {
 
             {/* SECCIÓN 2: IDIOMAS */}
             <section>
-              <h2 className="font-heading text-xs uppercase tracking-widest text-muted-foreground mb-4">
+              <h2 className="font-heading text-xs uppercase tracking-widest text-muted-foreground mb-4 flex items-center gap-2"><span className="h-3 w-1 rounded-full bg-brand" />
                 Idiomas
               </h2>
               <div className="space-y-2 text-sm">
@@ -284,7 +287,7 @@ export default function CVPage() {
 
             {/* SECCIÓN 3: HABILIDADES */}
             <section>
-              <h2 className="font-heading text-xs uppercase tracking-widest text-muted-foreground mb-4">
+              <h2 className="font-heading text-xs uppercase tracking-widest text-muted-foreground mb-4 flex items-center gap-2"><span className="h-3 w-1 rounded-full bg-brand" />
                 Habilidades
               </h2>
               <div className="space-y-1">
@@ -298,15 +301,16 @@ export default function CVPage() {
 
             {/* SECCIÓN 4: DESCARGAR */}
             <section>
-              <h2 className="font-heading text-xs uppercase tracking-widest text-muted-foreground mb-4">
+              <h2 className="font-heading text-xs uppercase tracking-widest text-muted-foreground mb-4 flex items-center gap-2"><span className="h-3 w-1 rounded-full bg-brand" />
                 Descargar
               </h2>
               <a
                 href="/images/CV/CV_MariaBoronat.pdf"
                 download
-                className="inline-flex items-center gap-2 text-xs uppercase tracking-widest hover:underline underline-offset-4"
+                className="group inline-flex items-center gap-2 rounded-full bg-brand px-5 py-2.5 text-xs uppercase tracking-widest text-brand-foreground transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg"
               >
-                CV en PDF &darr;
+                CV en PDF
+                <span className="transition-transform duration-300 group-hover:translate-y-0.5">&darr;</span>
               </a>
             </section>
           </aside>
