@@ -4,6 +4,7 @@ import Link from "next/link"
 import { useState, useRef, useEffect } from "react"
 import Image from "next/image"
 import { cn } from "@/lib/utils"
+import { useLanguage } from "@/lib/i18n"
 
 /* =========================
    TYPES

@@ -170,7 +170,7 @@ export default async function CategoryPage({ params }: { params: PageParams }) {
 
   return (
     <div className="pt-24 min-h-screen">
-      <CategoryContent categoryData={categoryData} />
+      <CategoryContent categoryData={categoryData} categorySlug={category} />
       <ContactSection />
     </div>
   )

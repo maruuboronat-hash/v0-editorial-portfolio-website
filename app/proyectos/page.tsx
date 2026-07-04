@@ -2,6 +2,7 @@
 "use client";
 
 import { ProjectsGrid } from "@/components/projects-grid";
+import { useLanguage } from "@/lib/i18n";
 
 const allProjects = [
   {
@@ -44,12 +45,13 @@ const allProjects = [
 ];
 
 export default function ProjectsPage() {
+  const { t } = useLanguage();
   return (
     <div className="pt-16">
       <ProjectsGrid
         projects={allProjects}
-        title="Proyectos"
-        description="Una selección de trabajos en diseño gráfico, comunicación, indumentaria y proyectos personales."
+        title={t("projects.title")}
+        description={t("projects.description")}
       />
     </div>
   );
