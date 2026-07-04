@@ -8,16 +8,23 @@ interface UseScrollRevealOptions {
   threshold?: number
   rootMargin?: string
   triggerOnce?: boolean
+  immediate?: boolean
 }
 
 export function useScrollReveal<T extends HTMLElement = HTMLDivElement>(
   options: UseScrollRevealOptions = {}
 ): { ref: RefObject<T | null>; isVisible: boolean } {
-  const { threshold = 0.1, rootMargin = "0px 0px -80px 0px", triggerOnce = true } = options
+  const { threshold = 0.1, rootMargin = "0px 0px -80px 0px", triggerOnce = true, immediate = false } = options
   const ref = useRef<T>(null)
   const [isVisible, setIsVisible] = useState(false)
 
   useEffect(() => {
+    // Revela apenas monta el componente, sin necesidad de scroll
+    if (immediate) {
+      const raf = requestAnimationFrame(() => setIsVisible(true))
+      return () => cancelAnimationFrame(raf)
+    }
+
     const element = ref.current
     if (!element) return
 
@@ -38,7 +45,7 @@ export function useScrollReveal<T extends HTMLElement = HTMLDivElement>(
     observer.observe(element)
 
     return () => observer.disconnect()
-  }, [threshold, rootMargin, triggerOnce])
+  }, [threshold, rootMargin, triggerOnce, immediate])
 
   return { ref, isVisible }
 }
@@ -50,6 +57,7 @@ interface ScrollRevealProps {
   as?: keyof JSX.IntrinsicElements
   threshold?: number
   rootMargin?: string
+  immediate?: boolean
 }
 
 export function ScrollReveal({
@@ -58,8 +66,9 @@ export function ScrollReveal({
   as: Component = "div",
   threshold,
   rootMargin,
+  immediate,
 }: ScrollRevealProps) {
-  const { ref, isVisible } = useScrollReveal<HTMLDivElement>({ threshold, rootMargin })
+  const { ref, isVisible } = useScrollReveal<HTMLDivElement>({ threshold, rootMargin, immediate })
 
   return (
     <Component

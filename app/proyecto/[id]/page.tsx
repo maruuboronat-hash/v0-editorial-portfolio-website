@@ -31,7 +31,7 @@ const projectsData: Record<string, {
       ] 
     },
     // ===== IMÁGENES DEL PROYECTO =====
-    { type: "single-column-stack", images: [
+    { type: "two-column-grid", images: [
       { src: "/images/diseno-grafico/oasis/oasis-01.jpg", alt: "Diario Oasis 1" },
       { src: "/images/diseno-grafico/oasis/oasis-02.jpg", alt: "Diario Oasis 2" },
       { src: "/images/diseno-grafico/oasis/oasis-03.jpg", alt: "Diario Oasis 3" },
@@ -69,6 +69,11 @@ const projectsData: Record<string, {
       type: "single-column-stack", 
       images: [
         { src: "/images/diseno-grafico/revistas-editorial/stupia/2_Mockup_Stupia.jpg", alt: "Eduardo Estupía 2" },
+      ]
+    },
+    {
+      type: "two-column-grid",
+      images: [
         { src: "/images/diseno-grafico/revistas-editorial/stupia/3_Mockup_Stupia.jpg", alt: "Eduardo Estupía 3" },
         { src: "/images/diseno-grafico/revistas-editorial/stupia/4_Mockup_Stupia.jpg", alt: "Eduardo Estupía 4" },
         { src: "/images/diseno-grafico/revistas-editorial/stupia/5_Mockup_Stupia.jpg", alt: "Eduardo Estupía 5" },
@@ -87,6 +92,11 @@ const projectsData: Record<string, {
       type: "single-column-stack", 
       images: [
         { src: "/images/diseno-grafico/revistas-editorial/leparc/2_Mockup_LeParc.jpg", alt: "Julio Le Parc 2" },
+      ]
+    },
+    {
+      type: "two-column-grid",
+      images: [
         { src: "/images/diseno-grafico/revistas-editorial/leparc/3_Mockup_LeParc.jpg", alt: "Julio Le Parc 3" },
         { src: "/images/diseno-grafico/revistas-editorial/leparc/4_Mockup_LeParc.jpg", alt: "Julio Le Parc 4" },
         { src: "/images/diseno-grafico/revistas-editorial/leparc/5_Mockup_LeParc.jpg", alt: "Julio Le Parc 5" },
@@ -114,6 +124,11 @@ const projectsData: Record<string, {
       type: "single-column-stack", 
       images: [
         { src: "/images/diseno-grafico/revistas-editorial/ariadna/2_Mockup_Ariadna.jpg", alt: "Ariadna Pastorini 2" },
+      ]
+    },
+    {
+      type: "two-column-grid",
+      images: [
         { src: "/images/diseno-grafico/revistas-editorial/ariadna/3_Mockup_Ariadna.jpg", alt: "Ariadna Pastorini 3" },
         { src: "/images/diseno-grafico/revistas-editorial/ariadna/4_Mockup_Ariadna.jpg", alt: "Ariadna Pastorini 4" },
         { src: "/images/diseno-grafico/revistas-editorial/ariadna/5_Mockup_Ariadna.jpg", alt: "Ariadna Pastorini 5" },
@@ -137,7 +152,7 @@ const projectsData: Record<string, {
         "Illustrator"
       ] 
     },
-      { type: "single-column-stack", images: [
+      { type: "single-column-stack", compact: true, images: [
         { src: "/images/diseno-grafico/postales/postales-01.jpg", alt: "Postal Cortázar 1" },
         { src: "/images/diseno-grafico/postales/postales-02.jpg", alt: "Postal Cortázar 2" },
         { src: "/images/diseno-grafico/postales/postales-03.jpg", alt: "Postal Cortázar 3" },
@@ -159,7 +174,7 @@ const projectsData: Record<string, {
         "Illustrator"
       ] 
     },
-      { type: "single-column-stack", images: [
+      { type: "two-column-grid", images: [
         { src: "/images/diseno-grafico/clara-cava/clara-01.jpg", alt: "Clara 01" },
         { src: "/images/diseno-grafico/clara-cava/clara-02.jpeg", alt: "Clara 02" },
         { src: "/images/diseno-grafico/clara-cava/clara-03.jpeg", alt: "Clara 03" },
@@ -606,6 +621,11 @@ const projectsData: Record<string, {
         type: "single-column-stack", 
         images: [
           { src: "/images/indumentaria-ilustracion/colección-portuguese/portuguese-01.PNG", alt: "Portuguese 01" },
+        ]
+      },
+      {
+        type: "two-column-grid",
+        images: [
           { src: "/images/indumentaria-ilustracion/colección-portuguese/portuguese-02.jpg", alt: "Portuguese 02" },
           { src: "/images/indumentaria-ilustracion/colección-portuguese/portuguese-03.jpg", alt: "Portuguese 03" },
           { src: "/images/indumentaria-ilustracion/colección-portuguese/portuguese-04.jpg", alt: "Portuguese 04" },
@@ -627,6 +647,7 @@ const projectsData: Record<string, {
     sections: [
       { 
         type: "three-column-grid", 
+        whiteBg: true,
         images: [
           { src: "/images/indumentaria-ilustracion/fotografia-moda/fotografia-01.jpg", alt: "Fotografía 01" },
           { src: "/images/indumentaria-ilustracion/fotografia-moda/fotografia-02.jpg", alt: "Fotografía 02" },
@@ -682,7 +703,8 @@ const projectsData: Record<string, {
     description: "Desarrollo de prendas confeccionadas a mano durante la cursada de Diseño de Indumentaria. Cada prototipo explora la relación entre moldería, materiales y construcción, poniendo el foco en la experimentación con formas, terminaciones y el concepto particular que guía cada proyecto.",
     sections: [
       { 
-        type: "single-column-stack", 
+        type: "three-column-grid", 
+        whiteBg: true,
         images: [
           { src: "/images/indumentaria-ilustracion/prototipos/protos-01.jpg", alt: "Prototipo 01" },
           { src: "/images/indumentaria-ilustracion/prototipos/protos-02.jpg", alt: "Prototipo 02" },
@@ -723,7 +745,9 @@ const projectsData: Record<string, {
     description: "Serie de fotografías analógicas tomadas durante un viaje por Europa, con la intención de experimentar con nuevas técnicas y rollos vencidos. El proyecto funciona como un registro espontáneo que explora la luz, el color y la composición desde una mirada más personal.",
     sections: [
       { 
-        type: "two-column-grid", 
+        type: "three-column-grid", 
+        bare: true,
+        mobileCols: 2,
         images: [
           { src: "/images/proyectos-personales/analogicas/analogicas-01.jpg", alt: "Analógica 01" },
           { src: "/images/proyectos-personales/analogicas/analogicas-02.jpg", alt: "Analógica 02" },

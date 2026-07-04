@@ -12,9 +12,9 @@ import { cn } from "@/lib/utils"
 export type SectionType =
   | { type: "full-width-image"; src: string; alt?: string; caption?: string }
   | { type: "centered-image"; src: string; alt?: string; caption?: string; width?: "small" | "medium" | "large" }
-  | { type: "single-column-stack"; images: Array<{ src: string; alt?: string; caption?: string }> }
+  | { type: "single-column-stack"; images: Array<{ src: string; alt?: string; caption?: string }>; compact?: boolean }
   | { type: "two-column-grid"; images: Array<{ src: string; alt?: string }> }
-  | { type: "three-column-grid"; images: Array<{ src: string; alt?: string }> }
+  | { type: "three-column-grid"; images: Array<{ src: string; alt?: string }>; bare?: boolean; whiteBg?: boolean; mobileCols?: 1 | 2 }
   | { type: "text"; title?: string; content: string }
   | { type: "video-embed"; src: string; caption?: string }
   | { type: "infinite-carousel"; images: Array<{ src: string; alt?: string }>; speed?: number }
@@ -244,7 +244,7 @@ export function CenteredImage({ section }: { section: Extract<SectionType, { typ
 
 export function SingleColumnStack({ section }: { section: Extract<SectionType, { type: "single-column-stack" }> }) {
   return (
-    <section className="mx-auto flex max-w-5xl flex-col gap-6 md:gap-9">
+    <section className={cn("mx-auto flex max-w-5xl flex-col", section.compact ? "gap-2 md:gap-3" : "gap-6 md:gap-9")}>
       {section.images.map((img, i) => (
         <figure key={i} className="m-0">
           <a
@@ -290,15 +290,22 @@ export function TwoColumnGrid({ section }: { section: Extract<SectionType, { typ
 }
 
 export function ThreeColumnGrid({ section }: { section: Extract<SectionType, { type: "three-column-grid" }> }) {
+  const colsClass = section.mobileCols === 2 ? "grid-cols-2 md:grid-cols-3" : "grid-cols-1 md:grid-cols-3"
+  const containerClass = section.bare
+    ? "group block overflow-hidden"
+    : cn(
+        "group block overflow-hidden rounded-2xl border border-border transition-all duration-300 hover:border-brand hover:shadow-lg",
+        section.whiteBg ? "bg-white" : "bg-muted"
+      )
   return (
-    <section className="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <section className={cn("grid gap-6", colsClass)}>
       {section.images.map((img, i) => (
         <a
           key={i}
           href={img.src}
           target="_blank"
           rel="noopener noreferrer"
-          className="group block overflow-hidden rounded-2xl border border-border bg-muted transition-all duration-300 hover:border-brand hover:shadow-lg"
+          className={containerClass}
         >
           <div className="aspect-square relative transition-transform duration-500 group-hover:scale-[1.03]">
             <Img src={img.src} alt={img.alt} contain />

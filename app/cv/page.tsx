@@ -132,7 +132,7 @@ export default function CVPage() {
   return (
     <div className="pt-24 pb-24 px-6 md:px-12 min-h-screen">
       <div className="max-w-6xl mx-auto">
-        <header className="mb-16 md:mb-24">
+        <header className="mb-8 md:mb-10">
           <h1 className="font-heading text-4xl md:text-6xl tracking-tight mb-6">
             CV · María Boronat 
           </h1>
@@ -143,9 +143,9 @@ export default function CVPage() {
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8">
           {/* Main Content */}
-          <div className="lg:col-span-8 space-y-16">
+          <div className="lg:col-span-8 divide-y divide-border">
             {/* Experience */}
-            <section>
+            <section className="pb-12">
               <h2 className="font-heading text-xs uppercase tracking-widest text-muted-foreground mb-8 flex items-center gap-2">
                 <span className="h-3 w-1 rounded-full bg-brand" />
                 Experiencia Laboral
@@ -169,7 +169,7 @@ export default function CVPage() {
             </section>
 
             {/* Education */}
-            <section>
+            <section className="py-12">
               <h2 className="font-heading text-xs uppercase tracking-widest text-muted-foreground mb-8 flex items-center gap-2">
                 <span className="h-3 w-1 rounded-full bg-brand" />
                 Educación
@@ -190,7 +190,7 @@ export default function CVPage() {
             </section>
 
             {/* Awards */}
-            <section>
+            <section className="pt-12">
               <h2 className="font-heading text-xs uppercase tracking-widest text-muted-foreground mb-8 flex items-center gap-2">
                 <span className="h-3 w-1 rounded-full bg-brand" />
                 CURSOS

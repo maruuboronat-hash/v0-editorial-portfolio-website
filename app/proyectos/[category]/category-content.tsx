@@ -15,7 +15,7 @@ interface CategoryContentProps {
 export function CategoryContent({ categoryData }: CategoryContentProps) {
   return (
     <>
-      <ScrollReveal as="header" className="px-6 md:px-12 mb-16">
+      <ScrollReveal as="header" immediate className="px-6 md:px-12 mb-16">
         <div className="max-w-6xl mx-auto">
           <Link
             href="/proyectos"
@@ -32,7 +32,7 @@ export function CategoryContent({ categoryData }: CategoryContentProps) {
         </div>
       </ScrollReveal>
 
-      <ScrollReveal as="section" className="px-6 md:px-12">
+      <ScrollReveal as="section" immediate className="px-6 md:px-12">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
             {categoryData.projects?.map((project) => (

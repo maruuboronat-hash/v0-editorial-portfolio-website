@@ -80,9 +80,9 @@ export function ProjectsGrid({
   </div>
 )}
 
-                <div className="absolute inset-0 bg-black/80 flex flex-col items-center justify-center gap-4 p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  <span className="h-0.5 w-8 rounded-full bg-brand" />
-                  <p className="text-white text-sm md:text-base text-center leading-relaxed">
+                <div className="absolute inset-0 bg-brand/80 flex flex-col items-center justify-center gap-4 p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                  <span className="h-0.5 w-8 rounded-full bg-brand-foreground" />
+                  <p className="text-brand-foreground text-sm md:text-base text-center leading-relaxed">
                     {project.description}
                   </p>
                 </div>
