@@ -50,8 +50,6 @@ interface ScrollRevealProps {
   as?: keyof JSX.IntrinsicElements
   threshold?: number
   rootMargin?: string
-  /** Reveal as soon as the component mounts, without requiring scroll into view. */
-  immediate?: boolean
 }
 
 export function ScrollReveal({
@@ -60,23 +58,13 @@ export function ScrollReveal({
   as: Component = "div",
   threshold,
   rootMargin,
-  immediate = false,
 }: ScrollRevealProps) {
   const { ref, isVisible } = useScrollReveal<HTMLDivElement>({ threshold, rootMargin })
-  const [mountVisible, setMountVisible] = useState(false)
-
-  useEffect(() => {
-    if (!immediate) return
-    const raf = requestAnimationFrame(() => setMountVisible(true))
-    return () => cancelAnimationFrame(raf)
-  }, [immediate])
-
-  const visible = immediate ? mountVisible : isVisible
 
   return (
     <Component
       ref={ref as RefObject<HTMLDivElement>}
-      className={`scroll-reveal ${visible ? "is-visible" : ""} ${className}`}
+      className={`scroll-reveal ${isVisible ? "is-visible" : ""} ${className}`}
     >
       {children}
     </Component>
