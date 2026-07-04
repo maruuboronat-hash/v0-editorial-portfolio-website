@@ -45,6 +45,17 @@ export const ui = {
     // Bio
     "bio.title": "Bio",
     "bio.cta": "Ver currículum completo",
+    "bio.p1":
+      "Dicen que cuando no tenes experiencia, hay que mostrar los trabajos que tengas, aunque no te encanten. Y yo me lo tome literal.",
+    "bio.p2":
+      "Estos son algunos de mis primeros proyectos: algo hecho en Microsoft Paint en 2011, lienzo y acrilico en 2013, y Procreate en 2024.",
+    "bio.p3":
+      "Algunos sienten pasion por un artista, un famoso o un deporte. Hace poco me preguntaron cual era la mia, y no supe que responder. Me quede pensando, hasta que entendi que mi pasion es lo que hago.",
+    "bio.p4":
+      "Desde chica siempre me gusto crear: armar piezas de todo tipo, editar fotos de amigos, mirar Art Attack todos los dias o sacar fotos cada vez que podia. Mi vida siempre estuvo atravesada por el diseno, de distintas formas. Cualquier excusa para disenar —aunque no lo sabia— era, para mi, el mejor favor que me podian pedir.",
+    "bio.captionPaint": "Microsoft Paint 2011",
+    "bio.captionHand": "A mano 2013",
+    "bio.captionProcreate": "Procreate 2024",
     // CV
     "cv.title": "CV · María Boronat",
     "cv.summary":
@@ -78,6 +89,8 @@ export const ui = {
     "nav.bio": "Bio",
     "nav.contact": "Contact",
     "nav.langLabel": "Change language",
+    "theme.toLight": "Switch to light mode",
+    "theme.toDark": "Switch to dark mode",
     // Hero / Home
     "hero.portfolio": "Portfolio",
     "hero.subtitle": "Graphic Design & Communication",
@@ -109,6 +122,17 @@ export const ui = {
     // Bio
     "bio.title": "Bio",
     "bio.cta": "View full résumé",
+    "bio.p1":
+      "They say that when you have no experience, you should show whatever work you have, even if you don't love it. And I took that literally.",
+    "bio.p2":
+      "These are some of my first projects: something made in Microsoft Paint in 2011, canvas and acrylic in 2013, and Procreate in 2024.",
+    "bio.p3":
+      "Some people are passionate about an artist, a celebrity or a sport. I was recently asked what mine was, and I didn't know how to answer. I kept thinking about it, until I understood that my passion is what I do.",
+    "bio.p4":
+      "Ever since I was little I always loved to create: putting together all kinds of pieces, editing photos of friends, watching Art Attack every day or taking photos whenever I could. My life was always shaped by design, in different ways. Any excuse to design —even though I didn't know it— was, for me, the best favor anyone could ask of me.",
+    "bio.captionPaint": "Microsoft Paint 2011",
+    "bio.captionHand": "By hand 2013",
+    "bio.captionProcreate": "Procreate 2024",
     // CV
     "cv.title": "CV · María Boronat",
     "cv.summary":

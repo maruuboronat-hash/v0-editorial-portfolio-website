@@ -4,42 +4,21 @@ import Link from "next/link"
 import { ContactSection } from "@/components/contact-section"
 import { ScrollReveal } from "@/hooks/use-scroll-reveal"
 import { BioImage } from "@/components/bio-image"
+import { useLanguage } from "@/lib/i18n"
+import type { UIKey } from "@/lib/translations"
 
 // LISTA ACTUALIZADA CON LAS RUTAS REALES DE LAS IMÁGENES
-const bioImages = [
-  { 
-    alt: "Microsoft Paint 2011", 
-    caption: "Microsoft Paint 2011",
-    src: "/images/generales/BIO/Microsoft-Paint.jpg"
-  },
-  { 
-    alt: "Microsoft Paint 2011", 
-    caption: "Microsoft Paint 2011",
-    src: "/images/generales/BIO/Microsoft-Paint2.jpg"
-  },
-  { 
-    alt: "A mano 2013", 
-    caption: "A mano 2013",
-    src: "/images/generales/BIO/A-mano.jpg"
-  },
-  { 
-    alt: "A mano 2013", 
-    caption: "A mano 2013",
-    src: "/images/generales/BIO/A-mano2.jpg"
-  },
-  { 
-    alt: "Procreate 2024", 
-    caption: "Procreate 2024",
-    src: "/images/generales/BIO/Procreate.jpg"
-  },
-  { 
-    alt: "Procreate 2024", 
-    caption: "Procreate 2024",
-    src: "/images/generales/BIO/Procreate2.jpg"
-  },
+const bioImages: Array<{ captionKey: UIKey; src: string }> = [
+  { captionKey: "bio.captionPaint", src: "/images/generales/BIO/Microsoft-Paint.jpg" },
+  { captionKey: "bio.captionPaint", src: "/images/generales/BIO/Microsoft-Paint2.jpg" },
+  { captionKey: "bio.captionHand", src: "/images/generales/BIO/A-mano.jpg" },
+  { captionKey: "bio.captionHand", src: "/images/generales/BIO/A-mano2.jpg" },
+  { captionKey: "bio.captionProcreate", src: "/images/generales/BIO/Procreate.jpg" },
+  { captionKey: "bio.captionProcreate", src: "/images/generales/BIO/Procreate2.jpg" },
 ]
 
 export default function BioPage() {
+  const { t } = useLanguage()
   return (
     <div className="pt-24 min-h-screen">
       <div className="pb-24 px-6 md:px-12">
@@ -58,26 +37,26 @@ export default function BioPage() {
               <ScrollReveal>
                 <header className="mb-12">
                   <h1 className="font-heading text-4xl md:text-6xl tracking-tight mb-4">
-                    Bio
+                    {t("bio.title")}
                   </h1>
                 </header>
               </ScrollReveal>
 
               <ScrollReveal className="space-y-6 text-base leading-relaxed">
                 <p className="scroll-reveal-child">
-                  Dicen que cuando no tenes experiencia, hay que mostrar los trabajos que tengas, aunque no te encanten. Y yo me lo tome literal.
+                  {t("bio.p1")}
                 </p>
 
                 <p className="scroll-reveal-child">
-                  Estos son algunos de mis primeros proyectos: algo hecho en Microsoft Paint en 2011, lienzo y acrilico en 2013, y Procreate en 2024.
+                  {t("bio.p2")}
                 </p>
 
                 <p className="scroll-reveal-child">
-                  Algunos sienten pasion por un artista, un famoso o un deporte. Hace poco me preguntaron cual era la mia, y no supe que responder. Me quede pensando, hasta que entendi que mi pasion es lo que hago.
+                  {t("bio.p3")}
                 </p>
 
                 <p className="scroll-reveal-child">
-                  Desde chica siempre me gusto crear: armar piezas de todo tipo, editar fotos de amigos, mirar Art Attack todos los dias o sacar fotos cada vez que podia. Mi vida siempre estuvo atravesada por el diseno, de distintas formas. Cualquier excusa para disenar —aunque no lo sabia— era, para mi, el mejor favor que me podian pedir.
+                  {t("bio.p4")}
                 </p>
               </ScrollReveal>
 
@@ -90,7 +69,7 @@ export default function BioPage() {
                         {/* IMAGEN REAL CON EFECTO HOVER */}
                         <img 
                           src={image.src} 
-                          alt={image.alt}
+                          alt={t(image.captionKey)}
                           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                         />
                         {/* OVERLAY SUAVE AL PASAR EL MOUSE */}
@@ -98,7 +77,7 @@ export default function BioPage() {
                       </div>
                       {/* EPÍGRAFE */}
                       <p className="mt-2 text-xs text-muted-foreground">
-                        {image.caption}
+                        {t(image.captionKey)}
                       </p>
                     </div>
                   ))}
@@ -117,7 +96,7 @@ export default function BioPage() {
             href="/cv"
             className="group inline-flex items-center gap-3 rounded-full bg-brand px-8 py-4 text-sm font-medium uppercase tracking-widest text-brand-foreground shadow-lg transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl"
           >
-            Ver currículum completo
+            {t("bio.cta")}
             <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
           </Link>
         </div>

@@ -27,6 +27,7 @@ function LanguageToggle() {
 function ThemeToggle() {
   const { resolvedTheme, setTheme } = useTheme()
   const [mounted, setMounted] = useState(false)
+  const { t } = useLanguage()
 
   useEffect(() => setMounted(true), [])
 
@@ -35,7 +36,7 @@ function ThemeToggle() {
   return (
     <button
       type="button"
-      aria-label={isDark ? "Activar modo claro" : "Activar modo oscuro"}
+      aria-label={isDark ? t("theme.toLight") : t("theme.toDark")}
       onClick={() => setTheme(isDark ? "light" : "dark")}
       className="flex h-9 w-9 items-center justify-center rounded-full border border-border text-foreground transition-colors hover:border-brand hover:text-brand"
     >

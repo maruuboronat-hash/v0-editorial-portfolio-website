@@ -3,6 +3,8 @@
 import Link from "next/link";
 import Image from "next/image";
 import { ScrollReveal } from "@/hooks/use-scroll-reveal";
+import { useLanguage } from "@/lib/i18n";
+import { homeServiceEn } from "@/lib/translations";
 
 interface ProjectItem {
   id: string;
@@ -25,6 +27,7 @@ export function ProjectsGrid({
   title,
   description,
 }: ProjectsGridProps) {
+  const { lang } = useLanguage();
   return (
     <ScrollReveal className="py-10 md:py-28 px-6 md:px-12">
       <div className="max-w-6xl mx-auto">
@@ -46,6 +49,8 @@ export function ProjectsGrid({
           {projects.map((project) => {
             const isSquare = project.imageStyle === "square";
             const isWide = project.isWide;
+            const desc =
+              lang === "en" ? homeServiceEn[project.id] ?? project.description : project.description;
 
             return (
               <Link
@@ -83,7 +88,7 @@ export function ProjectsGrid({
                 <div className="absolute inset-0 bg-brand/80 flex flex-col items-center justify-center gap-4 p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                   <span className="h-0.5 w-8 rounded-full bg-brand-foreground" />
                   <p className="text-brand-foreground text-sm md:text-base text-center leading-relaxed">
-                    {project.description}
+                    {desc}
                   </p>
                 </div>
               </Link>
