@@ -5,6 +5,8 @@ import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 import { Navigation } from '@/components/navigation'
 import { ThemeProvider } from '@/components/theme-provider'
+import { LanguageProvider } from '@/lib/i18n'
+import { BackToTop } from '@/components/back-to-top'
 
 const _spaceGrotesk = Space_Grotesk({ 
   subsets: ["latin"], 
@@ -53,10 +55,12 @@ export default function RootLayout({
           enableSystem={false}
           disableTransitionOnChange
         >
+        <LanguageProvider>
         <Navigation />
         <main>
           {children}
         </main>
+        <BackToTop />
         <Analytics />
       {/* v0 – built-with badge */}
   <div dangerouslySetInnerHTML={{ __html: `<div id="v0-built-with-button-c636a2dc-05d8-4ce1-8fce-807e60c6f8ef" style="
@@ -141,6 +145,7 @@ font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   v0
 </span>
 </div>` }} />
+        </LanguageProvider>
         </ThemeProvider>
 </body>
     </html>

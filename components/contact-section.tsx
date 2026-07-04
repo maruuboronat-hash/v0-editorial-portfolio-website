@@ -56,6 +56,8 @@ export function ContactSection() {
                 <p className="text-lg">Buenos Aires, Argentina</p>
               </div>
 
+              <div className="h-px w-full bg-border" />
+
               {/* REDES SOCIALES */}
               <div className="text-center pt-2">
                 <span className="text-xs uppercase tracking-widest text-muted-foreground block mb-3">

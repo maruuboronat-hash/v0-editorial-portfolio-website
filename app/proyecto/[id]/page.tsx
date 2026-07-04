@@ -65,15 +65,10 @@ const projectsData: Record<string, {
       title: "Revista - Eduardo Estupía", 
       content: ""
     },
-    { 
-      type: "single-column-stack", 
-      images: [
-        { src: "/images/diseno-grafico/revistas-editorial/stupia/2_Mockup_Stupia.jpg", alt: "Eduardo Estupía 2" },
-      ]
-    },
     {
       type: "two-column-grid",
       images: [
+        { src: "/images/diseno-grafico/revistas-editorial/stupia/2_Mockup_Stupia.jpg", alt: "Eduardo Estupía 2" },
         { src: "/images/diseno-grafico/revistas-editorial/stupia/3_Mockup_Stupia.jpg", alt: "Eduardo Estupía 3" },
         { src: "/images/diseno-grafico/revistas-editorial/stupia/4_Mockup_Stupia.jpg", alt: "Eduardo Estupía 4" },
         { src: "/images/diseno-grafico/revistas-editorial/stupia/5_Mockup_Stupia.jpg", alt: "Eduardo Estupía 5" },
@@ -88,15 +83,10 @@ const projectsData: Record<string, {
       title: "Revista - Julio Le Parc", 
       content: ""
     },
-    { 
-      type: "single-column-stack", 
-      images: [
-        { src: "/images/diseno-grafico/revistas-editorial/leparc/2_Mockup_LeParc.jpg", alt: "Julio Le Parc 2" },
-      ]
-    },
     {
       type: "two-column-grid",
       images: [
+        { src: "/images/diseno-grafico/revistas-editorial/leparc/2_Mockup_LeParc.jpg", alt: "Julio Le Parc 2" },
         { src: "/images/diseno-grafico/revistas-editorial/leparc/3_Mockup_LeParc.jpg", alt: "Julio Le Parc 3" },
         { src: "/images/diseno-grafico/revistas-editorial/leparc/4_Mockup_LeParc.jpg", alt: "Julio Le Parc 4" },
         { src: "/images/diseno-grafico/revistas-editorial/leparc/5_Mockup_LeParc.jpg", alt: "Julio Le Parc 5" },
@@ -120,15 +110,10 @@ const projectsData: Record<string, {
       title: "Revista - Ariadna Pastorini", 
       content: ""
     },
-    { 
-      type: "single-column-stack", 
-      images: [
-        { src: "/images/diseno-grafico/revistas-editorial/ariadna/2_Mockup_Ariadna.jpg", alt: "Ariadna Pastorini 2" },
-      ]
-    },
     {
       type: "two-column-grid",
       images: [
+        { src: "/images/diseno-grafico/revistas-editorial/ariadna/2_Mockup_Ariadna.jpg", alt: "Ariadna Pastorini 2" },
         { src: "/images/diseno-grafico/revistas-editorial/ariadna/3_Mockup_Ariadna.jpg", alt: "Ariadna Pastorini 3" },
         { src: "/images/diseno-grafico/revistas-editorial/ariadna/4_Mockup_Ariadna.jpg", alt: "Ariadna Pastorini 4" },
         { src: "/images/diseno-grafico/revistas-editorial/ariadna/5_Mockup_Ariadna.jpg", alt: "Ariadna Pastorini 5" },
@@ -201,13 +186,15 @@ const projectsData: Record<string, {
         "Illustrator"
       ] 
     },
-      { type: "single-column-stack", images: [
+      { type: "two-column-grid", images: [
         { src: "/images/diseno-grafico/afiche3d/cordoba-01.jpg", alt: "Córdoba 01" },
         { src: "/images/diseno-grafico/afiche3d/cordoba-02.jpg", alt: "Córdoba 02" },
-        { src: "/images/diseno-grafico/afiche3d/cordoba-03.jpg", alt: "Córdoba 03" },
+      ]},
+      { type: "single-column-stack", images: [
         { src: "/images/diseno-grafico/afiche3d/cordoba-04.jpg", alt: "Córdoba 04" },
         { src: "/images/diseno-grafico/afiche3d/cordoba-05.jpg", alt: "Córdoba 05" },
         { src: "/images/diseno-grafico/afiche3d/cordoba-06.jpg", alt: "Córdoba 06" },
+        { src: "/images/diseno-grafico/afiche3d/cordoba-03.jpg", alt: "Córdoba 03" },
       ]},
     ],
   },
@@ -223,7 +210,7 @@ const projectsData: Record<string, {
         "Illustrator"
       ] 
     },
-      { type: "single-column-stack", images: [
+      { type: "two-column-grid", images: [
         { src: "/images/diseno-grafico/afiche-tipografico/tipografia-01.jpg", alt: "Afiche 01" },
         { src: "/images/diseno-grafico/afiche-tipografico/tipografia-02.jpg", alt: "Afiche 02" },
         { src: "/images/diseno-grafico/afiche-tipografico/tipografia-03.jpg", alt: "Afiche 03" },
@@ -256,19 +243,9 @@ const projectsData: Record<string, {
         type: "two-column-grid", 
         images: [
           { src: "/images/diseno-grafico/infantil/infantil-01.jpg", alt: "Infantil 01" },
-          { src: "/images/diseno-grafico/infantil/infantil-02.jpg", alt: "Infantil 02" }
-        ]
-      },
-      { 
-        type: "single-column-stack", 
-        images: [
+          { src: "/images/diseno-grafico/infantil/infantil-02.jpg", alt: "Infantil 02" },
           { src: "/images/diseno-grafico/infantil/infantil-03.jpg", alt: "Infantil 03" },
-          { src: "/images/diseno-grafico/infantil/infantil-04.jpg", alt: "Infantil 04" }
-        ]
-      },
-      { 
-        type: "two-column-grid", 
-        images: [
+          { src: "/images/diseno-grafico/infantil/infantil-04.jpg", alt: "Infantil 04" },
           { src: "/images/diseno-grafico/infantil/infantil-05.jpg", alt: "Infantil 05" },
           { src: "/images/diseno-grafico/infantil/infantil-06.jpg", alt: "Infantil 06" }
         ]
@@ -288,7 +265,7 @@ const projectsData: Record<string, {
         "Photoshop"
       ] 
     },
-      { type: "single-column-stack", images: [
+      { type: "two-column-grid", images: [
         { src: "/images/diseno-grafico/modelado3d/modelado-01.jpg", alt: "Modelado 01" },
         { src: "/images/diseno-grafico/modelado3d/modelado-02.jpg", alt: "Modelado 02" },
         { src: "/images/diseno-grafico/modelado3d/modelado-03.jpg", alt: "Modelado 03" },
@@ -474,8 +451,8 @@ const projectsData: Record<string, {
     { 
       type: "infinite-carousel", 
       images: [
-        { src: "/images/corporativo/via-publica/viapublica-01.jpg", alt: "Cartel 01" },
-        { src: "/images/corporativo/via-publica/viapublica-02.jpg", alt: "Cartel 02" },
+            { src: "/images/corporativo/via-publica/viapublica-01.jpeg", alt: "Cartel 01" },
+            { src: "/images/corporativo/via-publica/viapublica-02.jpeg", alt: "Cartel 02" },
         { src: "/images/corporativo/via-publica/viapublica-03.jpeg", alt: "Cartel 03" },
         { src: "/images/corporativo/via-publica/viapublica-04.jpeg", alt: "Cartel 04" },
         { src: "/images/corporativo/via-publica/viapublica-05.jpeg", alt: "Cartel 05" },
@@ -619,6 +596,7 @@ const projectsData: Record<string, {
     },
       { 
         type: "single-column-stack", 
+        bare: true,
         images: [
           { src: "/images/indumentaria-ilustracion/colección-portuguese/portuguese-01.PNG", alt: "Portuguese 01" },
         ]

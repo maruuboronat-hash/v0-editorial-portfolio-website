@@ -12,7 +12,7 @@ import { cn } from "@/lib/utils"
 export type SectionType =
   | { type: "full-width-image"; src: string; alt?: string; caption?: string }
   | { type: "centered-image"; src: string; alt?: string; caption?: string; width?: "small" | "medium" | "large" }
-  | { type: "single-column-stack"; images: Array<{ src: string; alt?: string; caption?: string }>; compact?: boolean }
+  | { type: "single-column-stack"; images: Array<{ src: string; alt?: string; caption?: string }>; compact?: boolean; bare?: boolean }
   | { type: "two-column-grid"; images: Array<{ src: string; alt?: string }> }
   | { type: "three-column-grid"; images: Array<{ src: string; alt?: string }>; bare?: boolean; whiteBg?: boolean; mobileCols?: 1 | 2 }
   | { type: "text"; title?: string; content: string }
@@ -251,13 +251,13 @@ export function SingleColumnStack({ section }: { section: Extract<SectionType, {
             href={img.src}
             target="_blank"
             rel="noopener noreferrer"
-            className="group block overflow-hidden rounded-xl border border-border bg-muted shadow-sm transition-all duration-300 hover:border-brand hover:shadow-lg"
+            className={section.bare ? "block overflow-hidden rounded-xl" : "block overflow-hidden rounded-xl border border-border bg-white shadow-sm"}
           >
             <img
               src={img.src || "/placeholder.svg"}
               alt={img.alt || ""}
               loading="lazy"
-              className="h-auto w-full object-contain transition-transform duration-500 group-hover:scale-[1.02]"
+              className="h-auto w-full object-contain"
             />
           </a>
           {img.caption && (
@@ -278,9 +278,9 @@ export function TwoColumnGrid({ section }: { section: Extract<SectionType, { typ
           href={img.src}
           target="_blank"
           rel="noopener noreferrer"
-          className="group block overflow-hidden rounded-2xl border border-border bg-muted transition-all duration-300 hover:border-brand hover:shadow-lg"
+          className="block overflow-hidden rounded-2xl border border-border bg-white"
         >
-          <div className="aspect-[4/3] relative transition-transform duration-500 group-hover:scale-[1.03]">
+          <div className="aspect-[4/3] relative">
             <Img src={img.src} alt={img.alt} contain />
           </div>
         </a>
@@ -292,11 +292,8 @@ export function TwoColumnGrid({ section }: { section: Extract<SectionType, { typ
 export function ThreeColumnGrid({ section }: { section: Extract<SectionType, { type: "three-column-grid" }> }) {
   const colsClass = section.mobileCols === 2 ? "grid-cols-2 md:grid-cols-3" : "grid-cols-1 md:grid-cols-3"
   const containerClass = section.bare
-    ? "group block overflow-hidden"
-    : cn(
-        "group block overflow-hidden rounded-2xl border border-border transition-all duration-300 hover:border-brand hover:shadow-lg",
-        section.whiteBg ? "bg-white" : "bg-muted"
-      )
+    ? "block overflow-hidden"
+    : "block overflow-hidden rounded-2xl border border-border bg-white"
   return (
     <section className={cn("grid gap-6", colsClass)}>
       {section.images.map((img, i) => (
@@ -307,7 +304,7 @@ export function ThreeColumnGrid({ section }: { section: Extract<SectionType, { t
           rel="noopener noreferrer"
           className={containerClass}
         >
-          <div className="aspect-square relative transition-transform duration-500 group-hover:scale-[1.03]">
+          <div className="aspect-square relative">
             <Img src={img.src} alt={img.alt} contain />
           </div>
         </a>

@@ -5,6 +5,24 @@ import { usePathname } from "next/navigation"
 import { useEffect, useState } from "react"
 import { useTheme } from "next-themes"
 import { Moon, Sun } from "lucide-react"
+import { useLanguage } from "@/lib/i18n"
+
+function LanguageToggle() {
+  const { lang, toggle, t } = useLanguage()
+
+  return (
+    <button
+      type="button"
+      aria-label={t("nav.langLabel")}
+      onClick={toggle}
+      className="flex h-9 items-center justify-center gap-1 rounded-full border border-border px-3 text-xs font-medium tracking-wider text-foreground transition-colors hover:border-brand hover:text-brand"
+    >
+      <span className={lang === "en" ? "text-brand" : "text-muted-foreground"}>EN</span>
+      <span className="text-muted-foreground">·</span>
+      <span className={lang === "es" ? "text-brand" : "text-muted-foreground"}>ES</span>
+    </button>
+  )
+}
 
 function ThemeToggle() {
   const { resolvedTheme, setTheme } = useTheme()
@@ -31,11 +49,11 @@ function ThemeToggle() {
 }
 
 const navItems = [
-  { href: "/", label: "Home" },
-  { href: "/proyectos", label: "Proyectos" },
-  { href: "/cv", label: "CV" },
-  { href: "/bio", label: "Bio" },
-  { href: "/contacto", label: "Contacto" },
+  { href: "/", key: "nav.home" as const },
+  { href: "/proyectos", key: "nav.projects" as const },
+  { href: "/cv", key: "nav.cv" as const },
+  { href: "/bio", key: "nav.bio" as const },
+  { href: "/contacto", key: "nav.contact" as const },
 ]
 
 function BuenosAiresClock() {
@@ -69,6 +87,7 @@ function BuenosAiresClock() {
 export function Navigation() {
   const pathname = usePathname()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const { t } = useLanguage()
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-sm">
@@ -94,21 +113,23 @@ export function Navigation() {
                 {pathname === item.href && (
                   <span className="h-1.5 w-1.5 rounded-full bg-brand" />
                 )}
-                {item.label}
+                {t(item.key)}
               </span>
             </Link>
           ))}
         </nav>
 
-        {/* Desktop: Hora + toggle a la derecha */}
-        <div className="hidden md:flex items-center gap-5">
+        {/* Desktop: Hora + toggles a la derecha */}
+        <div className="hidden md:flex items-center gap-4">
           <BuenosAiresClock />
           <ThemeToggle />
+          <LanguageToggle />
         </div>
 
-        {/* Móvil: toggle + hamburguesa */}
-        <div className="flex items-center gap-3 md:hidden">
+        {/* Móvil: toggles + hamburguesa */}
+        <div className="flex items-center gap-2 md:hidden">
         <ThemeToggle />
+        <LanguageToggle />
         <button 
           className="text-foreground"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -135,7 +156,7 @@ export function Navigation() {
                   }`}
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  {item.label}
+                  {t(item.key)}
                 </Link>
               ))}
               <div className="mt-2">
