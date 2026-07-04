@@ -244,7 +244,7 @@ export function CenteredImage({ section }: { section: Extract<SectionType, { typ
 
 export function SingleColumnStack({ section }: { section: Extract<SectionType, { type: "single-column-stack" }> }) {
   return (
-    <section className="mx-auto flex max-w-4xl flex-col gap-5 md:gap-7">
+    <section className="mx-auto flex max-w-5xl flex-col gap-6 md:gap-9">
       {section.images.map((img, i) => (
         <figure key={i} className="m-0">
           <a
