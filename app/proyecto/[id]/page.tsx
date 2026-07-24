@@ -155,6 +155,49 @@ const projectsData: Record<string, {
     },
   ],
 },
+
+"fanzine-infancia": {
+  title: "Fanzine | Infancia",
+  category: "Diseño Gráfico",
+  categorySlug: "diseno-grafico",
+  description: "Proyecto editorial y audiovisual desarrollado a partir de la creación de un fanzine narrativo sobre la infancia. La propuesta toma la forma del diario íntimo de una niña, donde recuerdos, dibujos y fotografías construyen un diálogo constante entre su mirada infantil y su voz adulta. El universo del fanzine se expande hacia una pieza audiovisual animada, concebida como un tráiler de la historia, y una serie de tres historias para Instagram que trasladan la narrativa a nuevos formatos.",
+  image: "/images/diseno-grafico/fanzine/fanzine-01.jpg",
+  sections: [
+    // ===== HERRAMIENTAS UTILIZADAS =====
+    { 
+      type: "tools", 
+      tools: [
+        "InDesign",
+        "Photoshop",
+        "Illustrator",
+        "Premiere",
+        "After Effects"
+      ] 
+    },
+    // ===== IMÁGENES DEL FANZINE =====
+    { type: "single-column-stack", images: [
+      { src: "/images/diseno-grafico/fanzine/fanzine-01.jpg", alt: "Fanzine infancia 1" },
+      { src: "/images/diseno-grafico/fanzine/fanzine-02.jpg", alt: "Fanzine infancia 2" },
+      { src: "/images/diseno-grafico/fanzine/fanzine-03.jpg", alt: "Fanzine infancia 3" },
+      { src: "/images/diseno-grafico/fanzine/fanzine-04.jpg", alt: "Fanzine infancia 4" },
+      { src: "/images/diseno-grafico/fanzine/fanzine-05.jpg", alt: "Fanzine infancia 5" },
+      { src: "/images/diseno-grafico/fanzine/fanzine-06.jpg", alt: "Fanzine infancia 6" },
+      { src: "/images/diseno-grafico/fanzine/fanzine-07.jpg", alt: "Fanzine infancia 7" },
+      { src: "/images/diseno-grafico/fanzine/fanzine-08.jpg", alt: "Fanzine infancia 8" },
+    ]},
+    // ===== VIDEOS (uno abajo del otro) =====
+    { 
+      type: "single-column-stack", 
+      images: [
+        { src: "/images/diseno-grafico/fanzine/video-animado.mp4", alt: "Video animado", type: "video" },
+        { src: "/images/diseno-grafico/fanzine/fanzine-historias.mp4", alt: "Fanzine historias", type: "video" }
+      ]
+    },
+  ],
+},
+
+
+  
   "postales-cortazar": {
     title: "Postales I Julio Cortázar",
     category: "Diseño Gráfico",
