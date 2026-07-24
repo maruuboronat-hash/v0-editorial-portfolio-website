@@ -14,7 +14,40 @@ const projectsData: Record<string, {
   sections: SectionType[]
 }> = {
   // DISEÑO GRÁFICO projects
-"diario-oasis": {
+"libro-tecnico-manual": {
+  title: "Libro técnico editorial I Manual",
+  category: "Diseño Gráfico",
+  categorySlug: "diseno-grafico",
+  description: "Proyecto editorial centrado en el diseño y maquetación integral de un libro técnico. El trabajo abarca la organización y jerarquización de contenidos, el desarrollo de una grilla editorial y la construcción de un sistema tipográfico que facilita la lectura y navegación de la información. El proyecto se completa con el diseño de la sobrecubierta, manteniendo una identidad visual coherente entre el interior y el exterior de la publicación.",
+  image: "/images/diseno-grafico/tecnico/tecnico-01.jpg",
+  sections: [
+    // ===== HERRAMIENTAS UTILIZADAS =====
+    { 
+      type: "tools", 
+      tools: [
+        "InDesign",
+        "Photoshop",
+        "Illustrator"
+      ] 
+    },
+    // ===== IMÁGENES DEL PROYECTO =====
+    { type: "single-column-stack", images: [
+      { src: "/images/diseno-grafico/tecnico/tecnico-01.jpg", alt: "Libro técnico 1" },
+      { src: "/images/diseno-grafico/tecnico/tecnico-02.jpg", alt: "Libro técnico 2" },
+      { src: "/images/diseno-grafico/tecnico/tecnico-03.jpg", alt: "Libro técnico 3" },
+      { src: "/images/diseno-grafico/tecnico/tecnico-04.jpg", alt: "Libro técnico 4" },
+    ]},
+    // ===== BOTÓN DE DESCARGA =====
+    { 
+      type: "text", 
+      title: "Descargar proyecto", 
+      content: "<a href='/pdf/TecMariaBoronat.pdf' download class='inline-block px-6 py-3 bg-foreground text-background hover:bg-foreground/90 transition-colors font-medium text-sm'>Descargar proyecto (PDF)</a>"
+    }
+  ],
+},
+  
+  
+  "diario-oasis": {
   title: "Periódico de Oasis I Backstage Times",
   category: "Diseño Gráfico",
   categorySlug: "diseno-grafico",
