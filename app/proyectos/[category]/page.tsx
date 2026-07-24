@@ -23,6 +23,14 @@ const categoriesData = {
   title: "Revistas I Colección de Arte Amalia Lacroze de Fortabat",
   image: "/images/diseno-grafico/revistas-editorial/portada-editorial2.jpg"
       },
+
+      { 
+  id: "fanzine-infancia", 
+  title: "Fanzine | Infancia",
+  image: "/images/diseno-grafico/fanzine/fanzine-01.jpg"
+},
+      
+      
       { 
         id: "postales-cortazar", 
         title: "Postales I Julio Cortazar",
