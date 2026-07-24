@@ -24,10 +24,10 @@ const categoriesData = {
   image: "/images/diseno-grafico/revistas-editorial/portada-editorial2.jpg"
       },
 
-      { 
+  { 
   id: "fanzine-infancia", 
   title: "Fanzine | Infancia",
-  image: "/images/diseno-grafico/fanzine/fanzine-01.jpg"
+  image: "/fanzine-01.jpg"
 },
       
       
