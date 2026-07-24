@@ -41,7 +41,7 @@ const projectsData: Record<string, {
     { 
       type: "text", 
       title: "Descargar proyecto", 
-      content: "<a href='/pdf/TecMariaBoronat.pdf' download class='inline-block px-6 py-3 bg-foreground text-background hover:bg-foreground/90 transition-colors font-medium text-sm'>Descargar proyecto (PDF)</a>"
+      content: "<a href='/images/diseno-grafico/tecnico/TecMariaBoronat.pdf' download class='inline-block px-6 py-3 bg-foreground text-background hover:bg-foreground/90 transition-colors font-medium text-sm'>Descargar proyecto (PDF)</a>"
     }
   ],
 },
