@@ -7,6 +7,12 @@ const categoriesData = {
     title: "Diseño Gráfico",
     description: "Proyectos de diseño editorial, diseño 3D, comunicación visual e investigación tipográfica desarrollados durante la carrera de Diseño Gráfico y Comunicación.",
     projects: [
+          { 
+      id: "libro-tecnico-manual", 
+      title: "Libro técnico editorial I Manual",
+      image: "/images/diseno-grafico/tecnico/tecnico-01.jpg"
+    },
+      
       { 
         id: "diario-oasis", 
         title: "Diario de Oasis I Backstage Times",
