@@ -21,10 +21,10 @@ const projectsData: Record<string, {
   description: "Proyecto editorial centrado en el diseño y maquetación integral de un libro técnico. El trabajo abarca la organización y jerarquización de contenidos, el desarrollo de una grilla editorial y la construcción de un sistema tipográfico que facilita la lectura y navegación de la información. El proyecto se completa con el diseño de la sobrecubierta, manteniendo una identidad visual coherente entre el interior y el exterior de la publicación.",
   image: "/images/diseno-grafico/tecnico/tecnico-01.jpg",
   sections: [
-    // ===== BOTÓN DE DESCARGA (primero, debajo de descripción) =====
+    // ===== BOTÓN DE DESCARGA (estilo IDÉNTICO al CV) =====
     { 
       type: "text", 
-      content: "<div class='mb-12'><a href='/images/diseno-grafico/tecnico/TecMariaBoronat.pdf' download class='group inline-flex items-center gap-2 rounded-full bg-brand px-6 py-3 text-sm font-medium text-brand-foreground transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg'>📄 Descargar proyecto (PDF) <span class='transition-transform duration-300 group-hover:translate-y-0.5'>&darr;</span></a></div>"
+      content: "<div class='mb-12'><a href='/images/diseno-grafico/tecnico/TecMariaBoronat.pdf' download class='group inline-flex items-center gap-2 rounded-full bg-brand px-5 py-2.5 text-xs uppercase tracking-widest text-brand-foreground transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg'>Descargar proyecto <span class='transition-transform duration-300 group-hover:translate-y-0.5'>&darr;</span></a></div>"
     },
     // ===== HERRAMIENTAS UTILIZADAS =====
     { 
