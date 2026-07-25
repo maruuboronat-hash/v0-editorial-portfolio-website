@@ -24,6 +24,12 @@ const categoryData = {
       image: "/images/diseno-grafico/fanzine/fanzine-01.jpg"
     },
     
+        { 
+      id: "animated-teaser", 
+      title: "Animated Teaser",
+      image: "/images/edicion-video/interfaces.png"
+    },
+    
     
     { 
       id: "vlog-diario-video", 
