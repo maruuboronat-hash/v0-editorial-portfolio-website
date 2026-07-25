@@ -5,6 +5,9 @@ import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 import { Navigation } from '@/components/navigation'
 import { ThemeProvider } from '@/components/theme-provider'
+import { NextIntlClientProvider } from 'next-intl';
+import { getMessages } from 'next-intl/server';
+import LanguageSwitcher from '@/components/LanguageSwitcher';
 
 const _spaceGrotesk = Space_Grotesk({ 
   subsets: ["latin"], 
