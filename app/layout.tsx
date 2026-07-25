@@ -51,7 +51,7 @@ export default async function RootLayout({
 }>) {
   const messages = await getMessages();
   return (
-    <html lang="es" className="bg-background" suppressHydrationWarning>
+ <html lang="es" className="bg-background" suppressHydrationWarning>
 <body className={`${_spaceGrotesk.variable} ${_inter.variable} font-sans antialiased`}>
         <ThemeProvider
           attribute="class"
