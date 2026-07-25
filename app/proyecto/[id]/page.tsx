@@ -436,25 +436,30 @@ const projectsData: Record<string, {
         "After Effects"
       ] 
     },
-    {
-      type: "video-embed",
-      src: "/images/diseno-grafico/fanzine/fanzine-historias.mp4",
-      caption: "Fanzine | Historias - Instagram"
+
+
+    "animated-teaser": {
+  title: "Animated Teaser",
+  category: "Edición de Video",
+  categorySlug: "edicion-video",
+  image: "/images/edicion-video/interfaces.png",
+  description: "Pieza audiovisual animada que presenta el universo de Clavis y conecta sus personajes, escenarios y plataformas a través de una narrativa visual dinámica. El video funciona como una introducción al proyecto y expande su historia hacia nuevos universos.",
+  sections: [
+    { 
+      type: "tools", 
+      tools: [
+        "After Effects",
+        "Premiere",
+        "Illustrator"
+      ] 
     },
     {
       type: "video-embed",
-      src: "/images/diseno-grafico/fanzine/video-animado.mp4",
-      caption: "Fanzine | Video animado"
+      src: "https://www.youtube.com/embed/40SYT5-lHWY",
+      caption: "Animated Teaser - Clavis"
     }
   ],
 },
-
-   { 
-      id: "animated-teaser", 
-      title: "Animated Teaser",
-      image: "/images/edicion-video/interfaces.png"
-    },
-  
   
   "vlog-diario-video": {
     title: "Vlog Diario",
