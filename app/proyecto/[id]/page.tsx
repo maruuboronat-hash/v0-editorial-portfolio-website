@@ -422,6 +422,35 @@ const projectsData: Record<string, {
       }
     ]
   },
+ 
+  "fanzine-infancia-video": {
+  title: "Fanzine | Infancia",
+  category: "Edición de Video",
+  categorySlug: "edicion-video",
+  image: "/images/diseno-grafico/fanzine/fanzine-01.jpg",
+  sections: [
+    { 
+      type: "tools", 
+      tools: [
+        "Premiere",
+        "After Effects"
+      ] 
+    },
+    {
+      type: "video-embed",
+      src: "/images/diseno-grafico/fanzine/fanzine-historias.mp4",
+      caption: "Fanzine | Historias - Instagram"
+    },
+    {
+      type: "video-embed",
+      src: "/images/diseno-grafico/fanzine/video-animado.mp4",
+      caption: "Fanzine | Video animado"
+    }
+  ],
+},
+  
+  
+  
   "vlog-diario-video": {
     title: "Vlog Diario",
     category: "Edición de Video",
