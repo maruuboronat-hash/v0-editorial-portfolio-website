@@ -380,22 +380,22 @@ const projectsData: Record<string, {
     ]
   },
  
-  // EDICION DE VIDEO projects - DESCRIPCIÓN GENERAL (se repite en cada proyecto)
+  // EDICION DE VIDEO projects
   "portfolio-video": {
     title: "Portfolio",
     category: "Edición de Video",
     categorySlug: "edicion-video",
     image: "/images/edicion-video/portada05.png",
     sections: [
-                      { 
-      type: "tools", 
-      tools: [
-        "AfterEffects",
-        "Premiere",
-        "Blender",
-        "Illustrator"
-      ] 
-    },
+      { 
+        type: "tools", 
+        tools: [
+          "AfterEffects",
+          "Premiere",
+          "Blender",
+          "Illustrator"
+        ] 
+      },
       {
         type: "video-embed",
         src: "/images/edicion-video/video-portfolio.mp4",
@@ -409,12 +409,12 @@ const projectsData: Record<string, {
     categorySlug: "edicion-video",
     image: "/images/edicion-video/portada03.png",
     sections: [
-                      { 
-      type: "tools", 
-      tools: [
-        "Premiere"
-      ] 
-    },
+      { 
+        type: "tools", 
+        tools: [
+          "Premiere"
+        ] 
+      },
       {
         type: "video-embed",
         src: "https://www.youtube.com/embed/w0SAl3TPjGM",
@@ -422,57 +422,65 @@ const projectsData: Record<string, {
       }
     ]
   },
- 
   "fanzine-infancia-video": {
-  title: "Fanzine | Infancia",
-  category: "Edición de Video",
-  categorySlug: "edicion-video",
-  image: "/images/diseno-grafico/fanzine/fanzine-01.jpg",
-  sections: [
-    { 
-      type: "tools", 
-      tools: [
-        "Premiere",
-        "After Effects"
-      ] 
-    },
-
-
-"animated-teaser": {
-  title: "Animated Teaser",
-  category: "Edición de Video",
-  categorySlug: "edicion-video",
-  image: "/images/edicion-video/interfaces.png",
-  description: "Pieza audiovisual animada que presenta el universo de Clavis y conecta sus personajes, escenarios y plataformas a través de una narrativa visual dinámica. El video funciona como una introducción al proyecto y expande su historia hacia nuevos universos.",
-  sections: [
-    { 
-      type: "tools", 
-      tools: [
-        "After Effects",
-        "Premiere",
-        "Illustrator"
-      ] 
-    },
-    {
-      type: "video-embed",
-      src: "https://www.youtube.com/embed/40SYT5-lHWY",
-      caption: "Animated Teaser - Clavis"
-    }
-  ],
-},
-  
+    title: "Fanzine | Infancia",
+    category: "Edición de Video",
+    categorySlug: "edicion-video",
+    image: "/images/diseno-grafico/fanzine/fanzine-01.jpg",
+    sections: [
+      { 
+        type: "tools", 
+        tools: [
+          "Premiere",
+          "After Effects"
+        ] 
+      },
+      {
+        type: "video-embed",
+        src: "/images/diseno-grafico/fanzine/fanzine-historias.mp4",
+        caption: "Fanzine | Historias - Instagram"
+      },
+      {
+        type: "video-embed",
+        src: "/images/diseno-grafico/fanzine/video-animado.mp4",
+        caption: "Fanzine | Video animado"
+      }
+    ]
+  },
+  "animated-teaser": {
+    title: "Animated Teaser",
+    category: "Edición de Video",
+    categorySlug: "edicion-video",
+    image: "/images/edicion-video/interfaces.png",
+    description: "Pieza audiovisual animada que presenta el universo de Clavis y conecta sus personajes, escenarios y plataformas a través de una narrativa visual dinámica. El video funciona como una introducción al proyecto y expande su historia hacia nuevos universos.",
+    sections: [
+      { 
+        type: "tools", 
+        tools: [
+          "After Effects",
+          "Premiere",
+          "Illustrator"
+        ] 
+      },
+      {
+        type: "video-embed",
+        src: "https://www.youtube.com/embed/40SYT5-lHWY",
+        caption: "Animated Teaser - Clavis"
+      }
+    ]
+  },
   "vlog-diario-video": {
     title: "Vlog Diario",
     category: "Edición de Video",
     categorySlug: "edicion-video",
     image: "/images/edicion-video/portada04.png",
     sections: [
-                      { 
-      type: "tools", 
-      tools: [
-        "Premiere"
-      ] 
-    },
+      { 
+        type: "tools", 
+        tools: [
+          "Premiere"
+        ] 
+      },
       {
         type: "video-embed",
         src: "https://www.youtube.com/embed/FlTDpF_Dr6Y",
@@ -486,12 +494,12 @@ const projectsData: Record<string, {
     categorySlug: "edicion-video",
     image: "/images/edicion-video/portada02.jpeg",
     sections: [
-                      { 
-      type: "tools", 
-      tools: [
-        "Premiere"
-      ] 
-    },
+      { 
+        type: "tools", 
+        tools: [
+          "Premiere"
+        ] 
+      },
       {
         type: "video-embed",
         src: "https://www.youtube.com/embed/mm8RTJ4UoPE",
@@ -505,12 +513,12 @@ const projectsData: Record<string, {
     categorySlug: "edicion-video",
     image: "/images/edicion-video/portada01.png",
     sections: [
-                      { 
-      type: "tools", 
-      tools: [
-        "Premiere"
-      ] 
-    },
+      { 
+        type: "tools", 
+        tools: [
+          "Premiere"
+        ] 
+      },
       {
         type: "video-embed",
         src: "/images/edicion-video/video-modelos.mp4",
