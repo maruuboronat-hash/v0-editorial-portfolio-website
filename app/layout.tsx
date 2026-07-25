@@ -5,9 +5,6 @@ import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 import { Navigation } from '@/components/navigation'
 import { ThemeProvider } from '@/components/theme-provider'
-import { NextIntlClientProvider } from 'next-intl';
-import { getMessages } from 'next-intl/server';
-import LanguageSwitcher from '@/components/LanguageSwitcher';
 
 const _spaceGrotesk = Space_Grotesk({ 
   subsets: ["latin"], 
@@ -42,30 +39,26 @@ export const metadata: Metadata = {
   },
 }
 
-export default async function RootLayout({
+export default function RootLayout({
   children,
-  params: { locale }
 }: Readonly<{
-  children: React.ReactNode;
-  params: { locale: string };
+  children: React.ReactNode
 }>) {
-  const messages = await getMessages();
   return (
- <html lang="es" className="bg-background" suppressHydrationWarning>
-<body className={`${_spaceGrotesk.variable} ${_inter.variable} font-sans antialiased`}>
+    <html lang="es" className="bg-background" suppressHydrationWarning>
+      <body className={`${_spaceGrotesk.variable} ${_inter.variable} font-sans antialiased`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="light"
           enableSystem={false}
           disableTransitionOnChange
         >
-        <Navigation />
-        <main>
-          {children}
-        </main>
-        <Analytics />
-      {/* v0 – built-with badge */}
-  <div dangerouslySetInnerHTML={{ __html: `<div id="v0-built-with-button-c636a2dc-05d8-4ce1-8fce-807e60c6f8ef" style="
+          <Navigation />
+          <main>
+            {children}
+          </main>
+          <Analytics />
+          <div dangerouslySetInnerHTML={{ __html: `<div id="v0-built-with-button-c636a2dc-05d8-4ce1-8fce-807e60c6f8ef" style="
 border: 1px solid hsl(0deg 0% 100% / 12%);
 position: fixed;
 bottom: 24px;
@@ -148,7 +141,7 @@ font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 </span>
 </div>` }} />
         </ThemeProvider>
-</body>
+      </body>
     </html>
   )
 }
