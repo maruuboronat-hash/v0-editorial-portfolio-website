@@ -12,12 +12,12 @@ import { cn } from "@/lib/utils"
 export type SectionType =
   | { type: "full-width-image"; src: string; alt?: string; caption?: string }
   | { type: "centered-image"; src: string; alt?: string; caption?: string; width?: "small" | "medium" | "large" }
-  | { type: "single-column-stack"; images: Array<{ src: string; alt?: string; caption?: string }> }
-  | { type: "two-column-grid"; images: Array<{ src: string; alt?: string }> }
-  | { type: "three-column-grid"; images: Array<{ src: string; alt?: string }> }
+  | { type: "single-column-stack"; images: Array<{ src: string; alt?: string; caption?: string; type?: "image" | "video" }> }
+  | { type: "two-column-grid"; images: Array<{ src: string; alt?: string; type?: "image" | "video" }> }
+  | { type: "three-column-grid"; images: Array<{ src: string; alt?: string; type?: "image" | "video" }> }
   | { type: "text"; title?: string; content: string }
   | { type: "video-embed"; src: string; caption?: string }
-  | { type: "infinite-carousel"; images: Array<{ src: string; alt?: string }>; speed?: number }
+  | { type: "infinite-carousel"; images: Array<{ src: string; alt?: string; type?: "image" | "video" }>; speed?: number }
   | { type: "skills"; skills: string[] }
   | { type: "tools"; tools: string[] }  // ← NUEVO TIPO
 
@@ -54,6 +54,10 @@ if (typeof document !== 'undefined') {
 /* =========================
    IMAGE HELPERS
 ========================= */
+
+function isVideoItem(item: { src: string; type?: "image" | "video" }) {
+  return item.type === "video" || /\.(mp4|webm|mov|ogg)$/i.test(item.src)
+}
 
 function Img({ src, alt, contain = false }: { src: string; alt?: string; contain?: boolean }) {
   return (
@@ -93,16 +97,29 @@ export function InfiniteCarousel({ images }: { images: Array<{ src: string; alt?
         </div>
 
         {/* Marco de imagen con relación fija para que no salte el layout */}
-        <a href={images[currentIndex].src} target="_blank" rel="noopener noreferrer" className="block">
-          <div className="relative flex h-72 w-full cursor-zoom-in items-center justify-center p-4 md:h-[30rem] md:p-8">
-            <img
+        {isVideoItem(images[currentIndex]) ? (
+          <div className="relative flex h-72 w-full items-center justify-center p-4 md:h-[30rem] md:p-8">
+            <video
               key={currentIndex}
-              src={images[currentIndex].src || "/placeholder.svg"}
-              alt={images[currentIndex].alt || ""}
+              src={images[currentIndex].src}
+              controls
               className="max-h-full max-w-full rounded-lg object-contain shadow-lg animate-in fade-in duration-500"
-            />
+            >
+              Tu navegador no soporta videos HTML5.
+            </video>
           </div>
-        </a>
+        ) : (
+          <a href={images[currentIndex].src} target="_blank" rel="noopener noreferrer" className="block">
+            <div className="relative flex h-72 w-full cursor-zoom-in items-center justify-center p-4 md:h-[30rem] md:p-8">
+              <img
+                key={currentIndex}
+                src={images[currentIndex].src || "/placeholder.svg"}
+                alt={images[currentIndex].alt || ""}
+                className="max-h-full max-w-full rounded-lg object-contain shadow-lg animate-in fade-in duration-500"
+              />
+            </div>
+          </a>
+        )}
 
         {images.length > 1 && (
           <>
@@ -247,19 +264,31 @@ export function SingleColumnStack({ section }: { section: Extract<SectionType, {
     <section className="mx-auto flex max-w-4xl flex-col gap-5 md:gap-7">
       {section.images.map((img, i) => (
         <figure key={i} className="m-0">
-          <a
-            href={img.src}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group block overflow-hidden rounded-xl border border-border bg-muted shadow-sm transition-all duration-300 hover:border-brand hover:shadow-lg"
-          >
-            <img
-              src={img.src || "/placeholder.svg"}
-              alt={img.alt || ""}
-              loading="lazy"
-              className="h-auto w-full object-contain transition-transform duration-500 group-hover:scale-[1.02]"
-            />
-          </a>
+          {isVideoItem(img) ? (
+            <div className="overflow-hidden rounded-xl border border-border bg-black shadow-sm">
+              <video
+                src={img.src}
+                controls
+                className="h-auto w-full object-contain"
+              >
+                Tu navegador no soporta videos HTML5.
+              </video>
+            </div>
+          ) : (
+            <a
+              href={img.src}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group block overflow-hidden rounded-xl border border-border bg-muted shadow-sm transition-all duration-300 hover:border-brand hover:shadow-lg"
+            >
+              <img
+                src={img.src || "/placeholder.svg"}
+                alt={img.alt || ""}
+                loading="lazy"
+                className="h-auto w-full object-contain transition-transform duration-500 group-hover:scale-[1.02]"
+              />
+            </a>
+          )}
           {img.caption && (
             <figcaption className="mt-3 text-xs text-muted-foreground text-center">{img.caption}</figcaption>
           )}

@@ -9,7 +9,7 @@ const projectsData: Record<string, {
   title: string
   category: string
   categorySlug: string
-  description: string
+  description?: string
   image?: string
   sections: SectionType[]
 }> = {

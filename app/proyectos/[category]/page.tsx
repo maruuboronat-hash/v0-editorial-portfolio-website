@@ -174,9 +174,6 @@ const categoriesData = {
 }
 
 type PageParams = Promise<{ category: string }>
-// ... resto del código ...
-
-type PageParams = Promise<{ category: string }>
 
 export default async function CategoryPage({ params }: { params: PageParams }) {
   const { category } = await params

@@ -10,7 +10,7 @@ interface ProjectItem {
   image: string;
   description: string;
   colSpan?: number;
-  imageStyle?: "square" | "natural";
+  imageStyle?: string;
   isWide?: boolean;
 }
 
