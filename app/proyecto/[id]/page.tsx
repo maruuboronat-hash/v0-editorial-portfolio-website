@@ -438,7 +438,7 @@ const projectsData: Record<string, {
     },
 
 
-    "animated-teaser": {
+"animated-teaser": {
   title: "Animated Teaser",
   category: "Edición de Video",
   categorySlug: "edicion-video",
