@@ -448,7 +448,12 @@ const projectsData: Record<string, {
     }
   ],
 },
-  
+
+   { 
+      id: "animated-teaser", 
+      title: "Animated Teaser",
+      image: "/images/edicion-video/interfaces.png"
+    },
   
   
   "vlog-diario-video": {
