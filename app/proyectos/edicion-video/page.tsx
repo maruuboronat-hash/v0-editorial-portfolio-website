@@ -17,6 +17,14 @@ const categoryData = {
       title: "Mini Skirts - Mary Quant",
       image: "/images/edicion-video/portada03.png"
     },
+    
+    { 
+      id: "fanzine-infancia-video", 
+      title: "Fanzine | Infancia",
+      image: "/images/diseno-grafico/fanzine/fanzine-01.jpg"
+    },
+    
+    
     { 
       id: "vlog-diario-video", 
       title: "Vlog Diario",
