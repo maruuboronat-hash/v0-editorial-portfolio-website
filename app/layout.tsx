@@ -42,11 +42,14 @@ export const metadata: Metadata = {
   },
 }
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
+  params: { locale }
 }: Readonly<{
-  children: React.ReactNode
+  children: React.ReactNode;
+  params: { locale: string };
 }>) {
+  const messages = await getMessages();
   return (
     <html lang="es" className="bg-background" suppressHydrationWarning>
 <body className={`${_spaceGrotesk.variable} ${_inter.variable} font-sans antialiased`}>
