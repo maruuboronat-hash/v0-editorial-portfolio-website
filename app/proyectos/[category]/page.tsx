@@ -154,6 +154,12 @@ const categoriesData = {
         image: "/images/edicion-video/portada04.png"
       },
       { 
+      id: "animated-teaser", 
+      title: "Animated Teaser",
+      image: "/images/edicion-video/interfaces.png"
+    }, 
+    
+    { 
         id: "motocross-video", 
         title: "Motocross",
         image: "/images/edicion-video/portada02.jpeg"
