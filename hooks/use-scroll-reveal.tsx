@@ -2,7 +2,6 @@
 
 import React from "react"
 import { useEffect, useRef, useState, type RefObject } from "react"
-import { JSX } from "react/jsx-runtime" // Import JSX to fix the undeclared variable error
 
 interface UseScrollRevealOptions {
   threshold?: number
@@ -47,7 +46,7 @@ export function useScrollReveal<T extends HTMLElement = HTMLDivElement>(
 interface ScrollRevealProps {
   children: React.ReactNode
   className?: string
-  as?: keyof JSX.IntrinsicElements
+  as?: React.ElementType
   threshold?: number
   rootMargin?: string
 }
