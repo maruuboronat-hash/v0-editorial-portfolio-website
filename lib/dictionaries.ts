@@ -16,8 +16,12 @@
 
 export type Language = "es" | "en"
 
-// Estructura (forma) de un diccionario. Cada idioma debe cumplir este tipo.
-// Al agregar una sección nueva arriba, agregá su forma también acá.
+// ============================================================================
+//  ESTRUCTURA DEL DICCIONARIO
+// ============================================================================
+//  ACÁ DEFINÍS LA "FORMA" QUE TIENE QUE TENER EL DICCIONARIO.
+//  Si agregás una clave nueva más abajo, TENÉS QUE AGREGARLA ACÁ TAMBIÉN.
+// ============================================================================
 export type Dictionary = {
   nav: {
     home: string
@@ -26,24 +30,76 @@ export type Dictionary = {
     bio: string
     contacto: string
   }
+  home: {
+    titulo: string
+    subtitulo: string
+    descripcion: string
+    ver_proyectos: string
+  }
+  proyectos: {
+    titulo: string
+    descripcion: string
+    ver_todos: string
+    categorias: {
+      diseno_grafico: string
+      corporativo: string
+      indumentaria: string
+      personales: string
+    }
+  }
+  contacto: {
+    titulo: string
+    descripcion: string
+    nombre: string
+    email: string
+    mensaje: string
+    enviar: string
+  }
 }
 
+// ============================================================================
+//  TEXTO EN ESPAÑOL
+// ============================================================================
 export const dictionaries: Record<Language, Dictionary> = {
   es: {
     nav: {
-      home: "Home",
+      home: "Inicio",
       proyectos: "Proyectos",
       cv: "CV",
       bio: "Bio",
       contacto: "Contacto",
     },
-    // Agregá más secciones acá abajo, por ejemplo:
-    // home: {
-    //   titulo: "Diseño gráfico y comunicación",
-    //   subtitulo: "Portfolio de María Boronat",
-    // },
+    home: {
+      titulo: "María Boronat",
+      subtitulo: "Diseñadora gráfica y comunicadora visual",
+      descripcion:
+        "Exploro el diseño editorial, la ilustración y la comunicación corporativa.",
+      ver_proyectos: "Ver proyectos",
+    },
+    proyectos: {
+      titulo: "Proyectos",
+      descripcion: "Selección de trabajos destacados",
+      ver_todos: "Ver todos →",
+      categorias: {
+        diseno_grafico: "Diseño Gráfico",
+        corporativo: "Corporativo",
+        indumentaria: "Indumentaria e Ilustración",
+        personales: "Proyectos Personales",
+      },
+    },
+    contacto: {
+      titulo: "Contacto",
+      descripcion: "¿Tenés un proyecto en mente? ¡Hablemos!",
+      nombre: "Nombre",
+      email: "Email",
+      mensaje: "Mensaje",
+      enviar: "Enviar",
+    },
   },
 
+  // ============================================================================
+  //  TEXTO EN INGLÉS
+  // ============================================================================
   en: {
     nav: {
       home: "Home",
@@ -52,12 +108,36 @@ export const dictionaries: Record<Language, Dictionary> = {
       bio: "Bio",
       contacto: "Contact",
     },
-    // Add more sections here, for example:
-    // home: {
-    //   titulo: "Graphic design and communication",
-    //   subtitulo: "María Boronat's portfolio",
-    // },
+    home: {
+      titulo: "María Boronat",
+      subtitulo: "Graphic designer and visual communicator",
+      descripcion:
+        "I explore editorial design, illustration, and corporate communication.",
+      ver_proyectos: "View projects",
+    },
+    proyectos: {
+      titulo: "Projects",
+      descripcion: "Selection of featured work",
+      ver_todos: "View all →",
+      categorias: {
+        diseno_grafico: "Graphic Design",
+        corporativo: "Corporate",
+        indumentaria: "Fashion Design & Illustration",
+        personales: "Personal Projects",
+      },
+    },
+    contacto: {
+      titulo: "Contact",
+      descripcion: "Have a project in mind? Let's talk!",
+      nombre: "Name",
+      email: "Email",
+      mensaje: "Message",
+      enviar: "Send",
+    },
   },
 }
 
+// ============================================================================
+//  IDIOMA POR DEFECTO
+// ============================================================================
 export const DEFAULT_LANGUAGE: Language = "es"
