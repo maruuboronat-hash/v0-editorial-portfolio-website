@@ -1,12 +1,13 @@
-"use client"
-
 import { notFound } from "next/navigation"
 import { ContactSection } from "@/components/contact-section"
 import { CategoryContent } from "./category-content"
-import { useLanguage } from "@/components/language-provider"
 
-// Los datos de proyectos (títulos, imágenes, IDs) siguen acá
-const categoriesData = {
+// ============================================================
+//  DATOS DE PROYECTOS (SIN TRADUCCIONES - SOLO DATOS DUROS)
+// ============================================================
+const categoriesData: Record<string, {
+  projects: Array<{ id: string; title: string; image?: string }>
+}> = {
   "diseno-grafico": {
     projects: [
       { id: "libro-tecnico-manual", title: "Libro técnico editorial I Manual", image: "/images/diseno-grafico/tecnico/tecnico-01.jpg" },
@@ -54,42 +55,24 @@ const categoriesData = {
   },
 }
 
-// Mapeo de categorías a claves del diccionario
-const categoryMap: Record<string, string> = {
-  "diseno-grafico": "diseno_grafico",
-  "corporativo": "corporativo",
-  "indumentaria-ilustracion": "indumentaria",
-  "personales": "personales",
-  "edicion-video": "edicion_video",
-}
-
 type PageParams = Promise<{ category: string }>
 
-export default function CategoryPage({ params }: { params: PageParams }) {
-  const { category } = use(params)
-  const { t } = useLanguage()
-  
-  const categoryData = categoriesData[category as keyof typeof categoriesData]
+export default async function CategoryPage({ params }: { params: PageParams }) {
+  const { category } = await params
+  const categoryData = categoriesData[category]
 
   if (!categoryData) {
     notFound()
   }
 
-  // Obtener el título y descripción traducidos
-  const key = categoryMap[category] as keyof typeof t.categorias
-  const tituloTraducido = t.categorias[key]?.titulo || category
-  const descripcionTraducida = t.categorias[key]?.descripcion || ""
-
-  // Crear un objeto con los datos traducidos para CategoryContent
-  const dataConTraducciones = {
-    title: tituloTraducido,
-    description: descripcionTraducida,
-    projects: categoryData.projects,
-  }
-
   return (
     <div className="pt-24 min-h-screen">
-      <CategoryContent categoryData={dataConTraducciones} />
+      <CategoryContent 
+        categoryData={{
+          projects: categoryData.projects,
+          // No pasamos title ni description - CategoryContent los traduce solos
+        }} 
+      />
       <ContactSection />
     </div>
   )
