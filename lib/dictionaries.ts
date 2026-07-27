@@ -72,6 +72,9 @@ export type Dictionary = {
       titulo: string
     }
   }
+  herramientas: string
+  tambien_te_puede_gustar: string
+  volver_a: string
 }
 
 // ============================================================================
@@ -215,6 +218,9 @@ export const dictionaries: Record<Language, Dictionary> = {
         titulo: "Indumentaria",
       },
     },
+    herramientas: "HERRAMIENTAS UTILIZADAS",
+    tambien_te_puede_gustar: ":) También te puede gustar:",
+    volver_a: "Volver a",
   },
 
   // ============================================================================
@@ -357,6 +363,9 @@ export const dictionaries: Record<Language, Dictionary> = {
         titulo: "Fashion Design",
       },
     },
+    herramientas: "TOOLS USED",
+    tambien_te_puede_gustar: ":) You might also like:",
+    volver_a: "Back to",
   },
 }
 
