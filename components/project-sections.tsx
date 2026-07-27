@@ -4,6 +4,7 @@ import Link from "next/link"
 import { useState, useRef, useEffect } from "react"
 import Image from "next/image"
 import { cn } from "@/lib/utils"
+import { useLanguage } from "@/components/language-provider"
 
 /* =========================
    TYPES
@@ -19,7 +20,7 @@ export type SectionType =
   | { type: "video-embed"; src: string; caption?: string }
   | { type: "infinite-carousel"; images: Array<{ src: string; alt?: string; type?: "image" | "video" }>; speed?: number }
   | { type: "skills"; skills: string[] }
-  | { type: "tools"; tools: string[] }  // ← NUEVO TIPO
+  | { type: "tools"; tools: string[] }
 
 interface SectionProps {
   section: SectionType
@@ -167,11 +168,13 @@ export function InfiniteCarousel({ images }: { images: Array<{ src: string; alt?
 ========================= */
 
 export function SkillsSection({ section }: { section: Extract<SectionType, { type: "skills" }> }) {
+  const { t } = useLanguage()
+  
   return (
     <section className="w-full py-1">
       <div className="max-w-7xl mx-auto">
         <h3 className="text-xs font-heading uppercase tracking-widest text-muted-foreground mb-4">
-          Herramientas y tecnologías
+          {t.herramientas}
         </h3>
         <div className="flex flex-wrap gap-2">
           {section.skills.map((skill, index) => (
@@ -194,13 +197,15 @@ export function SkillsSection({ section }: { section: Extract<SectionType, { typ
 ========================= */
 
 export function ProjectTools({ tools }: { tools: string[] }) {
+  const { t } = useLanguage()
+  
   if (!tools || tools.length === 0) return null;
   
   return (
     <section className="w-full py-4">
       <div className="max-w-7xl mx-auto">
         <h3 className="text-xs font-heading uppercase tracking-widest text-muted-foreground mb-4">
-          Herramientas utilizadas
+          {t.herramientas}
         </h3>
         <div className="flex flex-wrap gap-2">
           {tools.map((tool, index) => (
@@ -426,7 +431,7 @@ export function ProjectSection({ section }: SectionProps) {
       return <InfiniteCarousel images={section.images} />
     case "skills":
       return <SkillsSection section={section} />
-    case "tools":  // ← NUEVO CASO
+    case "tools":
       return <ProjectTools tools={section.tools} />
     default:
       return null
