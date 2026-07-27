@@ -1,8 +1,12 @@
+"use client"
+
 import Link from "next/link"
 import { notFound } from "next/navigation"
 import Image from "next/image"
 import { ProjectSections, type SectionType } from "@/components/project-sections"
 import { ContactSection } from "@/components/contact-section"
+import { useLanguage } from "@/components/language-provider"
+import { useParams } from "next/navigation"
 
 // Project data with real content
 const projectsData: Record<string, {
@@ -21,12 +25,10 @@ const projectsData: Record<string, {
   description: "Proyecto editorial centrado en el diseño y maquetación integral de un libro técnico. El trabajo abarca la organización y jerarquización de contenidos, el desarrollo de una grilla editorial y la construcción de un sistema tipográfico que facilita la lectura y navegación de la información. El proyecto se completa con el diseño de la sobrecubierta, manteniendo una identidad visual coherente entre el interior y el exterior de la publicación.",
   image: "/images/diseno-grafico/tecnico/tecnico-01.jpg",
   sections: [
-    // ===== BOTÓN DE DESCARGA (estilo IDÉNTICO al CV) =====
     { 
       type: "text", 
       content: "<div class='mb-12'><a href='/images/diseno-grafico/tecnico/TecMariaBoronat.pdf' download class='group inline-flex items-center gap-2 rounded-full bg-brand px-5 py-2.5 text-xs uppercase tracking-widest text-brand-foreground transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg'>Descargar proyecto completo <span class='transition-transform duration-300 group-hover:translate-y-0.5'>&darr;</span></a></div>"
     },
-    // ===== HERRAMIENTAS UTILIZADAS =====
     { 
       type: "tools", 
       tools: [
@@ -35,7 +37,6 @@ const projectsData: Record<string, {
         "Illustrator"
       ] 
     },
-    // ===== IMÁGENES DEL PROYECTO =====
     { type: "single-column-stack", images: [
       { src: "/images/diseno-grafico/tecnico/tecnico-01.jpg", alt: "Libro técnico 1" },
       { src: "/images/diseno-grafico/tecnico/tecnico-02.jpg", alt: "Libro técnico 2" },
@@ -45,7 +46,6 @@ const projectsData: Record<string, {
   ],
 },
   
-  
   "diario-oasis": {
   title: "Periódico de Oasis I Backstage Times",
   category: "Diseño Gráfico",
@@ -53,7 +53,6 @@ const projectsData: Record<string, {
   description: "Proyecto editorial que combina investigación visual, narrativa y diseño gráfico. Desarrollado como un periódico musical inspirada en la banda británica Oasis, explora su historia, estética y legado cultural a través de recursos editoriales, tipográficos y fotográficos. El enfoque está puesto en la dirección de arte, la grilla editorial y la construcción de una identidad visual coherente con el universo de la banda.",
   image: "/images/diseno-grafico/oasis/oasis-02.jpg",
   sections: [
-    // ===== HERRAMIENTAS UTILIZADAS =====
     { 
       type: "tools", 
       tools: [
@@ -62,7 +61,6 @@ const projectsData: Record<string, {
         "Illustrator"
       ] 
     },
-    // ===== IMÁGENES DEL PROYECTO =====
     { type: "single-column-stack", images: [
       { src: "/images/diseno-grafico/oasis/oasis-01.jpg", alt: "Diario Oasis 1" },
       { src: "/images/diseno-grafico/oasis/oasis-02.jpg", alt: "Diario Oasis 2" },
@@ -81,7 +79,6 @@ const projectsData: Record<string, {
   description: "Proyecto editorial que toma como punto de partida la identidad del Museo Colección Amalia Lacroze de Fortabat. Desarrollado como un sistema de revistas institucionales, aborda tres exposiciones diferentes a través de recursos editoriales, tipográficos y fotográficos. El foco está puesto en construir una narrativa visual coherente, organizada mediante una grilla editorial, y en desarrollar una identidad gráfica que dialogue con el carácter, el patrimonio y la estética contemporánea del museo.",
   image: "/images/diseno-grafico/revistas-fortabat/portada.jpg",
   sections: [
-    // ===== HERRAMIENTAS UTILIZADAS =====
     { 
       type: "tools", 
       tools: [
@@ -90,8 +87,6 @@ const projectsData: Record<string, {
         "Illustrator"
       ] 
     },
-    
-    // ===== REVISTA 1: EDUARDO ESTUPÍA =====
     { 
       type: "text", 
       title: "Revista - Eduardo Estupía", 
@@ -108,8 +103,6 @@ const projectsData: Record<string, {
         { src: "/images/diseno-grafico/revistas-editorial/stupia/7_Mockup_Stupia.jpg", alt: "Eduardo Estupía 7" },
       ]
     },
-    
-    // ===== REVISTA 2: JULIO LE PARC =====
     { 
       type: "text", 
       title: "Revista - Julio Le Parc", 
@@ -135,8 +128,6 @@ const projectsData: Record<string, {
         { src: "/images/diseno-grafico/revistas-editorial/leparc/16_Mockup_LeParc.jpg", alt: "Julio Le Parc 16" },
       ]
     },
-    
-    // ===== REVISTA 3: ARIADNA PASTORINI =====
     { 
       type: "text", 
       title: "Revista - Ariadna Pastorini", 
@@ -163,7 +154,6 @@ const projectsData: Record<string, {
   description: "Proyecto editorial y audiovisual desarrollado a partir de la creación de un fanzine narrativo sobre la infancia. La propuesta toma la forma del diario íntimo de una niña, donde recuerdos, dibujos y fotografías construyen un diálogo constante entre su mirada infantil y su voz adulta. El universo del fanzine se expande hacia una pieza audiovisual animada, concebida como un tráiler de la historia, y una serie de tres historias para Instagram que trasladan la narrativa a nuevos formatos.",
   image: "/images/diseno-grafico/fanzine/fanzine-01.jpg",
   sections: [
-    // ===== HERRAMIENTAS UTILIZADAS =====
     { 
       type: "tools", 
       tools: [
@@ -174,7 +164,6 @@ const projectsData: Record<string, {
         "After Effects"
       ] 
     },
-    // ===== IMÁGENES DEL FANZINE =====
     { type: "single-column-stack", images: [
       { src: "/images/diseno-grafico/fanzine/fanzine-01.jpg", alt: "Fanzine infancia 1" },
       { src: "/images/diseno-grafico/fanzine/fanzine-02.jpg", alt: "Fanzine infancia 2" },
@@ -185,7 +174,6 @@ const projectsData: Record<string, {
       { src: "/images/diseno-grafico/fanzine/fanzine-07.jpg", alt: "Fanzine infancia 7" },
       { src: "/images/diseno-grafico/fanzine/fanzine-08.jpg", alt: "Fanzine infancia 8" },
     ]},
-    // ===== VIDEOS (uno abajo del otro) =====
     { 
       type: "single-column-stack", 
       images: [
@@ -535,7 +523,6 @@ const projectsData: Record<string, {
   image: "/images/corporativo/logos/portadas-logos-05.jpg",
   description: "Durante mi pasantía en Bosch Mobility Aftermarket Argentina formé parte del equipo de Marketing y Comunicación, participando en el desarrollo e implementación de comunicación comercial y de marca para distintas unidades de negocio.\n\nMi trabajo abarcó desde la promoción de productos y servicios hasta el acompañamiento estratégico, integrando diseño gráfico, coherencia de identidad visual y objetivos comerciales. Intervine en múltiples soportes y formatos, adaptando lineamientos globales a necesidades locales y colaborando con distintas áreas para asegurar una comunicación clara, consistente y orientada a resultados.\n\nAdemás del desarrollo creativo, asumí responsabilidades vinculadas a la coordinación con proveedores y equipos regionales, así como soporte en procesos administrativos y organización de eventos internos y externos.",
   sections: [
-    // ===== HABILIDADES GENERALES =====
     { 
       type: "skills", 
       skills: [
@@ -553,7 +540,6 @@ const projectsData: Record<string, {
       ] 
     },
 
-    // ===== 1. YOUNG TALENTS =====
     { 
       type: "text", 
       title: "Young Talents – Automatización de pedidos y control de stock", 
@@ -570,7 +556,6 @@ const projectsData: Record<string, {
       ]
     },
 
-    // ===== 2. DISEÑO DE CARTELERÍA EN VÍA PÚBLICA =====
     { 
       type: "text", 
       title: "Diseño de cartelería en vía pública", 
@@ -590,7 +575,6 @@ const projectsData: Record<string, {
       ]
     },
 
-    // ===== 3. MERCHANDISING & MATERIALES PROMOCIONALES =====
     { 
       type: "text", 
       title: "Merchandising & Materiales Promocionales", 
@@ -619,7 +603,6 @@ const projectsData: Record<string, {
       ]
     },
 
-    // ===== 4. ASESORAMIENTO Y DISEÑO PARA TALLERES MECÁNICOS =====
     { 
       type: "text", 
       title: "Asesoramiento y diseño para talleres mecánicos", 
@@ -643,7 +626,6 @@ const projectsData: Record<string, {
       ]
     },
 
-    // ===== 5. COMUNICACIÓN COMERCIAL & MARCA =====
     { 
       type: "text", 
       title: "Comunicación Comercial & Marca", 
@@ -663,7 +645,6 @@ const projectsData: Record<string, {
       ]
     },
 
-    // ===== 6. GESTIÓN Y SOPORTE OPERATIVO =====
     { 
       type: "text", 
       title: "Gestión y Soporte Operativo", 
@@ -694,17 +675,6 @@ const projectsData: Record<string, {
       }
     ]
   },
-  
-  // "cantiere": {
-  //   title: "Cantiere SA",
-  //   category: "Corporativo",
-  //   categorySlug: "corporativo",
-  //   image: "/images/corporativo/logos/portadas-logos-02.jpg",
-  //   description: "Diseño y desarrollo de la página web corporativa para Cantiere SA.",
-  //   sections: [
-  //     // PROYECTO DESACTIVADO - se mostrará en el futuro
-  //   ]
-  // },
 
   // INDUMENTARIA E ILUSTRACIÓN projects
  "coleccion-portuguese": {
@@ -860,7 +830,7 @@ const projectsData: Record<string, {
       }
     ]
   },
-} // ← CIERRE DEL OBJETO projectsData
+}
 
 // Get all projects in a category for "También te puede gustar" section
 function getRelatedProjects(currentId: string, categorySlug: string) {
@@ -878,10 +848,10 @@ function getProject(id: string) {
   return projectsData[id] || null
 }
 
-type PageParams = Promise<{ id: string }>
-
-export default async function ProjectPage({ params }: { params: PageParams }) {
-  const { id } = await params
+export default function ProjectPage() {
+  const { t } = useLanguage()
+  const params = useParams()
+  const id = params.id as string
   const project = getProject(id)
 
   if (!project) {
@@ -889,6 +859,9 @@ export default async function ProjectPage({ params }: { params: PageParams }) {
   }
 
   const relatedProjects = getRelatedProjects(id, project.categorySlug)
+
+  // Obtener el título traducido del proyecto
+  const tituloTraducido = t.proyectos_detalle?.[id]?.titulo || project.title
 
   return (
     <article className="pt-24 pb-24 min-h-screen">
@@ -903,7 +876,7 @@ export default async function ProjectPage({ params }: { params: PageParams }) {
           </Link>
           
           <h1 className="font-heading text-3xl md:text-5xl lg:text-6xl tracking-tight mb-8">
-            {project.title}
+            {tituloTraducido}
           </h1>
           
           <p className="text-base md:text-lg leading-relaxed text-muted-foreground">
