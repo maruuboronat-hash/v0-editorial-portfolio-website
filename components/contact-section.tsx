@@ -2,26 +2,28 @@
 
 import React from "react"
 import { ScrollReveal } from "@/hooks/use-scroll-reveal"
+import { useLanguage } from "@/components/language-provider"
 
 export function ContactSection() {
+  const { t } = useLanguage()
+  
   return (
     <ScrollReveal as="section" className="py-20 md:py-28 px-6 md:px-12">
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
-          {/* Contact Info */}
-          <div className="scroll-reveal-child lg:col-span-2"> {/* Cambiado a col-span-2 para centrar */}
+          <div className="scroll-reveal-child lg:col-span-2">
             <h2 className="font-heading text-3xl md:text-4xl tracking-tight mb-8 text-center">
-              Contacto
+              {t.contacto.titulo}
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-12 text-center max-w-2xl mx-auto">
-              ¿Conectamos?
+              {t.contacto.descripcion}
             </p>
 
             <div className="max-w-2xl mx-auto rounded-2xl border border-border bg-card p-8 md:p-12 space-y-8">
               {/* EMAIL */}
               <div className="text-center">
                 <span className="text-xs uppercase tracking-widest text-muted-foreground block mb-2">
-                  Email
+                  {t.contacto.email}
                 </span>
                 <a 
                   href="mailto:maruuboronat@gmail.com" 
@@ -36,7 +38,7 @@ export function ContactSection() {
               {/* TELÉFONO */}
               <div className="text-center">
                 <span className="text-xs uppercase tracking-widest text-muted-foreground block mb-2">
-                  Teléfono
+                  {t.contacto.telefono}
                 </span>
                 <a 
                   href="tel:+541159729469"
@@ -51,7 +53,7 @@ export function ContactSection() {
               {/* UBICACIÓN */}
               <div className="text-center">
                 <span className="text-xs uppercase tracking-widest text-muted-foreground block mb-2">
-                  Ubicación
+                  {t.contacto.ubicacion}
                 </span>
                 <p className="text-lg">Buenos Aires, Argentina</p>
               </div>
@@ -59,7 +61,7 @@ export function ContactSection() {
               {/* REDES SOCIALES */}
               <div className="text-center pt-4">
                 <span className="text-xs uppercase tracking-widest text-muted-foreground block mb-4">
-                  Redes
+                  {t.contacto.redes}
                 </span>
                 <div className="flex flex-wrap justify-center gap-6 text-sm">
                   <a 
