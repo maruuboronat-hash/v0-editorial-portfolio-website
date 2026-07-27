@@ -1,4 +1,7 @@
-import Image from "next/image"
+"use client"
+
+import { ContactSection } from "@/components/contact-section"
+import { useLanguage } from "@/components/language-provider"
 
 const experience = [
   {
@@ -91,7 +94,6 @@ const skills = [
   "- Mailing",
 ]
 
-// HERRAMIENTAS (separadas individualmente)
 const tools = {
   design: [
     "Photoshop",
@@ -129,15 +131,17 @@ const awards = [
 ]
 
 export default function CVPage() {
+  const { t } = useLanguage()
+
   return (
     <div className="pt-24 pb-24 px-6 md:px-12 min-h-screen">
       <div className="max-w-6xl mx-auto">
         <header className="mb-16 md:mb-24">
           <h1 className="font-heading text-4xl md:text-6xl tracking-tight mb-6">
-            CV · María Boronat 
+            {t.nav.cv} · María Boronat 
           </h1>
           <p className="text-muted-foreground max-w-3xl leading-relaxed">
-            {"Diseñadora gráfica y comunicadora visual con perfil híbrido que combina creatividad, pensamiento estratégico y herramientas tecnológicas. Con experiencia en entornos corporativos internacionales, manejo integral de identidad de marca y capacidad para automatizar procesos creativos y operativos. Orientada a resultados, con iniciativa propia, aprendizaje autónomo y habilidades para adaptarse a equipos multidisciplinarios en contextos dinámicos."}
+            {t.cv?.descripcion || "Diseñadora gráfica y comunicadora visual con perfil híbrido que combina creatividad, pensamiento estratégico y herramientas tecnológicas. Con experiencia en entornos corporativos internacionales, manejo integral de identidad de marca y capacidad para automatizar procesos creativos y operativos. Orientada a resultados, con iniciativa propia, aprendizaje autónomo y habilidades para adaptarse a equipos multidisciplinarios en contextos dinámicos."}
           </p>
         </header>
 
@@ -148,7 +152,7 @@ export default function CVPage() {
             <section>
               <h2 className="font-heading text-xs uppercase tracking-widest text-muted-foreground mb-8 flex items-center gap-2">
                 <span className="h-3 w-1 rounded-full bg-brand" />
-                Experiencia Laboral
+                {t.cv?.experiencia || "Experiencia Laboral"}
               </h2>
               <div className="space-y-12">
                 {experience.map((item, index) => (
@@ -172,7 +176,7 @@ export default function CVPage() {
             <section>
               <h2 className="font-heading text-xs uppercase tracking-widest text-muted-foreground mb-8 flex items-center gap-2">
                 <span className="h-3 w-1 rounded-full bg-brand" />
-                Educación
+                {t.cv?.educacion || "Educación"}
               </h2>
               <div className="space-y-8">
                 {education.map((item, index) => (
@@ -193,7 +197,7 @@ export default function CVPage() {
             <section>
               <h2 className="font-heading text-xs uppercase tracking-widest text-muted-foreground mb-8 flex items-center gap-2">
                 <span className="h-3 w-1 rounded-full bg-brand" />
-                CURSOS
+                {t.cv?.cursos || "CURSOS"}
               </h2>
               <div className="space-y-4">
                 {awards.map((item, index) => (
@@ -215,12 +219,11 @@ export default function CVPage() {
             {/* SECCIÓN 1: HERRAMIENTAS */}
             <section>
               <h2 className="font-heading text-xs uppercase tracking-widest text-muted-foreground mb-4 flex items-center gap-2"><span className="h-3 w-1 rounded-full bg-brand" />
-                Herramientas
+                {t.cv?.herramientas || "Herramientas"}
               </h2>
               
-              {/* Diseño & Creatividad */}
               <div className="mb-4">
-                <h3 className="text-xs font-medium text-foreground mb-2">Diseño & Creatividad</h3>
+                <h3 className="text-xs font-medium text-foreground mb-2">{t.cv?.diseno_creatividad || "Diseño & Creatividad"}</h3>
                 <div className="flex flex-wrap gap-2">
                   {tools.design.map((tool) => (
                     <span
@@ -233,9 +236,8 @@ export default function CVPage() {
                 </div>
               </div>
 
-              {/* Productividad */}
               <div className="mb-4">
-                <h3 className="text-xs font-medium text-foreground mb-2">Productividad</h3>
+                <h3 className="text-xs font-medium text-foreground mb-2">{t.cv?.productividad || "Productividad"}</h3>
                 <div className="flex flex-wrap gap-2">
                   {tools.productivity.map((tool) => (
                     <span
@@ -248,9 +250,8 @@ export default function CVPage() {
                 </div>
               </div>
 
-              {/* Desarrollo & Prototipado */}
               <div>
-                <h3 className="text-xs font-medium text-foreground mb-2">Desarrollo & Prototipado</h3>
+                <h3 className="text-xs font-medium text-foreground mb-2">{t.cv?.desarrollo || "Desarrollo & Prototipado"}</h3>
                 <div className="flex flex-wrap gap-2">
                   {tools.development.map((tool) => (
                     <span
@@ -267,20 +268,20 @@ export default function CVPage() {
             {/* SECCIÓN 2: IDIOMAS */}
             <section>
               <h2 className="font-heading text-xs uppercase tracking-widest text-muted-foreground mb-4 flex items-center gap-2"><span className="h-3 w-1 rounded-full bg-brand" />
-                Idiomas
+                {t.cv?.idiomas || "Idiomas"}
               </h2>
               <div className="space-y-2 text-sm">
                 <div className="flex justify-between">
-                  <span>Español</span>
-                  <span className="text-muted-foreground">Nativo</span>
+                  <span>{t.cv?.espanol || "Español"}</span>
+                  <span className="text-muted-foreground">{t.cv?.nativo || "Nativo"}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span>Inglés</span>
-                  <span className="text-muted-foreground">Avanzado</span>
+                  <span>{t.cv?.ingles || "Inglés"}</span>
+                  <span className="text-muted-foreground">{t.cv?.avanzado || "Avanzado"}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span>Italiano</span>
-                  <span className="text-muted-foreground">Básico</span>
+                  <span>{t.cv?.italiano || "Italiano"}</span>
+                  <span className="text-muted-foreground">{t.cv?.basico || "Básico"}</span>
                 </div>
               </div>
             </section>
@@ -288,7 +289,7 @@ export default function CVPage() {
             {/* SECCIÓN 3: HABILIDADES */}
             <section>
               <h2 className="font-heading text-xs uppercase tracking-widest text-muted-foreground mb-4 flex items-center gap-2"><span className="h-3 w-1 rounded-full bg-brand" />
-                Habilidades
+                {t.cv?.habilidades || "Habilidades"}
               </h2>
               <div className="space-y-1">
                 {skills.map((skill) => (
@@ -302,20 +303,22 @@ export default function CVPage() {
             {/* SECCIÓN 4: DESCARGAR */}
             <section>
               <h2 className="font-heading text-xs uppercase tracking-widest text-muted-foreground mb-4 flex items-center gap-2"><span className="h-3 w-1 rounded-full bg-brand" />
-                Descargar
+                {t.cv?.descargar || "Descargar"}
               </h2>
               <a
                 href="/images/CV/CV_MariaBoronat.pdf"
                 download
                 className="group inline-flex items-center gap-2 rounded-full bg-brand px-5 py-2.5 text-xs uppercase tracking-widest text-brand-foreground transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg"
               >
-                CV en PDF
+                {t.cv?.cv_pdf || "CV en PDF"}
                 <span className="transition-transform duration-300 group-hover:translate-y-0.5">&darr;</span>
               </a>
             </section>
           </aside>
         </div>
       </div>
+
+      <ContactSection />
     </div>
   )
 }
