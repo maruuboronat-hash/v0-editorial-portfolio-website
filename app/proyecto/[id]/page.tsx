@@ -872,7 +872,7 @@ export default function ProjectPage() {
             href={`/proyectos/${project.categorySlug}`}
             className="group text-xs uppercase tracking-widest text-muted-foreground hover:text-brand transition-colors mb-8 inline-flex items-center gap-1.5"
           >
-            <span className="transition-transform duration-300 group-hover:-translate-x-1">&larr;</span> {project.category}
+            <span className="transition-transform duration-300 group-hover:-translate-x-1">&larr;</span> {t.volver_a} {project.category}
           </Link>
           
           <h1 className="font-heading text-3xl md:text-5xl lg:text-6xl tracking-tight mb-8">
@@ -896,39 +896,43 @@ export default function ProjectPage() {
         <section className="px-6 md:px-12 mt-24 pt-16 border-t border-border">
           <div className="max-w-6xl mx-auto">
             <h2 className="font-heading text-lg mb-12">
-              :) También te puede gustar:
+              {t.tambien_te_puede_gustar}
             </h2>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-border">
-              {relatedProjects.map((relatedProject) => (
-                <Link
-                  key={relatedProject.id}
-                  href={`/proyecto/${relatedProject.id}`}
-                  className="group bg-background"
-                >
-                  <div className="aspect-[4/3] bg-muted relative overflow-hidden">
-                    {relatedProject.image ? (
-                      <Image
-                        src={relatedProject.image}
-                        alt={relatedProject.title}
-                        fill
-                        className="object-cover"
-                        sizes="(max-width: 768px) 50vw, 33vw"
-                      />
-                    ) : (
-                      <div className="absolute inset-0 flex items-center justify-center text-muted-foreground text-xs uppercase tracking-widest opacity-30">
-                        {relatedProject.title}
-                      </div>
-                    )}
-                    <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/5 transition-colors" />
-                  </div>
-                  <div className="p-6 border-t border-border">
-                    <h3 className="font-heading text-xl group-hover:underline underline-offset-4">
-                      {relatedProject.title}
-                    </h3>
-                  </div>
-                </Link>
-              ))}
+              {relatedProjects.map((relatedProject) => {
+                const tituloRelacionado = t.proyectos_detalle?.[relatedProject.id]?.titulo || relatedProject.title
+                
+                return (
+                  <Link
+                    key={relatedProject.id}
+                    href={`/proyecto/${relatedProject.id}`}
+                    className="group bg-background"
+                  >
+                    <div className="aspect-[4/3] bg-muted relative overflow-hidden">
+                      {relatedProject.image ? (
+                        <Image
+                          src={relatedProject.image}
+                          alt={tituloRelacionado}
+                          fill
+                          className="object-cover"
+                          sizes="(max-width: 768px) 50vw, 33vw"
+                        />
+                      ) : (
+                        <div className="absolute inset-0 flex items-center justify-center text-muted-foreground text-xs uppercase tracking-widest opacity-30">
+                          {tituloRelacionado}
+                        </div>
+                      )}
+                      <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/5 transition-colors" />
+                    </div>
+                    <div className="p-6 border-t border-border">
+                      <h3 className="font-heading text-xl group-hover:underline underline-offset-4">
+                        {tituloRelacionado}
+                      </h3>
+                    </div>
+                  </Link>
+                )
+              })}
             </div>
           </div>
         </section>
