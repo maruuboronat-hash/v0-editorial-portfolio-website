@@ -60,7 +60,9 @@ export type Dictionary = {
   bio: {
     texto1: string
     texto2: string
-    leer_mas: string
+    texto3: string
+    texto4: string
+    ver_cv: string
   }
   video: {
     titulo: string
@@ -75,6 +77,26 @@ export type Dictionary = {
   herramientas: string
   tambien_te_puede_gustar: string
   volver_a: string
+  cv: {
+    descripcion: string
+    experiencia: string
+    educacion: string
+    cursos: string
+    herramientas: string
+    diseno_creatividad: string
+    productividad: string
+    desarrollo: string
+    idiomas: string
+    espanol: string
+    ingles: string
+    italiano: string
+    nativo: string
+    avanzado: string
+    basico: string
+    habilidades: string
+    descargar: string
+    cv_pdf: string
+  }
 }
 
 // ============================================================================
@@ -130,9 +152,11 @@ export const dictionaries: Record<Language, Dictionary> = {
       redes: "Redes",
     },
     bio: {
-      texto1: "Estudiante de Diseño Gráfico y Comunicación en UCES.",
-      texto2: "Algunos sienten pasión por un artista, un famoso o un deporte. Hace poco me preguntaron cuál era la mía, y no supe qué responder. Me quedé pensando, hasta que entendí que mi pasión es lo que hago.",
-      leer_mas: "Leer más →",
+      texto1: "Dicen que cuando no tenes experiencia, hay que mostrar los trabajos que tengas, aunque no te encanten. Y yo me lo tome literal.",
+      texto2: "Estos son algunos de mis primeros proyectos: algo hecho en Microsoft Paint en 2011, lienzo y acrilico en 2013, y Procreate en 2024.",
+      texto3: "Algunos sienten pasion por un artista, un famoso o un deporte. Hace poco me preguntaron cual era la mia, y no supe que responder. Me quede pensando, hasta que entendi que mi pasion es lo que hago.",
+      texto4: "Desde chica siempre me gusto crear: armar piezas de todo tipo, editar fotos de amigos, mirar Art Attack todos los dias o sacar fotos cada vez que podia. Mi vida siempre estuvo atravesada por el diseno, de distintas formas. Cualquier excusa para disenar —aunque no lo sabia— era, para mi, el mejor favor que me podian pedir.",
+      ver_cv: "Ver currículum completo",
     },
     video: {
       titulo: "Mini presentación",
@@ -243,6 +267,26 @@ export const dictionaries: Record<Language, Dictionary> = {
     herramientas: "HERRAMIENTAS UTILIZADAS",
     tambien_te_puede_gustar: ":) También te puede gustar:",
     volver_a: "Volver a",
+    cv: {
+      descripcion: "Diseñadora gráfica y comunicadora visual con perfil híbrido que combina creatividad, pensamiento estratégico y herramientas tecnológicas. Con experiencia en entornos corporativos internacionales, manejo integral de identidad de marca y capacidad para automatizar procesos creativos y operativos. Orientada a resultados, con iniciativa propia, aprendizaje autónomo y habilidades para adaptarse a equipos multidisciplinarios en contextos dinámicos.",
+      experiencia: "Experiencia Laboral",
+      educacion: "Educación",
+      cursos: "CURSOS",
+      herramientas: "Herramientas",
+      diseno_creatividad: "Diseño & Creatividad",
+      productividad: "Productividad",
+      desarrollo: "Desarrollo & Prototipado",
+      idiomas: "Idiomas",
+      espanol: "Español",
+      ingles: "Inglés",
+      italiano: "Italiano",
+      nativo: "Nativo",
+      avanzado: "Avanzado",
+      basico: "Básico",
+      habilidades: "Habilidades",
+      descargar: "Descargar",
+      cv_pdf: "CV en PDF",
+    },
   },
 
   // ============================================================================
@@ -297,9 +341,11 @@ export const dictionaries: Record<Language, Dictionary> = {
       redes: "Social",
     },
     bio: {
-      texto1: "Graphic Design and Communication student at UCES.",
-      texto2: "Some people feel passion for an artist, a celebrity, or a sport. Recently I was asked what mine was, and I didn't know what to answer. I kept thinking, until I understood that my passion is what I do.",
-      leer_mas: "Read more →",
+      texto1: "They say that when you don't have experience, you should show whatever work you have, even if you're not proud of it. And I took it literally.",
+      texto2: "These are some of my first projects: something made in Microsoft Paint in 2011, canvas and acrylic in 2013, and Procreate in 2024.",
+      texto3: "Some people feel passion for an artist, a celebrity, or a sport. Recently I was asked what mine was, and I didn't know what to answer. I kept thinking, until I understood that my passion is what I do.",
+      texto4: "Since I was a child, I've always loved creating: building all kinds of pieces, editing friends' photos, watching Art Attack every day, or taking photos whenever I could. My life has always been crossed by design, in different ways. Any excuse to design —even if I didn't know it— was, for me, the best favor anyone could ask of me.",
+      ver_cv: "View full CV",
     },
     video: {
       titulo: "Mini presentation",
@@ -410,6 +456,26 @@ export const dictionaries: Record<Language, Dictionary> = {
     herramientas: "TOOLS USED",
     tambien_te_puede_gustar: ":) You might also like:",
     volver_a: "Back to",
+    cv: {
+      descripcion: "Graphic designer and visual communicator with a hybrid profile combining creativity, strategic thinking, and technological tools. Experienced in international corporate environments, with comprehensive brand identity management and the ability to automate creative and operational processes. Results-oriented, with initiative, autonomous learning, and skills to adapt to multidisciplinary teams in dynamic contexts.",
+      experiencia: "Work Experience",
+      educacion: "Education",
+      cursos: "COURSES",
+      herramientas: "Tools",
+      diseno_creatividad: "Design & Creativity",
+      productividad: "Productivity",
+      desarrollo: "Development & Prototyping",
+      idiomas: "Languages",
+      espanol: "Spanish",
+      ingles: "English",
+      italiano: "Italian",
+      nativo: "Native",
+      avanzado: "Advanced",
+      basico: "Basic",
+      habilidades: "Skills",
+      descargar: "Download",
+      cv_pdf: "CV PDF",
+    },
   },
 }
 
