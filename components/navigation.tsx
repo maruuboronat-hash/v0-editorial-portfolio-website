@@ -5,6 +5,28 @@ import { usePathname } from "next/navigation"
 import { useEffect, useState } from "react"
 import { useTheme } from "next-themes"
 import { Moon, Sun } from "lucide-react"
+import { useLanguage } from "@/components/language-provider"
+
+function LanguageToggle() {
+  const { lang, toggleLang } = useLanguage()
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => setMounted(true), [])
+
+  // El próximo idioma es el que se activará al hacer click.
+  const nextLang = lang === "es" ? "en" : "es"
+
+  return (
+    <button
+      type="button"
+      aria-label={nextLang === "en" ? "Switch to English" : "Cambiar a español"}
+      onClick={toggleLang}
+      className="flex h-9 min-w-9 items-center justify-center rounded-full border border-border px-3 font-heading text-xs uppercase tracking-widest text-foreground transition-colors hover:border-brand hover:text-brand"
+    >
+      {mounted ? lang.toUpperCase() : <span className="h-4 w-4" />}
+    </button>
+  )
+}
 
 function ThemeToggle() {
   const { resolvedTheme, setTheme } = useTheme()
@@ -30,13 +52,14 @@ function ThemeToggle() {
   )
 }
 
+// "key" apunta a la entrada correspondiente en dictionaries[lang].nav
 const navItems = [
-  { href: "/", label: "Home" },
-  { href: "/proyectos", label: "Proyectos" },
-  { href: "/cv", label: "CV" },
-  { href: "/bio", label: "Bio" },
-  { href: "/contacto", label: "Contacto" },
-]
+  { href: "/", key: "home" },
+  { href: "/proyectos", key: "proyectos" },
+  { href: "/cv", key: "cv" },
+  { href: "/bio", key: "bio" },
+  { href: "/contacto", key: "contacto" },
+] as const
 
 function BuenosAiresClock() {
   const [time, setTime] = useState<string>("")
@@ -69,6 +92,7 @@ function BuenosAiresClock() {
 export function Navigation() {
   const pathname = usePathname()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const { t } = useLanguage()
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-sm">
@@ -94,7 +118,7 @@ export function Navigation() {
                 {pathname === item.href && (
                   <span className="h-1.5 w-1.5 rounded-full bg-brand" />
                 )}
-                {item.label}
+                {t.nav[item.key]}
               </span>
             </Link>
           ))}
@@ -104,11 +128,13 @@ export function Navigation() {
         <div className="hidden md:flex items-center gap-5">
           <BuenosAiresClock />
           <ThemeToggle />
+          <LanguageToggle />
         </div>
 
         {/* Móvil: toggle + hamburguesa */}
         <div className="flex items-center gap-3 md:hidden">
         <ThemeToggle />
+        <LanguageToggle />
         <button 
           className="text-foreground"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -135,7 +161,7 @@ export function Navigation() {
                   }`}
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  {item.label}
+                  {t.nav[item.key]}
                 </Link>
               ))}
               <div className="mt-2">
