@@ -14,55 +14,109 @@ const categoryMap: Record<string, string> = {
   "edicion-video": "edicion_video",
 }
 
+interface Project {
+  id: string
+  title: string
+  image?: string
+}
+
+interface Empresa {
+  id: string
+  nombre: string
+  imagen: string
+  descripcion?: string
+  categorias?: Array<{
+    subtitulo: string
+    imagenes: string[]
+  }>
+}
+
 interface CategoryContentProps {
   categoryData: {
     title?: string
     description?: string
-    projects?: Array<{ id: string; title: string; image?: string }>
+    projects?: Array<Project>
+    empresas?: Array<Empresa>
   }
 }
 
 export function CategoryContent({ categoryData }: CategoryContentProps) {
   const { t } = useLanguage()
 
-  // Obtener la clave de la categoría actual (usando la URL)
-  // Como no tenemos acceso a la URL directamente, usamos categoryData.title
-  // para determinar qué categoría es
-  let categoryKey = ""
+  // ========== CASO CORPORATIVO (con empresas) ==========
+  if (categoryData.empresas) {
+    // Por ahora, mostramos un mensaje simple
+    // (la lógica completa de corporativo está en otra parte)
+    return (
+      <>
+        <ScrollReveal as="header" className="px-6 md:px-12 mb-16">
+          <div className="max-w-6xl mx-auto">
+            <Link
+              href="/proyectos"
+              className="group scroll-reveal-child text-xs uppercase tracking-widest text-muted-foreground hover:text-brand transition-colors mb-8 inline-flex items-center gap-1.5"
+            >
+              <span className="transition-transform duration-300 group-hover:-translate-x-1">&larr;</span> {t.nav.proyectos}
+            </Link>
+            <h1 className="scroll-reveal-child font-heading text-4xl md:text-6xl tracking-tight mb-6">
+              {t.categorias.corporativo.titulo}
+            </h1>
+            <p className="scroll-reveal-child text-base md:text-lg text-muted-foreground max-w-3xl leading-relaxed">
+              {t.categorias.corporativo.descripcion}
+            </p>
+          </div>
+        </ScrollReveal>
 
-  // Buscar qué categoría coincide con el título recibido
-  for (const [urlKey, dictKey] of Object.entries(categoryMap)) {
-    if (categoryData.title === t.categorias[dictKey as keyof typeof t.categorias]?.titulo) {
-      categoryKey = dictKey
-      break
-    }
+        <ScrollReveal as="section" className="px-6 md:px-12 pb-20">
+          <div className="max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {categoryData.empresas.map((empresa) => (
+                <div
+                  key={empresa.id}
+                  className="group bg-background text-left w-full overflow-hidden rounded-xl hover:shadow-lg transition-shadow duration-300"
+                >
+                  <div className="aspect-[4/3] bg-muted relative overflow-hidden">
+                    <Image
+                      src={empresa.imagen}
+                      alt={empresa.nombre}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    />
+                    <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/5 transition-colors duration-500" />
+                  </div>
+                  
+                  <div className="p-6">
+                    <h2 className="font-heading text-xl md:text-2xl group-hover:opacity-70 transition-opacity mb-2">
+                      {empresa.nombre}
+                    </h2>
+                    {empresa.descripcion && (
+                      <p className="text-sm text-muted-foreground leading-relaxed">
+                        {empresa.descripcion}
+                      </p>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </ScrollReveal>
+      </>
+    )
   }
 
-  // Si no se encontró por título, intentar por descripción
-  if (!categoryKey) {
-    for (const [urlKey, dictKey] of Object.entries(categoryMap)) {
-      if (categoryData.description === t.categorias[dictKey as keyof typeof t.categorias]?.descripcion) {
+  // ========== CASO NORMAL (con projects) ==========
+  // Obtener la clave de la categoría actual
+  let categoryKey = "diseno_grafico"
+  
+  // Intentar encontrar la categoría por título o descripción
+  for (const [urlKey, dictKey] of Object.entries(categoryMap)) {
+    const dictData = t.categorias[dictKey as keyof typeof t.categorias]
+    if (dictData) {
+      if (categoryData.title === dictData.titulo || categoryData.description === dictData.descripcion) {
         categoryKey = dictKey
         break
       }
     }
-  }
-
-  // Si todavía no se encontró, usar el primer proyecto para inferir
-  if (!categoryKey && categoryData.projects && categoryData.projects.length > 0) {
-    const projectId = categoryData.projects[0].id
-    // Buscar en qué categoría está este proyecto
-    for (const [urlKey, dictKey] of Object.entries(categoryMap)) {
-      // Esto es una heurística simple - asumimos que el usuario está en la categoría correcta
-      // y usamos la clave del diccionario que corresponda
-      categoryKey = dictKey
-      break
-    }
-  }
-
-  // Si todo falla, usar "diseno_grafico" como fallback
-  if (!categoryKey) {
-    categoryKey = "diseno_grafico"
   }
 
   // Obtener el título y descripción traducidos
