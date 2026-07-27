@@ -16,7 +16,19 @@
 
 export type Language = "es" | "en"
 
-export const dictionaries = {
+// Estructura (forma) de un diccionario. Cada idioma debe cumplir este tipo.
+// Al agregar una sección nueva arriba, agregá su forma también acá.
+export type Dictionary = {
+  nav: {
+    home: string
+    proyectos: string
+    cv: string
+    bio: string
+    contacto: string
+  }
+}
+
+export const dictionaries: Record<Language, Dictionary> = {
   es: {
     nav: {
       home: "Home",
@@ -46,9 +58,6 @@ export const dictionaries = {
     //   subtitulo: "María Boronat's portfolio",
     // },
   },
-} as const
-
-// El tipo de un diccionario individual (usado por el proveedor y el hook).
-export type Dictionary = (typeof dictionaries)["es"]
+}
 
 export const DEFAULT_LANGUAGE: Language = "es"

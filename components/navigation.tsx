@@ -161,7 +161,7 @@ export function Navigation() {
                   }`}
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  {item.label}
+                  {t.nav[item.key]}
                 </Link>
               ))}
               <div className="mt-2">
