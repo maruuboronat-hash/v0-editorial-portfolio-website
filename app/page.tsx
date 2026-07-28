@@ -184,14 +184,22 @@ function AboutSection() {
 ========================= */
 
 export default function HomePage() {
+  const { t } = useLanguage()
+  
+  // 🔥 AGREGAR DESCRIPCIONES TRADUCIDAS A CADA SERVICIO
+  const servicesWithTranslations = services.map(service => ({
+    ...service,
+    description: t.home.descripciones[service.id as keyof typeof t.home.descripciones]
+  }))
+
   return (
     <div className="pt-16">
       <IntroAnimation />
       <InteractiveHero />
-      <ProjectsGrid projects={services} />
+      <ProjectsGrid projects={servicesWithTranslations} />
       <AboutSection />
       <VideoPortfolioSection />
       <ContactSection />
     </div>
-  );
+  )
 }
