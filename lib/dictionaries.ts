@@ -43,6 +43,7 @@ export type Dictionary = {
     texto3: string
     texto4: string
     ver_cv: string
+    leer_mas: string
   }
   video: {
     titulo: string
@@ -183,6 +184,7 @@ export const dictionaries: Record<Language, Dictionary> = {
       texto3: "Algunos sienten pasion por un artista, un famoso o un deporte. Hace poco me preguntaron cual era la mia, y no supe que responder. Me quede pensando, hasta que entendi que mi pasion es lo que hago.",
       texto4: "Desde chica siempre me gusto crear: armar piezas de todo tipo, editar fotos de amigos, mirar Art Attack todos los dias o sacar fotos cada vez que podia. Mi vida siempre estuvo atravesada por el diseno, de distintas formas. Cualquier excusa para disenar —aunque no lo sabia— era, para mi, el mejor favor que me podian pedir.",
       ver_cv: "Ver currículum completo",
+      leer_mas: "Leer más",
     },
     video: {
       titulo: "Mini presentación",
@@ -418,6 +420,7 @@ export const dictionaries: Record<Language, Dictionary> = {
       texto3: "Some people feel passion for an artist, a celebrity, or a sport. Recently I was asked what mine was, and I didn't know what to answer. I kept thinking, until I understood that my passion is what I do.",
       texto4: "Since I was a child, I've always loved creating: building all kinds of pieces, editing friends' photos, watching Art Attack every day, or taking photos whenever I could. My life has always been crossed by design, in different ways. Any excuse to design —even if I didn't know it— was, for me, the best favor anyone could ask of me.",
       ver_cv: "View full CV",
+      leer_mas: "Read more",
     },
     video: {
       titulo: "Mini presentation",
