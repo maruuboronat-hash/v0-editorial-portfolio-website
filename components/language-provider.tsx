@@ -11,6 +11,8 @@ import {
 type LanguageContextValue = {
   /** Idioma actual: "es" | "en" */
   lang: Language
+  /** Alias de `lang` (compatibilidad con componentes que usan `language`) */
+  language: Language
   /** Cambiar el idioma manualmente */
   setLang: (lang: Language) => void
   /** Alternar entre "es" y "en" */
@@ -46,6 +48,7 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
 
   const value: LanguageContextValue = {
     lang,
+    language: lang,
     setLang,
     toggleLang,
     t: dictionaries[lang],
