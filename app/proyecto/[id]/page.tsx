@@ -295,7 +295,6 @@ const projectsData: Record<string, {
       ]},
       { type: "text", title: "Diseño de cartelería en vía pública", content: "Tuve la oportunidad de diseñar y producir mis primeros carteles para vía pública. Las piezas fueron creadas para promocionar el Centro de Capacitación de Bosch, manteniendo la identidad visual de la marca y adaptándola a diferentes formatos y soportes exteriores." },
       { type: "infinite-carousel", images: [
-        { src: "/images/corporativo/via-publica/viapublica-02.jpg", alt: "Cartel 02" },
         { src: "/images/corporativo/via-publica/viapublica-03.jpeg", alt: "Cartel 03" },
         { src: "/images/corporativo/via-publica/viapublica-04.jpeg", alt: "Cartel 04" },
         { src: "/images/corporativo/via-publica/viapublica-05.jpeg", alt: "Cartel 05" },
