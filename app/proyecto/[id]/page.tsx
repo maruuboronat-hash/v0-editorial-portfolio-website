@@ -548,6 +548,21 @@ const projectsData: Record<string, {
       { type: "video-embed", src: "/images/edicion-video/video-modelos.mp4", caption: "Indumentaria - Diseño IV" }
     ]
   },
+  "animaciones-video": {
+    title: "Animaciones",
+    category: "Edición de Video",
+    categorySlug: "edicion-video",
+    image: "/images/edicion-video/portada06.png",
+    description: "Serie de animaciones",
+    sections: [
+      { type: "tools", tools: ["After Effects"] },
+      { type: "single-column-stack", images: [
+        { src: "/images/edicion-video/animaciones-01.mp4", alt: "Animación 1", type: "video" },
+        { src: "/images/edicion-video/animaciones-02.mp4", alt: "Animación 2", type: "video" },
+        { src: "/images/edicion-video/animaciones-03.mp4", alt: "Animación 3", type: "video" },
+      ]},
+    ]
+  },
 }
 
 // ============================================================

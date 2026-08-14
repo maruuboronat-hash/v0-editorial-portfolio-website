@@ -70,6 +70,7 @@ export function CategoryContent({ categoryData }: CategoryContentProps) {
       "animated-teaser": "edicion-video",
       "motocross-video": "edicion-video",
       "indumentaria-video": "edicion-video",
+      "animaciones-video": "edicion-video",
     }
 
     const categoriaUrl = projectToCategory[firstProjectId] || "diseno-grafico"

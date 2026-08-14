@@ -299,6 +299,10 @@ export const dictionaries: Record<Language, Dictionary> = {
         titulo: "Indumentaria",
         descripcion: "Pieza audiovisual que documenta y pone en valor el proceso de diseño y confección de prendas.",
       },
+      "animaciones-video": {
+        titulo: "Animaciones",
+        descripcion: "Serie de animaciones.",
+      },
     },
     herramientas: "HERRAMIENTAS UTILIZADAS",
     tambien_te_puede_gustar: ":) También te puede gustar:",
@@ -536,6 +540,10 @@ export const dictionaries: Record<Language, Dictionary> = {
       "indumentaria-video": {
         titulo: "Fashion Design",
         descripcion: "Audiovisual piece documenting and highlighting the garment design and creation process.",
+      },
+      "animaciones-video": {
+        titulo: "Animations",
+        descripcion: "Series of animations.",
       },
     },
     herramientas: "TOOLS USED",
