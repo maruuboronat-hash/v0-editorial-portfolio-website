@@ -1,17 +1,12 @@
 "use client"
 
 import { useEffect, useState } from "react"
-
-// Portadas usadas en la animación de entrada
-const coverImages = [
-  "/images/generales/home-cover-grafico.jpg",
-  "/images/generales/home-cover-corporativo.jpg",
-  "/images/generales/home-cover-indumentaria.jpg",
-  "/images/generales/home-cover-proyectos-personales.jpg",
-  "/images/generales/home-cover-ediciondevideo.jpg",
-]
+import { useLanguage } from "@/components/language-provider"
+import { categoryCovers } from "@/lib/category-covers"
 
 export function IntroAnimation() {
+  const { lang } = useLanguage()
+  const coverImages = Object.values(categoryCovers).map(cover => cover[lang])
   const [show, setShow] = useState(false)
   const [exiting, setExiting] = useState(false)
 

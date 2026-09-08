@@ -10,6 +10,7 @@ import { ProjectsGrid } from "@/components/projects-grid"
 import { BioImage } from "@/components/bio-image";
 import { IntroAnimation } from "@/components/intro-animation";
 import { useLanguage } from "@/components/language-provider"
+import { categoryCovers } from "@/lib/category-covers"
 
 /* =========================
    HERO
@@ -83,31 +84,26 @@ const services = [
   {
     id: "diseno-grafico",
     href: "/proyectos/diseno-grafico",
-    image: "/images/generales/home-cover-grafico.jpg",
     imageStyle: "square",
   },
   {
     id: "corporativo",
     href: "/proyectos/corporativo",
-    image: "/images/generales/home-cover-corporativo.jpg",
     imageStyle: "square",
   },
   {
     id: "indumentaria",
     href: "/proyectos/indumentaria-ilustracion",
-    image: "/images/generales/home-cover-indumentaria.jpg",
     imageStyle: "square",
   },
   {
     id: "personales",
     href: "/proyectos/personales",
-    image: "/images/generales/home-cover-proyectos-personales.jpg",
     imageStyle: "square",
   },
   {
     id: "edicion-video",
     href: "/proyectos/edicion-video",
-    image: "/images/generales/home-cover-ediciondevideo.jpg",
     colSpan: 2,
     imageStyle: "natural",
     isWide: true,
@@ -184,12 +180,13 @@ function AboutSection() {
 ========================= */
 
 export default function HomePage() {
-  const { t } = useLanguage()
-  
-  // 🔥 AGREGAR DESCRIPCIONES TRADUCIDAS A CADA SERVICIO
+  const { t, lang } = useLanguage()
+
+  // 🔥 AGREGAR DESCRIPCIONES Y PORTADA TRADUCIDAS A CADA SERVICIO
   const servicesWithTranslations = services.map(service => ({
     ...service,
-    description: t.home.descripciones[service.id as keyof typeof t.home.descripciones]
+    description: t.home.descripciones[service.id as keyof typeof t.home.descripciones],
+    image: categoryCovers[service.id][lang],
   }))
 
   return (
