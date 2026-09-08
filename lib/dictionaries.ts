@@ -247,6 +247,10 @@ export const dictionaries: Record<Language, Dictionary> = {
         titulo: "Robert Bosch Argentina",
         descripcion: "Durante mi pasantía en Bosch Mobility Aftermarket Argentina formé parte del equipo de Marketing y Comunicación.",
       },
+      "cantiere-rebranding": {
+        titulo: "Rebranding y Página Web | Cantiere SA",
+        descripcion: "Renovación integral de la identidad de Cantiere, partiendo de una marca existente para construir un sistema visual y comunicacional actualizado y coherente. El proyecto incluyó el desarrollo de un nuevo manual de marca, la renovación completa de su sitio web —cuya última actualización había sido en 2014— y la actualización de su presencia en redes sociales. Actualmente continúo trabajando en la creación y planificación de contenidos para la marca.",
+      },
       "power-bi-picklog": {
         titulo: "Pick&Log",
         descripcion: "Proyecto desarrollado para la empresa de logística Pick&Log, enfocado en el diseño de plantillas visuales y dashboards para Power BI.",
@@ -488,6 +492,10 @@ export const dictionaries: Record<Language, Dictionary> = {
       "carteles-bosch": {
         titulo: "Robert Bosch Argentina",
         descripcion: "During my internship at Bosch Mobility Aftermarket Argentina, I was part of the Marketing and Communication team.",
+      },
+      "cantiere-rebranding": {
+        titulo: "Rebranding & Website | Cantiere SA",
+        descripcion: "A comprehensive refresh of Cantiere's existing identity, creating an updated and cohesive visual and communication system. The project included the development of a new brand guidelines manual, a complete redesign of the company's website —last updated in 2014— and an update of its social media presence. I am currently continuing to work on content creation and planning for the brand.",
       },
       "power-bi-picklog": {
         titulo: "Pick&Log",

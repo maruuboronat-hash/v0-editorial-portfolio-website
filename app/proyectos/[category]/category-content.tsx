@@ -54,6 +54,7 @@ export function CategoryContent({ categoryData }: CategoryContentProps) {
       "cuento-infantil-3d": "diseno_grafico",
       // Corporativo
       "carteles-bosch": "corporativo",
+      "cantiere-rebranding": "corporativo",
       "power-bi-picklog": "corporativo",
       // Indumentaria
       "coleccion-portuguese": "indumentaria-ilustracion",

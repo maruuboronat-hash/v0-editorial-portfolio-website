@@ -16,9 +16,10 @@ export type SectionType =
   | { type: "single-column-stack"; images: Array<{ src: string; alt?: string; caption?: string; type?: "image" | "video" }> }
   | { type: "two-column-grid"; images: Array<{ src: string; alt?: string; type?: "image" | "video" }> }
   | { type: "three-column-grid"; images: Array<{ src: string; alt?: string; type?: "image" | "video" }> }
-  | { type: "text"; title?: string; content: string }
+  | { type: "text"; title?: string; content: string; titleEn?: string; contentEn?: string }
   | { type: "video-embed"; src: string; caption?: string }
   | { type: "infinite-carousel"; images: Array<{ src: string; alt?: string; type?: "image" | "video" }>; speed?: number }
+  | { type: "horizontal-gallery"; images: Array<{ src: string; alt?: string }> }
   | { type: "skills"; skills: string[] }
   | { type: "tools"; tools: string[] }
 
@@ -43,6 +44,24 @@ const styles = `
 
 .animate-scroll:hover {
   animation-play-state: paused;
+}
+
+.horizontal-gallery-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
+}
+
+.horizontal-gallery-scroll::-webkit-scrollbar {
+  height: 8px;
+}
+
+.horizontal-gallery-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.horizontal-gallery-scroll::-webkit-scrollbar-thumb {
+  background-color: var(--border);
+  border-radius: 9999px;
 }
 `;
 
@@ -159,6 +178,32 @@ export function InfiniteCarousel({ images }: { images: Array<{ src: string; alt?
           ))}
         </div>
       )}
+    </section>
+  )
+}
+
+/* =========================
+   GALERÍA HORIZONTAL (NO CLICKEABLE, CON SCROLL)
+========================= */
+
+export function HorizontalGallery({ section }: { section: Extract<SectionType, { type: "horizontal-gallery" }> }) {
+  return (
+    <section className="w-full">
+      <div className="horizontal-gallery-scroll flex gap-4 overflow-x-auto pb-4">
+        {section.images.map((img, i) => (
+          <div
+            key={i}
+            className="h-48 md:h-56 w-auto flex-shrink-0 overflow-hidden rounded-lg border border-border bg-muted"
+          >
+            <img
+              src={img.src || "/placeholder.svg"}
+              alt={img.alt || ""}
+              loading="lazy"
+              className="h-full w-auto object-contain select-none pointer-events-none"
+            />
+          </div>
+        ))}
+      </div>
     </section>
   )
 }
@@ -389,18 +434,22 @@ export function VideoEmbed({ section }: { section: Extract<SectionType, { type: 
 }
 
 export function TextSection({ section }: { section: Extract<SectionType, { type: "text" }> }) {
+  const { lang } = useLanguage()
+  const title = lang === "en" ? section.titleEn || section.title : section.title
+  const content = lang === "en" ? section.contentEn || section.content : section.content
+
   return (
     <section className="w-full">
-      {section.title && (
+      {title && (
         <h3 className="flex items-center gap-3 text-2xl md:text-3xl font-heading tracking-tight pt-6 md:pt-10">
           <span className="h-6 w-1 rounded-full bg-brand" />
-          {section.title}
+          {title}
         </h3>
       )}
-      {section.content && (
-        <div 
+      {content && (
+        <div
           className="text-base md:text-lg leading-relaxed text-foreground"
-          dangerouslySetInnerHTML={{ __html: section.content.replace(/\n/g, '<br/>') }}
+          dangerouslySetInnerHTML={{ __html: content.replace(/\n/g, '<br/>') }}
         />
       )}
     </section>
@@ -429,6 +478,8 @@ export function ProjectSection({ section }: SectionProps) {
       return <VideoEmbed section={section} />
     case "infinite-carousel":
       return <InfiniteCarousel images={section.images} />
+    case "horizontal-gallery":
+      return <HorizontalGallery section={section} />
     case "skills":
       return <SkillsSection section={section} />
     case "tools":

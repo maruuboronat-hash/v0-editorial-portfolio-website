@@ -26,6 +26,7 @@ const categoriesData: Record<string, {
   "corporativo": {
     projects: [
       { id: "carteles-bosch", title: "Robert Bosch Argentina", image: "/images/corporativo/logos/portadas-logos-05.jpg" },
+      { id: "cantiere-rebranding", title: "Rebranding y Página Web | Cantiere SA", image: "/images/corporativo/cantiere/portada-cantiere.jpg" },
       { id: "power-bi-picklog", title: "Pick&Log", image: "/images/corporativo/logos/portadas-logos-01.jpg" },
     ],
   },
