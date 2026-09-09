@@ -97,9 +97,9 @@ export function Navigation() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-sm">
       <div className="flex items-center justify-between px-4 md:px-12 py-4">
-        {/* MAR BOR (siempre visible a la izquierda) */}
+        {/* Nombre completo (siempre visible a la izquierda) */}
         <Link href="/" className="font-heading text-sm tracking-wider hover:opacity-70 transition-opacity">
-          MAR BOR
+          MARÍA BORONAT
         </Link>
         
         {/* Desktop: Links centrados */}
@@ -149,7 +149,7 @@ export function Navigation() {
         {isMenuOpen && (
           <div className="absolute top-full left-0 right-0 bg-background/95 backdrop-blur-sm border-b border-border md:hidden">
             <nav className="flex flex-col items-center py-4">
-              {/* Excluimos Home del menú móvil porque MAR BOR ya lleva a home */}
+              {/* Excluimos Home del menú móvil porque el nombre ya lleva a home */}
               {navItems.slice(1).map((item) => (
                 <Link
                   key={item.href}

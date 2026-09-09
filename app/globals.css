@@ -212,6 +212,12 @@
   animation: heroReveal 1.2s cubic-bezier(0.19, 1, 0.22, 1) 0.2s forwards;
 }
 
+.hero-reveal-delay-2 {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: heroReveal 1.2s cubic-bezier(0.19, 1, 0.22, 1) 0.35s forwards;
+}
+
 @keyframes heroReveal {
   to {
     opacity: 1;
@@ -293,30 +299,25 @@
   }
 }
 
-.intro-line-mask {
-  overflow: hidden;
+/* Logo "escribiéndose" en la intro: un trazo grueso recorre la forma real
+   de cada letra (como una lapicera) y actúa de máscara para revelar el
+   relleno sólido a su paso, sin mostrarse nunca como contorno. */
+.intro-logo-mask {
   display: block;
-}
-
-.intro-line {
-  display: block;
-  font-family: var(--font-heading);
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  line-height: 1;
+  width: clamp(9rem, 28vw, 15rem);
   color: var(--foreground);
-  transform: translateY(110%);
-  animation: introLineUp 1s cubic-bezier(0.19, 1, 0.22, 1) forwards;
 }
 
-.intro-word-1 {
-  font-size: clamp(3.5rem, 16vw, 7rem);
-  animation-delay: 0.15s;
+.marbor-logo-reveal {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: marborLogoReveal 0.32s linear forwards;
 }
 
-.intro-word-2 {
-  font-size: clamp(3.5rem, 16vw, 7rem);
-  animation-delay: 0.28s;
+@keyframes marborLogoReveal {
+  to {
+    stroke-dashoffset: 0;
+  }
 }
 
 .intro-sub {
@@ -336,12 +337,6 @@
   background: var(--brand);
   border-radius: 999px;
   animation: introBar 1s cubic-bezier(0.19, 1, 0.22, 1) 0.5s forwards;
-}
-
-@keyframes introLineUp {
-  to {
-    transform: translateY(0);
-  }
 }
 
 @keyframes introFadeIn {
@@ -366,15 +361,19 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .intro-line,
+  .marbor-logo-reveal,
   .intro-sub,
   .intro-bar,
   .hero-reveal,
-  .hero-reveal-delay {
+  .hero-reveal-delay,
+  .hero-reveal-delay-2 {
     animation: none;
     opacity: 1;
     transform: none;
     width: auto;
+  }
+  .marbor-logo-reveal {
+    stroke-dashoffset: 0;
   }
   .intro-cover {
     animation: none;

@@ -3,7 +3,6 @@
 import React from "react"
 import { useState, useRef } from "react"
 import Link from "next/link"
-import Image from "next/image"
 import { ContactSection } from "@/components/contact-section"
 import { ScrollReveal } from "@/hooks/use-scroll-reveal"
 import { ProjectsGrid } from "@/components/projects-grid"
@@ -11,6 +10,7 @@ import { BioImage } from "@/components/bio-image";
 import { IntroAnimation } from "@/components/intro-animation";
 import { useLanguage } from "@/components/language-provider"
 import { categoryCovers } from "@/lib/category-covers"
+import { MarborLogo } from "@/components/marbor-logo"
 
 /* =========================
    HERO
@@ -56,15 +56,17 @@ function InteractiveHero() {
       />
 
       <div className="relative z-10 text-center px-6">
-        <span className="hero-reveal block text-xs uppercase tracking-[0.35em] text-muted-foreground mb-6">
-          {t.home.portfolio}
-        </span>
-        <h1 className="font-heading text-6xl md:text-7xl lg:text-8xl tracking-tight leading-[0.95]">
-          <span className="hero-reveal block">{t.home.titulo}</span>
+        <h1 className="flex flex-col items-center">
+          <span className="hero-reveal block w-[200px] sm:w-[260px] md:w-[320px] lg:w-[380px] text-foreground">
+            <MarborLogo className="h-auto w-full" />
+          </span>
           <span className="hero-reveal-delay block mt-4 text-2xl md:text-2xl lg:text-3xl font-light opacity-70">
             {t.home.subtitulo}
           </span>
         </h1>
+        <span className="hero-reveal-delay-2 block text-xs uppercase tracking-[0.35em] text-muted-foreground mt-6">
+          {t.home.portfolio}
+        </span>
       </div>
 
       {/* Indicador de scroll */}

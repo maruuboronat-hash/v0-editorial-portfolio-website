@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react"
 import { useLanguage } from "@/components/language-provider"
 import { categoryCovers } from "@/lib/category-covers"
+import { MarborLogo } from "@/components/marbor-logo"
 
 export function IntroAnimation() {
   const { lang } = useLanguage()
@@ -52,11 +53,8 @@ export function IntroAnimation() {
       </div>
 
       <div className="intro-content">
-        <span className="intro-line-mask">
-          <span className="intro-line intro-word-1">MARÍA</span>
-        </span>
-        <span className="intro-line-mask">
-          <span className="intro-line intro-word-2">BORONAT</span>
+        <span className="intro-logo-mask">
+          <MarborLogo animated />
         </span>
         <span className="intro-bar" />
         <span className="intro-sub">Diseño Gráfico y Comunicación</span>
