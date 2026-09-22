@@ -5,11 +5,10 @@ import { useState, useRef } from "react"
 import Link from "next/link"
 import { ContactSection } from "@/components/contact-section"
 import { ScrollReveal } from "@/hooks/use-scroll-reveal"
-import { ProjectsGrid } from "@/components/projects-grid"
+import { CategoryGalleries } from "@/components/category-galleries"
 import { BioImage } from "@/components/bio-image";
 import { IntroAnimation } from "@/components/intro-animation";
 import { useLanguage } from "@/components/language-provider"
-import { categoryCovers } from "@/lib/category-covers"
 import { MarborLogo } from "@/components/marbor-logo"
 
 /* =========================
@@ -60,13 +59,13 @@ function InteractiveHero() {
           <span className="hero-reveal block w-[200px] sm:w-[260px] md:w-[320px] lg:w-[380px] text-foreground">
             <MarborLogo className="h-auto w-full" />
           </span>
-          <span className="hero-reveal-delay block mt-4 text-2xl md:text-2xl lg:text-3xl font-light opacity-70">
+          <span className="hero-reveal-delay block text-xs uppercase tracking-[0.35em] text-muted-foreground mt-6">
+            {t.home.portfolio}
+          </span>
+          <span className="hero-reveal-delay-2 block mt-3 text-2xl md:text-2xl lg:text-3xl font-light opacity-70">
             {t.home.subtitulo}
           </span>
         </h1>
-        <span className="hero-reveal-delay-2 block text-xs uppercase tracking-[0.35em] text-muted-foreground mt-6">
-          {t.home.portfolio}
-        </span>
       </div>
 
       {/* Indicador de scroll */}
@@ -182,20 +181,11 @@ function AboutSection() {
 ========================= */
 
 export default function HomePage() {
-  const { t, lang } = useLanguage()
-
-  // 🔥 AGREGAR DESCRIPCIONES Y PORTADA TRADUCIDAS A CADA SERVICIO
-  const servicesWithTranslations = services.map(service => ({
-    ...service,
-    description: t.home.descripciones[service.id as keyof typeof t.home.descripciones],
-    image: categoryCovers[service.id][lang],
-  }))
-
   return (
     <div className="pt-16">
       <IntroAnimation />
       <InteractiveHero />
-      <ProjectsGrid projects={servicesWithTranslations} />
+      <CategoryGalleries />
       <AboutSection />
       <VideoPortfolioSection />
       <ContactSection />
