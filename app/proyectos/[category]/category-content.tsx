@@ -41,6 +41,7 @@ export function CategoryContent({ categoryData }: CategoryContentProps) {
     // Mapeo de IDs de proyecto a categorías
     const projectToCategory: Record<string, string> = {
       // Diseño Gráfico
+      "festival-musica-electronica": "diseno_grafico",
       "libro-tecnico-manual": "diseno_grafico",
       "diario-oasis": "diseno_grafico",
       "revistas-editorial": "diseno_grafico",

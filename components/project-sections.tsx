@@ -14,7 +14,7 @@ export type SectionType =
   | { type: "full-width-image"; src: string; alt?: string; caption?: string }
   | { type: "centered-image"; src: string; alt?: string; caption?: string; width?: "small" | "medium" | "large" }
   | { type: "single-column-stack"; images: Array<{ src: string; alt?: string; caption?: string; type?: "image" | "video" }> }
-  | { type: "two-column-grid"; images: Array<{ src: string; alt?: string; type?: "image" | "video" }> }
+  | { type: "two-column-grid"; images: Array<{ src: string; alt?: string; type?: "image" | "video" }>; aspect?: string }
   | { type: "three-column-grid"; images: Array<{ src: string; alt?: string; type?: "image" | "video" }> }
   | { type: "text"; title?: string; content: string; titleEn?: string; contentEn?: string }
   | { type: "video-embed"; src: string; caption?: string }
@@ -359,7 +359,7 @@ export function TwoColumnGrid({ section }: { section: Extract<SectionType, { typ
           rel="noopener noreferrer"
           className="group block overflow-hidden rounded-2xl border border-border bg-muted transition-all duration-300 hover:border-brand hover:shadow-lg"
         >
-          <div className="aspect-[4/3] relative transition-transform duration-500 group-hover:scale-[1.03]">
+          <div className={`${section.aspect || "aspect-[4/3]"} relative transition-transform duration-500 group-hover:scale-[1.03]`}>
             <Img src={img.src} alt={img.alt} contain />
           </div>
         </a>

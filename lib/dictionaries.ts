@@ -199,6 +199,10 @@ export const dictionaries: Record<Language, Dictionary> = {
       descripcion: "Video portfolio - Diseño IV",
     },
     proyectos_detalle: {
+      "festival-musica-electronica": {
+        titulo: "Festival de Música Electrónica | Diseño Editorial",
+        descripcion: "Diseño de un tríptico desarrollado en el marco de un proyecto académico, basado en la programación de un festival de música electrónica. El objetivo fue organizar y jerarquizar una gran cantidad de actividades, artistas y experiencias dentro de una pieza editorial clara, dinámica y visualmente atractiva. El proyecto se desarrolló contemplando su producción gráfica y finalizó con la impresión y armado de las piezas en formato físico.",
+      },
       "libro-tecnico-manual": {
         titulo: "Libro técnico editorial I Manual",
         descripcion: "Proyecto editorial centrado en el diseño y maquetación integral de un libro técnico.",
@@ -445,6 +449,10 @@ export const dictionaries: Record<Language, Dictionary> = {
       descripcion: "Video portfolio - Design IV",
     },
     proyectos_detalle: {
+      "festival-musica-electronica": {
+        titulo: "Electronic Music Festival | Editorial Design",
+        descripcion: "Trifold brochure designed as part of an academic project, based on the program of an electronic music festival. The objective was to organize and structure a large amount of activities, artists, and experiences into a clear, dynamic, and visually engaging editorial piece. The project was developed with print production in mind and concluded with the printing and assembly of the final physical pieces.",
+      },
       "libro-tecnico-manual": {
         titulo: "Technical editorial book I Manual",
         descripcion: "Editorial project focused on the comprehensive design and layout of a technical book.",

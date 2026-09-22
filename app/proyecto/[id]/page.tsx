@@ -33,6 +33,25 @@ const projectsData: Record<string, {
   // ==========================================================
   // DISEÑO GRÁFICO
   // ==========================================================
+  "festival-musica-electronica": {
+    title: "Festival de Música Electrónica | Diseño Editorial",
+    category: "Diseño Gráfico",
+    categorySlug: "diseno-grafico",
+    description: "Diseño de un tríptico desarrollado en el marco de un proyecto académico, basado en la programación de un festival de música electrónica. El objetivo fue organizar y jerarquizar una gran cantidad de actividades, artistas y experiencias dentro de una pieza editorial clara, dinámica y visualmente atractiva. El proyecto se desarrolló contemplando su producción gráfica y finalizó con la impresión y armado de las piezas en formato físico.",
+    image: "/images/diseno-grafico/folleto-electronica/mockup-02.jpg",
+    sections: [
+      { type: "tools", tools: ["InDesign", "Illustrator", "Photoshop"] },
+      { type: "two-column-grid", aspect: "aspect-[1642/2400]", images: [
+        { src: "/images/diseno-grafico/folleto-electronica/folleto-externo.jpg", alt: "Tríptico festival de música electrónica - cara externa" },
+        { src: "/images/diseno-grafico/folleto-electronica/folleto-interno.jpg", alt: "Tríptico festival de música electrónica - cara interna" },
+      ]},
+      { type: "three-column-grid", images: [
+        { src: "/images/diseno-grafico/folleto-electronica/mockup-01.jpg", alt: "Tríptico festival - mockup 1" },
+        { src: "/images/diseno-grafico/folleto-electronica/mockup-02.jpg", alt: "Tríptico festival - mockup 2" },
+        { src: "/images/diseno-grafico/folleto-electronica/mockup-03.jpg", alt: "Tríptico festival - mockup 3" },
+      ]},
+    ],
+  },
   "libro-tecnico-manual": {
     title: "Libro técnico editorial I Manual",
     category: "Diseño Gráfico",

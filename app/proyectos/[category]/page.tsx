@@ -10,6 +10,7 @@ const categoriesData: Record<string, {
 }> = {
   "diseno-grafico": {
     projects: [
+      { id: "festival-musica-electronica", title: "Festival de Música Electrónica | Diseño Editorial", image: "/images/diseno-grafico/folleto-electronica/mockup-02.jpg" },
       { id: "libro-tecnico-manual", title: "Libro técnico editorial I Manual", image: "/images/diseno-grafico/tecnico/tecnico-01.jpg" },
       { id: "diario-oasis", title: "Diario de Oasis I Backstage Times", image: "/images/diseno-grafico/oasis/oasis-02.jpg" },
       { id: "revistas-editorial", title: "Revistas I Colección de Arte Amalia Lacroze de Fortabat", image: "/images/diseno-grafico/revistas-editorial/portada-editorial2.jpg" },
