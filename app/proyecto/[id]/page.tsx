@@ -304,25 +304,8 @@ const projectsData: Record<string, {
     description: "Durante mi pasantía en Bosch Mobility Aftermarket Argentina formé parte del equipo de Marketing y Comunicación, participando en el desarrollo e implementación de comunicación comercial y de marca para distintas unidades de negocio. Mi trabajo abarcó desde la promoción de productos y servicios hasta el acompañamiento estratégico, integrando diseño gráfico, coherencia de identidad visual y objetivos comerciales.",
     sections: [
       { type: "skills", skills: ["Adobe Illustrator", "Adobe Photoshop", "Adobe InDesign", "Figma", "MailJet", "Canva", "Adobe Premiere", "SAP", "Power Apps", "Power Automate", "Microsoft Office"] },
-      { type: "text", title: "Young Talents – Automatización de pedidos y control de stock", content: "Proyecto desarrollado en el marco del programa interno Young Talents 2025, enfocado en la digitalización y automatización del proceso de pedidos y control de stock de merchandising.\n\nA partir de la detección de problemas operativos —carga manual, falta de registro y desactualización de datos— diseñé e implementé un sistema integrado con Power Apps, Excel y Power Automate que permitió formalizar pedidos, actualizar stock en tiempo real y generar un historial automático para análisis posteriores.\n\nLa solución redujo errores, optimizó tiempos operativos y dejó una base replicable para otras áreas. El proyecto fue presentado ante gerencia dentro del programa.\n\n<a href='/images/corporativo/ytalents/presentacion-portfolio.pdf' download class='inline-block mt-4 text-sm font-medium text-white hover:underline underline-offset-4'>Saber más →</a>" },
-      { type: "horizontal-gallery", images: [
-        { src: "/images/corporativo/ytalents/yt-01.jpg", alt: "Young Talents 1" },
-        { src: "/images/corporativo/ytalents/yt-02.jpg", alt: "Young Talents 2" },
-        { src: "/images/corporativo/ytalents/yt-03.jpg", alt: "Young Talents 3" },
-        { src: "/images/corporativo/ytalents/yt-04.jpg", alt: "Young Talents 4" },
-        { src: "/images/corporativo/ytalents/yt-05.jpg", alt: "Young Talents 5" },
-      ]},
-      { type: "text", title: "Diseño de cartelería en vía pública", content: "Tuve la oportunidad de diseñar y producir mis primeros carteles para vía pública. Las piezas fueron creadas para promocionar el Centro de Capacitación de Bosch, manteniendo la identidad visual de la marca y adaptándola a diferentes formatos y soportes exteriores." },
-      { type: "horizontal-gallery", images: [
-        { src: "/images/corporativo/via-publica/viapublica-03.jpeg", alt: "Cartel 03" },
-        { src: "/images/corporativo/via-publica/viapublica-04.jpeg", alt: "Cartel 04" },
-        { src: "/images/corporativo/via-publica/viapublica-05.jpeg", alt: "Cartel 05" },
-        { src: "/images/corporativo/via-publica/viapublica-06.jpeg", alt: "Cartel 06" },
-        { src: "/images/corporativo/via-publica/viapublica-07.jpeg", alt: "Cartel 07" },
-        { src: "/images/corporativo/via-publica/viapublica-08.jpeg", alt: "Cartel 08" },
-      ]},
       { type: "text", title: "Merchandising & Materiales Promocionales", content: "Diseño y desarrollo de materiales aplicados a distintas acciones comerciales y de marca: stickers, ploteos, bolsas, anotadores, cuadernos, llaveros, catálogos, newsletters y piezas para redes sociales. Trabajo enfocado en coherencia visual, funcionalidad y alineación a objetivos comerciales." },
-      { type: "horizontal-gallery", images: [
+      { type: "horizontal-gallery", clickable: true, images: [
         { src: "/images/corporativo/merch/merch-01.jpg", alt: "Merch 01" },
         { src: "/images/corporativo/merch/merch-02.jpg", alt: "Merch 02" },
         { src: "/images/corporativo/merch/merch-03.jpg", alt: "Merch 03" },
@@ -342,7 +325,7 @@ const projectsData: Record<string, {
         { src: "/images/corporativo/merch/merch-17.jpg", alt: "Merch 17" },
       ]},
       { type: "text", title: "Asesoramiento y diseño para talleres mecánicos", content: "Desarrollo de propuestas visuales para talleres, integrando sus necesidades comerciales con los lineamientos globales de marca.\n\nEl trabajo incluyó diseño de ploteos y aplicaciones gráficas en fachada, adaptaciones visuales personalizadas y realización de fotomontajes previos a la adhesión a la red. Estas visualizaciones permitían imaginar el resultado del taller fusionado con la identidad Bosch, funcionando como herramienta estratégica en el proceso de decisión.\n\nLa experiencia implicó contacto directo con clientes, análisis del entorno comercial e interpretación espacial, asegurando una implementación coherente y efectiva de la identidad corporativa en contextos reales." },
-      { type: "horizontal-gallery", images: [
+      { type: "horizontal-gallery", clickable: true, images: [
         { src: "/images/corporativo/ploteos/talleres-01.jpg", alt: "Taller 01" },
         { src: "/images/corporativo/ploteos/talleres-02.jpg", alt: "Taller 02" },
         { src: "/images/corporativo/ploteos/parador.mp4", alt: "Video del proceso", type: "video" },
@@ -353,7 +336,7 @@ const projectsData: Record<string, {
         { src: "/images/corporativo/ploteos/talleres-07.jpg", alt: "Taller 07" },
       ]},
       { type: "text", title: "Comunicación Comercial & Marca", content: "Flyers de producto: Desarrollo de piezas gráficas para fichas técnicas, lanzamientos y ofertas comerciales destinadas a distribuidores y red comercial. Definición y consolidación de una estética alineada a la identidad global de marca, aplicada de forma consistente en el tiempo.\n\nPresentaciones corporativas y comerciales: Diseño y optimización de presentaciones internas y externas, asegurando coherencia visual, claridad de información y adecuación al contexto de uso.\n\nWrapped – Resumen anual: Conceptualización y diseño del resumen anual de resultados de comunicación (redes sociales, newsletters y métricas digitales), enfocado a los distintos equipos dentro de la división." },
-      { type: "horizontal-gallery", images: [
+      { type: "horizontal-gallery", clickable: true, images: [
         { src: "/images/corporativo/flyers/flyers-01.jpg", alt: "Flyer 01" },
         { src: "/images/corporativo/flyers/flyers-02.jpg", alt: "Flyer 02" },
         { src: "/images/corporativo/flyers/flyers-03.jpg", alt: "Flyer 03" },
@@ -362,6 +345,23 @@ const projectsData: Record<string, {
         { src: "/images/corporativo/flyers/flyers-06.jpg", alt: "Flyer 06" },
         { src: "/images/corporativo/flyers/flyers-07.jpg", alt: "Flyer 07" },
         { src: "/images/corporativo/flyers/flyers-08.jpg", alt: "Flyer 08" },
+      ]},
+      { type: "text", title: "Diseño de cartelería en vía pública", content: "Tuve la oportunidad de diseñar y producir mis primeros carteles para vía pública. Las piezas fueron creadas para promocionar el Centro de Capacitación de Bosch, manteniendo la identidad visual de la marca y adaptándola a diferentes formatos y soportes exteriores." },
+      { type: "horizontal-gallery", clickable: true, images: [
+        { src: "/images/corporativo/via-publica/viapublica-03.jpeg", alt: "Cartel 03" },
+        { src: "/images/corporativo/via-publica/viapublica-04.jpeg", alt: "Cartel 04" },
+        { src: "/images/corporativo/via-publica/viapublica-05.jpeg", alt: "Cartel 05" },
+        { src: "/images/corporativo/via-publica/viapublica-06.jpeg", alt: "Cartel 06" },
+        { src: "/images/corporativo/via-publica/viapublica-07.jpeg", alt: "Cartel 07" },
+        { src: "/images/corporativo/via-publica/viapublica-08.jpeg", alt: "Cartel 08" },
+      ]},
+      { type: "text", title: "Young Talents – Automatización de pedidos y control de stock", content: "Proyecto desarrollado en el marco del programa interno Young Talents 2025, enfocado en la digitalización y automatización del proceso de pedidos y control de stock de merchandising.\n\nA partir de la detección de problemas operativos —carga manual, falta de registro y desactualización de datos— diseñé e implementé un sistema integrado con Power Apps, Excel y Power Automate que permitió formalizar pedidos, actualizar stock en tiempo real y generar un historial automático para análisis posteriores.\n\nLa solución redujo errores, optimizó tiempos operativos y dejó una base replicable para otras áreas. El proyecto fue presentado ante gerencia dentro del programa.\n\n<a href='/images/corporativo/ytalents/presentacion-portfolio.pdf' download class='inline-block mt-4 text-sm font-medium text-white hover:underline underline-offset-4'>Saber más →</a>" },
+      { type: "horizontal-gallery", clickable: true, images: [
+        { src: "/images/corporativo/ytalents/yt-01.jpg", alt: "Young Talents 1" },
+        { src: "/images/corporativo/ytalents/yt-02.jpg", alt: "Young Talents 2" },
+        { src: "/images/corporativo/ytalents/yt-03.jpg", alt: "Young Talents 3" },
+        { src: "/images/corporativo/ytalents/yt-04.jpg", alt: "Young Talents 4" },
+        { src: "/images/corporativo/ytalents/yt-05.jpg", alt: "Young Talents 5" },
       ]},
       { type: "text", title: "Gestión y Soporte Operativo", content: "Además del desarrollo creativo, participé en:\n• Coordinación con proveedores y agencias\n• Gestión y control de stock de merchandising\n• Soporte en procesos administrativos (órdenes de compra, entregas y pagos)\n• Organización y asistencia en eventos corporativos y promocionales\n• Articulación con equipos regionales" }
     ]

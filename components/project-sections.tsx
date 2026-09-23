@@ -19,7 +19,7 @@ export type SectionType =
   | { type: "text"; title?: string; content: string; titleEn?: string; contentEn?: string }
   | { type: "video-embed"; src: string; caption?: string }
   | { type: "infinite-carousel"; images: Array<{ src: string; alt?: string; type?: "image" | "video" }>; speed?: number }
-  | { type: "horizontal-gallery"; images: Array<{ src: string; alt?: string; type?: "image" | "video" }> }
+  | { type: "horizontal-gallery"; images: Array<{ src: string; alt?: string; type?: "image" | "video" }>; clickable?: boolean }
   | { type: "skills"; skills: string[] }
   | { type: "tools"; tools: string[] }
 
@@ -188,27 +188,49 @@ export function InfiniteCarousel({ images }: { images: Array<{ src: string; alt?
 
 export function HorizontalGallery({ section }: { section: Extract<SectionType, { type: "horizontal-gallery" }> }) {
   return (
-    <section className="w-full">
+    <section className="w-full mt-3">
       <div className="horizontal-gallery-scroll flex gap-4 overflow-x-auto pb-4">
-        {section.images.map((img, i) => (
-          <div
-            key={i}
-            className="h-48 md:h-56 w-auto flex-shrink-0 overflow-hidden rounded-lg border border-border bg-muted"
-          >
-            {isVideoItem(img) ? (
-              <video src={img.src} controls className="h-full w-auto object-contain">
-                Tu navegador no soporta videos HTML5.
-              </video>
-            ) : (
-              <img
-                src={img.src || "/placeholder.svg"}
-                alt={img.alt || ""}
-                loading="lazy"
-                className="h-full w-auto object-contain select-none pointer-events-none"
-              />
-            )}
-          </div>
-        ))}
+        {section.images.map((img, i) => {
+          const frameClass = "h-48 md:h-56 w-auto flex-shrink-0 overflow-hidden rounded-lg border border-border bg-muted"
+
+          if (isVideoItem(img)) {
+            return (
+              <div key={i} className={frameClass}>
+                <video src={img.src} controls className="h-full w-auto object-contain">
+                  Tu navegador no soporta videos HTML5.
+                </video>
+              </div>
+            )
+          }
+
+          const image = (
+            <img
+              src={img.src || "/placeholder.svg"}
+              alt={img.alt || ""}
+              loading="lazy"
+              className={cn(
+                "h-full w-auto object-contain select-none",
+                !section.clickable && "pointer-events-none"
+              )}
+            />
+          )
+
+          return section.clickable ? (
+            <a
+              key={i}
+              href={img.src}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={cn(frameClass, "group transition-colors hover:border-brand")}
+            >
+              {image}
+            </a>
+          ) : (
+            <div key={i} className={frameClass}>
+              {image}
+            </div>
+          )
+        })}
       </div>
     </section>
   )
