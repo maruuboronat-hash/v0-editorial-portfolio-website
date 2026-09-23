@@ -19,7 +19,7 @@ export type SectionType =
   | { type: "text"; title?: string; content: string; titleEn?: string; contentEn?: string }
   | { type: "video-embed"; src: string; caption?: string }
   | { type: "infinite-carousel"; images: Array<{ src: string; alt?: string; type?: "image" | "video" }>; speed?: number }
-  | { type: "horizontal-gallery"; images: Array<{ src: string; alt?: string }> }
+  | { type: "horizontal-gallery"; images: Array<{ src: string; alt?: string; type?: "image" | "video" }> }
   | { type: "skills"; skills: string[] }
   | { type: "tools"; tools: string[] }
 
@@ -195,12 +195,18 @@ export function HorizontalGallery({ section }: { section: Extract<SectionType, {
             key={i}
             className="h-48 md:h-56 w-auto flex-shrink-0 overflow-hidden rounded-lg border border-border bg-muted"
           >
-            <img
-              src={img.src || "/placeholder.svg"}
-              alt={img.alt || ""}
-              loading="lazy"
-              className="h-full w-auto object-contain select-none pointer-events-none"
-            />
+            {isVideoItem(img) ? (
+              <video src={img.src} controls className="h-full w-auto object-contain">
+                Tu navegador no soporta videos HTML5.
+              </video>
+            ) : (
+              <img
+                src={img.src || "/placeholder.svg"}
+                alt={img.alt || ""}
+                loading="lazy"
+                className="h-full w-auto object-contain select-none pointer-events-none"
+              />
+            )}
           </div>
         ))}
       </div>
